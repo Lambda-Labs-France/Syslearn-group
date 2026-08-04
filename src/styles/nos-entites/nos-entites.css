@@ -1,0 +1,250 @@
+.entites-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+
+.entites-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.entites-hero__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.entites-hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.entites-hero__subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+
+
+.entites-content {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.entites-content__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.entites-intro {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+
+.entites-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+
+.entite-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  overflow: hidden;
+  text-decoration: none;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.entite-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.06);
+  border-color: #0f172a;
+}
+
+.entite-card__image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.entite-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.entite-card:hover .entite-card__image img {
+  transform: scale(1.05);
+}
+
+.entite-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.3rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.05em;
+}
+
+.entite-card__content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.entite-card__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0;
+}
+
+.entite-card__tagline {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #475569;
+  margin: 0;
+}
+
+.entite-card__description {
+  font-size: 0.9375rem;
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0.25rem 0 0.5rem 0;
+  flex: 1;
+}
+
+
+.entite-card__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  width: fit-content; 
+  margin-top: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.entite-card__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  filter: brightness(1.05);
+}
+
+.entite-card__btn:active {
+  transform: translateY(0);
+}
+
+.entite-card__btn-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.entite-card__btn:hover .entite-card__btn-icon {
+  transform: translateX(4px);
+}
+
+
+@media (max-width: 1024px) {
+  .entites-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .entites-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .entites-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .entites-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .entites-intro {
+    font-size: 1rem;
+  }
+
+  .entite-card__image {
+    height: 180px;
+  }
+
+  .entite-card__content {
+    padding: 1.25rem;
+  }
+
+  .entite-card__title {
+    font-size: 1.125rem;
+  }
+
+  .entite-card__tagline {
+    font-size: 0.8125rem;
+  }
+
+  .entite-card__description {
+    font-size: 0.875rem;
+  }
+
+ 
+  .entite-card__btn {
+    width: fit-content;
+    justify-content: center;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .entites-hero__title {
+    font-size: 2rem;
+  }
+
+  .entite-card__image {
+    height: 160px;
+  }
+
+  .entite-card__btn {
+    width: fit-content; 
+    padding: 0.5rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+}

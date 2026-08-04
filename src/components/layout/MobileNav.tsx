@@ -32,16 +32,28 @@ export default function MobileNav() {
               <ul>
                 {mainNav.map((item) => {
                   const hasChildren = !!(item.children && item.children.length > 0);
+                  const isExternal = item.isExternal || false;
                   
                   return (
                     <li key={item.href}>
                       <div className="mobile-nav__item">
-                        <Link
-                          href={item.href}
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {item.label}
-                        </Link>
+                        {isExternal ? (
+                          <a
+                            href={item.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {item.label}
+                          </a>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            onClick={() => setIsOpen(false)}
+                          >
+                            {item.label}
+                          </Link>
+                        )}
 
                         {hasChildren && (
                           <button
@@ -59,16 +71,31 @@ export default function MobileNav() {
 
                       {hasChildren && openSubmenu === item.href && (
                         <ul className="mobile-nav__submenu">
-                          {item.children?.map((child) => (
-                            <li key={child.href}>
-                              <Link
-                                href={child.href}
-                                onClick={() => setIsOpen(false)}
-                              >
-                                {child.label}
-                              </Link>
-                            </li>
-                          ))}
+                          {item.children?.map((child) => {
+                            const childIsExternal = child.isExternal || false;
+                            
+                            return (
+                              <li key={child.href}>
+                                {childIsExternal ? (
+                                  <a
+                                    href={child.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    {child.label}
+                                  </a>
+                                ) : (
+                                  <Link
+                                    href={child.href}
+                                    onClick={() => setIsOpen(false)}
+                                  >
+                                    {child.label}
+                                  </Link>
+                                )}
+                              </li>
+                            );
+                          })}
                         </ul>
                       )}
                     </li>

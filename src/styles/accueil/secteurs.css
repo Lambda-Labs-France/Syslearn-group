@@ -1,0 +1,264 @@
+/* ===== SECTEURS ===== */
+.secteurs {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.secteurs__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+.secteurs__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin: 0 0 1rem 0;
+}
+
+.secteurs__description {
+  font-size: 1.125rem;
+  color: #4b5563;
+  text-align: center;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.secteurs__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.secteurs__card:nth-child(1) {
+  grid-column: 1 / 3;
+  justify-self: end;
+}
+
+.secteurs__card:nth-child(2) {
+  grid-column: 3 / 5;
+  justify-self: start;
+}
+
+.secteurs__card:nth-child(3) {
+  grid-column: 1 / 3;
+  justify-self: end;
+}
+
+.secteurs__card:nth-child(4) {
+  grid-column: 3 / 5;
+  justify-self: start;
+}
+
+.secteurs__card:nth-child(5) {
+  grid-column: 2 / 4;
+  justify-self: center;
+}
+
+.secteurs__card {
+  position: relative;
+  border-radius: 2rem;
+  overflow: hidden;
+  text-decoration: none;
+  background: #1f2937;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 530px;
+  height: 220px;
+}
+
+.secteurs__card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.secteurs__card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.secteurs__card:hover .secteurs__card-image img {
+  transform: scale(1.08);
+}
+
+.secteurs__card-overlay {
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.secteurs__card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.5;
+  max-width: 90%;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.secteurs__footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+}
+
+/* ✅ Bouton comme Actualites */
+.secteurs__btn {
+  display: inline-block;
+  padding: 0.875rem 2.5rem;
+  background: #111827;
+  color: #ffffff;
+  border-radius: 50px;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.secteurs__btn:hover {
+  background: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .secteurs__card {
+    width: 400px;
+    height: 200px;
+  }
+
+  .secteurs__card-title {
+    font-size: 1.125rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .secteurs {
+    padding: 60px 0;
+  }
+
+  .secteurs__inner {
+    padding: 0 1.25rem;
+  }
+
+  .secteurs__title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .secteurs__description {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .secteurs__grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .secteurs__card:nth-child(1),
+  .secteurs__card:nth-child(2),
+  .secteurs__card:nth-child(3),
+  .secteurs__card:nth-child(4),
+  .secteurs__card:nth-child(5) {
+    grid-column: auto;
+    justify-self: auto;
+  }
+
+  .secteurs__card {
+    width: 100%;
+    max-width: 400px;
+    height: 180px;
+    border-radius: 1.5rem;
+  }
+
+  .secteurs__card-title {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .secteurs__card-overlay {
+    padding: 1.5rem;
+  }
+
+  .secteurs__btn {
+    width: auto;
+    min-width: 200px;
+    padding: 0.75rem 2rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .secteurs {
+    padding: 40px 0;
+  }
+
+  .secteurs__inner {
+    padding: 0 1rem;
+  }
+
+  .secteurs__title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .secteurs__description {
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .secteurs__grid {
+    gap: 1rem;
+  }
+
+  .secteurs__card {
+    max-width: 100%;
+    height: 150px;
+    border-radius: 1rem;
+  }
+
+  .secteurs__card-title {
+    font-size: 0.875rem;
+  }
+
+  .secteurs__card-overlay {
+    padding: 1rem;
+  }
+
+  .secteurs__btn {
+    width: auto;
+    min-width: 160px;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.8125rem;
+  }
+}

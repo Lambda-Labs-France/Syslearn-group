@@ -1,0 +1,204 @@
+.quisommes-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+.quisommes-hero {
+  background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.quisommes-hero__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.quisommes-hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+}
+
+.quisommes-hero__subtitle {
+  font-size: 1.25rem;
+  color: #93c5fd;
+  font-weight: 300;
+}
+
+.quisommes-content {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.quisommes-content__inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.quisommes-block {
+  margin-bottom: 4rem;
+}
+
+.quisommes-block:last-child {
+  margin-bottom: 0;
+}
+
+.quisommes-block--image {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.quisommes-block__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+}
+
+.quisommes-block__text {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+}
+
+.quisommes-block__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.quisommes-block__img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.quisommes-timeline {
+  margin-top: 1.5rem;
+}
+
+.quisommes-timeline-item {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.quisommes-timeline-item:last-child {
+  border-bottom: none;
+}
+
+.quisommes-timeline-item__year {
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: #2563eb;
+  min-width: 80px;
+}
+
+.quisommes-timeline-item p {
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.quisommes-timeline-item strong {
+  color: #0f172a;
+}
+
+.quisommes-engagement {
+  background: #e4e5e7;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.quisommes-engagement__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.75rem;
+}
+
+.quisommes-engagement__text {
+  font-size: 1.125rem;
+  color: #212730;
+  line-height: 1.8;
+}
+
+@media (max-width: 1024px) {
+  .quisommes-block--image {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .quisommes-block__img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quisommes-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .quisommes-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .quisommes-block__title {
+    font-size: 1.75rem;
+  }
+
+  .quisommes-block__text,
+  .quisommes-engagement__text {
+    font-size: 1rem;
+  }
+
+  .quisommes-timeline-item {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .quisommes-timeline-item__year {
+    min-width: auto;
+  }
+
+  .quisommes-engagement {
+    padding: 1.5rem;
+  }
+
+  .quisommes-engagement__title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .quisommes-hero__title {
+    font-size: 2rem;
+  }
+
+  .quisommes-block__title {
+    font-size: 1.5rem;
+  }
+
+  .quisommes-block__img {
+    height: 200px;
+  }
+
+  .quisommes-engagement {
+    padding: 1.25rem;
+  }
+
+  .quisommes-engagement__text {
+    font-size: 0.9375rem;
+  }
+}

@@ -49,6 +49,7 @@
   width: fit-content;
   border: none;
   cursor: pointer;
+  margin-right: 20px;
 }
 
 .rejoindre__btn:hover {
@@ -139,6 +140,7 @@
     font-size: 0.9375rem;
     text-align: center;
     justify-content: center;
+    margin-bottom: 10px;
   }
 }
 

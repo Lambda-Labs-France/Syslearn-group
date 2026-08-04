@@ -2,16 +2,39 @@ export type NavItem = {
   label: string;
   href: string;
   children?: NavItem[];
+  isExternal?: boolean;
 };
 
 export const mainNav: NavItem[] = [
   {
-    label: "Groupe",
-    href: "/groupe",
+    label: "Le Groupe",
+    href: "/le-groupe",
     children: [
-      { label: "Syslearn", href: "/syslearn" },
-      { label: "PointerLab", href: "/pointerlab" },
-      { label: "StackJobs", href: "/stackjobs" },
+      { label: "Qui sommes-nous", href: "/le-groupe/qui-sommes-nous" },
+      { label: "Nos valeurs", href: "/le-groupe/valeurs" },
+      { label: "Nos chiffres-clés", href: "/le-groupe/chiffres-cles" },
+    ],
+  },
+  {
+    label: "Nos entités",
+    href: "/nos-entites",
+    children: [
+      { label: "Syslearn", href: "/nos-entites/syslearn" },
+      { label: "PointerLab", href: "/nos-entites/pointerlab" },
+      { label: "StackJobs", href: "/nos-entites/stackjobs"},
+    ],
+  },
+  {
+    label: "Secteurs",
+    href: "/secteurs",
+    children: [
+      { label: "Énergie", href: "/secteurs/energie" },
+      { label: "Défense", href: "/secteurs/defense" },
+      { label: "Industrie", href: "/secteurs/industrie" },
+      { label: "Médical", href: "/secteurs/medical" },
+      { label: "Aéronautique", href: "/secteurs/aeronautique" },
+      { label: "Automobile & Mobilité", href: "/secteurs/automobile-mobilite" },
+      { label: "IoT", href: "/secteurs/iot" },
     ],
   },
   {
@@ -19,22 +42,14 @@ export const mainNav: NavItem[] = [
     href: "/actualites",
   },
   {
-    label: "Services",
-    href: "/services",
-    
-  },
-  {
-    label: "Réseaux",
-    href: "/reseaux",
+    label: "Carrières",
+    href: "/carrieres",
     children: [
-      { label: "LinkedIn", href: "https://linkedin.com/company/syslearn" },
-      { label: "Twitter", href: "https://twitter.com/syslearn" },
-      { label: "YouTube", href: "https://youtube.com/syslearn" },
+      { label: "Nos métiers", href: "/carrieres/metiers" },
+      { label: "Pourquoi nous rejoindre", href: "/carrieres/pourquoi-nous-rejoindre" },
+      { label: "Voir les offres", href: "https://www.stackjobs.com/jobs", isExternal: true },
+      { label: "Candidature spontanée", href: "/carrieres/candidature-spontanee" },
     ],
-  },
-  {
-    label: "Rejoignez-nous",
-    href: "/recrutement",
   },
   {
     label: "Contact",
@@ -44,6 +59,6 @@ export const mainNav: NavItem[] = [
 
 export const siteConfig = {
   name: "Syslearn Groupe",
-  logo: "/logo.svg", // ou "/favicon.ico"
+  logo: "/logo.svg",
   description: "Syslearn Groupe - Leader de la transformation numérique",
 };

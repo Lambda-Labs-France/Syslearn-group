@@ -1,0 +1,437 @@
+.pointerlab-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+
+.pointerlab-hero {
+  background: linear-gradient(135deg, #2d1b69 0%, #0f172a 100%);
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.pointerlab-hero__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.pointerlab-hero__badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: rgba(124, 58, 237, 0.2);
+  color: #c4b5fd;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.pointerlab-hero__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pointerlab-hero__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pointerlab-hero__content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.pointerlab-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 2rem;
+  background: rgba(124, 58, 237, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(124, 58, 237, 0.1);
+}
+
+.pointerlab-hero__btn:hover {
+  background: rgba(124, 58, 237, 0.25);
+  border-color: rgba(124, 58, 237, 0.4);
+  box-shadow: 0 6px 25px rgba(124, 58, 237, 0.2);
+  transform: translateY(-2px);
+}
+
+.pointerlab-hero__btn svg {
+  transition: transform 0.3s ease;
+}
+
+.pointerlab-hero__btn:hover svg {
+  transform: translateX(4px) rotate(-5deg);
+}
+
+.pointerlab-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.pointerlab-section__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pointerlab-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.pointerlab-section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.pointerlab-section__text p {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.pointerlab-section__text p:last-child {
+  margin-bottom: 0;
+}
+
+.pointerlab-section__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pointerlab-section__img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.pointerlab-expertises {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.pointerlab-expertises__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pointerlab-expertises__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.pointerlab-expertises__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.pointerlab-expertise-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.pointerlab-expertise-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-color: #7c3aed;
+}
+
+.pointerlab-expertise-card__icon {
+  flex-shrink: 0;
+  color: #7c3aed;
+  margin-top: 0.1rem;
+}
+
+.pointerlab-expertise-card__text {
+  font-size: 0.9375rem;
+  color: #1f2937;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+.pointerlab-secteurs-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.pointerlab-secteurs-section__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pointerlab-secteurs-section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.pointerlab-secteurs-section__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.pointerlab-secteur-card {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.pointerlab-secteur-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-color: #7c3aed;
+}
+
+.pointerlab-secteur-card__icon {
+  color: #7c3aed;
+  margin: 0 auto 0.75rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.pointerlab-secteur-card__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.pointerlab-secteur-card__desc {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin: 0;
+}
+
+
+.pointerlab-faq {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.pointerlab-faq__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pointerlab-faq__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.pointerlab-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pointerlab-faq-item {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.pointerlab-faq-item:hover {
+  border-color: #0f172a;
+}
+
+.pointerlab-faq-item__question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.pointerlab-faq-item__answer {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+
+@media (max-width: 1024px) {
+  .pointerlab-section__grid {
+    gap: 2rem;
+  }
+
+  .pointerlab-section__img {
+    height: 280px;
+  }
+
+  .pointerlab-expertises__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pointerlab-secteurs-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pointerlab-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .pointerlab-section {
+    padding: 40px 0;
+  }
+
+  .pointerlab-section__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .pointerlab-section__title {
+    font-size: 1.75rem;
+  }
+
+  .pointerlab-section__text p {
+    font-size: 1rem;
+  }
+
+  .pointerlab-section__img {
+    height: 220px;
+  }
+
+  .pointerlab-expertises {
+    padding: 40px 0;
+  }
+
+  .pointerlab-expertises__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pointerlab-expertises__title {
+    font-size: 1.75rem;
+  }
+
+  .pointerlab-secteurs-section {
+    padding: 40px 0;
+  }
+
+  .pointerlab-secteurs-section__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pointerlab-secteurs-section__title {
+    font-size: 1.75rem;
+  }
+
+  .pointerlab-faq {
+    padding: 40px 0;
+  }
+
+  .pointerlab-faq__title {
+    font-size: 1.75rem;
+  }
+
+  .pointerlab-faq-item {
+    padding: 1.25rem;
+  }
+
+  .pointerlab-faq-item__question {
+    font-size: 1rem;
+  }
+
+  .pointerlab-faq-item__answer {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pointerlab-hero__title {
+    font-size: 1.8rem;
+  }
+
+  .pointerlab-section__title {
+    font-size: 1.5rem;
+  }
+
+  .pointerlab-section__img {
+    height: 180px;
+  }
+
+  .pointerlab-expertise-card {
+    padding: 1.25rem;
+  }
+
+  .pointerlab-expertise-card__text {
+    font-size: 0.875rem;
+  }
+
+  .pointerlab-secteur-card {
+    padding: 1.25rem;
+  }
+
+  .pointerlab-secteur-card__name {
+    font-size: 1rem;
+  }
+
+  .pointerlab-secteur-card__desc {
+    font-size: 0.8125rem;
+  }
+}

@@ -6,51 +6,56 @@ import "../../styles/accueil/activites.css";
 
 const activitesData = [
   {
-    id: "recrutement",
-    title: "Hellowork recrutement",
+    id: "syslearn",
+    title: "Syslearn",
     description:
-      "Nos solutions permettent une mise en relation transparente, fluide et efficace entre les candidats et les recruteurs.",
+      "Conseil et ingénierie informatique pour l'énergie, la défense et l'industrie. Une connaissance sectorielle qui fait la différence là où une ESN généraliste classique bute.",
     images: [
-      "https://picsum.photos/seed/recrutement1/80/80",
-      "https://picsum.photos/seed/recrutement2/80/80",
+      "https://picsum.photos/seed/syslearn1/80/80",
+      "https://picsum.photos/seed/syslearn2/80/80",
     ],
-    imageMain: "https://picsum.photos/seed/recrutement-main/600/500",
-    buttonText: "Contactez-nous",
-    buttonLink: "/contact",
+    imageMain: "https://picsum.photos/seed/syslearn-main/600/500",
+    buttonText: "Découvrir Syslearn",
+    buttonLink: "/nos-entites/syslearn",
   },
   {
-    id: "education",
-    title: "Hellowork education",
+    id: "pointerlab",
+    title: "PointerLab",
     description:
-      "Nos plateformes donnent les bons outils pour bien choisir sa formation initiale, professionnelle ou sa reconversion. Les écoles et organismes de formation peuvent valoriser leurs offres sur les plateformes afin de développer leurs activités et leur attractivité.",
+      "L'ESN spécialisée C++ et Qt, partenaire officiel de Qt Group. Simulation 3D, imagerie médicale, systèmes embarqués aéronautiques : quand le logiciel doit tenir sous contrainte réelle, sans droit à l'erreur.",
     images: [
-      "https://picsum.photos/seed/education1/80/80",
-      "https://picsum.photos/seed/education2/80/80",
+      "https://picsum.photos/seed/pointerlab1/80/80",
+      "https://picsum.photos/seed/pointerlab2/80/80",
     ],
-    imageMain: "https://picsum.photos/seed/education-main/600/500",
-    buttonText: "Contactez-nous",
-    buttonLink: "/contact",
+    imageMain: "https://picsum.photos/seed/pointerlab-main/600/500",
+    buttonText: "Découvrir PointerLab",
+    buttonLink: "/nos-entites/pointerlab",
   },
   {
-    id: "media",
-    title: "Hellowork media",
+    id: "stackjobs",
+    title: "StackJobs",
     description:
-      "Helloworkplace est destiné aux recruteurs et aux professionnels des ressources humaines, tandis que BDM cible les experts du digital. À travers des articles, des analyses et des interviews, ces médias fournissent les informations clés pour les professionnels qui souhaitent être en veille sur leur secteur.",
+      "La plateforme de recrutement tech qui matche vraiment. Plus de 4 000 offres actives, un moteur de matching par IA qui trie le bruit plutôt que de l'amplifier.",
     images: [
-      "https://picsum.photos/seed/media1/80/80",
-      "https://picsum.photos/seed/media2/80/80",
+      "https://picsum.photos/seed/stackjobs1/80/80",
+      "https://picsum.photos/seed/stackjobs2/80/80",
     ],
-    imageMain: "https://picsum.photos/seed/media-main/600/500",
-    buttonText: "Contactez-nous",
-    buttonLink: "/contact",
+    imageMain: "https://picsum.photos/seed/stackjobs-main/600/500",
+    buttonText: "Découvrir StackJobs",
+    buttonLink: "/nos-entites/stackjobs",
   },
 ];
 
 export default function Activites() {
-  const [openId, setOpenId] = useState<string>("recrutement");
+  const [openId, setOpenId] = useState<string>("syslearn");
 
   const toggle = (id: string) => {
-    setOpenId(openId === id ? "" : id);
+    if (openId === id) {
+      if (id === "syslearn") return;
+      setOpenId("");
+      return;
+    }
+    setOpenId(id);
   };
 
   const activeItem = activitesData.find((item) => item.id === openId);
@@ -60,9 +65,7 @@ export default function Activites() {
       <div className="activites__inner">
         <h2 className="activites__title">Nos activités</h2>
 
-        {/* Desktop : grille 2 colonnes */}
         <div className="activites__grid">
-          {/* Colonne gauche : Accordéon */}
           <div className="activites__accordion-col">
             {activitesData.map((item) => {
               const isOpen = openId === item.id;
@@ -115,7 +118,6 @@ export default function Activites() {
             })}
           </div>
 
-          {/* Colonne droite : Image principale (Desktop uniquement) */}
           <div className="activites__image-col">
             <img
               src={activeItem?.imageMain || activitesData[0].imageMain}
@@ -126,7 +128,6 @@ export default function Activites() {
           </div>
         </div>
 
-        {/* Mobile : chaque élément avec son image */}
         <div className="activites__mobile">
           {activitesData.map((item) => {
             const isOpen = openId === item.id;
@@ -178,7 +179,7 @@ export default function Activites() {
                     href={item.buttonLink}
                     className="activites__mobile-button"
                   >
-                    {item.buttonText} →
+                    {item.buttonText}
                   </Link>
                 </div>
               </div>
