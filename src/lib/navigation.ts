@@ -47,7 +47,7 @@ export const mainNav: NavItem[] = [
     children: [
       { label: "Nos métiers", href: "/carrieres/metiers" },
       { label: "Pourquoi nous rejoindre", href: "/carrieres/pourquoi-nous-rejoindre" },
-      { label: "Voir les offres", href: "https://www.stackjobs.com/jobs", isExternal: true },
+      { label: "Recrutement", href: "/carrieres/recrutement" },
       { label: "Candidature spontanée", href: "/carrieres/candidature-spontanee" },
     ],
   },

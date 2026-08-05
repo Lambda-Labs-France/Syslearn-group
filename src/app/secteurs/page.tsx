@@ -77,9 +77,7 @@ export default function SecteursPage() {
   ];
 
   return (
-    <main className="secteurs-page">
-      {/* Hero */}
-      <section className="secteurs-hero">
+    <main className="secteurs-page">      <section className="secteurs-hero">
         <div className="secteurs-hero__inner">
           <h1 className="secteurs-hero__title">Nos secteurs : une expertise technique adaptée à chaque contexte</h1>
           <p className="secteurs-hero__subtitle">
@@ -89,7 +87,6 @@ export default function SecteursPage() {
         </div>
       </section>
 
-      {/* Grille des secteurs */}
       <section className="secteurs-content">
         <div className="secteurs-content__inner">
           <div className="secteurs-grid">
