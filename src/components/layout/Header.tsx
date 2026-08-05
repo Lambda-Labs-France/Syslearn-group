@@ -13,6 +13,9 @@ export default function Header() {
     if (href === "/") {
       return false;
     }
+    if (href.startsWith("http")) {
+      return false;
+    }
     return pathname.startsWith(href);
   };
 
@@ -29,28 +32,53 @@ export default function Header() {
           </span>
         </Link>
 
-        {/* Navigation Desktop */}
         <nav className="header__nav" aria-label="Navigation principale">
           <ul>
             {mainNav.map((item) => {
               const hasChildren = !!(item.children && item.children.length > 0);
+              const isExternal = item.isExternal || false;
               
               return (
                 <li key={item.href} className="header__nav-item">
-                  <Link
-                    href={item.href}
-                    className={isActive(item.href) ? "header__nav-link--active" : ""}
-                  >
-                    {item.label}
-                  </Link>
+                  {isExternal ? (
+                    <a
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={isActive(item.href) ? "header__nav-link--active" : ""}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      href={item.href}
+                      className={isActive(item.href) ? "header__nav-link--active" : ""}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
 
                   {hasChildren && (
-                    <ul className="header__submenu" aria-label={`Sous-menu ${item.label}`}>
-                      {item.children?.map((child) => (
-                        <li key={child.href}>
-                          <Link href={child.href}>{child.label}</Link>
-                        </li>
-                      ))}
+                    <ul className="header__submenu">
+                      {item.children?.map((child) => {
+                        const childIsExternal = child.isExternal || false;
+                        
+                        return (
+                          <li key={child.href}>
+                            {childIsExternal ? (
+                              <a
+                                href={child.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                              >
+                                {child.label}
+                              </a>
+                            ) : (
+                              <Link href={child.href}>{child.label}</Link>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
                   )}
                 </li>
@@ -59,7 +87,6 @@ export default function Header() {
           </ul>
         </nav>
 
-        {/* Mobile Navigation */}
         <div className="mobile-nav">
           <MobileNav />
         </div>

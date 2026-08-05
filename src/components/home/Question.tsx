@@ -8,7 +8,7 @@ export default function Question() {
         <h2 className="question__title">Une question ?</h2>
         <p className="question__text">
           Vous avez besoin d&apos;informations sur nos solutions professionnelles, 
-          nos plateformes, nos médias, ou envie de nous rejoindre ?
+          nos plateformes, ou envie de nous rejoindre ?
         </p>
         <Link href="/contact" className="question__btn">
           Contactez-nous

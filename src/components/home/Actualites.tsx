@@ -5,26 +5,30 @@ const actualitesData = [
   {
     id: 1,
     date: "24 juillet 2026",
-    category: "emploi",
-    title: "Hellowork prolonge son partenariat avec le Stade Rennais F.C.",
-    image: "https://picsum.photos/seed/actualite1/600/400",
+    category: "Lancement",
+    title: "Syslearn Groupe : Syslearn, PointerLab et StackJobs réunis sous une même identité",
+    image: "https://picsum.photos/seed/lancement/600/400",
     link: "/actualites/1",
   },
   {
     id: 2,
     date: "16 juillet 2026",
-    category: "group",
-    title: "Hellowork au cœur de l'actualité emploi au premier semestre 2026",
-    image: "https://picsum.photos/seed/actualite2/600/400",
+    category: "Bilan",
+    title: "45 missions, 50 consultants : le bilan d'activité de Syslearn Groupe",
+    image: "https://picsum.photos/seed/bilan/600/400",
     link: "/actualites/2",
   },
+  
 ];
 
 export default function Actualites() {
   return (
     <section className="actualites">
       <div className="actualites__inner">
-        <h2 className="actualites__title">Nos actualités</h2>
+        <div className="actualites__header">
+          <h2 className="actualites__title">Actualités</h2>
+          
+        </div>
 
         <div className="actualites__grid">
           {actualitesData.map((item) => (

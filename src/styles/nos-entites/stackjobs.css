@@ -1,0 +1,431 @@
+.stackjobs-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+
+.stackjobs-hero {
+  background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.stackjobs-hero__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.stackjobs-hero__badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: rgba(5, 150, 105, 0.2);
+  color: #6ee7b7;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.stackjobs-hero__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stackjobs-hero__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.stackjobs-hero__content {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.stackjobs-hero__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: 0.75rem 2rem;
+  background: rgba(5, 150, 105, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(5, 150, 105, 0.25);
+  border-radius: 9999px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.1);
+}
+
+.stackjobs-hero__btn:hover {
+  background: rgba(5, 150, 105, 0.25);
+  border-color: rgba(5, 150, 105, 0.4);
+  box-shadow: 0 6px 25px rgba(5, 150, 105, 0.2);
+  transform: translateY(-2px);
+}
+
+.stackjobs-hero__btn svg {
+  transition: transform 0.3s ease;
+}
+
+.stackjobs-hero__btn:hover svg {
+  transform: translateX(4px) rotate(-5deg);
+}
+
+.stackjobs-section {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.stackjobs-section__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.stackjobs-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.stackjobs-section__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.stackjobs-section__text p {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.stackjobs-section__text p:last-child {
+  margin-bottom: 0;
+}
+
+.stackjobs-section__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stackjobs-section__img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+
+.stackjobs-features {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.stackjobs-features__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.stackjobs-features__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.stackjobs-features__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stackjobs-feature-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.stackjobs-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-color: #059669;
+}
+
+.stackjobs-feature-card__icon {
+  flex-shrink: 0;
+  color: #059669;
+  margin-top: 0.1rem;
+}
+
+.stackjobs-feature-card__text {
+  font-size: 0.9375rem;
+  color: #1f2937;
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+.stackjobs-raisons {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.stackjobs-raisons__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.stackjobs-raisons__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.stackjobs-raisons__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.stackjobs-raison-card {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.stackjobs-raison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-color: #0f172a;
+}
+
+.stackjobs-raison-card__icon {
+  flex-shrink: 0;
+  color: #059669;
+  margin-top: 0.1rem;
+}
+
+.stackjobs-raison-card__text {
+  font-size: 0.9375rem;
+  color: #1f2937;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
+.stackjobs-faq {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.stackjobs-faq__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.stackjobs-faq__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.stackjobs-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stackjobs-faq-item {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 1.5rem 2rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.stackjobs-faq-item:hover {
+  border-color: #0f172a;
+}
+
+.stackjobs-faq-item__question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.stackjobs-faq-item__answer {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+
+@media (max-width: 1024px) {
+  .stackjobs-section__grid {
+    gap: 2rem;
+  }
+
+  .stackjobs-section__img {
+    height: 280px;
+  }
+
+  .stackjobs-raisons__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stackjobs-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .stackjobs-section {
+    padding: 40px 0;
+  }
+
+  .stackjobs-section__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .stackjobs-section__title {
+    font-size: 1.75rem;
+  }
+
+  .stackjobs-section__text p {
+    font-size: 1rem;
+  }
+
+  .stackjobs-section__img {
+    height: 220px;
+  }
+
+  .stackjobs-features {
+    padding: 40px 0;
+  }
+
+  .stackjobs-features__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stackjobs-features__title {
+    font-size: 1.75rem;
+  }
+
+  .stackjobs-raisons {
+    padding: 40px 0;
+  }
+
+  .stackjobs-raisons__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stackjobs-raisons__title {
+    font-size: 1.75rem;
+  }
+
+  .stackjobs-raison-card {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .stackjobs-faq {
+    padding: 40px 0;
+  }
+
+  .stackjobs-faq__title {
+    font-size: 1.75rem;
+  }
+
+  .stackjobs-faq-item {
+    padding: 1.25rem;
+  }
+
+  .stackjobs-faq-item__question {
+    font-size: 1rem;
+  }
+
+  .stackjobs-faq-item__answer {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .stackjobs-hero__title {
+    font-size: 1.8rem;
+  }
+
+  .stackjobs-section__title {
+    font-size: 1.5rem;
+  }
+
+  .stackjobs-section__img {
+    height: 180px;
+  }
+
+  .stackjobs-feature-card {
+    padding: 1.25rem;
+  }
+
+  .stackjobs-feature-card__text {
+    font-size: 0.875rem;
+  }
+
+  .stackjobs-raison-card {
+    padding: 1rem 1.25rem;
+  }
+
+  .stackjobs-raison-card__text {
+    font-size: 0.875rem;
+  }
+}

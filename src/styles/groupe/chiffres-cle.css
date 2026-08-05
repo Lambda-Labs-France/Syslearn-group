@@ -1,0 +1,269 @@
+.chiffres-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+
+.chiffres-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
+  color: #ffffff;
+  padding: 80px 0;
+}
+
+.chiffres-hero__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.chiffres-hero__title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.chiffres-hero__subtitle {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  font-weight: 300;
+}
+
+
+.chiffres-content {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.chiffres-content__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.chiffres-intro {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+
+.chiffres-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.chiffres-stat {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2rem 1rem;
+  text-align: center;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.chiffres-stat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+}
+
+.chiffres-stat__number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  font-family: 'Barlow', sans-serif;
+  margin-bottom: 0.25rem;
+}
+
+.chiffres-stat__label {
+  font-size: 0.875rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+
+.chiffres-chart {
+  background: #ffffff;
+  border-radius: 1rem;
+  padding: 2.5rem 3rem;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 3rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.chiffres-chart__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.chiffres-chart__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.chiffres-chart__bar-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.chiffres-chart__bar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chiffres-chart__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.chiffres-chart__percentage {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.chiffres-chart__bar-track {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.chiffres-chart__bar {
+  height: 100%;
+  border-radius: 9999px;
+  background: #0f172a;
+  transition: width 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+
+.chiffres-image__img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+
+@media (max-width: 1024px) {
+  .chiffres-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chiffres-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .chiffres-hero__subtitle {
+    font-size: 1rem;
+  }
+
+  .chiffres-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .chiffres-stat {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .chiffres-stat__number {
+    font-size: 2rem;
+  }
+
+  .chiffres-intro {
+    font-size: 1rem;
+  }
+
+  .chiffres-chart {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .chiffres-chart__title {
+    font-size: 1.125rem;
+  }
+
+  .chiffres-chart__label,
+  .chiffres-chart__percentage {
+    font-size: 0.8125rem;
+  }
+
+  .chiffres-chart__bars {
+    gap: 1.25rem;
+  }
+
+  .chiffres-image__img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .chiffres-hero__title {
+    font-size: 2rem;
+  }
+
+  .chiffres-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+  }
+
+  .chiffres-stat {
+    padding: 1rem 0.5rem;
+  }
+
+  .chiffres-stat__number {
+    font-size: 1.5rem;
+  }
+
+  .chiffres-stat__label {
+    font-size: 0.75rem;
+  }
+
+  .chiffres-chart {
+    padding: 1rem;
+  }
+
+  .chiffres-chart__title {
+    font-size: 1rem;
+  }
+
+  .chiffres-chart__label,
+  .chiffres-chart__percentage {
+    font-size: 0.75rem;
+  }
+
+  .chiffres-chart__bars {
+    gap: 1rem;
+  }
+
+  .chiffres-chart__bar-track {
+    height: 5px;
+  }
+
+  .chiffres-image__img {
+    height: 150px;
+  }
+}
