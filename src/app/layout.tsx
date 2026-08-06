@@ -1,32 +1,27 @@
 import type { Metadata } from "next";
-import { Inter, Barlow } from "next/font/google";
+import { Inter } from "next/font/google"; // ✅ Supprimer Barlow
 import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 
+// ✅ Garder uniquement Inter
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
-});
-
-const barlow = Barlow({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  variable: "--font-barlow",
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Syslearn Groupe",
-    template: `%s | Syslearn Groupe`,
+    default: "Syslearn Group",
+    template: `%s | Syslearn Group`,
   },
-  description: "Syslearn Groupe - Leader de la transformation numérique",
+  description: "Syslearn Group - Leader de la transformation numérique",
   openGraph: {
-    title: "Syslearn Groupe",
+    title: "Syslearn Group",
     description: "Découvrez le groupe Syslearn et ses entités",
     url: "https://syslearn-group.fr",
-    siteName: "Syslearn Groupe",
+    siteName: "Syslearn Group",
     locale: "fr_FR",
     type: "website",
   },
@@ -38,8 +33,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="fr">
-      <body className={`${inter.className} ${barlow.variable}`}>
+    <html lang="fr" className={`${inter.className} ${inter.variable}`}>
+      <body>
         <Header />
         <main>{children}</main>
         <Footer />

@@ -52,7 +52,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
           <p className="footer__copyright">
-            © {currentYear} Syslearn Groupe
+            © {currentYear} Syslearn Group
           </p>
         </div>
       </div>

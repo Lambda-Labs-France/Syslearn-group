@@ -25,7 +25,7 @@ export default function FAQ() {
         <div className="faq__header">
           <h2 className="faq__title">Questions fréquentes</h2>
           <p className="faq__subtitle">
-            Tout ce que vous devez savoir sur Syslearn Groupe
+            Tout ce que vous devez savoir sur Syslearn Group
           </p>
         </div>
 

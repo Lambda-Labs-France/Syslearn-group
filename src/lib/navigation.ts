@@ -10,9 +10,10 @@ export const mainNav: NavItem[] = [
     label: "Le Groupe",
     href: "/le-groupe",
     children: [
-      { label: "Qui sommes-nous", href: "/le-groupe/qui-sommes-nous" },
       { label: "Nos valeurs", href: "/le-groupe/valeurs" },
       { label: "Nos chiffres-clés", href: "/le-groupe/chiffres-cles" },
+      { label: "Qui sommes-nous", href: "/le-groupe/qui-sommes-nous" },
+
     ],
   },
   {
@@ -58,7 +59,7 @@ export const mainNav: NavItem[] = [
 ];
 
 export const siteConfig = {
-  name: "Syslearn Groupe",
+  name: "Syslearn Group",
   logo: "/logo.svg",
-  description: "Syslearn Groupe - Leader de la transformation numérique",
+  description: "Syslearn Group - Leader de la transformation numérique",
 };

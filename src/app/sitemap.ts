@@ -46,26 +46,26 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   return routes.map((route) => {
     let priority = 0.7;
-    let changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' = 'monthly';
+    let changeFrequency: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never' = 'weekly';
 
     if (route === '/') {
       priority = 1.0;
       changeFrequency = 'daily';
     } else if (route === '/le-groupe' || route === '/nos-entites' || route === '/secteurs' || route === '/actualites') {
       priority = 0.9;
-      changeFrequency = 'weekly';
+      changeFrequency = 'weekly'; 
     } else if (route === '/carrieres' || route === '/contact') {
       priority = 0.8;
-      changeFrequency = 'weekly';
+      changeFrequency = 'weekly'; 
     } else if (route.includes('/le-groupe/') || route.includes('/nos-entites/')) {
       priority = 0.8;
-      changeFrequency = 'monthly';
+      changeFrequency = 'weekly'; 
     } else if (route.includes('/secteurs/')) {
       priority = 0.7;
-      changeFrequency = 'monthly';
+      changeFrequency = 'weekly';
     } else if (route.includes('/carrieres/')) {
       priority = 0.7;
-      changeFrequency = 'monthly';
+      changeFrequency = 'weekly'; 
     }
 
     const url = `${baseUrl}${route}`;

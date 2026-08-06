@@ -25,7 +25,7 @@ export default function Header() {
         <Link
           href="/"
           className="header__logo"
-          aria-label="Syslearn Groupe - Accueil"
+          aria-label="Syslearn Group - Accueil"
         >
           <span className="header__logo-text">
             Syslearn <span>Group</span>
