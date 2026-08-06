@@ -37,7 +37,7 @@ export default function ContactClient() {
           <div className="contact-motifs__grid">
             <div className="contact-motif">
               <div className="contact-motif__icon"><Users size={24} strokeWidth={1.5} /></div>
-              <h3 className="contact-motif__name">Syslearn Groupe</h3>
+              <h3 className="contact-motif__name">Syslearn Group</h3>
               <p className="contact-motif__desc">Presse, partenariat, question générale</p>
             </div>
             <div className="contact-motif">
@@ -80,7 +80,7 @@ export default function ContactClient() {
                   <label htmlFor="entite">Entité concernée <span>*</span></label>
                   <select id="entite" name="entite" required>
                     <option value="">Sélectionnez une entité</option>
-                    <option value="groupe">Syslearn Groupe</option>
+                    <option value="groupe">Syslearn Group</option>
                     <option value="syslearn">Syslearn</option>
                     <option value="pointerlab">PointerLab</option>
                     <option value="stackjobs">StackJobs</option>

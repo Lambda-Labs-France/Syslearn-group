@@ -18,9 +18,9 @@ export const articles: Article[] = [
   {
     id: '1',
     slug: 'syslearn-pointerlab-stackjobs-reunis',
-    title: 'Syslearn Groupe : Syslearn, PointerLab et StackJobs réunis sous une même identité',
-    seoTitle: 'Syslearn Groupe : Syslearn, PointerLab et StackJobs réunis sous une même identité',
-    metaDescription: 'Syslearn Groupe lance son site institutionnel commun pour Syslearn, PointerLab et StackJobs. Découvrez notre écosystème conseil IT, ESN C++/Qt et recrutement tech.',
+    title: 'Syslearn Group : Syslearn, PointerLab et StackJobs réunis sous une même identité',
+    seoTitle: 'Syslearn Group : Syslearn, PointerLab et StackJobs réunis sous une même identité',
+    metaDescription: 'Syslearn Group lance son site institutionnel commun pour Syslearn, PointerLab et StackJobs. Découvrez notre écosystème conseil IT, ESN C++/Qt et recrutement tech.',
     excerpt: 'Trouver un consultant informatique, un développeur C++/Qt ou un job tech ne devrait pas obliger à visiter trois sites différents sans lien apparent entre eux.',
     content: `Trouver un consultant informatique, un développeur C++/Qt ou un job tech ne devrait pas obliger à visiter trois sites différents sans lien apparent entre eux. C'est le problème que ce nouveau site résout : Syslearn (conseil et ingénierie informatique), PointerLab (ESN spécialisée C++/Qt) et StackJobs (plateforme de recrutement tech) sont désormais présentées sous une identité commune, tout en gardant chacune son site et sa spécialité.
 
@@ -35,9 +35,9 @@ Ce lancement s'accompagne d'un renforcement des passerelles entre les trois enti
   {
     id: '2',
     slug: '45-missions-50-consultants-bilan',
-    title: '45 missions, 50 consultants : le bilan d\'activité de Syslearn Groupe',
-    seoTitle: '45 missions, 50 consultants : le bilan d\'activité de Syslearn Groupe',
-    metaDescription: 'Découvrez les chiffres-clés de Syslearn Groupe : 45 missions confiées, 50 consultants, 20 clients accompagnés et plus de 4 000 offres actives sur StackJobs.',
+    title: '45 missions, 50 consultants : le bilan d\'activité de Syslearn Group',
+    seoTitle: '45 missions, 50 consultants : le bilan d\'activité de Syslearn Group',
+    metaDescription: 'Découvrez les chiffres-clés de Syslearn Group : 45 missions confiées, 50 consultants, 20 clients accompagnés et plus de 4 000 offres actives sur StackJobs.',
     excerpt: '45 missions confiées, 50 consultants actifs, 20 clients accompagnés, et plus de 4 000 offres actives sur StackJobs : ces chiffres résument une année de croissance pour un écosystème encore jeune mais déjà structuré autour de trois expertises complémentaires.',
     content: `45 missions confiées, 50 consultants actifs, 20 clients accompagnés, et plus de 4 000 offres actives sur StackJobs : ces chiffres résument une année de croissance pour un écosystème encore jeune mais déjà structuré autour de trois expertises complémentaires.
 

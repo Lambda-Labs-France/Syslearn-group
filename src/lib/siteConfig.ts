@@ -16,8 +16,8 @@ export type SiteConfig = {
 };
 
 export const siteConfig: SiteConfig = {
-  name: "Syslearn Groupe",
-  description: "Syslearn Groupe - Leader de la transformation numérique",
+  name: "Syslearn Group",
+  description: "Syslearn Group - Leader de la transformation numérique",
   url: "https://syslearn-group.fr",
   logo: "/logo.png",
   socials: {

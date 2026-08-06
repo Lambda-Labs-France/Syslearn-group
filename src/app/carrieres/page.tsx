@@ -67,7 +67,7 @@ export default function CarrieresPage() {
       <section className="carrieres-intro">
         <div className="carrieres-intro__inner">
           <p className="carrieres-intro__text">
-            On vous a peut-être déjà vendu la « culture d'entreprise » d'une ESN. Chez Syslearn Groupe, on préfère
+            On vous a peut-être déjà vendu la « culture d'entreprise » d'une ESN. Chez Syslearn Group, on préfère
             parler concrètement : peu de strates hiérarchiques, des marges connues de tous, et la possibilité réelle
             de devenir associé si vous le souhaitez. C'est le modèle que PointerLab a rodé sur le C++/Qt, et que
             Syslearn comme StackJobs appliquent à leur façon.
