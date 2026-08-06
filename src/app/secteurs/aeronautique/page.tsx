@@ -11,7 +11,7 @@ import {
 import "../../../styles/secteurs/aeronautique.css";
 
 export const metadata = {
-  title: "Aéronautique | ESN spécialisée C++/Qt Syslearn Groupe",
+  title: "Aéronautique | ESN spécialisée C++/Qt Syslearn Group",
   description: "PointerLab développe des systèmes embarqués et logiciels de simulation pour l'aéronautique en C++/Qt. Fiabilité et performance pour vos projets critiques.",
 };
 

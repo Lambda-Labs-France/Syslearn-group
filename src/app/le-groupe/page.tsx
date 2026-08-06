@@ -3,8 +3,8 @@ import Image from "next/image";
 import "../../styles/groupe/groupe.css";
 
 export const metadata = {
-  title: "Le Groupe | Syslearn Groupe - Notre modèle d'ESN nouvelle génération",
-  description: "Découvrez Syslearn Groupe : l'écosystème derrière Syslearn, PointerLab et StackJobs. Notre histoire, nos valeurs et notre modèle horizontal et transparent. ",
+  title: "Le Groupe | Syslearn Group - Notre modèle d'ESN nouvelle génération",
+  description: "Découvrez Syslearn Group : l'écosystème derrière Syslearn, PointerLab et StackJobs. Notre histoire, nos valeurs et notre modèle horizontal et transparent. ",
 };
 
 export default function LeGroupePage() {
@@ -29,7 +29,7 @@ export default function LeGroupePage() {
           <div className="groupe-section__grid">
             <div className="groupe-section__text">
               <p className="groupe-section__brief">
-                Syslearn Groupe réunit trois entités du numérique - Syslearn, PointerLab et StackJobs - 
+                Syslearn Group réunit trois entités du numérique - Syslearn, PointerLab et StackJobs - 
                 unies par un modèle horizontal et transparent. Chaque entité conserve sa spécialité tout en 
                 partageant une infrastructure commune et une porosité assumée.
               </p>
@@ -126,9 +126,9 @@ export default function LeGroupePage() {
               </p>
             </div>
             <div className="groupe-faq-item">
-              <h3 className="groupe-faq-item__question">Syslearn Groupe est-il une seule entreprise ou plusieurs ?</h3>
+              <h3 className="groupe-faq-item__question">Syslearn Group est-il une seule entreprise ou plusieurs ?</h3>
               <p className="groupe-faq-item__answer">
-                Syslearn Groupe réunit trois entités distinctes - Syslearn, PointerLab et StackJobs - chacune avec son propre 
+                Syslearn Group réunit trois entités distinctes - Syslearn, PointerLab et StackJobs - chacune avec son propre 
                 site et sa propre spécialité, reliées par un modèle et des valeurs communes.
               </p>
             </div>

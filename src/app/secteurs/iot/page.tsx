@@ -10,7 +10,7 @@ import {
 import "../../../styles/secteurs/iot.css";
 
 export const metadata = {
-  title: "IoT | Conseil et ingénierie objets connectés Syslearn Groupe",
+  title: "IoT | Conseil et ingénierie objets connectés Syslearn Group",
   description: "Syslearn et PointerLab accompagnent vos projets IoT, du prototype au déploiement industriel. Systèmes embarqués, remontée de données, conseil informatique.",
 };
 

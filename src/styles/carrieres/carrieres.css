@@ -1,0 +1,424 @@
+.carrieres-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+.carrieres-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
+  color: #ffffff;
+  padding: 80px 0;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.carrieres-hero__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.carrieres-hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.carrieres-intro {
+  padding: 30px 0;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.carrieres-intro__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.carrieres-intro__text {
+  font-size: 1.125rem;
+  color: #1f2937;
+  line-height: 1.8;
+  margin: 0;
+}
+
+.carrieres-metiers {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.carrieres-metiers__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.carrieres-metiers__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.carrieres-metiers__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carrieres-metier {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.carrieres-metier:hover {
+  border-color: #0f172a;
+  transform: translateX(4px);
+}
+
+.carrieres-metier__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+.carrieres-metier__name {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.carrieres-metier__entity {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 0.1rem 0.6rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.carrieres-metier__desc {
+  font-size: 0.9375rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.carrieres-raisons {
+  padding: 60px 0;
+  background: #f8fafc;
+}
+
+.carrieres-raisons__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.carrieres-raisons__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.carrieres-raisons__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.carrieres-raison {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+}
+
+.carrieres-raison__icon {
+  flex-shrink: 0;
+  color: #059669;
+  margin-top: 0.1rem;
+}
+
+.carrieres-raison__text {
+  font-size: 0.9375rem;
+  color: #1f2937;
+  line-height: 1.5;
+}
+
+.carrieres-cta {
+  padding: 60px 0;
+  background: #0f172a;
+  color: #ffffff;
+}
+
+.carrieres-cta__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.carrieres-cta__title {
+  font-size: 2rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  margin-bottom: 0.75rem;
+}
+
+.carrieres-cta__text {
+  font-size: 1.125rem;
+  color: #94a3b8;
+  margin-bottom: 2rem;
+}
+
+.carrieres-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.carrieres-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.carrieres-cta__btn--primary {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.carrieres-cta__btn--primary:hover {
+  background: #e2e8f0;
+  transform: translateY(-2px);
+}
+
+.carrieres-cta__btn--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.carrieres-cta__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.carrieres-faq {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.carrieres-faq__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.carrieres-faq__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Barlow', sans-serif;
+}
+
+.carrieres-faq__list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.carrieres-faq-item {
+  background: #f8fafc;
+  padding: 1.5rem 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.carrieres-faq-item:hover {
+  border-color: #0f172a;
+}
+
+.carrieres-faq-item__question {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.carrieres-faq-item__answer {
+  font-size: 1rem;
+  color: #475569;
+  line-height: 1.7;
+  margin: 0;
+}
+
+
+@media (max-width: 1024px) {
+  .carrieres-hero__title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carrieres-hero {
+    padding: 60px 0;
+    min-height: 150px;
+  }
+
+  .carrieres-hero__title {
+    font-size: 2rem;
+  }
+
+  .carrieres-intro {
+    padding: 30px 0;
+  }
+
+  .carrieres-intro__text {
+    font-size: 1rem;
+  }
+
+  .carrieres-metiers {
+    padding: 40px 0;
+  }
+
+  .carrieres-metiers__title {
+    font-size: 1.75rem;
+  }
+
+  .carrieres-metier {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .carrieres-metier__name {
+    font-size: 1rem;
+  }
+
+  .carrieres-raisons {
+    padding: 40px 0;
+  }
+
+  .carrieres-raisons__grid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .carrieres-raisons__title {
+    font-size: 1.75rem;
+  }
+
+  .carrieres-cta {
+    padding: 40px 0;
+  }
+
+  .carrieres-cta__title {
+    font-size: 1.5rem;
+  }
+
+  .carrieres-cta__text {
+    font-size: 1rem;
+  }
+
+  .carrieres-cta__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carrieres-cta__btn {
+    width: auto;
+    min-width: auto;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+  }
+
+  .carrieres-faq {
+    padding: 40px 0;
+  }
+
+  .carrieres-faq__title {
+    font-size: 1.75rem;
+  }
+
+  .carrieres-faq-item {
+    padding: 1.25rem;
+  }
+
+  .carrieres-faq-item__question {
+    font-size: 1rem;
+  }
+
+  .carrieres-faq-item__answer {
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrieres-hero__title {
+    font-size: 1.7rem;
+  }
+
+  .carrieres-metier {
+    padding: 1.25rem;
+  }
+
+  .carrieres-metier__desc {
+    font-size: 0.875rem;
+  }
+
+  .carrieres-raison {
+    padding: 0.75rem 1rem;
+  }
+
+  .carrieres-raison__text {
+    font-size: 0.875rem;
+  }
+
+  .carrieres-cta__btn {
+    width: auto;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.8125rem;
+  }
+}
