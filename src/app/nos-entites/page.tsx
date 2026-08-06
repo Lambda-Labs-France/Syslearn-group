@@ -14,7 +14,7 @@ export default function NosEntitesPage() {
       description: "Syslearn accompagne ses clients de l'énergie, la défense et l'industrie en conseil informatique et ingénierie sur mesure. Consultants qualifiés, missions exigeantes.",
       link: "/nos-entites/syslearn",
       image: "https://picsum.photos/seed/syslearn-entite/600/400",
-      color: "#2563eb",
+      color: "#059669",
     },
     {
       name: "PointerLab",
@@ -30,13 +30,12 @@ export default function NosEntitesPage() {
       description: "StackJobs réunit plus de 4 000 offres d'emploi tech en France avec un matching IA entre développeurs, data scientists et entreprises qui recrutent.",
       link: "/nos-entites/stackjobs",
       image: "https://picsum.photos/seed/stackjobs-entite/600/400",
-      color: "#059669",
+      color: "#2563eb",
     },
   ];
 
   return (
     <main className="entites-page">
-      {/* Hero */}
       <section className="entites-hero">
         <div className="entites-hero__inner">
           <h1 className="entites-hero__title">Nos entités</h1>
@@ -46,7 +45,6 @@ export default function NosEntitesPage() {
         </div>
       </section>
 
-      {/* Grille des entités */}
       <section className="entites-content">
         <div className="entites-content__inner">
           <p className="entites-intro">

@@ -30,9 +30,10 @@ export default function StackJobsPage() {
     { icon: GitBranch, text: "Une intégration directe avec PointerLab et Syslearn pour les offres du groupe" },
   ];
 
+  const stackjobsUrl = "https://www.stackjobs.com?utm_source=syslearn-groupe&utm_medium=website&utm_campaign=entite_stackjobs";
+
   return (
     <main className="stackjobs-page">
-      {/* Hero */}
       <section className="stackjobs-hero">
         <div className="stackjobs-hero__inner">
           <div className="stackjobs-hero__content">
@@ -43,7 +44,7 @@ export default function StackJobsPage() {
               </h1>
             </div>
             <Link 
-              href="https://www.stackjobs.com" 
+              href={stackjobsUrl}
               target="_blank" 
               rel="noopener noreferrer"
               className="stackjobs-hero__btn"
@@ -55,7 +56,6 @@ export default function StackJobsPage() {
         </div>
       </section>
 
-      {/* Présentation */}
       <section className="stackjobs-section">
         <div className="stackjobs-section__inner">
           <div className="stackjobs-section__grid">
@@ -87,7 +87,6 @@ export default function StackJobsPage() {
         </div>
       </section>
 
-      {/* Fonctionnalités clés */}
       <section className="stackjobs-features">
         <div className="stackjobs-features__inner">
           <h2 className="stackjobs-features__title">Fonctionnalités clés</h2>
@@ -107,7 +106,6 @@ export default function StackJobsPage() {
         </div>
       </section>
 
-      {/* Pourquoi StackJobs */}
       <section className="stackjobs-raisons">
         <div className="stackjobs-raisons__inner">
           <h2 className="stackjobs-raisons__title">
@@ -129,7 +127,6 @@ export default function StackJobsPage() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="stackjobs-faq">
         <div className="stackjobs-faq__inner">
           <h2 className="stackjobs-faq__title">Questions fréquentes</h2>

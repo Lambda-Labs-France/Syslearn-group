@@ -16,7 +16,10 @@ export default function Rejoindre() {
             <Link href="/carrieres" className="rejoindre__btn">
               Découvrir nos carrières
             </Link>
-            <Link href="https://www.stackjobs.com/jobs" target="_blank" rel="noopener noreferrer" className="rejoindre__btn rejoindre__btn--secondary">
+            <Link 
+              href="/carrieres/recrutement" 
+              className="rejoindre__btn rejoindre__btn--secondary"
+            >
               Voir les offres
             </Link>
           </div>

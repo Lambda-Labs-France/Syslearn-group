@@ -15,7 +15,7 @@ export default function LeGroupePage() {
           <div className="groupe-hero__content">
             <h1 className="groupe-hero__title">Le Groupe : une même exigence, trois métiers du numérique</h1>
             <p className="groupe-hero__subtitle">
-              Syslearn, PointerLab et StackJobs — trois entités, une même colonne vertébrale.
+              Syslearn, PointerLab et StackJobs - trois entités, une même colonne vertébrale.
             </p>
           </div>
         </div>
@@ -29,7 +29,7 @@ export default function LeGroupePage() {
           <div className="groupe-section__grid">
             <div className="groupe-section__text">
               <p className="groupe-section__brief">
-                Syslearn Groupe réunit trois entités du numérique — Syslearn, PointerLab et StackJobs — 
+                Syslearn Groupe réunit trois entités du numérique - Syslearn, PointerLab et StackJobs - 
                 unies par un modèle horizontal et transparent. Chaque entité conserve sa spécialité tout en 
                 partageant une infrastructure commune et une porosité assumée.
               </p>
@@ -58,8 +58,8 @@ export default function LeGroupePage() {
           <div className="groupe-section__grid groupe-section__grid--reverse">
             <div className="groupe-section__text">
               <p>
-                Chaque entité conserve son autonomie opérationnelle — son propre site, sa propre clientèle, sa propre équipe 
-                dirigeante — tout en partageant une infrastructure commune : outils, méthodes de recrutement, et surtout, une 
+                Chaque entité conserve son autonomie opérationnelle - son propre site, sa propre clientèle, sa propre équipe 
+                dirigeante - tout en partageant une infrastructure commune : outils, méthodes de recrutement, et surtout, une 
                 porosité assumée entre les trois structures.
               </p>
               <p>
@@ -120,15 +120,15 @@ export default function LeGroupePage() {
             <div className="groupe-faq-item">
               <h3 className="groupe-faq-item__question">Qu'est-ce qu'une néo-ESN ?</h3>
               <p className="groupe-faq-item__answer">
-                Une néo-ESN reprend le modèle économique classique d'une entreprise de services numériques — facturer des 
-                compétences techniques en mission — mais en réduisant les strates hiérarchiques et en partageant plus 
+                Une néo-ESN reprend le modèle économique classique d'une entreprise de services numériques - facturer des 
+                compétences techniques en mission - mais en réduisant les strates hiérarchiques et en partageant plus 
                 équitablement la marge avec les consultants qui produisent le travail.
               </p>
             </div>
             <div className="groupe-faq-item">
               <h3 className="groupe-faq-item__question">Syslearn Groupe est-il une seule entreprise ou plusieurs ?</h3>
               <p className="groupe-faq-item__answer">
-                Syslearn Groupe réunit trois entités distinctes — Syslearn, PointerLab et StackJobs — chacune avec son propre 
+                Syslearn Groupe réunit trois entités distinctes - Syslearn, PointerLab et StackJobs - chacune avec son propre 
                 site et sa propre spécialité, reliées par un modèle et des valeurs communes.
               </p>
             </div>

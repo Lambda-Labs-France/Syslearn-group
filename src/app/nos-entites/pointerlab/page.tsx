@@ -32,9 +32,10 @@ export default function PointerLabPage() {
     { icon: Car, name: "Industrie et automobile", desc: "automatisation, info-divertissement embarqué, IoT" },
   ];
 
+  const pointerlabUrl = "https://www.pointerlab.fr?utm_source=syslearn-groupe&utm_medium=website&utm_campaign=entite_pointerlab";
+
   return (
     <main className="pointerlab-page">
-      {/* Hero */}
       <section className="pointerlab-hero">
         <div className="pointerlab-hero__inner">
           <div className="pointerlab-hero__content">
@@ -45,7 +46,7 @@ export default function PointerLabPage() {
               </h1>
             </div>
             <Link 
-              href="https://www.pointerlab.fr" 
+              href={pointerlabUrl}
               target="_blank" 
               rel="noopener noreferrer"
               className="pointerlab-hero__btn"
@@ -57,7 +58,6 @@ export default function PointerLabPage() {
         </div>
       </section>
 
-      {/* Présentation */}
       <section className="pointerlab-section">
         <div className="pointerlab-section__inner">
           <div className="pointerlab-section__grid">
@@ -90,7 +90,6 @@ export default function PointerLabPage() {
         </div>
       </section>
 
-      {/* Expertises */}
       <section className="pointerlab-expertises">
         <div className="pointerlab-expertises__inner">
           <h2 className="pointerlab-expertises__title">Nos expertises</h2>

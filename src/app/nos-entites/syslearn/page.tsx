@@ -32,9 +32,10 @@ export default function SyslearnPage() {
     "Une entité intégrée à un groupe qui partage ses consultants et ses opportunités avec PointerLab et StackJobs",
   ];
 
+  const syslearnUrl = "https://www.syslearn.fr?utm_source=syslearn-groupe&utm_medium=website&utm_campaign=entite_syslearn";
+
   return (
     <main className="syslearn-page">
-      {/* Hero */}
       <section className="syslearn-hero">
         <div className="syslearn-hero__inner">
           <div className="syslearn-hero__content">
@@ -45,7 +46,7 @@ export default function SyslearnPage() {
               </h1>
             </div>
             <Link 
-              href="https://www.syslearn.fr" 
+              href={syslearnUrl}
               target="_blank" 
               rel="noopener noreferrer"
               className="syslearn-hero__btn"
@@ -57,7 +58,6 @@ export default function SyslearnPage() {
         </div>
       </section>
 
-      {/* Présentation */}
       <section className="syslearn-section">
         <div className="syslearn-section__inner">
           <div className="syslearn-section__grid">
@@ -90,7 +90,6 @@ export default function SyslearnPage() {
         </div>
       </section>
 
-      {/* Expertises */}
       <section className="syslearn-expertises">
         <div className="syslearn-expertises__inner">
           <h2 className="syslearn-expertises__title">Nos expertises</h2>
@@ -110,7 +109,6 @@ export default function SyslearnPage() {
         </div>
       </section>
 
-      {/* Pourquoi choisir Syslearn */}
       <section className="syslearn-raisons">
         <div className="syslearn-raisons__inner">
           <h2 className="syslearn-raisons__title">Pourquoi choisir Syslearn</h2>
@@ -127,7 +125,6 @@ export default function SyslearnPage() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="syslearn-faq">
         <div className="syslearn-faq__inner">
           <h2 className="syslearn-faq__title">Questions fréquentes</h2>

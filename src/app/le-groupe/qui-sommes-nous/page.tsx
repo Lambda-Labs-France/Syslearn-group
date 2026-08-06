@@ -33,22 +33,22 @@ export default function QuiSommesNousPage() {
                 <div className="quisommes-timeline-item">
                   <span className="quisommes-timeline-item__year">2019</span>
                   <p>
-                    <strong>Naissance de Syslearn</strong> — Du constat qu'un conseil informatique générique ne suffit plus 
-                    dès qu'un secteur impose ses propres règles du jeu — cycles longs de l'énergie, exigences de sécurité 
+                    <strong>Naissance de Syslearn</strong> - Du constat qu'un conseil informatique générique ne suffit plus 
+                    dès qu'un secteur impose ses propres règles du jeu - cycles longs de l'énergie, exigences de sécurité 
                     de la défense.
                   </p>
                 </div>
                 <div className="quisommes-timeline-item">
                   <span className="quisommes-timeline-item__year">2021</span>
                    <p>
-                    <strong>Naissance de StackJobs</strong> — Pour combler un manque commun aux deux premières entités : 
+                    <strong>Naissance de StackJobs</strong> - Pour combler un manque commun aux deux premières entités : 
                     trouver rapidement les bons profils techniques, sans diluer l'exigence dans le volume.
                   </p>
                 </div>
                 <div className="quisommes-timeline-item">
                   <span className="quisommes-timeline-item__year">2023</span>
                  <p>
-                    <strong>Lancement de PointerLab</strong> — Une trajectoire différente : au lieu d'élargir le champ des 
+                    <strong>Lancement de PointerLab</strong> - Une trajectoire différente : au lieu d'élargir le champ des 
                     compétences, PointerLab a choisi de creuser un seul sillon technique, le C++ et le Qt, jusqu'à devenir 
                     partenaire officiel de Qt Group.
                   </p>
@@ -56,7 +56,7 @@ export default function QuiSommesNousPage() {
                 <div className="quisommes-timeline-item">
                   <span className="quisommes-timeline-item__year">2026</span>
                   <p>
-                    <strong>Création du groupe Syslearn</strong> — Réunir trois expertises complémentaires sous une même 
+                    <strong>Création du groupe Syslearn</strong> - Réunir trois expertises complémentaires sous une même 
                     identité, avec un modèle horizontal et transparent.
                   </p>
                 </div>
@@ -71,16 +71,16 @@ export default function QuiSommesNousPage() {
           <div className="quisommes-block">
             <h2 className="quisommes-block__title">Notre philosophie</h2>
             <p className="quisommes-block__text">
-              La plupart des ESN grandissent en empilant les strates hiérarchiques et en diluant leurs marges dans l'opacité — 
+              La plupart des ESN grandissent en empilant les strates hiérarchiques et en diluant leurs marges dans l'opacité - 
               le consultant sur le terrain ignore souvent ce que sa mission facture réellement. Nous avons construit l'inverse. 
-              PointerLab a été pensée dès le départ avec un modèle à deux niveaux seulement — associés et collaborateurs — 
+              PointerLab a été pensée dès le départ avec un modèle à deux niveaux seulement - associés et collaborateurs - 
               où chacun connaît les objectifs et les marges de son travail. Syslearn Groupe porte cette conviction à l'échelle 
               de ses trois entités : Syslearn, PointerLab et StackJobs.
             </p>
             <p className="quisommes-block__text">
               Trois entités, trois métiers distincts, une même colonne vertébrale. Syslearn conseille et déploie des solutions 
-              informatiques dans des secteurs à forte contrainte réglementaire — énergie, défense, industrie. PointerLab construit 
-              des logiciels C++ et Qt là où la fiabilité n'est pas négociable — médical, aéronautique, mobilité. StackJobs connecte 
+              informatiques dans des secteurs à forte contrainte réglementaire - énergie, défense, industrie. PointerLab construit 
+              des logiciels C++ et Qt là où la fiabilité n'est pas négociable - médical, aéronautique, mobilité. StackJobs connecte 
               les meilleurs profils tech aux entreprises qui les recherchent vraiment, grâce à un matching propulsé par l'IA.
             </p>
           </div>
