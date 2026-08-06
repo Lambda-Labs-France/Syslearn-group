@@ -1,0 +1,194 @@
+.recrutement-page {
+  padding-top: 100px;
+  min-height: 100vh;
+}
+
+.recrutement-hero {
+  background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
+  color: #ffffff;
+  padding: 80px 0;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+}
+
+.recrutement-hero__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.recrutement-hero__title {
+  font-size: 3rem;
+  font-weight: 700;
+  font-family: 'Barlow', sans-serif;
+  margin: 0;
+}
+
+.recrutement-content {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.recrutement-content__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.recrutement-offres {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.recrutement-offre {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.recrutement-offre:hover {
+  border-color: #0f172a;
+  transform: translateX(4px);
+}
+
+.recrutement-offre__icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-radius: 50%;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+.recrutement-offre__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.25rem 0;
+}
+
+.recrutement-offre__entity {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #2563eb;
+  background: #eff6ff;
+  padding: 0.1rem 0.6rem;
+  border-radius: 9999px;
+  margin-bottom: 0.5rem;
+}
+
+.recrutement-offre__desc {
+  font-size: 0.9375rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.recrutement-cta {
+  text-align: center;
+  padding: 2.5rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.recrutement-cta__text {
+  font-size: 1.125rem;
+  color: #1f2937;
+  margin-bottom: 1.25rem;
+}
+
+.recrutement-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  background: #0f172a;
+  color: #ffffff;
+  border-radius: 9999px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.recrutement-cta__btn:hover {
+  background: #1e293b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+  .recrutement-hero {
+    padding: 60px 0;
+    min-height: 150px;
+  }
+
+  .recrutement-hero__title {
+    font-size: 2.2rem;
+  }
+
+  .recrutement-content {
+    padding: 40px 0;
+  }
+
+  .recrutement-offre {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .recrutement-cta {
+    padding: 1.5rem;
+  }
+
+  .recrutement-cta__btn {
+    width: auto;
+    min-width: auto;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9375rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .recrutement-hero__title {
+    font-size: 1.8rem;
+  }
+
+  .recrutement-offre {
+    padding: 1.25rem;
+  }
+
+  .recrutement-offre__title {
+    font-size: 1rem;
+  }
+
+  .recrutement-offre__desc {
+    font-size: 0.875rem;
+  }
+
+  .recrutement-cta__text {
+    font-size: 1rem;
+  }
+
+  .recrutement-cta__btn {
+    width: auto;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}

@@ -1,7 +1,7 @@
 import "../../../styles/groupe/about.css"
 
 export const metadata = {
-  title: "Qui sommes-nous | Syslearn Groupe",
+  title: "Qui sommes-nous | Syslearn Group",
   description: "Découvrez l'histoire du groupe Syslearn : la naissance de Syslearn, PointerLab et StackJobs.",
 };
 
@@ -20,7 +20,7 @@ export default function QuiSommesNousPage() {
           <div className="quisommes-block">
             <h2 className="quisommes-block__title">Notre mission</h2>
             <p className="quisommes-block__text">
-              Syslearn Groupe a pour mission d'accompagner les entreprises et les talents dans leur transformation 
+              Syslearn Group a pour mission d'accompagner les entreprises et les talents dans leur transformation 
               numérique. Nous croyons que la technologie doit être au service de l'humain pour créer un impact positif 
               et durable.
             </p>
@@ -67,14 +67,13 @@ export default function QuiSommesNousPage() {
             </div>
           </div>
 
-          {/* ✅ Description complète */}
           <div className="quisommes-block">
             <h2 className="quisommes-block__title">Notre philosophie</h2>
             <p className="quisommes-block__text">
               La plupart des ESN grandissent en empilant les strates hiérarchiques et en diluant leurs marges dans l'opacité - 
               le consultant sur le terrain ignore souvent ce que sa mission facture réellement. Nous avons construit l'inverse. 
               PointerLab a été pensée dès le départ avec un modèle à deux niveaux seulement - associés et collaborateurs - 
-              où chacun connaît les objectifs et les marges de son travail. Syslearn Groupe porte cette conviction à l'échelle 
+              où chacun connaît les objectifs et les marges de son travail. Syslearn Group porte cette conviction à l'échelle 
               de ses trois entités : Syslearn, PointerLab et StackJobs.
             </p>
             <p className="quisommes-block__text">

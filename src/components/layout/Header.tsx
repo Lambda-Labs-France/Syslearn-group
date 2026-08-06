@@ -28,7 +28,7 @@ export default function Header() {
           aria-label="Syslearn Groupe - Accueil"
         >
           <span className="header__logo-text">
-            Syslearn <span>Groupe</span>
+            Syslearn <span>Group</span>
           </span>
         </Link>
 

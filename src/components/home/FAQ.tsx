@@ -2,9 +2,9 @@ import "../../styles/accueil/faq.css";
 
 const faqs = [
   {
-    question: "Qu'est-ce que Syslearn Groupe ?",
+    question: "Qu'est-ce que Syslearn Group ?",
     answer:
-      "Syslearn Groupe est l'écosystème qui réunit trois entités du numérique : Syslearn (conseil informatique), PointerLab (ESN spécialisée C++/Qt) et StackJobs (plateforme de recrutement tech).",
+      "Syslearn Group est l'écosystème qui réunit trois entités du numérique : Syslearn (conseil informatique), PointerLab (ESN spécialisée C++/Qt) et StackJobs (plateforme de recrutement tech).",
   },
   {
     question: "Sur quels secteurs le groupe intervient-il ?",

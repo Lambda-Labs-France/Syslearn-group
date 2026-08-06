@@ -2,8 +2,8 @@ import Link from "next/link";
 import "../../styles/nos-entites/nos-entites.css";
 
 export const metadata = {
-  title: "Nos entités | Syslearn Groupe",
-  description: "Découvrez les trois entités de Syslearn Groupe : Syslearn (conseil IT), PointerLab (ESN C++/Qt) et StackJobs (recrutement tech).",
+  title: "Nos entités | Syslearn Group",
+  description: "Découvrez les trois entités de Syslearn Group : Syslearn (conseil IT), PointerLab (ESN C++/Qt) et StackJobs (recrutement tech).",
 };
 
 export default function NosEntitesPage() {
@@ -48,7 +48,7 @@ export default function NosEntitesPage() {
       <section className="entites-content">
         <div className="entites-content__inner">
           <p className="entites-intro">
-            Syslearn Groupe réunit trois entités qui, ensemble, couvrent tout le parcours : 
+            Syslearn Group réunit trois entités qui, ensemble, couvrent tout le parcours : 
             Syslearn pour le conseil et l'ingénierie informatique généraliste, 
             PointerLab pour le développement logiciel C++ et Qt sur les projets les plus exigeants, 
             et StackJobs pour connecter les bons profils aux bonnes entreprises.

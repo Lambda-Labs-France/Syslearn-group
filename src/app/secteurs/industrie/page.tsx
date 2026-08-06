@@ -10,7 +10,7 @@ import {
 import "../../../styles/secteurs/industrie.css";
 
 export const metadata = {
-  title: "Industrie | ESN conseil et ingénierie Syslearn Groupe",
+  title: "Industrie | ESN conseil et ingénierie Syslearn Group",
   description: "Conseil informatique et ingénierie logicielle pour l'industrie 4.0. Syslearn et PointerLab accompagnent l'automatisation et la supervision de vos systèmes.",
 };
 

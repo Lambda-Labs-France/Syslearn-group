@@ -10,7 +10,7 @@ import {
 import "../../../styles/secteurs/energie.css";
 
 export const metadata = {
-  title: "Énergie | ESN conseil informatique Syslearn Groupe",
+  title: "Énergie | ESN conseil informatique Syslearn Group",
   description: "Conseil informatique et ingénierie pour le secteur de l'énergie. Syslearn accompagne vos projets de transformation numérique sur des cycles longs et réglementés.",
 };
 

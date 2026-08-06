@@ -18,7 +18,7 @@ export default function Hero() {
 
           <p className="hero__description">
             Vous cherchez un partenaire pour un projet informatique, une expertise C++/Qt pointue, 
-            ou votre prochain poste tech ? Syslearn Groupe réunit trois entités qui, ensemble, 
+            ou votre prochain poste tech ? Syslearn Group réunit trois entités qui, ensemble, 
             couvrent tout le parcours : Syslearn pour le conseil et l'ingénierie informatique généraliste, 
             PointerLab pour le développement logiciel C++ et Qt sur les projets les plus exigeants, 
             et StackJobs pour connecter les bons profils aux bonnes entreprises.

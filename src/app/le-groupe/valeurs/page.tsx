@@ -1,8 +1,8 @@
 import "../../../styles/groupe/values.css";
 
 export const metadata = {
-  title: "Nos valeurs | Syslearn Groupe",
-  description: "Découvrez les valeurs de Syslearn Groupe : modernité, transparence, horizontalité, spécialisation et partage de la valeur.",
+  title: "Nos valeurs | Syslearn Group",
+  description: "Découvrez les valeurs de Syslearn Group : modernité, transparence, horizontalité, spécialisation et partage de la valeur.",
 };
 
 export default function ValeursPage() {

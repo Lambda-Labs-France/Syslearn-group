@@ -9,7 +9,7 @@ export default function Footer() {
       <div className="footer__inner">
         <div className="footer__col footer__col--brand">
           <Link href="/" className="footer__logo">
-            Syslearn <span>Groupe</span>
+            Syslearn <span>Group</span>
           </Link>
           <p className="footer__description">
             Conseil informatique, ingénierie C++/Qt et recrutement tech. 
