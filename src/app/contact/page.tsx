@@ -1,7 +1,7 @@
 import ContactClient from "./ContactClient";
 
 export const metadata = {
-  title: "Contact |Syslearn, PointerLab, StackJobs",
+  title: "Contact",
   description: "Contactez Syslearn Group pour un projet informatique, une expertise C++/Qt ou une question RH.",
 };
 

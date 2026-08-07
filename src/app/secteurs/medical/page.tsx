@@ -11,7 +11,7 @@ import {
 import "../../../styles/secteurs/medical.css";
 
 export const metadata = {
-  title: "Médical | ESN spécialisée C++/Qt Syslearn Group",
+  title: "Médical",
   description: "PointerLab développe des logiciels C++/Qt pour l'imagerie médicale et les dispositifs cliniques, où la fiabilité prime sur tout.",
 };
 

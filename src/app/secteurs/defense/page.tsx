@@ -11,7 +11,7 @@ import {
 import "../../../styles/secteurs/defense.css";
 
 export const metadata = {
-  title: "Défense | ESN conseil informatique Syslearn Group",
+  title: "Défense",
   description: "Conseil informatique et ingénierie pour le secteur de la défense. Syslearn intervient sur des systèmes critiques avec un haut niveau d'exigence et de confidentialité.",
 };
 

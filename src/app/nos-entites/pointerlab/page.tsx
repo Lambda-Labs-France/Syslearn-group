@@ -13,7 +13,7 @@ import {
 import "../../../styles/nos-entites/pointerlab.css";
 
 export const metadata = {
-  title: "PointerLab | ESN spécialisée C++ & Qt - Partenaire Qt Group",
+  title: "PointerLab",
   description: "PointerLab, néo-ESN spécialisée en développement C++ et Qt pour la simulation 3D, le médical et l'aéronautique. Vivier de plus de 8 000 profils qualifiés.",
 };
 

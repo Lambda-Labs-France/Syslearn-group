@@ -12,7 +12,7 @@ import {
 import "../../styles/nos-entites/syslearn.css";
 
 export const metadata = {
-  title: "Nos entités | ESN conseil informatique énergie défense",
+  title: "Nos entités",
   description: "Syslearn accompagne ses clients de l'énergie, la défense et l'industrie en conseil informatique et ingénierie sur mesure. Consultants qualifiés, missions exigeantes.",
 };
 

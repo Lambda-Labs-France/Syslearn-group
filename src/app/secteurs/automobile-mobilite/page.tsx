@@ -10,7 +10,7 @@ import {
 import "../../../styles/secteurs/automobile-mobilite.css";
 
 export const metadata = {
-  title: "Automobile & Mobilité | ESN C++/Qt Syslearn Group",
+  title: "Automobile & Mobilité",
   description: "PointerLab conçoit systèmes embarqués et logiciels de simulation pour l'automobile et la mobilité en C++/Qt. Info-divertissement, ADAS, simulation de conduite.",
 };
 

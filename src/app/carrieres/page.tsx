@@ -10,7 +10,7 @@ import {
 import "../../styles/carrieres/carrieres.css";
 
 export const metadata = {
-  title: "Carrières | Rejoindre Syslearn Group - Syslearn, PointerLab, StackJobs",
+  title: "Carrières",
   description: "Consultant IT, ingénieur C++/Qt ou équipe produit tech : découvrez les métiers de Syslearn Group et postulez dès aujourd'hui via StackJobs.",
 };
 
