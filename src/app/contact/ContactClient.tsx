@@ -10,10 +10,12 @@ export default function ContactClient() {
     const formData = new FormData(form);
     
     const data = {
-      name: formData.get("name"),
+      nom: formData.get("nom"),
+      prenom: formData.get("prenom"),
       email: formData.get("email"),
+      telephone: formData.get("telephone"),
       entite: formData.get("entite"),
-      secteur: formData.get("secteur"),
+      objet: formData.get("objet"),
       message: formData.get("message"),
     };
     
@@ -27,35 +29,6 @@ export default function ContactClient() {
       <section className="contact-hero">
         <div className="contact-hero__inner">
           <h1 className="contact-hero__title">Contactez-nous</h1>
-          
-        </div>
-      </section>
-
-      <section className="contact-motifs">
-        <div className="contact-motifs__inner">
-          <h2 className="contact-motifs__title">Motifs de contact</h2>
-          <div className="contact-motifs__grid">
-            <div className="contact-motif">
-              <div className="contact-motif__icon"><Users size={24} strokeWidth={1.5} /></div>
-              <h3 className="contact-motif__name">Syslearn Group</h3>
-              <p className="contact-motif__desc">Presse, partenariat, question générale</p>
-            </div>
-            <div className="contact-motif">
-              <div className="contact-motif__icon"><Briefcase size={24} strokeWidth={1.5} /></div>
-              <h3 className="contact-motif__name">Syslearn</h3>
-              <p className="contact-motif__desc">Besoin de conseil ou de mission informatique</p>
-            </div>
-            <div className="contact-motif">
-              <div className="contact-motif__icon"><Code2 size={24} strokeWidth={1.5} /></div>
-              <h3 className="contact-motif__name">PointerLab</h3>
-              <p className="contact-motif__desc">Projet logiciel C++/Qt, recrutement de consultant</p>
-            </div>
-            <div className="contact-motif">
-              <div className="contact-motif__icon"><UserCheck size={24} strokeWidth={1.5} /></div>
-              <h3 className="contact-motif__name">StackJobs</h3>
-              <p className="contact-motif__desc">Candidature, publication d'offre, partenariat recruteur</p>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -66,12 +39,23 @@ export default function ContactClient() {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-form__row">
                 <div className="contact-form__group">
-                  <label htmlFor="name">Nom & Prénom <span>*</span></label>
-                  <input type="text" id="name" name="name" placeholder="Votre nom complet" required />
+                  <label htmlFor="nom">Nom <span>*</span></label>
+                  <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
                 </div>
+                <div className="contact-form__group">
+                  <label htmlFor="prenom">Prénom <span>*</span></label>
+                  <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+                </div>
+              </div>
+
+              <div className="contact-form__row">
                 <div className="contact-form__group">
                   <label htmlFor="email">Email <span>*</span></label>
                   <input type="email" id="email" name="email" placeholder="vous@exemple.com" required />
+                </div>
+                <div className="contact-form__group">
+                  <label htmlFor="telephone">Téléphone (optionnel)</label>
+                  <input type="tel" id="telephone" name="telephone" placeholder="06 12 34 56 78" />
                 </div>
               </div>
 
@@ -87,17 +71,8 @@ export default function ContactClient() {
                   </select>
                 </div>
                 <div className="contact-form__group">
-                  <label htmlFor="secteur">Secteur (optionnel)</label>
-                  <select id="secteur" name="secteur">
-                    <option value="">Sélectionnez un secteur</option>
-                    <option value="energie">Énergie</option>
-                    <option value="defense">Défense</option>
-                    <option value="industrie">Industrie</option>
-                    <option value="medical">Médical</option>
-                    <option value="aeronautique">Aéronautique</option>
-                    <option value="automobile">Automobile & Mobilité</option>
-                    <option value="iot">IoT</option>
-                  </select>
+                  <label htmlFor="objet">Objet <span>*</span></label>
+                  <input type="text" id="objet" name="objet" placeholder="Objet de votre message" required />
                 </div>
               </div>
 
@@ -120,21 +95,21 @@ export default function ContactClient() {
                 <div className="contact-info__icon"><MapPin size={20} strokeWidth={1.5} /></div>
                 <div className="contact-info__content">
                   <h4>Adresse</h4>
-                  <p>adresse</p>
+                  <p>2 esplanade Ferdinand Magellan,<br />93160 Noisy-le-Grand, France</p>
                 </div>
               </div>
               <div className="contact-info__item">
                 <div className="contact-info__icon"><Phone size={20} strokeWidth={1.5} /></div>
                 <div className="contact-info__content">
                   <h4>Téléphone</h4>
-                  <a href="tel:0179629165">01 23 45 67 89</a>
+                  <a href="tel:0179629165">01 79 62 91 65</a>
                 </div>
               </div>
               <div className="contact-info__item">
                 <div className="contact-info__icon"><Mail size={20} strokeWidth={1.5} /></div>
                 <div className="contact-info__content">
                   <h4>Email</h4>
-                  <a href="mailto:recrutement@syslearn.fr">recrutement@syslearn.fr</a>
+                  <a href="mailto:contact@syslearn-group.com">contact@syslearn-group.com</a>
                 </div>
               </div>
             </div>

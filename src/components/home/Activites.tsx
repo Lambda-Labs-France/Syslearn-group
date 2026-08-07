@@ -22,7 +22,7 @@ const activitesData = [
     id: "pointerlab",
     title: "PointerLab",
     description:
-      "L'ESN spécialisée C++ et Qt, partenaire officiel de Qt Group. Simulation 3D, imagerie médicale, systèmes embarqués aéronautiques : quand le logiciel doit tenir sous contrainte réelle, sans droit à l'erreur.",
+      "L'ESN spécialisée dans l'écosystème C++, partenaire officiel de Qt Group. Simulation 3D, imagerie médicale, systèmes embarqués aéronautiques : quand le logiciel doit tenir sous contrainte réelle, sans droit à l'erreur.",
     images: [
       "https://picsum.photos/seed/pointerlab1/80/80",
       "https://picsum.photos/seed/pointerlab2/80/80",
@@ -35,7 +35,7 @@ const activitesData = [
     id: "stackjobs",
     title: "StackJobs",
     description:
-      "La plateforme de recrutement tech qui matche vraiment. Plus de 4 000 offres actives, un moteur de matching par IA qui trie le bruit plutôt que de l'amplifier.",
+      "La plateforme de recrutement tech & engineering qui matche vraiment. Plus de 4 000 offres actives, un moteur de matching par IA qui trie le bruit plutôt que de l'amplifier.",
     images: [
       "https://picsum.photos/seed/stackjobs1/80/80",
       "https://picsum.photos/seed/stackjobs2/80/80",

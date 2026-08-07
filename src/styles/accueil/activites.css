@@ -1,6 +1,6 @@
 .activites {
   padding: 80px 0;
-  background: #ffffff;
+  background: var(--color-background, #fbfcf9);
 }
 
 .activites__inner {
@@ -107,7 +107,7 @@
   padding: 0.75rem 2rem;
   background: #111827;
   color: #ffffff;
-  border-radius: 50px;
+  border-radius: 15px;
   font-weight: 500;
   text-decoration: none;
   font-size: 0.9375rem;

@@ -1,3 +1,6 @@
+/* ============================================================
+   HEADER
+   ============================================================ */
 .header {
   position: fixed;
   top: 0;
@@ -19,6 +22,9 @@
   height: 90px;
 }
 
+/* ============================================================
+   LOGO
+   ============================================================ */
 .header__logo {
   display: flex;
   align-items: center;
@@ -38,6 +44,9 @@
   color: #6b7280;
 }
 
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
 .header__nav {
   display: none;
 }
@@ -82,32 +91,21 @@
   color: #2563eb;
 }
 
+/* ✅ Active state - reste bleu tant que la page est active */
 .header__nav-link--active {
   color: #2563eb !important;
   background-color: #eff6ff;
 }
 
-
-.header__nav-link--contact {
-  background: #111827 !important;
-  color: #ffffff !important;
-  border-radius: 15px !important;
-  padding: 0.35rem 1rem !important; 
-  height: 34px !important; 
-  min-width: auto !important;
-  font-weight: 500 !important;
-  font-size: 0.9rem !important; 
-  transition: all 0.3s ease !important;
-  margin-left: 0.5rem;
+/* ✅ Active state pour les sous-menus */
+.header__submenu-link--active {
+  color: #2563eb !important;
+  background-color: #eff6ff;
 }
 
-.header__nav-link--contact:hover {
-  background: #000000 !important;
-  color: #ffffff !important;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
-}
-
+/* ============================================================
+   SUBMENU
+   ============================================================ */
 .header__submenu {
   position: absolute;
   top: 100%;
@@ -155,8 +153,11 @@
   color: #2563eb;
 }
 
+/* ❌ SUPPRIMÉ - Plus de style spécifique pour Contact */
 
-
+/* ============================================================
+   MOBILE NAV (overlay)
+   ============================================================ */
 .mobile-nav {
   display: block;
 }
@@ -250,7 +251,6 @@
   background-color: #f3f4f6;
 }
 
-/* ===== Liste des liens ===== */
 .mobile-nav__menu nav ul {
   list-style: none;
   padding: 0;
@@ -323,8 +323,9 @@
   color: #2563eb;
 }
 
-
-
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 768px) {
   .header__logo-text {
     font-size: 1.5rem;
