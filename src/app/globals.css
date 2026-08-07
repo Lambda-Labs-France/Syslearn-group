@@ -2,3 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --color-syslearn: #aacf37;
+  --gradient-pointerlab: linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%);
+  --gradient-stackjobs: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+}

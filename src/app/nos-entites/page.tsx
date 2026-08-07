@@ -14,7 +14,7 @@ export default function NosEntitesPage() {
       description: "Syslearn accompagne ses clients de l'énergie, la défense et l'industrie en conseil informatique et ingénierie sur mesure. Consultants qualifiés, missions exigeantes.",
       link: "/nos-entites/syslearn",
       image: "https://picsum.photos/seed/syslearn-entite/600/400",
-      color: "#059669",
+      color: "var(--color-syslearn)",
     },
     {
       name: "PointerLab",
@@ -22,7 +22,7 @@ export default function NosEntitesPage() {
       description: "PointerLab est une néo-ESN spécialisée en développement C++ et Qt pour la simulation 3D, le médical et l'aéronautique. Vivier de plus de 8 000 profils qualifiés.",
       link: "/nos-entites/pointerlab",
       image: "https://picsum.photos/seed/pointerlab-entite/600/400",
-      color: "#7c3aed",
+      color: "var(--gradient-pointerlab)",
     },
     {
       name: "StackJobs",
@@ -30,7 +30,7 @@ export default function NosEntitesPage() {
       description: "StackJobs réunit plus de 4 000 offres d'emploi tech en France avec un matching IA entre développeurs, data scientists et entreprises qui recrutent.",
       link: "/nos-entites/stackjobs",
       image: "https://picsum.photos/seed/stackjobs-entite/600/400",
-      color: "#2563eb",
+      color: "var(--gradient-stackjobs)",
     },
   ];
 
