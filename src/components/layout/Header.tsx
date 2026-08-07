@@ -1,24 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { mainNav } from "../../lib/navigation";
 import MobileNav from "./MobileNav";
 import "../../styles/accueil/header.css";
 
 export default function Header() {
-  const pathname = usePathname();
-
-  const isActive = (href: string) => {
-    if (href === "/") {
-      return false;
-    }
-    if (href.startsWith("http")) {
-      return false;
-    }
-    return pathname.startsWith(href);
-  };
-
   return (
     <header className="header">
       <div className="header__inner">
@@ -37,6 +24,7 @@ export default function Header() {
             {mainNav.map((item) => {
               const hasChildren = !!(item.children && item.children.length > 0);
               const isExternal = item.isExternal || false;
+              const isContact = item.label === "Contact";
               
               return (
                 <li key={item.href} className="header__nav-item">
@@ -45,14 +33,14 @@ export default function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={isActive(item.href) ? "header__nav-link--active" : ""}
+                      className={isContact ? "header__nav-link--contact" : ""}
                     >
                       {item.label}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className={isActive(item.href) ? "header__nav-link--active" : ""}
+                      className={isContact ? "header__nav-link--contact" : ""}
                     >
                       {item.label}
                     </Link>

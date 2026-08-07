@@ -48,7 +48,7 @@ export default function SyslearnPage() {
             <Link 
               href={syslearnUrl}
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="dofollow noopener noreferrer"
               className="syslearn-hero__btn"
             >
               Visiter le site de Syslearn
