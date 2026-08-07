@@ -52,7 +52,7 @@ export default function Actualites() {
 
         <div className="actualites__footer">
           <Link href="/actualites" className="actualites__btn">
-            Voir tous les articles
+              Voir toutes les actualités
           </Link>
         </div>
       </div>

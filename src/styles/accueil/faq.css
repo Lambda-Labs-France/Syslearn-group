@@ -1,6 +1,6 @@
 .faq {
   padding: 100px 0;
-  background: #ffffff;
+  background: var(--color-background, #fbfcf9);
   position: relative;
 }
 

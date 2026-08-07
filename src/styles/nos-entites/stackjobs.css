@@ -1,3 +1,4 @@
+
 .stackjobs-page {
   padding-top: 100px;
   min-height: 100vh;
@@ -5,7 +6,7 @@
 
 
 .stackjobs-hero {
-  background: linear-gradient(135deg, #1e3a5f 0%, #0f172a 100%);
+  background: linear-gradient(135deg, #2752ff 0%, #1d4ed8 30%, #0f172a 100%);
   color: #ffffff;
   padding: 80px 0;
 }
@@ -15,33 +16,6 @@
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
-}
-
-.stackjobs-hero__badge {
-  display: inline-block;
-  padding: 0.3rem 1rem;
-  background: rgba(37, 99, 235, 0.2);
-  color: #93c5fd;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 9999px;
-  margin-bottom: 1rem;
-}
-
-.stackjobs-hero__title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  font-family: 'Barlow', sans-serif;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.stackjobs-hero__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
 }
 
 .stackjobs-hero__content {
@@ -54,28 +28,49 @@
   gap: 1.5rem;
 }
 
+.stackjobs-hero__badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: rgba(39, 82, 255, 0.2);
+  color: #93c5fd;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.stackjobs-hero__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: var(--font-inter);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 .stackjobs-hero__btn {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
   padding: 0.75rem 2rem;
-  background: rgba(37, 99, 235, 0.15);
+  background: rgba(39, 82, 255, 0.15);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(37, 99, 235, 0.25);
+  border: 1px solid rgba(39, 82, 255, 0.25);
   border-radius: 9999px;
   color: #ffffff;
   font-weight: 500;
   font-size: 0.9375rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.1);
+  box-shadow: 0 4px 15px rgba(39, 82, 255, 0.1);
 }
 
 .stackjobs-hero__btn:hover {
-  background: rgba(37, 99, 235, 0.25);
-  border-color: rgba(37, 99, 235, 0.4);
-  box-shadow: 0 6px 25px rgba(37, 99, 235, 0.2);
+  background: rgba(39, 82, 255, 0.25);
+  border-color: rgba(39, 82, 255, 0.4);
+  box-shadow: 0 6px 25px rgba(39, 82, 255, 0.2);
   transform: translateY(-2px);
 }
 
@@ -86,6 +81,7 @@
 .stackjobs-hero__btn:hover svg {
   transform: translateX(4px) rotate(-5deg);
 }
+
 
 .stackjobs-section {
   padding: 60px 0;
@@ -110,7 +106,7 @@
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 1.5rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .stackjobs-section__text p {
@@ -156,7 +152,7 @@
   color: #0f172a;
   text-align: center;
   margin-bottom: 3rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .stackjobs-features__grid {
@@ -181,12 +177,12 @@
 .stackjobs-feature-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  border-color: #2563eb;
+  border-color: #2752ff;
 }
 
 .stackjobs-feature-card__icon {
   flex-shrink: 0;
-  color: #2563eb;
+  color: #2752ff;
   margin-top: 0.1rem;
 }
 
@@ -215,7 +211,7 @@
   color: #0f172a;
   text-align: center;
   margin-bottom: 3rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .stackjobs-raisons__grid {
@@ -240,12 +236,12 @@
 .stackjobs-raison-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  border-color: #2563eb;
+  border-color: #2752ff;
 }
 
 .stackjobs-raison-card__icon {
   flex-shrink: 0;
-  color: #2563eb;
+  color: #2752ff;
   margin-top: 0.1rem;
 }
 
@@ -274,7 +270,7 @@
   color: #0f172a;
   text-align: center;
   margin-bottom: 2.5rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .stackjobs-faq__list {

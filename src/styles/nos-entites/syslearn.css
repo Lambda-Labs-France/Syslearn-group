@@ -1,12 +1,17 @@
+/* ============================================================
+   SYSLEARN PAGE
+   ============================================================ */
 .syslearn-page {
   padding-top: 100px;
   min-height: 100vh;
 }
 
-
+/* ============================================================
+   HERO - BACKGROUND #b7ef4c
+   ============================================================ */
 .syslearn-hero {
-  background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
-  color: #ffffff;
+  background: linear-gradient(135deg, #b7ef4c 0%, #8fd436 50%, #0f172a 100%);
+  color: #000000;;
   padding: 80px 0;
 }
 
@@ -15,34 +20,6 @@
   margin: 0 auto;
   padding: 0 2rem;
   text-align: center;
-} 
-
-.syslearn-hero__badge {
-  display: inline-block;
-  padding: 0.3rem 1rem;
-  background: rgba(5, 150, 105, 0.2);
-  color: #6ee7b7;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-radius: 9999px;
-  margin-bottom: 1rem;
-}
-
-.syslearn-hero__title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  font-family: 'Barlow', sans-serif;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-
-.syslearn-hero__inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
 }
 
 .syslearn-hero__content {
@@ -55,28 +32,49 @@
   gap: 1.5rem;
 }
 
+.syslearn-hero__badge {
+  display: inline-block;
+  padding: 0.3rem 1rem;
+  background: rgba(0, 0, 0, 0.1);
+  color: #000000;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+.syslearn-hero__title {
+  font-size: 2.7rem;
+  font-weight: 680;
+  font-family: var(--font-inter);
+  max-width: 900px;
+  margin: 0 auto;
+  color: #000000;
+}
+
 .syslearn-hero__btn {
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
   padding: 0.75rem 2rem;
-  background: rgba(5, 150, 105, 0.15);
+  background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(5, 150, 105, 0.25);
+  border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 9999px;
-  color: #ffffff;
-  font-weight: 500;
+  color: #000000; /* ✅ Bouton texte en noir */
+  font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(5, 150, 105, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .syslearn-hero__btn:hover {
-  background: rgba(5, 150, 105, 0.25);
-  border-color: rgba(5, 150, 105, 0.4);
-  box-shadow: 0 6px 25px rgba(5, 150, 105, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
   transform: translateY(-2px);
 }
 
@@ -88,6 +86,9 @@
   transform: translateX(4px) rotate(-5deg);
 }
 
+/* ============================================================
+   SECTIONS - inchangées
+   ============================================================ */
 .syslearn-section {
   padding: 60px 0;
   background: #ffffff;
@@ -111,7 +112,7 @@
   font-weight: 700;
   color: #0f172a;
   margin-bottom: 1.5rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .syslearn-section__text p {
@@ -139,7 +140,9 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-
+/* ============================================================
+   EXPERTISES
+   ============================================================ */
 .syslearn-expertises {
   padding: 60px 0;
   background: #f8fafc;
@@ -157,7 +160,7 @@
   color: #0f172a;
   text-align: center;
   margin-bottom: 3rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .syslearn-expertises__grid {
@@ -180,12 +183,12 @@
 .syslearn-expertise-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
-  border-color: #6ee7b7;
+  border-color: #b7ef4c;
 }
 
 .syslearn-expertise-card__icon {
   flex-shrink: 0;
-  color: #6ee7b7;
+  color: #b7ef4c;
   margin-top: 0.1rem;
 }
 
@@ -196,7 +199,9 @@
   margin: 0;
 }
 
-
+/* ============================================================
+   RAISONS
+   ============================================================ */
 .syslearn-raisons {
   padding: 60px 0;
   background: #ffffff;
@@ -214,7 +219,7 @@
   color: #0f172a;
   text-align: center;
   margin-bottom: 3rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .syslearn-raisons__grid {
@@ -244,7 +249,7 @@
 
 .syslearn-raison-card__icon {
   flex-shrink: 0;
-  color: #6ee7b7;
+  color: #b7ef4c;
   margin-top: 0.1rem;
 }
 
@@ -255,7 +260,9 @@
   margin: 0;
 }
 
-
+/* ============================================================
+   FAQ
+   ============================================================ */
 .syslearn-faq {
   padding: 60px 0;
   background: #f8fafc;
@@ -273,7 +280,7 @@
   color: #0f172a;
   text-align: center;
   margin-bottom: 2.5rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: var(--font-inter);
 }
 
 .syslearn-faq__list {
@@ -328,7 +335,9 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
 @media (max-width: 1024px) {
   .syslearn-section__grid {
     gap: 2rem;

@@ -1,7 +1,7 @@
-/* ===== CHIFFRES-CLES ===== */
+
 .chiffres-cles {
   padding: 60px 0;
-  background: #f8fafc;
+  background: var(--color-background, #fbfcf9);
   border-top: 1px solid #e5e7eb;
   border-bottom: 1px solid #e5e7eb;
 }
@@ -16,7 +16,6 @@
   gap: 2rem;
 }
 
-/* ===== Carrousel ===== */
 .chiffres-cles__carousel {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -33,18 +32,19 @@
 }
 
 .chiffres-cles__number {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #0f172a;
-  font-family: var(--font-barlow), sans-serif;
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: var(--color-ink, #14161C);
+  font-family: var(--font-inter); 
   line-height: 1.2;
 }
 
 .chiffres-cles__label {
   font-size: 0.9375rem;
-  color: #6b7280;
+  color: var(--color-text-secondary, #6B7080);
   font-weight: 400;
   margin-top: 0.25rem;
+  font-family: var(--font-inter);
 }
 
 .chiffres-cles__footer {
@@ -54,19 +54,19 @@
   width: 100%;
 }
 
-/* ✅ Bouton comme Actualites */
 .chiffres-cles__btn {
   display: inline-block;
   padding: 0.875rem 2.5rem;
   background: #111827;
   color: #ffffff;
-  border-radius: 50px;
+  border-radius: 15px;
   font-weight: 500;
   text-decoration: none;
   font-size: 1rem;
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  font-family: var(--font-inter);
 }
 
 .chiffres-cles__btn:hover {

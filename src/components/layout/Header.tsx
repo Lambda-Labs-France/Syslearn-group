@@ -1,11 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { mainNav } from "../../lib/navigation";
 import MobileNav from "./MobileNav";
 import "../../styles/accueil/header.css";
 
 export default function Header() {
+  const pathname = usePathname();
+
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === href;
+    }
+    if (href.startsWith("http")) {
+      return false;
+    }
+    return pathname.startsWith(href);
+  };
+
   return (
     <header className="header">
       <div className="header__inner">
@@ -24,7 +37,7 @@ export default function Header() {
             {mainNav.map((item) => {
               const hasChildren = !!(item.children && item.children.length > 0);
               const isExternal = item.isExternal || false;
-              const isContact = item.label === "Contact";
+              const isActiveLink = isActive(item.href);
               
               return (
                 <li key={item.href} className="header__nav-item">
@@ -33,14 +46,14 @@ export default function Header() {
                       href={item.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={isContact ? "header__nav-link--contact" : ""}
+                      className={isActiveLink ? "header__nav-link--active" : ""}
                     >
                       {item.label}
                     </a>
                   ) : (
                     <Link
                       href={item.href}
-                      className={isContact ? "header__nav-link--contact" : ""}
+                      className={isActiveLink ? "header__nav-link--active" : ""}
                     >
                       {item.label}
                     </Link>
@@ -50,6 +63,7 @@ export default function Header() {
                     <ul className="header__submenu">
                       {item.children?.map((child) => {
                         const childIsExternal = child.isExternal || false;
+                        const isChildActive = isActive(child.href);
                         
                         return (
                           <li key={child.href}>
@@ -58,11 +72,17 @@ export default function Header() {
                                 href={child.href}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                className={isChildActive ? "header__submenu-link--active" : ""}
                               >
                                 {child.label}
                               </a>
                             ) : (
-                              <Link href={child.href}>{child.label}</Link>
+                              <Link
+                                href={child.href}
+                                className={isChildActive ? "header__submenu-link--active" : ""}
+                              >
+                                {child.label}
+                              </Link>
                             )}
                           </li>
                         );
