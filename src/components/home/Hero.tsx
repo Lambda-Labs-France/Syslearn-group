@@ -11,15 +11,15 @@ export default function Hero() {
               <span className="hero__title--words">
                 <span className="hero__title--word hero__title--syslearn">
                   <span className="hero__title--company">Syslearn</span>
-                  <span className="hero__title--tagline">conseil tech : Data, Cybersécurité, Cloud & IA</span>
+                  <span className="hero__title--tagline">Conseil tech : Data, Cybersécurité, Cloud & IA</span>
                 </span>
                 <span className="hero__title--word hero__title--pointerlab">
                   <span className="hero__title--company">PointerLab</span>
-                  <span className="hero__title--tagline">ingénierie écosystème C++</span>
+                  <span className="hero__title--tagline">Ingénierie écosystème C++</span>
                 </span>
                 <span className="hero__title--word hero__title--stackjobs">
                   <span className="hero__title--company">StackJobs</span>
-                  <span className="hero__title--tagline">recrutement tech & engineering</span>
+                  <span className="hero__title--tagline">Recrutement tech & engineering</span>
                 </span>
               </span>
               <span className="hero__title--highlight">trois métiers, un groupe</span>
