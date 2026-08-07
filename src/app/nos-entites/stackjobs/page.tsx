@@ -46,7 +46,7 @@ export default function StackJobsPage() {
             <Link 
               href={stackjobsUrl}
               target="_blank" 
-              rel="noopener noreferrer"
+              rel=" dofollow noopener noreferrer"
               className="stackjobs-hero__btn"
             >
               Visiter le site de StackJobs

@@ -48,7 +48,7 @@ export default function PointerLabPage() {
             <Link 
               href={pointerlabUrl}
               target="_blank" 
-              rel="noopener noreferrer"
+              rel=" dofollow noopener noreferrer"
               className="pointerlab-hero__btn"
             >
               Visiter le site de PointerLab
