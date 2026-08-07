@@ -3,7 +3,7 @@ import { Briefcase, Code2, Users, ArrowRight } from "lucide-react";
 import "../../../styles/carrieres/metier.css";
 
 export const metadata = {
-  title: "Nos métiers | Syslearn Group",
+  title: "Nos métiers",
   description: "Découvrez les métiers de Syslearn Group : consultant informatique, ingénieur C++/Qt et équipes produit tech.",
 };
 

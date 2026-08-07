@@ -3,7 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import "../../../styles/carrieres/nous-rejoindre.css";
 
 export const metadata = {
-  title: "Pourquoi nous rejoindre | Syslearn Group",
+  title: "Pourquoi nous rejoindre",
   description: "Découvrez pourquoi rejoindre Syslearn Group : modèle horizontal, transparence et spécialisation technique.",
 };
 
