@@ -3,7 +3,7 @@ import { Briefcase, Code2, Users, ArrowRight } from "lucide-react";
 import "../../../styles/carrieres/recrutement.css";
 
 export const metadata = {
-  title: "Recrutement | Syslearn Group",
+  title: "Recrutement",
   description: "Consultez nos offres d'emploi tech et rejoignez Syslearn, PointerLab ou StackJobs.",
 };
 

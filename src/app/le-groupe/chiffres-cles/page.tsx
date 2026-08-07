@@ -1,7 +1,7 @@
 import "../../../styles/groupe/chiffres-cle.css";
 
 export const metadata = {
-  title: "Nos chiffres-clés | Syslearn Group",
+  title: "Nos chiffres-clés",
   description: "Découvrez les chiffres qui font la force de Syslearn Group.",
 };
 

@@ -99,14 +99,17 @@ export function getArticleBySlug(slug: string) {
 
 export function getFilteredArticles(entity: string, category: string) {
   let filtered = articles;
-  if (entity !== 'Toutes') {
+  // "Groupe" affiche tous les articles (comme "Toutes" avant)
+  if (entity !== 'Groupe') {
     filtered = filtered.filter((a) => a.entity === entity);
   }
-  if (category !== 'Toutes') {
+  // "Vue du groupe" affiche tous les articles (comme "Toutes" avant)
+  if (category !== 'Vue du groupe') {
     filtered = filtered.filter((a) => a.category === category);
   }
   return filtered;
 }
 
-export const entities = ['Toutes', 'Syslearn', 'PointerLab', 'StackJobs', 'Groupe'];
-export const categories = ['Toutes', 'Lancement', 'Bilan', 'Portrait', 'Secteur', 'Vie du groupe'];
+// ✅ "Groupe" pour les entités, "Vue du groupe" pour les catégories
+export const entities = ['Groupe', 'Syslearn', 'PointerLab', 'StackJobs'];
+export const categories = ['Vue du groupe', 'Lancement', 'Bilan', 'Portrait', 'Secteur'];
