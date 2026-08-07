@@ -104,10 +104,7 @@
   transition: all 0.2s ease;
 }
 
-.actualites-filters__option:hover {
-  background: #f1f5f9;
-  color: #0f172a;
-}
+
 
 .actualites-filters__option--active {
   background: #0f172a;
