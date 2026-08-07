@@ -31,10 +31,18 @@ export default function Footer() {
         <div className="footer__col">
           <h3 className="footer__title">Secteurs</h3>
           <ul className="footer__list">
-            <li>Énergie & Défense</li>
-            <li>Médical & Simulation</li>
-            <li>Aéronautique & IoT</li>
-            <li>Industrie & Automobile</li>
+            <li>
+              <Link href="/secteurs/energie">Énergie</Link> & <Link href="/secteurs/defense">Défense</Link>
+            </li>
+            <li>
+              <Link href="/secteurs/medical">Médical</Link> & Simulation
+            </li>
+            <li>
+              <Link href="/secteurs/aeronautique">Aéronautique</Link> & <Link href="/secteurs/iot">IoT</Link>
+            </li>
+            <li>
+              <Link href="/secteurs/industrie">Industrie</Link> & <Link href="/secteurs/automobile">Automobile</Link>
+            </li>
           </ul>
         </div>
 

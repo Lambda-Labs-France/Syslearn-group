@@ -10,8 +10,8 @@ export default function ContactClient() {
     const formData = new FormData(form);
     
     const data = {
-      nom: formData.get("nom"),
       prenom: formData.get("prenom"),
+      nom: formData.get("nom"),
       email: formData.get("email"),
       telephone: formData.get("telephone"),
       objet: formData.get("objet"),
@@ -38,12 +38,12 @@ export default function ContactClient() {
             <form className="contact-form" onSubmit={handleSubmit}>
               <div className="contact-form__row">
                 <div className="contact-form__group">
-                  <label htmlFor="nom">Nom <span>*</span></label>
-                  <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
-                </div>
-                <div className="contact-form__group">
                   <label htmlFor="prenom">Prénom <span>*</span></label>
                   <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+                </div>
+                <div className="contact-form__group">
+                  <label htmlFor="nom">Nom <span>*</span></label>
+                  <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
                 </div>
               </div>
 
@@ -59,7 +59,6 @@ export default function ContactClient() {
               </div>
 
               <div className="contact-form__row">
-                
                 <div className="contact-form__group">
                   <label htmlFor="objet">Objet <span>*</span></label>
                   <input type="text" id="objet" name="objet" placeholder="Objet de votre message" required />

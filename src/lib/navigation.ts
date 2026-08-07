@@ -47,8 +47,9 @@ export const mainNav: NavItem[] = [
     href: "/carrieres",
     children: [
       { label: "Nos métiers", href: "/carrieres/metiers" },
-      { label: "Pourquoi nous rejoindre", href: "/carrieres/pourquoi-nous-rejoindre" },
       { label: "Recrutement", href: "/carrieres/recrutement" },
+
+      { label: "Pourquoi nous rejoindre", href: "/carrieres/pourquoi-nous-rejoindre" },
       { label: "Candidature spontanée", href: "/carrieres/candidature-spontanee" },
     ],
   },
