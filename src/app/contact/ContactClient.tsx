@@ -14,7 +14,6 @@ export default function ContactClient() {
       prenom: formData.get("prenom"),
       email: formData.get("email"),
       telephone: formData.get("telephone"),
-      entite: formData.get("entite"),
       objet: formData.get("objet"),
       message: formData.get("message"),
     };
@@ -60,16 +59,7 @@ export default function ContactClient() {
               </div>
 
               <div className="contact-form__row">
-                <div className="contact-form__group">
-                  <label htmlFor="entite">Entité concernée <span>*</span></label>
-                  <select id="entite" name="entite" required>
-                    <option value="">Sélectionnez une entité</option>
-                    <option value="groupe">Syslearn Group</option>
-                    <option value="syslearn">Syslearn</option>
-                    <option value="pointerlab">PointerLab</option>
-                    <option value="stackjobs">StackJobs</option>
-                  </select>
-                </div>
+                
                 <div className="contact-form__group">
                   <label htmlFor="objet">Objet <span>*</span></label>
                   <input type="text" id="objet" name="objet" placeholder="Objet de votre message" required />
@@ -102,7 +92,7 @@ export default function ContactClient() {
                 <div className="contact-info__icon"><Phone size={20} strokeWidth={1.5} /></div>
                 <div className="contact-info__content">
                   <h4>Téléphone</h4>
-                  <a href="tel:0179629165">01 79 62 91 65</a>
+                  <a href="tel:0179629165">06 68 67 04 57</a>
                 </div>
               </div>
               <div className="contact-info__item">
