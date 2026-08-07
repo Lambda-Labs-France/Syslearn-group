@@ -12,7 +12,7 @@ import {
 import "../../../styles/nos-entites/stackjobs.css";
 
 export const metadata = {
-  title: "StackJobs | Offres d'emploi tech & recrutement IT en France",
+  title: "StackJobs",
   description: "Plus de 4 000 offres d'emploi tech en France sur StackJobs. Matching IA entre développeurs, data scientists et entreprises qui recrutent.",
 };
 

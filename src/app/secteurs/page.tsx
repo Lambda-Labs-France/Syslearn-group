@@ -12,7 +12,7 @@ import {
 import "../../styles/secteurs/secteurs.css";
 
 export const metadata = {
-  title: "Secteurs | Énergie, défense, médical, aéronautique...",
+  title: "Secteurs",
   description: "Découvrez les secteurs accompagnés par Syslearn Group : énergie, défense, industrie, médical, aéronautique, automobile et IoT. Conseil et ingénierie sur mesure.",
 };
 
