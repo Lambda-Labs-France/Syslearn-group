@@ -40,13 +40,12 @@
   letter-spacing: -0.02em;
 }
 
-/* ✅ Augmenter la largeur du conteneur */
 .hero__title--words {
   display: inline-block;
   position: relative;
   height: 7rem;
   vertical-align: middle;
-  min-width: 500px; /* ✅ Augmenté de 350px à 500px */
+  min-width: 500px;
 }
 
 .hero__title--word {
@@ -59,22 +58,21 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 0.1rem;
-  width: 100%; /* ✅ Prend toute la largeur */
+  width: 100%;
 }
 
 .hero__title--company {
   font-size: 4rem;
   font-weight: 800;
   line-height: 1.1;
-  white-space: nowrap; /* ✅ Empêche le retour à la ligne */
+  white-space: nowrap;
 }
 
-/* ✅ Tagline sur une seule ligne */
 .hero__title--tagline {
   font-size: 1.6rem;
   font-weight: 500;
   line-height: 1.2;
-  white-space: nowrap; /* ✅ Empêche le retour à la ligne */
+  white-space: nowrap;
 }
 
 .hero__title--syslearn .hero__title--company,
@@ -224,6 +222,10 @@
   z-index: -1;
 }
 
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
 @media (max-width: 1024px) {
   .hero {
     padding: 100px 0 60px;
@@ -246,7 +248,7 @@
   }
 
   .hero__title--words {
-    min-width: 400px; /* ✅ Augmenté pour tablette */
+    min-width: 400px;
     height: 6rem;
   }
 
@@ -261,7 +263,8 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 80px 0 50px;
+    /* ✅ Augmenté le padding-top pour décaler le contenu vers le bas */
+    padding: 140px 0 50px;
     min-height: auto;
   }
 
@@ -278,11 +281,12 @@
   }
 
   .hero__title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
   }
 
   .hero__title--highlight {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
   }
 
   .hero__description {
@@ -316,22 +320,30 @@
   }
 
   .hero__title--words {
-    min-width: 300px; /* ✅ Augmenté pour mobile */
-    height: 5.2rem;
+    min-width: 280px;
+    height: 5.5rem;
+  }
+
+  .hero__title--word {
+    align-items: center;
+    gap: 0.05rem;
   }
 
   .hero__title--company {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    white-space: nowrap;
   }
 
   .hero__title--tagline {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
+    white-space: nowrap;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    padding: 60px 0 40px;
+    /* ✅ Encore plus d'espace sur très petit mobile */
+    padding: 130px 0 40px;
   }
 
   .hero__title {
@@ -339,7 +351,7 @@
   }
 
   .hero__title--highlight {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .hero__description {
@@ -363,14 +375,16 @@
 
   .hero__title--words {
     min-width: 200px;
-    height: 4.2rem;
+    height: 4.5rem;
   }
 
   .hero__title--company {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    white-space: nowrap;
   }
 
   .hero__title--tagline {
-    font-size: 0.9rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
   }
 }

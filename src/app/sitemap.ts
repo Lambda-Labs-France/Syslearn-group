@@ -31,7 +31,8 @@ function findPages(dir: string, baseRoute: string = ''): string[] {
 }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = siteConfig.url;
+  // ✅ Ajout de www dans l'URL de base
+  const baseUrl = siteConfig.url.replace('https://', 'https://www.');
 
   const appDir = path.join(process.cwd(), 'src/app');
   let allPages = findPages(appDir);
