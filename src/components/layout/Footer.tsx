@@ -60,7 +60,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="footer__bottom-inner">
           <p className="footer__copyright">
-           Copyright © {currentYear} Syslearn Group - Tous droits réservés.
+           © {currentYear} Syslearn Group - Tous droits réservés.
           </p>
         </div>
       </div>

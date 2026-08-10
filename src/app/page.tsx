@@ -12,7 +12,7 @@ import FAQ from "../components/home/FAQ";
 
 
 export const metadata = {
-  title: "Syslearn Group | ESN, ingénierie C++/Qt et recrutement tech",
+  title: "Syslearn Group | Ingénierie tech, Conseil informatique et Recrutement tech",
   description: "Syslearn Group réunit Syslearn (conseil IT), PointerLab (ESN C++/Qt) et StackJobs (recrutement tech). Missions, secteurs, offres : découvrez notre écosystème.",
   keywords: "groupe ESN France, conseil informatique, ingénierie logicielle C++ Qt, recrutement tech, néo-ESN, groupe informatique",
 };
