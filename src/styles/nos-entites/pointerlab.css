@@ -9,6 +9,8 @@
   background: linear-gradient(135deg, #9462fc 0%, #0f172a 100%);
   color: #ffffff;
   padding: 80px 0;
+  position: relative;
+  overflow: visible;
 }
 
 .pointerlab-hero__inner {
@@ -19,7 +21,7 @@
 }
 
 .pointerlab-hero__content {
-  max-width: 900px;
+  max-width: 1100px; 
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -42,11 +44,13 @@
 }
 
 .pointerlab-hero__title {
-  font-size: 2.8rem;
+  font-size: 2.5rem;
   font-weight: 700;
   font-family: var(--font-inter);
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .pointerlab-hero__btn {
@@ -88,6 +92,10 @@
   background: #ffffff;
 }
 
+.pointerlab-section--alt {
+  background: #f8fafc;
+}
+
 .pointerlab-section__inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -99,6 +107,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+}
+
+.pointerlab-section__grid--reverse {
+  direction: rtl;
+}
+
+.pointerlab-section__grid--reverse > * {
+  direction: ltr;
 }
 
 .pointerlab-section__title {
@@ -120,6 +136,11 @@
   margin-bottom: 0;
 }
 
+.pointerlab-section__text strong {
+  color: #9462fc;
+  font-weight: 600;
+}
+
 .pointerlab-section__image {
   display: flex;
   align-items: center;
@@ -133,6 +154,7 @@
   border-radius: 1rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
+
 
 .pointerlab-expertises {
   padding: 60px 0;
@@ -187,6 +209,71 @@
   font-size: 0.9375rem;
   color: #1f2937;
   line-height: 1.5;
+  margin: 0;
+}
+
+
+.pointerlab-raisons {
+  padding: 60px 0;
+  background: #ffffff;
+}
+
+.pointerlab-raisons__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.pointerlab-raisons__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 3rem;
+  font-family: var(--font-inter);
+}
+
+.pointerlab-raisons__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.pointerlab-raison-card {
+  background: #f8fafc;
+  border-radius: 0.75rem;
+  padding: 1.75rem;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.pointerlab-raison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  border-color: #9462fc;
+}
+
+.pointerlab-raison-card__icon {
+  color: #9462fc;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.pointerlab-raison-card__title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0 0 0.5rem 0;
+}
+
+.pointerlab-raison-card__desc {
+  font-size: 0.9375rem;
+  color: #475569;
+  line-height: 1.6;
   margin: 0;
 }
 
@@ -323,6 +410,10 @@
   .pointerlab-secteurs-section__grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .pointerlab-raisons__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -337,6 +428,10 @@
   .pointerlab-section__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .pointerlab-section__grid--reverse {
+    direction: ltr;
   }
 
   .pointerlab-section__title {
@@ -362,6 +457,23 @@
 
   .pointerlab-expertises__title {
     font-size: 1.75rem;
+  }
+
+  .pointerlab-raisons {
+    padding: 40px 0;
+  }
+
+  .pointerlab-raisons__title {
+    font-size: 1.75rem;
+  }
+
+  .pointerlab-raisons__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .pointerlab-raison-card {
+    padding: 1.5rem;
   }
 
   .pointerlab-secteurs-section {
@@ -416,6 +528,18 @@
   }
 
   .pointerlab-expertise-card__text {
+    font-size: 0.875rem;
+  }
+
+  .pointerlab-raison-card {
+    padding: 1.25rem;
+  }
+
+  .pointerlab-raison-card__title {
+    font-size: 1rem;
+  }
+
+  .pointerlab-raison-card__desc {
     font-size: 0.875rem;
   }
 

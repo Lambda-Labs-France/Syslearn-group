@@ -1,17 +1,13 @@
-/* ============================================================
-   SYSLEARN PAGE
-   ============================================================ */
+
 .syslearn-page {
   padding-top: 100px;
   min-height: 100vh;
 }
 
-/* ============================================================
-   HERO - BACKGROUND #b7ef4c
-   ============================================================ */
+
 .syslearn-hero {
   background: linear-gradient(135deg, #aacf37 0%, #aacf37 50%, #0f172a 100%);
-  color: #000000;;
+  color: #000000;
   padding: 80px 0;
 }
 
@@ -44,6 +40,7 @@
   border-radius: 9999px;
   margin-bottom: 1rem;
 }
+
 .syslearn-hero__title {
   font-size: 2.6rem;
   font-weight: 660;
@@ -54,12 +51,10 @@
   line-height: 1.2;
   display: block;
   width: 100%;
-  /* ✅ Empêche la césure des mots */
   word-break: keep-all;
   white-space: normal;
-  hyphens: none; /* ✅ Désactive la césure automatique */
+  hyphens: none;
 }
-
 
 .syslearn-hero__btn {
   display: inline-flex;
@@ -71,7 +66,7 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(0, 0, 0, 0.15);
   border-radius: 9999px;
-  color: #000000; /* ✅ Bouton texte en noir */
+  color: #000000;
   font-weight: 600;
   font-size: 0.9375rem;
   text-decoration: none;
@@ -94,12 +89,14 @@
   transform: translateX(4px) rotate(-5deg);
 }
 
-/* ============================================================
-   SECTIONS - inchangées
-   ============================================================ */
+
 .syslearn-section {
   padding: 60px 0;
   background: #ffffff;
+}
+
+.syslearn-section--alt {
+  background: #f8fafc;
 }
 
 .syslearn-section__inner {
@@ -113,6 +110,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+}
+
+.syslearn-section__grid--reverse {
+  direction: rtl;
+}
+
+.syslearn-section__grid--reverse > * {
+  direction: ltr;
 }
 
 .syslearn-section__title {
@@ -134,6 +139,11 @@
   margin-bottom: 0;
 }
 
+.syslearn-section__text strong {
+  color: #aacf37;
+  font-weight: 600;
+}
+
 .syslearn-section__image {
   display: flex;
   align-items: center;
@@ -148,9 +158,43 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-/* ============================================================
-   EXPERTISES
-   ============================================================ */
+
+.syslearn-section__list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.syslearn-section__list li {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.syslearn-section__list li:last-child {
+  border-bottom: none;
+}
+
+.syslearn-section__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 1rem;
+  width: 8px;
+  height: 8px;
+  background: #aacf37;
+  border-radius: 50%;
+}
+
+.syslearn-section__list li strong {
+  color: #0f172a;
+}
+
+
 .syslearn-expertises {
   padding: 60px 0;
   background: #f8fafc;
@@ -207,9 +251,7 @@
   margin: 0;
 }
 
-/* ============================================================
-   RAISONS
-   ============================================================ */
+
 .syslearn-raisons {
   padding: 60px 0;
   background: #ffffff;
@@ -268,9 +310,7 @@
   margin: 0;
 }
 
-/* ============================================================
-   FAQ
-   ============================================================ */
+
 .syslearn-faq {
   padding: 60px 0;
   background: #f8fafc;
@@ -335,6 +375,8 @@
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  width: auto;
+  min-width: fit-content;
 }
 
 .syslearn-faq-item__btn:hover {
@@ -343,9 +385,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
+
 @media (max-width: 1024px) {
   .syslearn-section__grid {
     gap: 2rem;
@@ -378,6 +418,10 @@
     gap: 2rem;
   }
 
+  .syslearn-section__grid--reverse {
+    direction: ltr;
+  }
+
   .syslearn-section__title {
     font-size: 1.75rem;
   }
@@ -388,6 +432,17 @@
 
   .syslearn-section__img {
     height: 220px;
+  }
+
+  .syslearn-section__list li {
+    font-size: 1rem;
+    padding-left: 1.25rem;
+  }
+
+  .syslearn-section__list li::before {
+    top: 0.9rem;
+    width: 6px;
+    height: 6px;
   }
 
   .syslearn-expertises {
@@ -441,7 +496,11 @@
   }
 
   .syslearn-faq-item__btn {
-    width: 100%;
+    width: auto;
+    min-width: fit-content;
+    display: inline-block;
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
     text-align: center;
   }
 }
@@ -457,6 +516,11 @@
 
   .syslearn-section__img {
     height: 180px;
+  }
+
+  .syslearn-section__list li {
+    font-size: 0.9375rem;
+    padding-left: 1rem;
   }
 
   .syslearn-expertise-card {
@@ -476,7 +540,9 @@
   }
 
   .syslearn-faq-item__btn {
-    font-size: 0.8125rem;
     padding: 0.5rem 1.25rem;
+    font-size: 0.8125rem;
+    width: auto;
+    min-width: fit-content;
   }
 }

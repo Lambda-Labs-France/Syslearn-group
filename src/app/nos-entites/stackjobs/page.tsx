@@ -25,7 +25,7 @@ export default function StackJobsPage() {
   ];
 
   const raisons = [
-    { icon: CheckCircle2, text: "Un matching qui réduit le bruit — moins de candidatures hors-sujet, moins d'offres non pertinentes" },
+    { icon: CheckCircle2, text: "Un matching qui réduit le bruit  moins de candidatures hors-sujet, moins d'offres non pertinentes" },
     { icon: Users, text: "Une communauté de recruteurs déjà exigeants sur la qualité technique des profils" },
     { icon: GitBranch, text: "Une intégration directe avec PointerLab et Syslearn pour les offres du groupe" },
   ];
@@ -68,7 +68,7 @@ export default function StackJobsPage() {
               <p>
                 La plateforme réunit plus de 4 000 offres actives en développement, data et cloud, avec un moteur 
                 de matching par intelligence artificielle qui croise votre stack technique, votre expérience et vos 
-                préférences avec les besoins réels des recruteurs — pas seulement des mots-clés repérés dans un CV.
+                préférences avec les besoins réels des recruteurs  pas seulement des mots-clés repérés dans un CV.
               </p>
               <p>
                 Développeurs, data scientists, ingénieurs cloud ou spécialistes cybersécurité y créent un profil 
