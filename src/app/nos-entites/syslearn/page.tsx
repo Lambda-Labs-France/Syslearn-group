@@ -7,23 +7,26 @@ import {
   BarChart3, 
   Layers,
   CheckCircle2,
-  ExternalLink
+  ExternalLink,
+  Shield,
+  Database,
+  Cloud
 } from "lucide-react";
 import "../../../styles/nos-entites/syslearn.css";
 
 export const metadata = {
-  title: "Syslearn",
-  description: "Syslearn accompagne ses clients de l'énergie, la défense et l'industrie en conseil informatique et ingénierie sur mesure. Consultants qualifiés, missions exigeantes.",
+  title: "Syslearn : Conseil et Ingénierie Java, IA, IoT & Cybersécurité",
+  description: "Syslearn est une ESN spécialisée dans l'accompagnement des secteurs de l'énergie, de la défense et de l'industrie sur leurs projets numériques les plus exigeants.",
 };
 
 export default function SyslearnPage() {
   const expertises = [
-    { icon: Code2, text: "Développement d'applications métier et systèmes d'information" },
-    { icon: Brain, text: "Intelligence artificielle et data science appliquées à l'industrie" },
-    { icon: Monitor, text: "Interfaces homme-machine (IHM) pour environnements critiques" },
-    { icon: Cpu, text: "Systèmes embarqués et IoT industriel" },
-    { icon: BarChart3, text: "Business intelligence et pilotage de la donnée" },
-    { icon: Layers, text: "CAO, réalité virtuelle et augmentée" },
+    { icon: Code2, text: "Écosystème Java pour applications métier robustes sur systèmes d'information complexes" },
+    { icon: Brain, text: "Intelligence artificielle et data science pour transformer les données en décisions opérationnelles" },
+    { icon: Cpu, text: "IoT industriel pour connecter, superviser et optimiser les équipements et infrastructures" },
+    { icon: Shield, text: "Cybersécurité pour protéger les systèmes critiques contre les risques opérationnels" },
+    { icon: BarChart3, text: "Business intelligence et pilotage de la donnée pour les secteurs stratégiques" },
+    { icon: Layers, text: "Architecture et conception de systèmes critiques pour l'énergie, la défense et l'industrie" },
   ];
 
   const raisons = [
@@ -42,7 +45,7 @@ export default function SyslearnPage() {
             <div>
               <span className="syslearn-hero__badge">Syslearn</span>
               <h1 className="syslearn-hero__title">
-                Syslearn : conseil et ingénierie informatique pour l'énergie, la défense et l'industrie
+                Syslearn : Conseil et Ingénierie Java, IA, IoT & Cybersécurité
               </h1>
             </div>
             <Link 
@@ -69,20 +72,82 @@ export default function SyslearnPage() {
                 coûter bien plus qu'un simple retard de mise en production.
               </p>
               <p>
-                Syslearn s'est construite sur cette conviction : la technique seule ne suffit pas, il faut aussi 
-                comprendre en profondeur les enjeux critiques des secteurs de l'énergie, de la défense et de l'industrie.
-              </p>
-              <p>
-                Nos consultants interviennent en conseil, en régie ou en portage salarial, sur des missions couvrant 
-                le développement d'applications métier, l'intelligence artificielle et la data science, les interfaces 
-                homme-machine, les systèmes embarqués, l'IoT industriel, la business intelligence, ou encore la CAO 
-                et la réalité virtuelle et augmentée pour la formation et la maintenance.
+                Syslearn est une <strong>ESN spécialisée dans l'accompagnement des secteurs de l'énergie, de la défense 
+                et de l'industrie</strong> sur leurs projets numériques les plus exigeants. Notre conviction : la technique 
+                seule ne suffit pas, il faut aussi comprendre en profondeur les enjeux métier, réglementaires et 
+                opérationnels propres à ces environnements critiques.
               </p>
             </div>
             <div className="syslearn-section__image">
               <img
                 src="https://picsum.photos/seed/syslearn-presentation/600/400"
-                alt="Syslearn"
+                alt="Syslearn - Conseil et Ingénierie"
+                className="syslearn-section__img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="syslearn-section syslearn-section--alt">
+        <div className="syslearn-section__inner">
+          <div className="syslearn-section__grid syslearn-section__grid--reverse">
+            <div className="syslearn-section__text">
+              <h2 className="syslearn-section__title">Quatre piliers d'expertise au service des systèmes critiques</h2>
+              <p>
+                Nos consultants interviennent en conseil, en régie ou en portage salarial, sur quatre grands domaines 
+                qui structurent aujourd'hui la transformation numérique des secteurs sensibles :
+              </p>
+              <ul className="syslearn-section__list">
+                <li>
+                  <strong>L'écosystème Java</strong>, pour la conception et la maintenance d'applications métier robustes, 
+                  capables de tenir dans la durée sur des systèmes d'information complexes ;
+                </li>
+                <li>
+                  <strong>L'intelligence artificielle et la data science</strong>, pour transformer des volumes de données 
+                  industrielles en décisions opérationnelles fiables ;
+                </li>
+                <li>
+                  <strong>L'IoT industriel</strong>, pour connecter, superviser et optimiser des équipements et 
+                  infrastructures sur le terrain ;
+                </li>
+                <li>
+                  <strong>La cybersécurité</strong>, pour protéger des systèmes où une faille ne se mesure pas seulement 
+                  en pertes financières, mais parfois en risques opérationnels majeurs.
+                </li>
+              </ul>
+            </div>
+            <div className="syslearn-section__image">
+              <img
+                src="https://picsum.photos/seed/syslearn-expertises/600/400"
+                alt="Expertises Syslearn"
+                className="syslearn-section__img"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="syslearn-section">
+        <div className="syslearn-section__inner">
+          <div className="syslearn-section__grid">
+            <div className="syslearn-section__text">
+              <h2 className="syslearn-section__title">Une approche pensée pour la criticité, pas pour la vitesse</h2>
+              <p>
+                Contrairement aux environnements où l'itération rapide prime, les projets de nos clients exigent une 
+                approche méthodique : compréhension approfondie du contexte réglementaire, anticipation des risques, 
+                et rigueur dans chaque livrable.
+              </p>
+              <p>
+                C'est cette culture de la criticité que l'on retrouve détaillée sur notre page Nos expertises sectorielles, 
+                et qui rejoint les constats du Syntec Numérique sur la tension croissante des compétences IT dans les 
+                secteurs stratégiques français.
+              </p>
+            </div>
+            <div className="syslearn-section__image">
+              <img
+                src="https://picsum.photos/seed/syslearn-approach/600/400"
+                alt="Approche criticité Syslearn"
                 className="syslearn-section__img"
               />
             </div>
@@ -143,7 +208,7 @@ export default function SyslearnPage() {
                 sur le développement logiciel C++ et Qt pour des secteurs comme le médical, l'aéronautique ou la simulation 3D.
               </p>
               <Link href="/nos-entites/pointerlab" className="syslearn-faq-item__btn">
-                Découvrir PointerLab
+                Découvrir PointerLab →
               </Link>
             </div>
           </div>

@@ -1,9 +1,6 @@
-/* ============================================================
-   HERO
-   ============================================================ */
 .hero {
   padding: 120px 0 80px;
-  background: var(--color-background, #fbfcf9);
+  background: var(--color-background);
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -263,7 +260,6 @@
 
 @media (max-width: 768px) {
   .hero {
-    /* ✅ Augmenté le padding-top pour décaler le contenu vers le bas */
     padding: 140px 0 50px;
     min-height: auto;
   }
@@ -271,22 +267,24 @@
   .hero__content {
     grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
+    text-align: left;
   }
 
   .hero__left {
-    align-items: center;
+    align-items: flex-start;
     padding-top: 0;
     order: 1;
   }
 
   .hero__title {
-    font-size: 1.8rem;
-    text-align: center;
+    font-size: 2rem; /* ✅ Augmenté de 1.8rem à 2rem */
+    text-align: left;
+    width: 100%;
   }
 
   .hero__title--highlight {
-    font-size: 1.8rem;
+    font-size: 2rem; /* ✅ Augmenté de 1.8rem à 2rem */
+    text-align: left;
   }
 
   .hero__description {
@@ -295,15 +293,15 @@
   }
 
   .hero__buttons {
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
   }
 
   .hero__btn {
-    width: 100%;
+    width: auto;
     text-align: center;
     padding: 0.875rem 2rem;
     font-size: 1rem;
-    max-width: 400px;
     box-sizing: border-box;
   }
 
@@ -321,37 +319,39 @@
 
   .hero__title--words {
     min-width: 280px;
-    height: 5.5rem;
+    height: 6rem; /* ✅ Augmenté de 5.5rem à 6rem */
+    text-align: left;
   }
 
   .hero__title--word {
-    align-items: center;
-    gap: 0.05rem;
+    align-items: flex-start;
+    gap: 0.1rem; /* ✅ Augmenté de 0.05rem à 0.1rem */
   }
 
   .hero__title--company {
-    font-size: 2.2rem;
+    font-size: 2.8rem; /* ✅ Augmenté de 2.2rem à 2.8rem */
     white-space: nowrap;
+    text-align: left;
   }
 
   .hero__title--tagline {
-    font-size: 0.95rem;
+    font-size: 1.2rem; /* ✅ Augmenté de 0.95rem à 1.2rem */
     white-space: nowrap;
+    text-align: left;
   }
 }
 
 @media (max-width: 480px) {
   .hero {
-    /* ✅ Encore plus d'espace sur très petit mobile */
     padding: 130px 0 40px;
   }
 
   .hero__title {
-    font-size: 1.5rem;
+    font-size: 1.7rem; /* ✅ Augmenté de 1.5rem à 1.7rem */
   }
 
   .hero__title--highlight {
-    font-size: 1.5rem;
+    font-size: 1.7rem; /* ✅ Augmenté de 1.5rem à 1.7rem */
   }
 
   .hero__description {
@@ -361,8 +361,8 @@
   .hero__btn {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
-    border-radius: 40px;
-    max-width: 100%;
+    border-radius: 15px;
+    width: auto;
   }
 
   .hero__image-wrapper {
@@ -375,16 +375,19 @@
 
   .hero__title--words {
     min-width: 200px;
-    height: 4.5rem;
+    height: 5rem; /* ✅ Augmenté de 4.5rem à 5rem */
+    text-align: left;
   }
 
   .hero__title--company {
-    font-size: 1.6rem;
+    font-size: 2.2rem; /* ✅ Augmenté de 1.6rem à 2.2rem */
     white-space: nowrap;
+    text-align: left;
   }
 
   .hero__title--tagline {
-    font-size: 0.75rem;
+    font-size: 1rem; /* ✅ Augmenté de 0.75rem à 1rem */
     white-space: nowrap;
+    text-align: left;
   }
 }
