@@ -40,7 +40,7 @@ export default function PointerLabPage() {
   const raisons = [
     {
       icon: Users,
-      title: "Vivier de +8 000 profils C/C++",
+      title: "Vivier de +8 000 profils C++",
       desc: "Un vivier qualifié, identifié et validé en continu par une combinaison d'IA et d'expertise humaine."
     },
     {
@@ -119,10 +119,10 @@ export default function PointerLabPage() {
         <div className="pointerlab-section__inner">
           <div className="pointerlab-section__grid pointerlab-section__grid--reverse">
             <div className="pointerlab-section__text">
-              <h2 className="pointerlab-section__title">Un vivier de plus de 8 000 profils C/C++ qualifiés</h2>
+              <h2 className="pointerlab-section__title">Un vivier de plus de 8 000 profils C++ qualifiés</h2>
               <p>
                 Reconnue par les acteurs majeurs de cet écosystème, PointerLab s'appuie sur un vivier de plus de 
-                8 000 profils C/C++ qualifiés, identifiés et validés en continu par une combinaison d'intelligence 
+                8 000 profils C++ qualifiés, identifiés et validés en continu par une combinaison d'intelligence 
                 artificielle et d'expertise humaine.
               </p>
               <p>
@@ -216,7 +216,7 @@ export default function PointerLabPage() {
                 Pourquoi choisir une ESN spécialisée plutôt qu'une ESN généraliste pour un projet C++ ?
               </h3>
               <p className="pointerlab-faq-item__answer">
-                Sur des stacks aussi spécifiques que le C++ et le Qt, la profondeur d'expertise fait la différence : 
+                Sur des stacks aussi spécifiques que le C++, la profondeur d'expertise fait la différence : 
                 une ESN généraliste doit souvent sous-traiter ou monter en compétence sur le projet, quand une ESN 
                 spécialisée comme PointerLab dispose déjà du vivier et du savoir-faire nécessaires.
               </p>
@@ -225,7 +225,7 @@ export default function PointerLabPage() {
               <h3 className="pointerlab-faq-item__question">PointerLab recrute-t-elle en CDI ou en mission ?</h3>
               <p className="pointerlab-faq-item__answer">
                 Les deux formats existent : mise à disposition de consultants salariés ou freelances pour un pic de charge, 
-                et recrutement direct en CDI pour intégrer durablement un profil C++/Qt.
+                et recrutement direct en CDI pour intégrer durablement un profil C++.
               </p>
             </div>
           </div>

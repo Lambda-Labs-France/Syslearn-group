@@ -30,9 +30,7 @@ export default function IotPage() {
             <div>
               <span className="iot-hero__badge">Secteur</span>
               <h1 className="iot-hero__title">IoT : conseil et ingénierie sur mesure</h1>
-              <p className="iot-hero__subtitle">
-                Entité(s) : <strong>Syslearn / PointerLab</strong>
-              </p>
+              
             </div>
           </div>
         </div>

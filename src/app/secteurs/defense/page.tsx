@@ -11,16 +11,17 @@ import {
 import "../../../styles/secteurs/defense.css";
 
 export const metadata = {
-  title: "Défense",
-  description: "Conseil informatique et ingénierie pour le secteur de la défense. Syslearn intervient sur des systèmes critiques avec un haut niveau d'exigence et de confidentialité.",
+  title: "Défense : Conseil et Ingénierie pour Systèmes Critiques | Syslearn",
+  description: "La défense bénéficie d'un effort budgétaire inédit de 6,7 milliards d'€ en 2026. Syslearn accompagne vos projets embarqués, cyberdéfense et IA avec une rigueur méthodologique adaptée.",
 };
 
 export default function DefensePage() {
   const expertises = [
-    { icon: Code2, text: "Développement d'applications métier sécurisées" },
+    { icon: Code2, text: "Développement d'applications métier sécurisées et traçables" },
     { icon: Cpu, text: "Systèmes embarqués pour environnements critiques" },
     { icon: Monitor, text: "Interfaces homme-machine à haute fiabilité" },
-    { icon: Brain, text: "Intelligence artificielle et data science appliquées" },
+    { icon: Brain, text: "Intelligence artificielle et data science appliquées à la défense" },
+    { icon: Shield, text: "Cyberdéfense et conformité aux standards NIS2" },
   ];
 
   return (
@@ -31,9 +32,7 @@ export default function DefensePage() {
             <div>
               <span className="defense-hero__badge">Secteur</span>
               <h1 className="defense-hero__title">Défense : conseil et ingénierie sur mesure</h1>
-              <p className="defense-hero__subtitle">
-                Entité(s) : <strong>Syslearn</strong>
-              </p>
+              
             </div>
           </div>
         </div>
@@ -43,16 +42,94 @@ export default function DefensePage() {
         <div className="defense-content__inner">
           <div className="defense-content__intro">
             <p>
-              Sur des systèmes où la fiabilité et la confidentialité sont non négociables, Syslearn intervient auprès
-              d'acteurs du secteur de la défense avec une rigueur méthodologique adaptée à ce niveau d'exigence.
+              La défense est aujourd'hui l'un des secteurs où l'effort budgétaire et technologique est le plus 
+              soutenu en France. Le budget de la mission Défense pour 2026 augmente de 
+              <strong> 6,7 milliards d'euros</strong> par rapport à 2025, soit 3,5 milliards au-delà de la 
+              trajectoire initialement prévue par la loi de programmation militaire , un effort qualifié d'inédit 
+              par le ministère des Armées.
+              
             </p>
           </div>
 
           <div className="defense-content__block">
-            <h2 className="defense-content__title">Le contexte</h2>
+            <h2 className="defense-content__title">Pourquoi le choix du langage compte dans la défense</h2>
             <p>
-              Les projets défense combinent souvent contraintes réglementaires strictes, cycles longs de validation
-              et exigence de sécurité renforcée à chaque étape du développement logiciel.
+              Cette hausse s'accompagne d'un investissement ciblé sur le numérique : plus de 
+              <strong> 500 millions d'euros</strong> sont fléchés vers la cyberdéfense et plus de 
+              <strong> 400 millions d'euros</strong> vers l'intelligence artificielle, afin de doter la France 
+              de capacités souveraines.
+              <Link 
+                href="https://www.info.gouv.fr/actualite/cybersecurite-le-premier-ministre-annonce-un-plan-d-action-pour-renforcer-la-protection-numerique-de-l-etat" 
+                target="_blank" 
+                rel="dofollow noopener noreferrer"
+                className="defense-content__link"
+              >
+                <ExternalLink size={14} />
+                SénatInfo.gouv.fr
+              </Link>
+             
+            </p>
+            
+            <p>
+              Sur le plan humain, cet effort se traduit aussi par des recrutements massifs : près de 
+              <strong> 40 000 recrutements</strong> sont prévus en 2026, dont 800 postes supplémentaires ciblés 
+              en priorité sur le réarmement capacitaire, la cyberdéfense, la transformation numérique et 
+              l'intelligence artificielle.
+              <Link 
+                href="https://www.senat.fr/rap/r22-638/r22-638_mono.html" 
+                target="_blank" 
+                rel="dofollow noopener noreferrer"
+                className="defense-content__link"
+              >
+                <ExternalLink size={14} />
+                Sénat
+              </Link>
+            </p>
+             
+          </div>
+
+          <div className="defense-content__block">
+            <h2 className="defense-content__title">Une exigence de fiabilité qui structure les choix techniques</h2>
+            <p>
+              Dans ce contexte, le langage et l'architecture logicielle ne sont jamais un détail d'implémentation : 
+              ce sont des garanties de robustesse sur des systèmes où une défaillance n'est pas une option. Le 
+              rapport annexé à la loi de programmation militaire 2024-2030 flèche à lui seul 
+              <strong> 4 milliards d'euros</strong> pour la cyberdéfense, destinés à renforcer les effectifs, 
+              moderniser les capacités techniques et accompagner les entreprises du secteur de la défense.
+              <Link 
+                href="https://www.blog-qhse.com/lpm-2024-2030" 
+                target="_blank" 
+                rel="dofollow noopener noreferrer"
+                className="defense-content__link"
+              >
+                <ExternalLink size={14} />
+                Blog QHSE
+              </Link>
+            </p>
+            <p>
+              Cet effort cyber, réparti sur l'ensemble de la période 2024-2030, est considéré comme sans précédent 
+              dans l'histoire récente de la cyberdéfense française.
+            </p>
+            <p>
+              Cette dynamique dépasse d'ailleurs le strict périmètre militaire : la loi de programmation militaire 
+              rapproche progressivement le cadre français des exigences européennes <strong> NIS2</strong>, ce qui 
+              pousse les entreprises accompagnant des opérateurs d'importance vitale ou des donneurs d'ordre 
+              sensibles à anticiper ces standards de conformité numérique bien avant un audit.
+            </p>
+          </div>
+
+          <div className="defense-content__block">
+            <h2 className="defense-content__title">Ce que cela implique concrètement</h2>
+            <p>
+              Sur des applications métier sécurisées, des systèmes embarqués critiques ou des interfaces 
+              homme-machine à haute fiabilité, ce niveau d'exigence impose une discipline de développement à part : 
+              validation à chaque étape, traçabilité complète du code, résistance dans la durée sur des cycles de 
+              vie souvent bien plus longs que ceux du secteur civil.
+            </p>
+            <p>
+              C'est cette rigueur méthodologique que Syslearn met au service de ses clients de la défense, en 
+              conjuguant maîtrise technique et compréhension fine des contraintes réglementaires propres à ce 
+              secteur régalien.
             </p>
           </div>
 

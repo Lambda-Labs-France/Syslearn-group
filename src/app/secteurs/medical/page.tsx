@@ -31,9 +31,7 @@ export default function MedicalPage() {
             <div>
               <span className="medical-hero__badge">Secteur</span>
               <h1 className="medical-hero__title">Médical : conseil et ingénierie sur mesure</h1>
-              <p className="medical-hero__subtitle">
-                Entité(s) : <strong>PointerLab</strong>
-              </p>
+              
             </div>
           </div>
         </div>
