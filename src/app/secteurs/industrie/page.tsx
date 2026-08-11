@@ -63,7 +63,7 @@ export default function IndustriePage() {
               <Link 
                 href="https://www.industrie-dufutur.org/" 
                 target="_blank" 
-                rel="dofollow noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="industrie-content__link"
               >
                 <ExternalLink size={14} />

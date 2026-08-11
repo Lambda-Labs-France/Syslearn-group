@@ -85,7 +85,7 @@ export default function EnergiePage() {
               <Link 
                 href="https://www.francenum.gouv.fr/guides-et-conseils/strategie-numerique/comprendre-le-numerique/transformation-numerique-des-0" 
                 target="_blank" 
-                rel="dofollow noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="energie-content__link"
               >
                 <ExternalLink size={14} />
@@ -116,13 +116,13 @@ export default function EnergiePage() {
               cyberattaques détectées en France en 2025.
             </p>
             <p>
-              Plus largement, le secteur de l'énergie concentre déjà plus de <strong>8 %</strong> des cyberattaques 
+              Plus largement, le secteur de l'énergie concentre déjà plus de <strong> 8 %</strong> des cyberattaques 
               recensées, le seul segment électrique représentant près de <strong> 44 %</strong> de ces incidents , 
               une tendance confirmée par le dernier panorama annuel de l'ANSSI sur les menaces informatiques.
               <Link 
                 href="https://shattered.io/fr/panorama-cybermenace-anssi-2025/" 
                 target="_blank" 
-                rel="dofollow noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="energie-content__link"
               >
                 <ExternalLink size={14} />
@@ -136,7 +136,7 @@ export default function EnergiePage() {
               <Link 
                 href="https://www.i-leadconsulting.com/cyberattaques-france-2026/" 
                 target="_blank" 
-                rel="dofollow noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="energie-content__link"
               >
                 <ExternalLink size={14} />
