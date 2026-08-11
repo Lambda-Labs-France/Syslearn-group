@@ -17,7 +17,7 @@ import {
 import "../../../styles/nos-entites/pointerlab.css";
 
 export const metadata = {
-  title: "PointerLab : ESN Spécialisée C++ pour Logiciels Critiques",
+  title: "PointerLab",
   description: "PointerLab est une ESN spécialisée dans l'écosystème C++ pour vos projets logiciels critiques. +8000 profils C/C++ qualifiés. Découvrez notre expertise.",
 };
 

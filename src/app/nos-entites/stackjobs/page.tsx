@@ -16,7 +16,7 @@ import {
 import "../../../styles/nos-entites/stackjobs.css";
 
 export const metadata = {
-  title: "StackJobs : la plateforme Tech & Engineering qui connecte les talents aux bonnes opportunités",
+  title: "StackJobs",
   description: "StackJobs est une plateforme de recrutement tech avec +4000 offres actives. Matching IA pour développeurs, data scientists, ingénieurs cloud et spécialistes cybersécurité.",
 };
 
