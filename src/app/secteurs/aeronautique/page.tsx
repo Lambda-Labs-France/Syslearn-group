@@ -31,9 +31,7 @@ export default function AeronautiquePage() {
             <div>
               <span className="aeronautique-hero__badge">Secteur</span>
               <h1 className="aeronautique-hero__title">Aéronautique : conseil et ingénierie sur mesure</h1>
-              <p className="aeronautique-hero__subtitle">
-                Entité(s) : <strong>PointerLab</strong>
-              </p>
+              
             </div>
           </div>
         </div>

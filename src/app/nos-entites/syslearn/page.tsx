@@ -101,15 +101,15 @@ export default function SyslearnPage() {
               <ul className="syslearn-section__list">
                 <li>
                   <strong>L'écosystème Java</strong>, pour la conception et la maintenance d'applications métier robustes, 
-                  capables de tenir dans la durée sur des systèmes d'information complexes ;
+                  capables de tenir dans la durée sur des systèmes d'information complexes.
                 </li>
                 <li>
                   <strong>L'intelligence artificielle et la data science</strong>, pour transformer des volumes de données 
-                  industrielles en décisions opérationnelles fiables ;
+                  industrielles en décisions opérationnelles fiables.
                 </li>
                 <li>
                   <strong>L'IoT industriel</strong>, pour connecter, superviser et optimiser des équipements et 
-                  infrastructures sur le terrain ;
+                  infrastructures sur le terrain.
                 </li>
                 <li>
                   <strong>La cybersécurité</strong>, pour protéger des systèmes où une faille ne se mesure pas seulement 

@@ -30,9 +30,7 @@ export default function IndustriePage() {
             <div>
               <span className="industrie-hero__badge">Secteur</span>
               <h1 className="industrie-hero__title">Industrie : conseil et ingénierie sur mesure</h1>
-              <p className="industrie-hero__subtitle">
-                Entité(s) : <strong>Syslearn / PointerLab</strong>
-              </p>
+              
             </div>
           </div>
         </div>

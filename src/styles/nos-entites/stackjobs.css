@@ -19,7 +19,7 @@
 }
 
 .stackjobs-hero__content {
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -42,11 +42,12 @@
 }
 
 .stackjobs-hero__title {
-  font-size: 2.8rem;
+  font-size: 2.4rem;
   font-weight: 700;
   font-family: var(--font-inter);
-  max-width: 900px;
+  max-width: 1300px;
   margin: 0 auto;
+  line-height: 1.2;
 }
 
 .stackjobs-hero__btn {
@@ -88,6 +89,10 @@
   background: #ffffff;
 }
 
+.stackjobs-section--alt {
+  background: #f8fafc;
+}
+
 .stackjobs-section__inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -99,6 +104,14 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
+}
+
+.stackjobs-section__grid--reverse {
+  direction: rtl;
+}
+
+.stackjobs-section__grid--reverse > * {
+  direction: ltr;
 }
 
 .stackjobs-section__title {
@@ -118,6 +131,11 @@
 
 .stackjobs-section__text p:last-child {
   margin-bottom: 0;
+}
+
+.stackjobs-section__text strong {
+  color: #2752ff;
+  font-weight: 600;
 }
 
 .stackjobs-section__image {
@@ -321,7 +339,7 @@
 
 @media (max-width: 768px) {
   .stackjobs-hero__title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .stackjobs-section {
@@ -331,6 +349,10 @@
   .stackjobs-section__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+
+  .stackjobs-section__grid--reverse {
+    direction: ltr;
   }
 
   .stackjobs-section__title {
@@ -398,7 +420,12 @@
 
 @media (max-width: 480px) {
   .stackjobs-hero__title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+  }
+
+  .stackjobs-hero__btn {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.875rem;
   }
 
   .stackjobs-section__title {

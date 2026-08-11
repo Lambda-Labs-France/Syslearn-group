@@ -3,7 +3,6 @@
   min-height: 100vh;
 }
 
-
 .energie-hero {
   background: linear-gradient(135deg, #1a365d 0%, #0f172a 100%);
   color: #ffffff;
@@ -54,7 +53,6 @@
   font-weight: 600;
 }
 
-
 .energie-content {
   padding: 60px 0 40px 0;
   background: #ffffff;
@@ -73,6 +71,11 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 2rem;
+}
+
+.energie-content__intro strong {
+  color: #2563eb;
+  font-weight: 600;
 }
 
 .energie-content__block {
@@ -95,8 +98,17 @@
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.8;
+  margin-bottom: 1rem;
 }
 
+.energie-content__block p:last-child {
+  margin-bottom: 0;
+}
+
+.energie-content__block strong {
+  color: #2563eb;
+  font-weight: 600;
+}
 
 .energie-expertises {
   display: grid;
@@ -244,7 +256,6 @@
   transform: translateX(4px);
 }
 
-
 @media (max-width: 1024px) {
   .energie-hero__title {
     font-size: 2.4rem;
@@ -303,7 +314,7 @@
 
   .energie-cta__actions {
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     width: 100%;
   }
 
@@ -311,8 +322,8 @@
   .energie-cta__btn--secondary {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
-    width: auto; 
-    min-width: fit-content; 
+    width: auto;
+    min-width: fit-content;
   }
 }
 
@@ -344,4 +355,32 @@
     width: auto;
     min-width: fit-content;
   }
+}
+
+.energie-content__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  margin-left: 0.3rem;
+}
+
+.energie-content__link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.energie-content__link svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.energie-content__link:hover svg {
+  transform: translateX(2px) rotate(-5deg);
+  opacity: 1;
 }

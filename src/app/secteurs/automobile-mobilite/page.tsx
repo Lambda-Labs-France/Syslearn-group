@@ -30,9 +30,7 @@ export default function AutomobileMobilitePage() {
             <div>
               <span className="automobile-hero__badge">Secteur</span>
               <h1 className="automobile-hero__title">Automobile & Mobilité : conseil et ingénierie sur mesure</h1>
-              <p className="automobile-hero__subtitle">
-                Entité(s) : <strong>PointerLab</strong>
-              </p>
+              
             </div>
           </div>
         </div>
