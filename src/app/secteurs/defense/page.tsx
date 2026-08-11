@@ -89,7 +89,7 @@ export default function DefensePage() {
               <Link 
                 href="https://www.info.gouv.fr/actualite/cybersecurite-le-premier-ministre-annonce-un-plan-d-action-pour-renforcer-la-protection-numerique-de-l-etat" 
                 target="_blank" 
-                rel="dofollow noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="defense-content__link"
               >
                 <ExternalLink size={14} />
@@ -104,7 +104,7 @@ export default function DefensePage() {
               <Link 
                 href="https://www.senat.fr/rap/r22-638/r22-638_mono.html" 
                 target="_blank" 
-                rel="dofollow noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="defense-content__link"
               >
                 <ExternalLink size={14} />
@@ -124,7 +124,7 @@ export default function DefensePage() {
               <Link 
                 href="https://www.blog-qhse.com/lpm-2024-2030" 
                 target="_blank" 
-                rel="dofollow noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="defense-content__link"
               >
                 <ExternalLink size={14} />
