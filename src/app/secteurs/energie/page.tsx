@@ -12,17 +12,16 @@ import {
 import "../../../styles/secteurs/energie.css";
 
 export const metadata = {
-  title: "Énergie : Conseil et Ingénierie pour Systèmes Critiques | Syslearn",
-  description: "Le secteur de l'énergie affiche une croissance de 6,0 % en 2026. Syslearn accompagne vos projets Java, cybersécurité et IoT avec une expertise des contraintes réglementaires NIS2.",
+  title: "Énergie",
+  description: "Le secteur de l'énergie affiche une croissance de 6,0 % en 2026. Syslearn Group accompagne vos projets Java, cybersécurité et IoT avec une expertise des contraintes réglementaires NIS2.",
 };
 
 export default function EnergiePage() {
   const expertises = [
-    { icon: Database, text: "Applications Java pour la gestion et le pilotage énergétique sur cycles longs" },
-    { icon: BarChart3, text: "Business intelligence et supervision de la donnée temps réel" },
+    { icon: Database, text: "Applications métier pour la gestion et le pilotage énergétique" },
+    { icon: BarChart3, text: "Business intelligence et supervision de la donnée" },
     { icon: Monitor, text: "Interfaces homme-machine pour environnements critiques" },
     { icon: Wifi, text: "IoT industriel et remontée de données terrain" },
-    { icon: Shield, text: "Cybersécurité et conformité NIS2 pour les systèmes SCADA" },
   ];
 
   return (
@@ -43,6 +42,42 @@ export default function EnergiePage() {
         <div className="energie-content__inner">
           <div className="energie-content__intro">
             <p>
+              Le secteur de l'énergie impose des cycles de développement longs, une forte exigence de fiabilité 
+              et un cadre réglementaire dense. <strong>Syslearn Group</strong> accompagne ses clients de ce 
+              secteur en conseil et ingénierie informatique, avec une connaissance fine de ces contraintes 
+              spécifiques.
+            </p>
+          </div>
+
+          <div className="energie-content__block">
+            <h2 className="energie-content__title">Le contexte</h2>
+            <p>
+              Entre transition énergétique, digitalisation des infrastructures et exigences de cybersécurité 
+              renforcées, les acteurs de l'énergie doivent moderniser leurs systèmes d'information sans jamais 
+              compromettre la continuité de service.
+            </p>
+          </div>
+
+          <div className="energie-content__block">
+            <h2 className="energie-content__title">Expertises mobilisées</h2>
+            <div className="energie-expertises">
+              {expertises.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="energie-expertise">
+                    <div className="energie-expertise__icon">
+                      <Icon size={20} strokeWidth={1.5} />
+                    </div>
+                    <p className="energie-expertise__text">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="energie-content__block">
+            <h2 className="energie-content__title">Pourquoi le choix du langage compte dans l'énergie</h2>
+            <p>
               Le secteur de l'énergie n'est pas un terrain neutre pour la technique. C'est aujourd'hui l'un des 
               secteurs clients les plus dynamiques du marché numérique français : l'énergie affiche une croissance 
               de <strong>6,0 % en 2026</strong>, devant les services et la banque, portée par la modernisation 
@@ -57,10 +92,6 @@ export default function EnergiePage() {
                 France Num
               </Link>
             </p>
-          </div>
-
-          <div className="energie-content__block">
-            <h2 className="energie-content__title">Pourquoi le choix du langage compte dans l'énergie</h2>
             <p>
               Cette dynamique s'explique en grande partie par la nécessité de faire cohabiter des systèmes 
               historiques, construits pour durer plusieurs décennies, avec de nouvelles exigences de supervision, 
@@ -86,7 +117,7 @@ export default function EnergiePage() {
             </p>
             <p>
               Plus largement, le secteur de l'énergie concentre déjà plus de <strong>8 %</strong> des cyberattaques 
-              recensées, le seul segment électrique représentant près de <strong>44 %</strong> de ces incidents , 
+              recensées, le seul segment électrique représentant près de <strong> 44 %</strong> de ces incidents , 
               une tendance confirmée par le dernier panorama annuel de l'ANSSI sur les menaces informatiques.
               <Link 
                 href="https://shattered.io/fr/panorama-cybermenace-anssi-2025/" 
@@ -124,30 +155,13 @@ export default function EnergiePage() {
             <h2 className="energie-content__title">Ce que cela implique concrètement</h2>
             <p>
               Dans ce contexte, le langage de développement n'est jamais un simple choix technique : c'est un 
-              engagement sur la maintenabilité, la traçabilité et la résistance dans le temps d'un système. 
+              engagement sur la maintenabilité, la traçabilité et la résistance dans le temps d'un système.
             </p>
             <p>
-              C'est cette approche que Syslearn met au service de ses clients du secteur énergétique, en combinant 
-              maîtrise de l'écosystème Java, exigence méthodologique et compréhension fine des contraintes 
-              réglementaires propres au secteur.
+              C'est cette approche que <strong>Syslearn Group</strong> met au service de ses clients du secteur 
+              énergétique, en combinant maîtrise de l'écosystème Java, exigence méthodologique et compréhension 
+              fine des contraintes réglementaires propres au secteur.
             </p>
-          </div>
-
-          <div className="energie-content__block">
-            <h2 className="energie-content__title">Expertises mobilisées</h2>
-            <div className="energie-expertises">
-              {expertises.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div key={index} className="energie-expertise">
-                    <div className="energie-expertise__icon">
-                      <Icon size={20} strokeWidth={1.5} />
-                    </div>
-                    <p className="energie-expertise__text">{item.text}</p>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
       </section>
@@ -157,11 +171,19 @@ export default function EnergiePage() {
           <div className="energie-cta__content">
             <h2 className="energie-cta__title">Prêt à discuter de votre projet ?</h2>
             <p className="energie-cta__text">
-              Découvrez comment Syslearn peut vous accompagner dans vos projets du secteur énergétique.
+              Découvrez comment les entités de Syslearn Group peuvent vous accompagner dans vos projets du secteur énergétique.
             </p>
             <div className="energie-cta__actions">
-              <Link href="/nos-entites/syslearn" className="energie-cta__btn energie-cta__btn--primary">
+              <Link href="https://www.syslearn.fr/qui-sommes-nous/secteurs-dactivites" className="energie-cta__btn energie-cta__btn--primary">
                 Découvrir Syslearn
+                <ExternalLink size={18} />
+              </Link>
+              <Link href="https://www.pointerlab.fr/secteurs/energie" className="energie-cta__btn energie-cta__btn--primary">
+                Découvrir PointerLab
+                <ExternalLink size={18} />
+              </Link>
+              <Link href="https://www.stackjobs.com/sectors/energie" className="energie-cta__btn energie-cta__btn--primary">
+                Découvrir StackJobs
                 <ExternalLink size={18} />
               </Link>
               <Link href="/contact" className="energie-cta__btn energie-cta__btn--secondary">

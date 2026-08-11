@@ -73,6 +73,11 @@
   margin-bottom: 2rem;
 }
 
+.aeronautique-content__intro strong {
+  color: #0284c7;
+  font-weight: 600;
+}
+
 .aeronautique-content__block {
   margin-bottom: 2.5rem;
 }
@@ -93,6 +98,16 @@
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.aeronautique-content__block p:last-child {
+  margin-bottom: 0;
+}
+
+.aeronautique-content__block strong {
+  color: #0284c7;
+  font-weight: 600;
 }
 
 .aeronautique-expertises {
@@ -169,7 +184,7 @@
 .aeronautique-cta__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
   margin-top: 0.5rem;
 }
@@ -178,7 +193,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 0.875rem 2rem;
+  padding: 0.875rem 1.75rem;
   background: #0f172a;
   color: #ffffff;
   border-radius: 9999px;
@@ -189,7 +204,6 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 4px 15px rgba(15, 23, 42, 0.15);
-  /* ✅ Largeur automatique */
   width: auto;
   min-width: fit-content;
 }
@@ -212,7 +226,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 0.875rem 2rem;
+  padding: 0.875rem 1.75rem;
   background: #ffffff;
   color: #0f172a;
   border-radius: 9999px;
@@ -223,7 +237,6 @@
   border: 1px solid #e2e8f0;
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-  /* ✅ Largeur automatique */
   width: auto;
   min-width: fit-content;
 }
@@ -301,17 +314,18 @@
 
   .aeronautique-cta__actions {
     flex-direction: column;
-    align-items: center; /* ✅ Centré au lieu de stretch */
+    align-items: center;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .aeronautique-cta__btn--primary,
   .aeronautique-cta__btn--secondary {
-    /* ✅ Supprimé width: 100% pour garder la largeur du texte */
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
-    width: auto; /* ✅ Largeur automatique */
-    min-width: fit-content; /* ✅ Largeur minimum = contenu */
+    width: auto;
+    min-width: fit-content;
+    justify-content: center;
   }
 }
 
@@ -342,5 +356,10 @@
     font-size: 0.8125rem;
     width: auto;
     min-width: fit-content;
+    justify-content: center;
+  }
+
+  .aeronautique-cta__actions {
+    gap: 0.5rem;
   }
 }

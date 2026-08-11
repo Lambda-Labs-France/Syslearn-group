@@ -11,17 +11,16 @@ import {
 import "../../../styles/secteurs/defense.css";
 
 export const metadata = {
-  title: "Défense : Conseil et Ingénierie pour Systèmes Critiques | Syslearn",
-  description: "La défense bénéficie d'un effort budgétaire inédit de 6,7 milliards d'€ en 2026. Syslearn accompagne vos projets embarqués, cyberdéfense et IA avec une rigueur méthodologique adaptée.",
+  title: "Défense",
+  description: "La défense bénéficie d'un effort budgétaire inédit de 6,7 milliards d'€ en 2026. Syslearn Group accompagne vos projets embarqués, cyberdéfense et IA avec une rigueur méthodologique adaptée.",
 };
 
 export default function DefensePage() {
   const expertises = [
-    { icon: Code2, text: "Développement d'applications métier sécurisées et traçables" },
+    { icon: Code2, text: "Développement d'applications métier sécurisées" },
     { icon: Cpu, text: "Systèmes embarqués pour environnements critiques" },
     { icon: Monitor, text: "Interfaces homme-machine à haute fiabilité" },
-    { icon: Brain, text: "Intelligence artificielle et data science appliquées à la défense" },
-    { icon: Shield, text: "Cyberdéfense et conformité aux standards NIS2" },
+    { icon: Brain, text: "Intelligence artificielle et data science appliquées" },
   ];
 
   return (
@@ -42,17 +41,46 @@ export default function DefensePage() {
         <div className="defense-content__inner">
           <div className="defense-content__intro">
             <p>
+              Sur des systèmes où la fiabilité et la confidentialité sont non négociables, 
+              <strong>Syslearn Group</strong> intervient auprès d'acteurs du secteur de la défense avec une 
+              rigueur méthodologique adaptée à ce niveau d'exigence.
+            </p>
+          </div>
+
+          <div className="defense-content__block">
+            <h2 className="defense-content__title">Le contexte</h2>
+            <p>
+              Les projets défense combinent souvent contraintes réglementaires strictes, cycles longs de validation 
+              et exigence de sécurité renforcée à chaque étape du développement logiciel.
+            </p>
+          </div>
+
+          <div className="defense-content__block">
+            <h2 className="defense-content__title">Expertises mobilisées</h2>
+            <div className="defense-expertises">
+              {expertises.map((item, index) => {
+                const Icon = item.icon;
+                return (
+                  <div key={index} className="defense-expertise">
+                    <div className="defense-expertise__icon">
+                      <Icon size={20} strokeWidth={1.5} />
+                    </div>
+                    <p className="defense-expertise__text">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className="defense-content__block">
+            <h2 className="defense-content__title">Pourquoi le choix du langage compte dans la défense</h2>
+            <p>
               La défense est aujourd'hui l'un des secteurs où l'effort budgétaire et technologique est le plus 
               soutenu en France. Le budget de la mission Défense pour 2026 augmente de 
               <strong> 6,7 milliards d'euros</strong> par rapport à 2025, soit 3,5 milliards au-delà de la 
               trajectoire initialement prévue par la loi de programmation militaire , un effort qualifié d'inédit 
               par le ministère des Armées.
-              
             </p>
-          </div>
-
-          <div className="defense-content__block">
-            <h2 className="defense-content__title">Pourquoi le choix du langage compte dans la défense</h2>
             <p>
               Cette hausse s'accompagne d'un investissement ciblé sur le numérique : plus de 
               <strong> 500 millions d'euros</strong> sont fléchés vers la cyberdéfense et plus de 
@@ -65,11 +93,9 @@ export default function DefensePage() {
                 className="defense-content__link"
               >
                 <ExternalLink size={14} />
-                SénatInfo.gouv.fr
+                Info.gouv.fr
               </Link>
-             
             </p>
-            
             <p>
               Sur le plan humain, cet effort se traduit aussi par des recrutements massifs : près de 
               <strong> 40 000 recrutements</strong> sont prévus en 2026, dont 800 postes supplémentaires ciblés 
@@ -85,7 +111,6 @@ export default function DefensePage() {
                 Sénat
               </Link>
             </p>
-             
           </div>
 
           <div className="defense-content__block">
@@ -127,27 +152,10 @@ export default function DefensePage() {
               vie souvent bien plus longs que ceux du secteur civil.
             </p>
             <p>
-              C'est cette rigueur méthodologique que Syslearn met au service de ses clients de la défense, en 
-              conjuguant maîtrise technique et compréhension fine des contraintes réglementaires propres à ce 
-              secteur régalien.
+              C'est cette rigueur méthodologique que <strong> Syslearn Group</strong> met au service de ses clients 
+              de la défense, en conjuguant maîtrise technique et compréhension fine des contraintes réglementaires 
+              propres à ce secteur régalien.
             </p>
-          </div>
-
-          <div className="defense-content__block">
-            <h2 className="defense-content__title">Expertises mobilisées</h2>
-            <div className="defense-expertises">
-              {expertises.map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div key={index} className="defense-expertise">
-                    <div className="defense-expertise__icon">
-                      <Icon size={20} strokeWidth={1.5} />
-                    </div>
-                    <p className="defense-expertise__text">{item.text}</p>
-                  </div>
-                );
-              })}
-            </div>
           </div>
         </div>
       </section>
@@ -157,10 +165,10 @@ export default function DefensePage() {
           <div className="defense-cta__content">
             <h2 className="defense-cta__title">Prêt à discuter de votre projet ?</h2>
             <p className="defense-cta__text">
-              Découvrez comment Syslearn peut vous accompagner dans vos projets du secteur de la défense.
+              Découvrez comment Syslearn Group peut vous accompagner dans vos projets du secteur de la défense.
             </p>
             <div className="defense-cta__actions">
-              <Link href="/nos-entites/syslearn" className="defense-cta__btn defense-cta__btn--primary">
+              <Link href="https://www.syslearn.fr/qui-sommes-nous/secteurs-dactivites" className="defense-cta__btn defense-cta__btn--primary">
                 Découvrir Syslearn
                 <ExternalLink size={18} />
               </Link>

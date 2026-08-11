@@ -15,7 +15,7 @@ import {
 import "../../../styles/nos-entites/syslearn.css";
 
 export const metadata = {
-  title: "Syslearn : Conseil et Ingénierie Java, IA, IoT & Cybersécurité",
+  title: "Syslearn",
   description: "Syslearn est une ESN spécialisée dans l'accompagnement des secteurs de l'énergie, de la défense et de l'industrie sur leurs projets numériques les plus exigeants.",
 };
 

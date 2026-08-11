@@ -184,7 +184,7 @@
 .energie-cta__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.75rem;
   justify-content: center;
   margin-top: 0.5rem;
 }
@@ -193,7 +193,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 0.875rem 2rem;
+  padding: 0.875rem 1.75rem;
   background: #0f172a;
   color: #ffffff;
   border-radius: 9999px;
@@ -226,7 +226,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  padding: 0.875rem 2rem;
+  padding: 0.875rem 1.75rem;
   background: #ffffff;
   color: #0f172a;
   border-radius: 9999px;
@@ -254,6 +254,34 @@
 
 .energie-cta__btn--secondary:hover svg {
   transform: translateX(4px);
+}
+
+.energie-content__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  margin-left: 0.3rem;
+}
+
+.energie-content__link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.energie-content__link svg {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: transform 0.2s ease;
+}
+
+.energie-content__link:hover svg {
+  transform: translateX(2px) rotate(-5deg);
+  opacity: 1;
 }
 
 @media (max-width: 1024px) {
@@ -316,6 +344,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    gap: 0.75rem;
   }
 
   .energie-cta__btn--primary,
@@ -324,6 +353,7 @@
     font-size: 0.875rem;
     width: auto;
     min-width: fit-content;
+    justify-content: center;
   }
 }
 
@@ -354,33 +384,10 @@
     font-size: 0.8125rem;
     width: auto;
     min-width: fit-content;
+    justify-content: center;
   }
-}
 
-.energie-content__link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1rem;
-  transition: all 0.2s ease;
-  margin-left: 0.3rem;
-}
-
-.energie-content__link:hover {
-  color: #1d4ed8;
-  text-decoration: underline;
-}
-
-.energie-content__link svg {
-  flex-shrink: 0;
-  opacity: 0.7;
-  transition: transform 0.2s ease;
-}
-
-.energie-content__link:hover svg {
-  transform: translateX(2px) rotate(-5deg);
-  opacity: 1;
+  .energie-cta__actions {
+    gap: 0.5rem;
+  }
 }
