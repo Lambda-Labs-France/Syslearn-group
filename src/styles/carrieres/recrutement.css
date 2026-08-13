@@ -32,10 +32,38 @@
 }
 
 .recrutement-content__inner {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 0 2rem;
 }
+
+
+.recrutement-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+.recrutement-intro p {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.recrutement-intro strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.recrutement-intro__sub {
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  color: #0f172a !important;
+  text-align: center !important;
+  margin-top: 1rem;
+}
+
 
 .recrutement-offres {
   display: flex;
@@ -47,7 +75,7 @@
 .recrutement-offre {
   display: flex;
   align-items: flex-start;
-  gap: 1.25rem;
+  gap: 1.5rem;
   padding: 1.5rem 2rem;
   background: #f8fafc;
   border-radius: 0.75rem;
@@ -60,10 +88,30 @@
   transform: translateX(4px);
 }
 
-.recrutement-offre__icon {
+.recrutement-offre__number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #d1d5db;
+  font-family: 'Barlow', sans-serif;
+  line-height: 1;
   flex-shrink: 0;
-  width: 48px;
-  height: 48px;
+  min-width: 50px;
+}
+
+.recrutement-offre__content {
+  flex: 1;
+}
+
+.recrutement-offre__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.recrutement-offre__icon {
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,13 +119,14 @@
   border-radius: 50%;
   color: #0f172a;
   border: 1px solid #e2e8f0;
+  flex-shrink: 0;
 }
 
 .recrutement-offre__title {
   font-size: 1.125rem;
   font-weight: 600;
   color: #0f172a;
-  margin: 0 0 0.25rem 0;
+  margin: 0;
 }
 
 .recrutement-offre__entity {
@@ -88,7 +137,7 @@
   background: #eff6ff;
   padding: 0.1rem 0.6rem;
   border-radius: 9999px;
-  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .recrutement-offre__desc {
@@ -98,6 +147,104 @@
   margin: 0;
 }
 
+
+.recrutement-pourquoi {
+  max-width: 800px; 
+  margin: 0 auto 3rem auto;
+  padding: 2rem 0;
+}
+
+.recrutement-pourquoi__line {
+  width: 60px;
+  height: 3px;
+  background: #0f172a;
+  margin: 0 auto 1.5rem auto;
+  border-radius: 9999px;
+}
+
+.recrutement-pourquoi__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.recrutement-pourquoi__text {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  text-align: justify; 
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+.recrutement-change {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  padding: 2.5rem;
+  background: #f8fafc;
+  border-radius: 1rem;
+  border: 1px solid #e2e8f0;
+}
+
+.recrutement-change__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.recrutement-change__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.recrutement-change__card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  padding: 2rem 1.5rem;
+  border: 1px solid #e2e8f0;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.recrutement-change__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+  border-color: #0f172a;
+}
+
+.recrutement-change__card-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eff6ff;
+  border-radius: 50%;
+  color: #2563eb;
+  margin: 0 auto 1rem auto;
+}
+
+.recrutement-change__card-title {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.recrutement-change__card-desc {
+  font-size: 0.875rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}
+
+
 .recrutement-cta {
   text-align: center;
   padding: 2.5rem;
@@ -106,29 +253,46 @@
   border: 1px solid #e2e8f0;
 }
 
+.recrutement-cta__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
 .recrutement-cta__text {
-  font-size: 1.125rem;
-  color: #1f2937;
-  margin-bottom: 1.25rem;
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
 }
 
 .recrutement-cta__btn {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 2rem;
+  padding: 0.875rem 2.5rem;
   background: #0f172a;
   color: #ffffff;
   border-radius: 9999px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
+  font-size: 0.9375rem;
 }
 
 .recrutement-cta__btn:hover {
   background: #1e293b;
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+
+@media (max-width: 1024px) {
+  .recrutement-change__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -145,15 +309,69 @@
     padding: 40px 0;
   }
 
+  .recrutement-intro p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .recrutement-intro__sub {
+    font-size: 1.125rem !important;
+  }
+
   .recrutement-offre {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+    align-items: stretch;
+    padding: 1.5rem;
+  }
+
+  .recrutement-offre__number {
+    font-size: 2rem;
+    min-width: auto;
+  }
+
+  .recrutement-offre__header {
+    flex-wrap: wrap;
+  }
+
+  .recrutement-pourquoi {
+    padding: 1.5rem 0;
+  }
+
+  .recrutement-pourquoi__title {
+    font-size: 1.25rem;
+  }
+
+  .recrutement-pourquoi__text {
+    font-size: 1rem;
+  }
+
+  .recrutement-change {
+    padding: 1.5rem;
+  }
+
+  .recrutement-change__title {
+    font-size: 1.25rem;
+  }
+
+  .recrutement-change__grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .recrutement-change__card {
     padding: 1.5rem;
   }
 
   .recrutement-cta {
     padding: 1.5rem;
+  }
+
+  .recrutement-cta__title {
+    font-size: 1.25rem;
+  }
+
+  .recrutement-cta__text {
+    font-size: 1rem;
   }
 
   .recrutement-cta__btn {
@@ -170,6 +388,10 @@
     font-size: 1.8rem;
   }
 
+  .recrutement-intro p {
+    font-size: 0.9375rem;
+  }
+
   .recrutement-offre {
     padding: 1.25rem;
   }
@@ -182,8 +404,24 @@
     font-size: 0.875rem;
   }
 
-  .recrutement-cta__text {
+  .recrutement-pourquoi__text {
+    font-size: 0.9375rem;
+  }
+
+  .recrutement-change {
+    padding: 1.25rem;
+  }
+
+  .recrutement-change__card {
+    padding: 1.25rem;
+  }
+
+  .recrutement-change__card-title {
     font-size: 1rem;
+  }
+
+  .recrutement-change__card-desc {
+    font-size: 0.8125rem;
   }
 
   .recrutement-cta__btn {
