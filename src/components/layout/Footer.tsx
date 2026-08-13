@@ -12,8 +12,7 @@ export default function Footer() {
             Syslearn <span>Group</span>
           </Link>
           <p className="footer__description">
-            Conseil informatique, ingénierie C++/Qt et recrutement tech. 
-            Trois métiers, une exigence commune, unis sous une même bannière.
+            Trois métiers, une même exigence : conseil, ingénierie C++ et recrutement tech.
           </p>
         </div>
 

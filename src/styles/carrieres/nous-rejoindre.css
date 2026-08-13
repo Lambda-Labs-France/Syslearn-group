@@ -26,6 +26,35 @@
   margin: 0;
 }
 
+
+.pourquoi-intro {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.pourquoi-intro p {
+  font-size: 1.125rem;
+  color: #475569;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.pourquoi-intro strong {
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.pourquoi-intro__conclusion {
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  color: #0f172a !important;
+  margin-top: 1rem;
+  text-align: center !important;
+}
+
+
 .pourquoi-content {
   padding: 60px 0;
   background: #ffffff;
@@ -61,7 +90,7 @@
 }
 
 .pourquoi-card__number {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #d1d5db;
   font-family: 'Barlow', sans-serif;
@@ -79,17 +108,34 @@
 .pourquoi-card__description {
   font-size: 0.9375rem;
   color: #475569;
-  line-height: 1.6;
+  line-height: 1.7;
   margin: 0;
 }
 
-.pourquoi-card__icon {
-  position: absolute;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  color: #059669;
-  opacity: 0.3;
+
+.pourquoi-conclusion {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  padding: 2.5rem 3rem;
+  background: #0f172a;
+  border-radius: 1rem;
+  text-align: center;
 }
+
+.pourquoi-conclusion__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.pourquoi-conclusion__text {
+  font-size: 1.0625rem;
+  color: #ffffff;
+  line-height: 1.7;
+  margin: 0;
+}
+
 
 .pourquoi-cta {
   text-align: center;
@@ -100,10 +146,18 @@
 }
 
 .pourquoi-cta__title {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.pourquoi-cta__text {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 1.5rem auto;
 }
 
 .pourquoi-cta__actions {
@@ -117,7 +171,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 2rem;
+  padding: 0.875rem 2.5rem;
   border-radius: 9999px;
   font-weight: 500;
   font-size: 0.9375rem;
@@ -136,18 +190,6 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-.pourquoi-cta__btn--secondary {
-  background: #ffffff;
-  color: #0f172a;
-  border: 1px solid #e2e8f0;
-}
-
-.pourquoi-cta__btn--secondary:hover {
-  background: #f8fafc;
-  border-color: #0f172a;
-  transform: translateY(-2px);
-}
-
 @media (max-width: 768px) {
   .pourquoi-hero {
     padding: 60px 0;
@@ -162,6 +204,15 @@
     padding: 40px 0;
   }
 
+  .pourquoi-intro p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .pourquoi-intro__conclusion {
+    font-size: 1.125rem !important;
+  }
+
   .pourquoi-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -171,8 +222,32 @@
     padding: 1.5rem;
   }
 
+  .pourquoi-card__number {
+    font-size: 2rem;
+  }
+
+  .pourquoi-conclusion {
+    padding: 2rem 1.5rem;
+  }
+
+  .pourquoi-conclusion__title {
+    font-size: 1.25rem;
+  }
+
+  .pourquoi-conclusion__text {
+    font-size: 1rem;
+  }
+
   .pourquoi-cta {
     padding: 1.5rem;
+  }
+
+  .pourquoi-cta__title {
+    font-size: 1.25rem;
+  }
+
+  .pourquoi-cta__text {
+    font-size: 1rem;
   }
 
   .pourquoi-cta__actions {
@@ -180,7 +255,6 @@
     align-items: center;
   }
 
-  /* ✅ Bouton avec largeur du texte */
   .pourquoi-cta__btn {
     width: auto;
     min-width: auto;
@@ -195,8 +269,8 @@
     font-size: 1.8rem;
   }
 
-  .pourquoi-card__number {
-    font-size: 2.5rem;
+  .pourquoi-intro p {
+    font-size: 0.9375rem;
   }
 
   .pourquoi-card__title {
@@ -205,6 +279,18 @@
 
   .pourquoi-card__description {
     font-size: 0.875rem;
+  }
+
+  .pourquoi-conclusion {
+    padding: 1.5rem 1rem;
+  }
+
+  .pourquoi-conclusion__title {
+    font-size: 1.125rem;
+  }
+
+  .pourquoi-conclusion__text {
+    font-size: 0.9375rem;
   }
 
   .pourquoi-cta__btn {
