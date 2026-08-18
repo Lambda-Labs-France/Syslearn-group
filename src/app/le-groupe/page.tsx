@@ -40,9 +40,11 @@ export default function LeGroupePage() {
               </div>
             </div>
             <div className="groupe-section__image">
-              <img
-                src="https://picsum.photos/seed/groupe-qui/600/400"
-                alt="Qui sommes-nous"
+              <Image
+                src="/images/groupe/le-groupe-presentation.png"
+                alt="Équipe collaborative travaillant ensemble"
+                width={600}
+                height={400}
                 className="groupe-section__img"
               />
             </div>
@@ -68,9 +70,11 @@ export default function LeGroupePage() {
               </p>
             </div>
             <div className="groupe-section__image">
-              <img
-                src="https://picsum.photos/seed/gouvernance/600/400"
-                alt="Notre gouvernance"
+              <Image
+                src="/images/groupe/notre-gouvernance.png"
+                alt="Espace de travail interconnecté et synergie"
+                width={600}
+                height={400}
                 className="groupe-section__img"
               />
             </div>
@@ -111,7 +115,7 @@ export default function LeGroupePage() {
         </div>
       </section>
 
-      <section className="groupe-faq">
+      <section className="groupe-faq">  
         <div className="groupe-faq__inner">
           <div className="groupe-faq__header">
             <h2 className="groupe-faq__title">Questions fréquentes</h2>

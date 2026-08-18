@@ -93,7 +93,13 @@ export default function IndustriePage() {
               })}
             </div>
           </div>
-
+          <div className="industrie-content__image-wrapper">
+            <img
+              src="/images/secteur-industrie.png"
+              alt="Secteur de l'industrie - Syslearn Group"
+              className="industrie-content__image"
+            />
+          </div>
           <div className="industrie-content__block">
             <h2 className="industrie-content__title">Pourquoi l'écosystème C++ intervient dans l'industrie</h2>
             <p>

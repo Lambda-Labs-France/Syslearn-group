@@ -11,10 +11,10 @@ const activitesData = [
     description:
       "Conseil et ingénierie informatique pour l'énergie, la défense et l'industrie. Une connaissance sectorielle qui fait la différence là où une ESN généraliste classique bute.",
     images: [
-      "https://picsum.photos/seed/syslearn1/80/80",
-      "https://picsum.photos/seed/syslearn2/80/80",
+      "/images/sys-vignette1.jpg",
+      "/images/sys-vignette2.jpg",
     ],
-    imageMain: "https://picsum.photos/seed/syslearn-main/600/500",
+    imageMain: "/images/activite-syslearn.jpg",
     buttonText: "Découvrir Syslearn",
     buttonLink: "/nos-entites/syslearn",
   },
@@ -24,10 +24,10 @@ const activitesData = [
     description:
       "L'ESN spécialisée dans l'écosystème C++, partenaire officiel de Qt Group. Simulation 3D, imagerie médicale, systèmes embarqués aéronautiques : quand le logiciel doit tenir sous contrainte réelle, sans droit à l'erreur.",
     images: [
-      "https://picsum.photos/seed/pointerlab1/80/80",
-      "https://picsum.photos/seed/pointerlab2/80/80",
+      "/images/pointerlab-vignette1.jpg",
+      "/images/pointerlab-vignette2.jpg",
     ],
-    imageMain: "https://picsum.photos/seed/pointerlab-main/600/500",
+    imageMain: "/images/activite-pointerlab.jpg",
     buttonText: "Découvrir PointerLab",
     buttonLink: "/nos-entites/pointerlab",
   },
@@ -37,10 +37,10 @@ const activitesData = [
     description:
       "La plateforme de recrutement tech & engineering qui matche vraiment. Plus de 4 000 offres actives, un moteur de matching par IA qui trie le bruit plutôt que de l'amplifier.",
     images: [
-      "https://picsum.photos/seed/stackjobs1/80/80",
-      "https://picsum.photos/seed/stackjobs2/80/80",
+      "/images/stackjobs-vignette1.jpg",
+      "/images/stackjobs-vignette2.jpg",
     ],
-    imageMain: "https://picsum.photos/seed/stackjobs-main/600/500",
+    imageMain: "/images/activite--stackjobs.jpg",
     buttonText: "Découvrir StackJobs",
     buttonLink: "/nos-entites/stackjobs",
   },

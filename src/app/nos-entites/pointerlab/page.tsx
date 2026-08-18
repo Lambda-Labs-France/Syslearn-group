@@ -65,7 +65,7 @@ export default function PointerLabPage() {
             <div>
               <span className="pointerlab-hero__badge">PointerLab</span>
               <h1 className="pointerlab-hero__title">
-                PointerLab : l'ESN spécialisée dans l'écosystème C++ pour vos projets logiciels critiques
+                PointerLab : Spécialiste dans l'écosystème C++ pour vos projets logiciels critiques
               </h1>
             </div>
             <Link 
@@ -91,7 +91,7 @@ export default function PointerLabPage() {
                 n'a pas sa place.
               </p>
               <p>
-                PointerLab est une <strong>ESN spécialisée dans l'écosystème C++</strong>, un choix stratégique dans les 
+                PointerLab est une <strong>Spécialiste en écosystème C++ & transformation industrielle</strong>, un choix stratégique dans les 
                 environnements où la fiabilité, la performance et la maîtrise du temps réel priment sur tout le reste : 
                 médical, aéronautique, automobile, industrie lourde. Dans ces secteurs, un logiciel défaillant n'est pas 
                 une simple gêne : il peut mettre en jeu la sécurité des personnes ou la continuité d'un système industriel 
@@ -106,7 +106,7 @@ export default function PointerLabPage() {
             </div>
             <div className="pointerlab-section__image">
               <img
-                src="https://picsum.photos/seed/pointerlab-presentation/600/400"
+                src="/images/entites/pointerlabPage1.jpg"
                 alt="PointerLab - ESN spécialisée C++"
                 className="pointerlab-section__img"
               />
@@ -139,7 +139,7 @@ export default function PointerLabPage() {
             </div>
             <div className="pointerlab-section__image">
               <img
-                src="https://picsum.photos/seed/pointerlab-vivier/600/400"
+                src="/images/entites/pointerlabPage2.jpg"
                 alt="Vivier de profils C++ PointerLab"
                 className="pointerlab-section__img"
               />

@@ -92,7 +92,13 @@ export default function AeronautiquePage() {
               })}
             </div>
           </div>
-
+          <div className="aeronautique-content__image-wrapper">
+            <img
+              src="/images/secteur-aeronautique.jpg"
+              alt="Secteur de l'aéronautique - Syslearn Group"
+              className="aeronautique-content__image"
+            />
+          </div>
           <div className="aeronautique-content__block">
             <h2 className="aeronautique-content__title">Pourquoi la certification structure tout le développement logiciel</h2>
             <p>

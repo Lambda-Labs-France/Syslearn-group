@@ -71,6 +71,13 @@ export default function DefensePage() {
               })}
             </div>
           </div>
+          <div className="defense-content__image-wrapper">
+            <img
+              src="/images/secteur-defense.png"
+              alt="Secteur de la defense - Syslearn Group"
+              className="defense-content__image"
+            />
+          </div>
 
           <div className="defense-content__block">
             <h2 className="defense-content__title">Pourquoi le choix du langage compte dans la défense</h2>

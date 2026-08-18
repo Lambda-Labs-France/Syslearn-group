@@ -35,6 +35,7 @@
 .chiffres-content {
   padding: 60px 0;
   background: #f8fafc;
+
 }
 
 .chiffres-content__inner {
@@ -50,6 +51,7 @@
   max-width: 800px;
   margin: 0 auto 3rem auto;
   text-align: center;
+  text-align: justify;
 }
 
 

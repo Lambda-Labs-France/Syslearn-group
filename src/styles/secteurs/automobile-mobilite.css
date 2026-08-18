@@ -71,6 +71,7 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .automobile-content__intro strong {
@@ -99,6 +100,7 @@
   color: #475569;
   line-height: 1.8;
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .automobile-content__block p:last-child {
@@ -361,5 +363,46 @@
 
   .automobile-cta__actions {
     gap: 0.5rem;
+  }
+}
+/* ============================================================
+   IMAGE SOUS EXPERTISES
+   ============================================================ */
+.automobile-content__image-wrapper {
+  margin: 2rem 0 2.5rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.automobile-content__image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.automobile-content__image:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 768px) {
+  .automobile-content__image-wrapper {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .automobile-content__image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .automobile-content__image-wrapper {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .automobile-content__image {
+    height: 160px;
   }
 }

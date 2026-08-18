@@ -21,7 +21,7 @@
 .secteurs__description {
   font-size: 1.125rem;
   color: #4b5563;
-  text-align: center;
+  text-align: justify;
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto 3rem auto;
