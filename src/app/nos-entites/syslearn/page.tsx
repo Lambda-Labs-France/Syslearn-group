@@ -45,7 +45,7 @@ export default function SyslearnPage() {
             <div>
               <span className="syslearn-hero__badge">Syslearn</span>
               <h1 className="syslearn-hero__title">
-                Syslearn : Conseil et Ingénierie Java, IA, IoT & Cybersécurité
+                Syslearn : Conseil et Ingénierie Tech, IA, IoT & Cybersécurité
               </h1>
             </div>
             <Link 
@@ -80,7 +80,7 @@ export default function SyslearnPage() {
             </div>
             <div className="syslearn-section__image">
               <img
-                src="https://picsum.photos/seed/syslearn-presentation/600/400"
+                src="/images/entites/syslearn--Page1.jpg"
                 alt="Syslearn - Conseil et Ingénierie"
                 className="syslearn-section__img"
               />
@@ -119,7 +119,7 @@ export default function SyslearnPage() {
             </div>
             <div className="syslearn-section__image">
               <img
-                src="https://picsum.photos/seed/syslearn-expertises/600/400"
+                src="/images/entites/syslearnPage2.jpg"
                 alt="Expertises Syslearn"
                 className="syslearn-section__img"
               />
@@ -146,7 +146,7 @@ export default function SyslearnPage() {
             </div>
             <div className="syslearn-section__image">
               <img
-                src="https://picsum.photos/seed/syslearn-approach/600/400"
+                src="/images/entites/syslearn-Page3.jpg"
                 alt="Approche criticité Syslearn"
                 className="syslearn-section__img"
               />

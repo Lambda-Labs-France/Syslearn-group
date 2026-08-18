@@ -5,25 +5,25 @@ const secteursData = [
   {
     id: "energie",
     title: "Énergie",
-    image: "https://picsum.photos/seed/energie/600/400",
+    image: "/images/secteur-energie.png",
     link: "/secteurs/energie",
   },
   {
     id: "defense",
     title: "Défense",
-    image: "https://picsum.photos/seed/defense/600/400",
+    image: "/images/secteur-defense.png",
     link: "/secteurs/defense",
   },
   {
     id: "industrie",
     title: "Industrie",
-    image: "https://picsum.photos/seed/industrie/600/400",
+    image: "/images/secteur-industrie.png",
     link: "/secteurs/industrie",
   },
   {
     id: "medical",
     title: "Médical",
-    image: "https://picsum.photos/seed/medical/600/400",
+    image: "/images/secteur-medical.png",
     link: "/secteurs/medical",
   },
   

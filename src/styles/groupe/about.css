@@ -65,6 +65,7 @@
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.8;
+  text-align: justify;
 }
 
 .quisommes-block__image {
@@ -107,6 +108,7 @@
   color: #475569;
   line-height: 1.6;
   margin: 0;
+  text-align: justify;
 }
 
 .quisommes-timeline-item strong {

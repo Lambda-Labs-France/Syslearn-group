@@ -87,7 +87,13 @@ export default function AutomobileMobilitePage() {
               })}
             </div>
           </div>
-
+          <div className="automobile-content__image-wrapper">
+            <img
+              src="/images/secteur-automobile.jpg"
+              alt="Secteur de l'automobile- Syslearn Group"
+              className="automobile-content__image"
+            />
+          </div>
           <div className="automobile-content__block">
             <h2 className="automobile-content__title">Pourquoi la fiabilité logicielle est indissociable de la sécurité automobile</h2>
             <p>

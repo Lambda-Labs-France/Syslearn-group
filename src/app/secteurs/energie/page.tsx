@@ -75,6 +75,14 @@ export default function EnergiePage() {
             </div>
           </div>
 
+          <div className="energie-content__image-wrapper">
+            <img
+              src="/images/secteur-energie.png"
+              alt="Secteur de l'énergie - Syslearn Group"
+              className="energie-content__image"
+            />
+          </div>
+
           <div className="energie-content__block">
             <h2 className="energie-content__title">Pourquoi le choix du langage compte dans l'énergie</h2>
             <p>

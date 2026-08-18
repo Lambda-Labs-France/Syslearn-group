@@ -89,7 +89,13 @@ export default function IotPage() {
               })}
             </div>
           </div>
-
+          <div className="iot-content__image-wrapper">
+            <img
+              src="/images/secteur-iot.jpg"
+              alt="Secteur de l'iot - Syslearn Group"
+              className="iot-content__image"
+            />
+          </div>
           <div className="iot-content__block">
             <h2 className="iot-content__title">Pourquoi un projet IoT ne se résume pas au capteur</h2>
             <p>

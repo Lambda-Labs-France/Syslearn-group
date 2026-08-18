@@ -44,7 +44,7 @@ export default function StackJobsPage() {
             <div>
               <span className="stackjobs-hero__badge">StackJobs</span>
               <h1 className="stackjobs-hero__title">
-                StackJobs : la plateforme Tech & Engineering qui connecte les talents aux bonnes opportunités
+                StackJobs : The best opportunities,the tech & engineering recruitment reference
               </h1>
             </div>
             <Link 
@@ -78,7 +78,7 @@ export default function StackJobsPage() {
             </div>
             <div className="stackjobs-section__image">
               <img
-                src="https://picsum.photos/seed/stackjobs-presentation/600/400"
+                src="/images/entites/stackjobs-Page1.jpg"
                 alt="StackJobs - Plateforme Tech & Engineering"
                 className="stackjobs-section__img"
               />
@@ -93,7 +93,15 @@ export default function StackJobsPage() {
             <div className="stackjobs-section__text">
               <h2 className="stackjobs-section__title">Un moteur de matching pensé pour la Tech & Engineering</h2>
               <p>
-                La plateforme réunit plus de <strong>4 000 offres actives</strong> couvrant l'ensemble de l'écosystème 
+                La plateforme réunit plus de{" "}
+                <Link 
+                  href="https://www.stackjobs.com/jobs" 
+                  target="_blank" 
+                  rel="dofollow noopener noreferrer"
+                >
+                  <strong>4 000 offres actives</strong>
+                </Link>{" "}
+                couvrant l'ensemble de l'écosystème 
                 Tech & Engineering : développement, data, cloud, cybersécurité, systèmes embarqués et ingénierie 
                 industrielle.
               </p>
@@ -110,7 +118,7 @@ export default function StackJobsPage() {
             </div>
             <div className="stackjobs-section__image">
               <img
-                src="https://picsum.photos/seed/stackjobs-matching/600/400"
+                src="/images/entites/stackjobsPage2.jpg"
                 alt="Matching IA StackJobs"
                 className="stackjobs-section__img"
               />
@@ -141,7 +149,7 @@ export default function StackJobsPage() {
             </div>
             <div className="stackjobs-section__image">
               <img
-                src="https://picsum.photos/seed/stackjobs-profile/600/400"
+                src="/images/entites/stackjobsPage3.jpg"
                 alt="Profil technique StackJobs"
                 className="stackjobs-section__img"
               />

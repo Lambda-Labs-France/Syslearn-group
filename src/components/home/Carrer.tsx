@@ -10,7 +10,7 @@ export default function Rejoindre() {
           <p className="rejoindre__text">
             Rejoindre un groupe où la spécialisation technique paie vraiment. Peu de strates hiérarchiques, 
             des marges connues de tous, et la possibilité réelle de devenir associé si vous le souhaitez. 
-            C'est le modèle que PointerLab a rodé sur le C++/Qt, et que Syslearn comme StackJobs appliquent à leur façon.
+            C'est le modèle que PointerLab a rodé sur le C++, et que Syslearn comme StackJobs appliquent à leur façon.
           </p>
           <div className="rejoindre__buttons">
             <Link href="/carrieres" className="rejoindre__btn">
@@ -26,7 +26,7 @@ export default function Rejoindre() {
         </div>
         <div className="rejoindre__image">
           <img
-            src="https://picsum.photos/seed/carrieres/600/400"
+            src="/images/section-carriere.png"
             alt="Carrières"
             className="rejoindre__img"
           />

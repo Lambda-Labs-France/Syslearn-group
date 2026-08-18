@@ -61,7 +61,7 @@ export default function ChiffresClesPage() {
 
           <div className="chiffres-image">
             <img
-              src="https://picsum.photos/seed/croissance/1200/300"
+              src="images/groupe/croissance-banner.png"
               alt="Notre croissance"
               className="chiffres-image__img"
             />

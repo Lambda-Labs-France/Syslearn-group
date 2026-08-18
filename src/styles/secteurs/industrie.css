@@ -71,6 +71,7 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 2rem;
+  text-align: justify;
 }
 
 .industrie-content__intro strong {
@@ -99,6 +100,7 @@
   color: #475569;
   line-height: 1.8;
   margin-bottom: 1rem;
+  text-align: justify;
 }
 
 .industrie-content__block p:last-child {
@@ -399,5 +401,46 @@
 
   .industrie-content__link {
     font-size: 0.8rem;
+  }
+}
+/* ============================================================
+   IMAGE SOUS EXPERTISES
+   ============================================================ */
+.industrie-content__image-wrapper {
+  margin: 2rem 0 2.5rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.industrie-content__image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.industrie-content__image:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 768px) {
+  .industrie-content__image-wrapper {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .industrie-content__image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .industrie-content__image-wrapper {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .industrie-content__image {
+    height: 160px;
   }
 }

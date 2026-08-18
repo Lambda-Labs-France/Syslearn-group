@@ -50,7 +50,7 @@
   line-height: 1.8;
   max-width: 800px;
   margin: 0 auto 3rem auto;
-  text-align: center;
+  text-align: justify;
 }
 
 
@@ -137,6 +137,7 @@
   line-height: 1.6;
   margin: 0.25rem 0 0.5rem 0;
   flex: 1;
+  text-align: justify;
 }
 
 

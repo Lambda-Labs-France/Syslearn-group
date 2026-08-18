@@ -63,7 +63,7 @@ export default function QuiSommesNousPage() {
               </div>
             </div>
             <div className="quisommes-block__image">
-              <img src="https://picsum.photos/seed/histoire/600/400" alt="Notre histoire" className="quisommes-block__img" />
+              <img src="/images/groupe/history2.jpg" alt="Notre histoire" className="quisommes-block__img" />
             </div>
           </div>
 
