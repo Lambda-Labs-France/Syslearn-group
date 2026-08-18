@@ -91,7 +91,13 @@ export default function MedicalPage() {
               })}
             </div>
           </div>
-
+          <div className="medical-content__image-wrapper">
+            <img
+              src="/images/secteur-medical.png"
+              alt="Secteur de l'énergie - Syslearn Group"
+              className="medical-content__image"
+            />
+          </div>
           <div className="medical-content__block">
             <h2 className="medical-content__title">Pourquoi la fiabilité logicielle est non négociable dans le médical</h2>
             <p>

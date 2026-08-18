@@ -10,7 +10,7 @@ export default function NosEntitesPage() {
   const entites = [
     {
       name: "Syslearn",
-      tagline: "Conseil et ingénierie informatique pour l'énergie, la défense et l'industrie",
+      tagline: "Conseil Data, Ingénierie Tech, IA, IoT & Cybersécurité.",
       description: "Syslearn accompagne ses clients de l'énergie, la défense et l'industrie en conseil informatique et ingénierie sur mesure. Consultants qualifiés, missions exigeantes.",
       link: "/nos-entites/syslearn",
       image: "/images/entites/entite-syslearn.jpg",
@@ -18,7 +18,7 @@ export default function NosEntitesPage() {
     },
     {
       name: "PointerLab",
-      tagline: "L'ESN spécialisée C++ et Qt, partenaire officiel de Qt Group",
+      tagline: "Spécialiste dans l'écosystème C++ pour vos projets logiciels critiques, aussi partenaire official de Qt Group.",
       description: "PointerLab est une néo-ESN spécialisée en développement C++ et Qt pour la simulation 3D, le médical et l'aéronautique. Vivier de plus de 8 000 profils qualifiés.",
       link: "/nos-entites/pointerlab",
       image: "/images/entites/entite-pointerlab.jpg",
@@ -26,7 +26,7 @@ export default function NosEntitesPage() {
     },
     {
       name: "StackJobs",
-      tagline: "The best opportunities,the tech & engineering recruitment reference",
+      tagline: "La référence du recrutement tech & engineering en France",
       description: "StackJobs réunit plus de 4 000 offres d'emploi tech en France avec un matching IA entre développeurs, data scientists et entreprises qui recrutent.",
       link: "/nos-entites/stackjobs",
       image: "/images/entites/entite-stackjobs.jpg",
@@ -48,10 +48,9 @@ export default function NosEntitesPage() {
       <section className="entites-content">
         <div className="entites-content__inner">
           <p className="entites-intro">
-            Syslearn Group réunit trois entités qui, ensemble, couvrent tout le parcours : 
-            Syslearn pour le conseil et l'ingénierie informatique généraliste, 
-            PointerLab pour le développement logiciel C++ sur les projets les plus exigeants, 
-            et StackJobs pour connecter les bons profils aux bonnes entreprises.
+           <strong>Syslearn Group</strong> réunit trois entités qui, ensemble, couvrent tout le parcours : <strong>Syslearn</strong> pour le conseil et l'ingénierie informatique généraliste, <strong>PointerLab</strong> pour le développement logiciel sur l'écosystème C++ appliqué aux projets les plus exigeants, et <strong>StackJobs</strong> pour connecter les bons profils aux bonnes entreprises. 
+
+          Cette architecture n'est pas un assemblage opportuniste de trois marques : c'est une réponse structurelle à un problème que rencontrent la plupart des entreprises technologiques françaises devoir jongler entre plusieurs prestataires pour couvrir le conseil généraliste, l'ingénierie critique et le recrutement spécialisé, avec à chaque fois une perte d'information au passage. Chez nous, ces trois briques restent connectées, sous une même exigence de rigueur et de transparence. 
           </p>
 
           <div className="entites-grid">
