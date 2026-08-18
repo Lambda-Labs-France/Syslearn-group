@@ -2,7 +2,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { 
   Calendar, 
   Clock, 
@@ -12,7 +11,8 @@ import {
   Users,
   Briefcase,
   Code2,
-  UserCheck
+  UserCheck,
+  ExternalLink
 } from "lucide-react";
 import {
   articles,
@@ -37,7 +37,7 @@ const ENTITY_COLORS: Record<string, string> = {
   'Groupe': '#0f172a',
 };
 
-const ITEMS_PER_PAGE = 9; 
+const ITEMS_PER_PAGE = 9;
 
 export default function ActualitesClient() {
   const [selectedEntity, setSelectedEntity] = useState('Groupe');
@@ -144,9 +144,11 @@ export default function ActualitesClient() {
             <>
               <div className="actualites-grid">
                 {paginatedArticles.map((article) => (
-                  <Link
+                  <a
                     key={article.id}
-                    href={`/actualites/${article.slug}`}
+                    href={article.originalLink}
+                    target="_blank"
+                    rel="dofollow noopener noreferrer"
                     className="actualites-card"
                   >
                     <div className="actualites-card__image">
@@ -157,6 +159,9 @@ export default function ActualitesClient() {
                       >
                         {ENTITY_ICONS[article.entity]}
                         {article.entity}
+                      </span>
+                      <span className="actualites-card__external-badge">
+                        <ExternalLink size={12} />
                       </span>
                     </div>
                     <div className="actualites-card__body">
@@ -175,8 +180,11 @@ export default function ActualitesClient() {
                       </div>
                       <h3 className="actualites-card__title">{article.title}</h3>
                       <p className="actualites-card__excerpt">{article.excerpt}</p>
+                      <span className="actualites-card__read-link">
+                        Lire l'article sur {article.source} →
+                      </span>
                     </div>
-                  </Link>
+                  </a>
                 ))}
               </div>
 
