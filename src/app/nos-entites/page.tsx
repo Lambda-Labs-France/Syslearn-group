@@ -47,11 +47,14 @@ export default function NosEntitesPage() {
 
       <section className="entites-content">
         <div className="entites-content__inner">
-          <p className="entites-intro">
-           <strong>Syslearn Group</strong> réunit trois entités qui, ensemble, couvrent tout le parcours : <strong>Syslearn</strong> pour le conseil et l'ingénierie informatique généraliste, <strong>PointerLab</strong> pour le développement logiciel sur l'écosystème C++ appliqué aux projets les plus exigeants, et <strong>StackJobs</strong> pour connecter les bons profils aux bonnes entreprises. 
-
-          Cette architecture n'est pas un assemblage opportuniste de trois marques : c'est une réponse structurelle à un problème que rencontrent la plupart des entreprises technologiques françaises devoir jongler entre plusieurs prestataires pour couvrir le conseil généraliste, l'ingénierie critique et le recrutement spécialisé, avec à chaque fois une perte d'information au passage. Chez nous, ces trois briques restent connectées, sous une même exigence de rigueur et de transparence. 
-          </p>
+          <div className="entites-intro">
+            <p>
+              <strong>Syslearn Group</strong> réunit trois entités qui, ensemble, couvrent tout le parcours : <strong>Syslearn</strong> pour le conseil et l'ingénierie informatique généraliste, <strong>PointerLab</strong> pour le développement logiciel sur l'écosystème C++ appliqué aux projets les plus exigeants, et <strong>StackJobs</strong> pour connecter les bons profils aux bonnes entreprises.
+            </p>
+            <p>
+              Cette architecture n'est pas un assemblage opportuniste de trois marques : c'est une réponse structurelle à un problème que rencontrent la plupart des entreprises technologiques françaises , devoir jongler entre plusieurs prestataires pour couvrir le conseil généraliste, l'ingénierie critique et le recrutement spécialisé, avec à chaque fois une perte d'information au passage. Chez nous, ces trois briques restent connectées, sous une même exigence de rigueur et de transparence.
+            </p>
+          </div>
 
           <div className="entites-grid">
             {entites.map((entite) => (
@@ -68,7 +71,6 @@ export default function NosEntitesPage() {
                   <p className="entite-card__description">{entite.description}</p>
                   <span className="entite-card__btn" style={{ background: entite.color }}>
                     Découvrir {entite.name}
-                   
                   </span>
                 </div>
               </Link>
