@@ -51,7 +51,7 @@ export default function Hero() {
           <div className="hero__right">
             <div className="hero__image-wrapper">
               <img
-                src="/images/hero-group.png"
+                src="/images/hero.png"
                 alt="Syslearn Group - Illustration"
                 className="hero__image"
               />
