@@ -44,7 +44,8 @@ export default function StackJobsPage() {
             <div>
               <span className="stackjobs-hero__badge">StackJobs</span>
               <h1 className="stackjobs-hero__title">
-                StackJobs : The best opportunities,the tech & engineering recruitment reference
+                StackJobs : La référence du recrutement tech & engineering en France
+
               </h1>
             </div>
             <Link 

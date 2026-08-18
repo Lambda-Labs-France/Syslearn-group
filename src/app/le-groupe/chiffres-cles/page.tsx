@@ -61,7 +61,7 @@ export default function ChiffresClesPage() {
 
           <div className="chiffres-image">
             <img
-              src="images/groupe/croissance-banner.png"
+              src="/images/groupe/chiffre-cle.jpg"
               alt="Notre croissance"
               className="chiffres-image__img"
             />
