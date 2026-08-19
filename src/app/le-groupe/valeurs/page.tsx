@@ -21,7 +21,7 @@ export default function ValeursPage() {
     },
     {
       title: "Spécialisation",
-      description: "Un consultant Syslearn énergie n'est pas un consultant Syslearn défense. Nous assumons la niche plutôt que de vendre un CV généraliste interchangeable.",
+      description: "Un consultant Syslearn énergie n'est pas un consultant Syslearn défense. Nous assumons la niche plutôt que de vendre un CV généraliste .",
     },
     {
       title: "Partage de la valeur",
@@ -40,7 +40,7 @@ export default function ValeursPage() {
 
       <section className="valeurs-content">
         <div className="valeurs-content__inner">
-          <p className="valeurs-intro">
+          <p className="valeurs-intro ">
             Nos valeurs sont le reflet de notre identité. Elles guident chacune de nos décisions 
             et nous aident à grandir ensemble.
           </p>
@@ -49,7 +49,7 @@ export default function ValeursPage() {
               <div key={index} className="valeurs-card">
                 <div className="valeurs-card__number">{String(index + 1).padStart(2, '0')}</div>
                 <h3 className="valeurs-card__title">{valeur.title}</h3>
-                <p className="valeurs-card__description">{valeur.description}</p>
+                <p className="valeurs-card__description text-justify-hyphens">{valeur.description}</p>
                 <div className="valeurs-card__line" />
               </div>
             ))}

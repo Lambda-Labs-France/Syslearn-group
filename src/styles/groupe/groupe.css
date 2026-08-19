@@ -4,7 +4,6 @@
   background: var(--color-background);
 }
 
-
 .groupe-hero {
   background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);
   color: #ffffff;
@@ -50,7 +49,6 @@
   font-weight: 300;
   line-height: 1.6;
 }
-
 
 .groupe-section {
   padding: 80px 0;
@@ -112,8 +110,6 @@
   color: #475569;
   line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify;
-
 }
 
 .groupe-section__text p:last-child {
@@ -136,7 +132,7 @@
   padding: 0.75rem 2rem;
   background: #0f172a;
   color: #ffffff;
-  border-radius: 15px; 
+  border-radius: 15px;
   font-weight: 500;
   text-decoration: none;
   font-size: 0.9375rem;
@@ -166,7 +162,6 @@
   border-radius: 1rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
-
 
 .groupe-stats {
   padding: 80px 0;
@@ -251,7 +246,7 @@
   padding: 0.75rem 2rem;
   background: #0f172a;
   color: #ffffff;
-  border-radius: 15px; 
+  border-radius: 15px;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -267,7 +262,6 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 .groupe-faq {
   padding: 80px 0;
@@ -342,10 +336,10 @@
   font-size: 1rem;
   color: #475569;
   line-height: 1.7;
-  text-align: justify;
-
 }
 
+/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
+/* Plus besoin de dupliquer les propriétés ici */
 
 @media (max-width: 1024px) {
   .groupe-section__grid {
@@ -445,7 +439,7 @@
     font-size: 0.875rem;
     max-width: 100%;
     display: inline-block;
-    border-radius: 15px; /* ✅ Ajouté pour mobile */
+    border-radius: 15px;
   }
 
   .groupe-section__links {
@@ -483,6 +477,6 @@
     max-width: 100%;
     box-sizing: border-box;
     display: inline-block;
-    border-radius: 15px; /* ✅ Ajouté pour très petit mobile */
+    border-radius: 15px;
   }
 }

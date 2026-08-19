@@ -64,6 +64,9 @@
   padding: 0 2rem;
 }
 
+/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
+/* Plus besoin de dupliquer les propriétés ici */
+
 .defense-content__intro {
   font-size: 1.125rem;
   color: #1f2937;
@@ -71,7 +74,6 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 2rem;
-  text-align: justify;
 }
 
 .defense-content__intro strong,
@@ -101,16 +103,12 @@
   color: #475569;
   line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify;
 }
 
 .defense-content__block p:last-child {
   margin-bottom: 0;
 }
 
-/* ============================================================
-   LIENS EXTERNES
-   ============================================================ */
 .defense-content__link {
   display: inline-flex;
   align-items: center;
@@ -285,6 +283,25 @@
   transform: translateX(4px);
 }
 
+.defense-content__image-wrapper {
+  margin: 2rem 0 2.5rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.defense-content__image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.defense-content__image:hover {
+  transform: scale(1.01);
+}
+
 @media (max-width: 1024px) {
   .defense-hero__title {
     font-size: 2.4rem;
@@ -351,13 +368,21 @@
   .defense-cta__btn--secondary {
     padding: 0.75rem 1.5rem;
     font-size: 0.875rem;
-    width: auto; 
-    min-width: fit-content; 
+    width: auto;
+    min-width: fit-content;
   }
 
   .defense-content__link {
     font-size: 0.9rem;
     margin-left: 0.2rem;
+  }
+
+  .defense-content__image-wrapper {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .defense-content__image {
+    height: 200px;
   }
 }
 
@@ -393,40 +418,7 @@
   .defense-content__link {
     font-size: 0.8rem;
   }
-}
-/* ============================================================
-   IMAGE SOUS EXPERTISES
-   ============================================================ */
-.defense-content__image-wrapper {
-  margin: 2rem 0 2.5rem 0;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
 
-.defense-content__image {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.defense-content__image:hover {
-  transform: scale(1.01);
-}
-
-@media (max-width: 768px) {
-  .defense-content__image-wrapper {
-    margin: 1.5rem 0 2rem 0;
-  }
-
-  .defense-content__image {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
   .defense-content__image-wrapper {
     margin: 1rem 0 1.5rem 0;
   }

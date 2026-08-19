@@ -1,3 +1,6 @@
+@import '../styles/utils/text-justify.css';
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

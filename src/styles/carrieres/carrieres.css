@@ -27,7 +27,6 @@
   line-height: 1.2;
 }
 
-
 .carrieres-intro {
   padding: 40px 0;
   background: #ffffff;
@@ -40,12 +39,31 @@
   padding: 0 2rem;
 }
 
+/* ✅ SOLUTION UNIVERSELLE POUR LA JUSTIFICATION */
+.carrieres-intro__text,
+.carrieres-marche__text,
+.carrieres-transparence__text,
+.carrieres-metier__desc,
+.carrieres-protection__text,
+.carrieres-cta__text,
+.carrieres-change__text,
+.carrieres-raison__desc {
+  text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  word-spacing: -0.02em;
+  letter-spacing: 0.01em;
+  line-height: 1.8;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: break-word;
+}
+
 .carrieres-intro__text {
   font-size: 1.125rem;
   color: #1f2937;
-  line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify;
 }
 
 .carrieres-intro__text:last-child {
@@ -56,7 +74,6 @@
   color: #0f172a;
   font-weight: 600;
 }
-
 
 .carrieres-marche {
   padding: 60px 0;
@@ -81,9 +98,7 @@
 .carrieres-marche__text {
   font-size: 1.125rem;
   color: #475569;
-  line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify; 
 }
 
 .carrieres-marche__text:last-child {
@@ -94,7 +109,6 @@
   color: #0f172a;
   font-weight: 600;
 }
-
 
 .carrieres-transparence {
   padding: 60px 0;
@@ -119,9 +133,7 @@
 .carrieres-transparence__text {
   font-size: 1.125rem;
   color: #475569;
-  line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify; 
 }
 
 .carrieres-transparence__text:last-child {
@@ -132,7 +144,6 @@
   color: #0f172a;
   font-weight: 600;
 }
-
 
 .carrieres-metiers {
   padding: 60px 0;
@@ -211,9 +222,8 @@
 .carrieres-metier__desc {
   font-size: 0.9375rem;
   color: #475569;
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 0;
-  text-align: justify;
 }
 
 .carrieres-metiers__note {
@@ -224,22 +234,28 @@
   border-radius: 0.75rem;
   border: none;
   border-left: 4px solid #dce0ca;
-
 }
 
 .carrieres-metiers__note-text {
   font-size: 1.0625rem;
-  color: #ffffff; 
-  line-height: 1.7;
+  color: #ffffff;
+  line-height: 1.8;
   margin: 0;
   text-align: justify;
+  text-justify: inter-word;
+  text-align-last: left;
+  word-spacing: -0.02em;
+  letter-spacing: 0.01em;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  word-break: break-word;
 }
 
 .carrieres-metiers__note-text strong {
   color: #dce0ca;
   font-weight: 600;
 }
-
 
 .carrieres-raisons {
   padding: 60px 0;
@@ -302,9 +318,8 @@
 .carrieres-raison__desc {
   font-size: 0.9375rem;
   color: #475569;
-  line-height: 1.6;
+  line-height: 1.8;
   margin: 0 0 0 2rem;
-  text-align: justify; 
 }
 
 .carrieres-change {
@@ -335,9 +350,7 @@
   color: #e2e8f0;
   line-height: 1.8;
   margin: 0;
-  text-align: justify;
 }
-
 
 .carrieres-protection {
   padding: 60px 0;
@@ -362,9 +375,7 @@
 .carrieres-protection__text {
   font-size: 1.125rem;
   color: #475569;
-  line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify; 
 }
 
 .carrieres-protection__text:last-child {
@@ -375,7 +386,6 @@
   color: #0f172a;
   font-weight: 600;
 }
-
 
 .carrieres-cta {
   padding: 60px 0;
@@ -402,8 +412,7 @@
   color: #475569;
   max-width: 600px;
   margin: 0 auto 1.5rem auto;
-  line-height: 1.7;
-  text-align: justify; 
+  line-height: 1.8;
 }
 
 .carrieres-cta__actions {
@@ -435,7 +444,6 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 @media (max-width: 1024px) {
   .carrieres-hero__title {

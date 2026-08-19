@@ -11,7 +11,7 @@ export default function MetiersPage() {
   const metiers = [
     {
       icon: Briefcase,
-      name: "Consultant informatique",
+      name: "Conseil informatique",
       entity: "Syslearn",
       description: "Missions généralistes en énergie, défense, industrie, avec une vraie diversité de contextes clients.",
       details: [
@@ -22,7 +22,7 @@ export default function MetiersPage() {
     },
     {
       icon: Code2,
-      name: "Ingénieur logiciel C++ / Qt",
+      name: "Ingénieur logiciel écosystème C++",
       entity: "PointerLab",
       description: "Simulation 3D, médical, aéronautique, sur des projets où la technique compte vraiment.",
       details: [

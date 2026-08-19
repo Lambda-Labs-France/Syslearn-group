@@ -45,7 +45,6 @@ export default function StackJobsPage() {
               <span className="stackjobs-hero__badge">StackJobs</span>
               <h1 className="stackjobs-hero__title">
                 StackJobs : La référence du recrutement tech & engineering en France
-
               </h1>
             </div>
             <Link 
@@ -66,13 +65,13 @@ export default function StackJobsPage() {
           <div className="stackjobs-section__grid">
             <div className="stackjobs-section__text">
               <h2 className="stackjobs-section__title">Présentation</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 Des milliers d'offres disponibles, mais rarement adaptées à votre profil réel : c'est le problème 
                 que StackJobs a été conçue pour résoudre.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 La plupart des plateformes d'emploi fonctionnent encore par correspondance de mots-clés : un CV qui 
-                contient les bons termes remonte, celui qui ne les contient pas disparaît  même si le profil 
+                contient les bons termes remonte, celui qui ne les contient pas disparaît même si le profil 
                 correspond parfaitement au poste. StackJobs part d'un constat différent : un bon matching ne se 
                 joue pas sur la forme d'un CV, mais sur la réalité d'un parcours technique.
               </p>
@@ -93,7 +92,7 @@ export default function StackJobsPage() {
           <div className="stackjobs-section__grid stackjobs-section__grid--reverse">
             <div className="stackjobs-section__text">
               <h2 className="stackjobs-section__title">Un moteur de matching pensé pour la Tech & Engineering</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 La plateforme réunit plus de{" "}
                 <Link 
                   href="https://www.stackjobs.com/jobs" 
@@ -106,12 +105,12 @@ export default function StackJobsPage() {
                 Tech & Engineering : développement, data, cloud, cybersécurité, systèmes embarqués et ingénierie 
                 industrielle.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Son moteur de matching par intelligence artificielle croise la stack technique, l'expérience réelle 
                 et les préférences du candidat avec les besoins concrets des recruteurs, au-delà de la simple 
                 détection de mots-clés dans un document.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Cette approche permet de faire remonter des opportunités réellement pertinentes, y compris pour des 
                 profils atypiques ou en reconversion, dont les compétences ne se résument pas à une liste de 
                 technologies alignées sur une fiche de poste.
@@ -133,16 +132,16 @@ export default function StackJobsPage() {
           <div className="stackjobs-section__grid">
             <div className="stackjobs-section__text">
               <h2 className="stackjobs-section__title">Un profil qui reflète un vrai parcours technique</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 Développeurs, data scientists, ingénieurs cloud ou spécialistes cybersécurité créent leur profil en 
                 quelques minutes, avec la possibilité de valoriser un GitHub, des projets personnels ou des 
                 contributions open source plutôt qu'un simple CV formaté.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Une manière de donner aux recruteurs une vision plus fidèle de la façon dont un candidat travaille 
                 réellement, au-delà des intitulés de poste et des années d'expérience.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Cette logique s'inscrit dans une tendance plus large observée par des acteurs comme l'APEC sur 
                 l'évolution des critères de recrutement dans les métiers techniques, où la preuve par la pratique 
                 prend une place croissante face au CV traditionnel.
@@ -170,7 +169,7 @@ export default function StackJobsPage() {
                   <div className="stackjobs-feature-card__icon">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <p className="stackjobs-feature-card__text">{item.text}</p>
+                  <p className="stackjobs-feature-card__text text-justify-hyphens">{item.text}</p>
                 </div>
               );
             })}
@@ -191,7 +190,7 @@ export default function StackJobsPage() {
                   <div className="stackjobs-raison-card__icon">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <p className="stackjobs-raison-card__text">{item.text}</p>
+                  <p className="stackjobs-raison-card__text text-justify-hyphens">{item.text}</p>
                 </div>
               );
             })}
@@ -205,13 +204,13 @@ export default function StackJobsPage() {
           <div className="stackjobs-faq__list">
             <div className="stackjobs-faq-item">
               <h3 className="stackjobs-faq-item__question">StackJobs est-elle gratuite pour les candidats ?</h3>
-              <p className="stackjobs-faq-item__answer">
+              <p className="stackjobs-faq-item__answer text-justify-hyphens">
                 Oui, la création de profil et la candidature aux offres sont gratuites pour les candidats.
               </p>
             </div>
             <div className="stackjobs-faq-item">
               <h3 className="stackjobs-faq-item__question">Quels types de postes trouve-t-on sur StackJobs ?</h3>
-              <p className="stackjobs-faq-item__answer">
+              <p className="stackjobs-faq-item__answer text-justify-hyphens">
                 Principalement des postes en développement (front, back, mobile), data science, cloud, DevOps et 
                 cybersécurité, en CDI comme en mission freelance.
               </p>
