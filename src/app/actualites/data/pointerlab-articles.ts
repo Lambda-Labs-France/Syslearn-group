@@ -1,6 +1,7 @@
 import { Article } from "./articles";
 
 export const pointerlabArticles: Article[] = [
+  // ===== PREMIERS 18 ARTICLES =====
   {
     id: 'pl-1',
     title: 'StackJobs.com : La Référence du Recrutement IT en France',
@@ -8,7 +9,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-1.png',
     date: '2026-04-21',
     entity: 'PointerLab',
-    category: 'Secteur',  
+    category: 'Secteur',
     originalLink: 'https://www.pointerlab.fr/blog/stackjobs-com-la-reference-du-recrutement',
   },
   {
@@ -18,7 +19,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-2.png',
     date: '2025-10-13',
     entity: 'PointerLab',
-    category: 'Qt',  
+    category: 'Qt',
     originalLink: 'https://www.pointerlab.fr/blog/qt-6-10-nouveautes-cpp-qml-interfaces-modernes',
   },
   {
@@ -28,7 +29,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-3.png',
     date: '2025-09-19',
     entity: 'PointerLab',
-    category: 'Secteur',  
+    category: 'Secteur',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-cote-navigateur',
   },
   {
@@ -38,7 +39,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-4.png',
     date: '2025-08-27',
     entity: 'PointerLab',
-    category: 'IA',  
+    category: 'IA',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-IA-embarquee',
   },
   {
@@ -48,7 +49,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-5.svg',
     date: '2025-08-05',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp26-reflexion-compile-time',
   },
   {
@@ -58,7 +59,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-6.svg',
     date: '2025-06-11',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-multithreading',
   },
   {
@@ -68,7 +69,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-7.png',
     date: '2025-05-08',
     entity: 'PointerLab',
-    category: 'Secteur',  
+    category: 'Secteur',
     originalLink: 'https://www.pointerlab.fr/blog/business-model-esn',
   },
   {
@@ -78,7 +79,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-8.png',
     date: '2025-05-08',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-concurrent-queue',
   },
   {
@@ -88,7 +89,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-9.png',
     date: '2025-05-05',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-constantes',
   },
   {
@@ -98,7 +99,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-10.png',
     date: '2025-05-05',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-priority-queue',
   },
   {
@@ -108,7 +109,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-11.png',
     date: '2025-05-05',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-std-queue',
   },
   {
@@ -118,7 +119,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-12.png',
     date: '2025-05-04',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-size-vector',
   },
   {
@@ -128,7 +129,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-13.png',
     date: '2025-05-03',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-portee-des-variables',
   },
   {
@@ -138,7 +139,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-14.png',
     date: '2025-05-02',
     entity: 'PointerLab',
-    category: 'C++', 
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-commentaires',
   },
   {
@@ -148,7 +149,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-15.png',
     date: '2025-05-02',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-struct',
   },
   {
@@ -158,7 +159,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-16.png',
     date: '2025-05-02',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-vector-insert-in-cpp',
   },
   {
@@ -168,7 +169,7 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-17.png',
     date: '2025-05-01',
     entity: 'PointerLab',
-    category: 'C++', 
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-syntaxe-base',
   },
   {
@@ -178,7 +179,99 @@ export const pointerlabArticles: Article[] = [
     image: '/images/actualites/pointerlab/art-18.png',
     date: '2025-03-01',
     entity: 'PointerLab',
-    category: 'C++',  
+    category: 'C++',
     originalLink: 'https://www.pointerlab.fr/blog/cpp-exceptions',
+  },
+
+  // ===== NOUVEAUX 9 ARTICLES (du blog PointerLab) =====
+  {
+    id: 'pl-19',
+    title: 'Les salons de l\'écosystème embedded à ne pas manquer en 2025',
+    excerpt: 'Découvrez les salons incontournables de 2025 pour les professionnels des systèmes embarqués, de l\'IoT et de l\'électronique.',
+    image: '/images/actualites/pointerlab/art-19.png',
+    date: '2025-02-25',
+    entity: 'PointerLab',
+    category: 'Events',
+    originalLink: 'https://www.pointerlab.fr/blog/liste-salons-pros-embedded-2025',
+  },
+  {
+    id: 'pl-20',
+    title: 'Salon Embedded World 2025 : Découvrez les nominés et votez pour votre favori',
+    excerpt: 'Découvrez les projets en lice pour les Embedded Awards 2025 et votez pour votre favori dans le Community Choice Award.',
+    image: '/images/actualites/pointerlab/art-20.png',
+    date: '2025-02-21',
+    entity: 'PointerLab',
+    category: 'News',
+    originalLink: 'https://www.pointerlab.fr/blog/embedded-world-2025-nominees',
+  },
+  {
+    id: 'pl-21',
+    title: 'Comment booster son ESN grâce à la RSE',
+    excerpt: 'Découvrez comment la RSE transforme le modèle traditionnel des ESN. À travers l\'exemple de PointerLab, explorez une approche innovante alliant management participatif, politique salariale transparente et engagement social pour créer une ESN où il fait bon travailler.',
+    image: '/images/actualites/pointerlab/art-21.png',
+    date: '2025-02-12',
+    entity: 'PointerLab',
+    category: 'Secteur',
+    originalLink: 'https://www.pointerlab.fr/blog/comment-booster-son-esn-grace-a-la-rse',
+  },
+  {
+    id: 'pl-22',
+    title: 'Lecture et écriture de fichiers CSV et JSON en C++',
+    excerpt: 'Manipuler des fichiers CSV et JSON en C++ permet de stocker et d\'échanger des données efficacement. Découvrez comment les lire et les écrire avec la bibliothèque standard et des outils externes.',
+    image: '/images/actualites/pointerlab/art-22.png',
+    date: '2025-02-11',
+    entity: 'PointerLab',
+    category: 'C++',
+    originalLink: 'https://www.pointerlab.fr/blog/cpp-csv-json',
+  },
+  {
+    id: 'pl-23',
+    title: 'La STL (Standard Template Library) en C++',
+    excerpt: 'Découvrez la STL, une bibliothèque puissante de conteneurs, algorithmes et itérateurs en C++.',
+    image: '/images/actualites/pointerlab/art-23.png',
+    date: '2025-02-01',
+    entity: 'PointerLab',
+    category: 'C++',
+    originalLink: 'https://www.pointerlab.fr/blog/cpp-introduction-standard-template-library',
+  },
+  {
+    id: 'pl-24',
+    title: 'PointerLab devient partenaire officiel de Qt Group',
+    excerpt: 'PointerLab s\'associe officiellement avec Qt Group pour renforcer son expertise en développement logiciel multiplateforme et offrir des solutions toujours plus performantes.',
+    image: '/images/actualites/pointerlab/art-24.png',
+    date: '2025-01-22',
+    entity: 'PointerLab',
+    category: 'News',
+    originalLink: 'https://www.pointerlab.fr/blog/pointerlab-partenaire-qt-group',
+  },
+  {
+    id: 'pl-25',
+    title: 'PointerLab est sponsor de la communauté C++ Francophone officielle',
+    excerpt: 'PointerLab devient le sponsor officiel de la communauté C++ Francophone, renforçant son engagement envers les développeurs et le partage de connaissances autour du langage C++.',
+    image: '/images/actualites/pointerlab/art-25.png',
+    date: '2025-01-15',
+    entity: 'PointerLab',
+    category: 'News',
+    originalLink: 'https://www.pointerlab.fr/blog/pointerlab-sponsoring-cpp-france',
+  },
+  {
+    id: 'pl-26',
+    title: 'Introduction à la Gestion des Fichiers en C++',
+    excerpt: 'La gestion des fichiers en C++ permet de lire et d’écrire des données dans des fichiers, facilitant le stockage et le traitement des informations. Découvrez les bases avec des exemples pratiques.',
+    image: '/images/actualites/pointerlab/art-26.png',
+    date: '2025-01-09',
+    entity: 'PointerLab',
+    category: 'C++',
+    originalLink: 'https://www.pointerlab.fr/blog/cpp-gestion-fichier',
+  },
+  {
+    id: 'pl-27',
+    title: '[Témoignage] Amine raconte son métier d’ingénieur développement C++',
+    excerpt: 'Découvrez le parcours et les missions d\'Amine, ingénieur développement C++, un métier exigeant et clé dans des secteurs comme l\'aéronautique, la finance ou le jeu vidéo.',
+    image: '/images/actualites/pointerlab/art-27.png',
+    date: '2025-01-07',
+    entity: 'PointerLab',
+    category: 'Career',
+    originalLink: 'https://www.pointerlab.fr/blog/temoignage-amine-raconte-son-metier-ingenieur-developpement-c-plus-plus',
   },
 ];

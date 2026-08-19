@@ -19,7 +19,7 @@ export default function NosEntitesPage() {
     {
       name: "PointerLab",
       tagline: "Spécialiste dans l'écosystème C++ pour vos projets logiciels critiques, aussi partenaire official de Qt Group.",
-      description: "PointerLab est une néo-ESN spécialisée en développement C++ et Qt pour la simulation 3D, le médical et l'aéronautique. Vivier de plus de 8 000 profils qualifiés.",
+      description: "PointerLab est une néo-ESN spécialisée en développement écosystéme C++ pour la simulation 3D, le médical et l'aéronautique. Vivier de plus de 8 000 profils qualifiés.",
       link: "/nos-entites/pointerlab",
       image: "/images/entites/entite-pointerlab.jpg",
       color: "var(--gradient-pointerlab)",

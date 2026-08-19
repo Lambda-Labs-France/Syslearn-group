@@ -189,7 +189,7 @@ export default function CandidatureSpontaneeClient() {
                 <Code2 size={20} strokeWidth={1.5} />
                 <div>
                   <h4>PointerLab</h4>
-                  <p>Ingénieurs C++/Qt</p>
+                  <p>Ingénieurs écosystème C++</p>
                 </div>
               </div>
               <div className="candidature-infos__item">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { 
   Filter,
   ChevronLeft,
@@ -11,7 +11,6 @@ import {
   UserCheck,
 } from "lucide-react";
 import {
-  articles,
   entities,
   getFilteredArticles,
   getCategories,
@@ -32,11 +31,46 @@ export default function ActualitesClient() {
   const [selectedEntity, setSelectedEntity] = useState('Groupe');
   const [selectedCategory, setSelectedCategory] = useState('Toutes');
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const trackRef = useRef<HTMLDivElement>(null);
+  const slideWidthRef = useRef<number>(0);
 
-  const categories = getCategories(); // ✅ Récupère les catégories dynamiques
+  const categories = getCategories();
   const filteredArticles = getFilteredArticles(selectedEntity, selectedCategory);
   const totalArticles = filteredArticles.length;
-  const currentArticle = filteredArticles[currentIndex];
+  const articlesPerView = 3;
+  const maxIndex = Math.max(0, totalArticles - articlesPerView);
+
+  const MAX_DOTS = 5;
+
+  const getVisibleDots = () => {
+    if (maxIndex <= MAX_DOTS - 1) {
+      return Array.from({ length: maxIndex + 1 }, (_, i) => i);
+    }
+    
+    let start = 0;
+    if (currentIndex >= 3 && currentIndex <= maxIndex - 3) {
+      start = currentIndex - 2;
+    } else if (currentIndex > maxIndex - 3) {
+      start = maxIndex - (MAX_DOTS - 1);
+    }
+    return Array.from({ length: MAX_DOTS }, (_, i) => start + i);
+  };
+
+  const visibleDots = getVisibleDots();
+
+  useEffect(() => {
+    const updateSlideWidth = () => {
+      if (trackRef.current) {
+        const trackWidth = trackRef.current.offsetWidth;
+        const gap = 24;
+        slideWidthRef.current = (trackWidth - (articlesPerView - 1) * gap) / articlesPerView;
+      }
+    };
+    updateSlideWidth();
+    window.addEventListener('resize', updateSlideWidth);
+    return () => window.removeEventListener('resize', updateSlideWidth);
+  }, [filteredArticles]);
 
   const handleFilterChange = (entity: string, category: string) => {
     setSelectedEntity(entity);
@@ -44,12 +78,28 @@ export default function ActualitesClient() {
     setCurrentIndex(0);
   };
 
+  const scrollToIndex = (index: number) => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
+    setCurrentIndex(index);
+    setTimeout(() => setIsTransitioning(false), 500);
+  };
+
   const goToPrevious = () => {
-    setCurrentIndex((prev) => (prev === 0 ? totalArticles - 1 : prev - 1));
+    if (currentIndex === 0 || isTransitioning) return;
+    scrollToIndex(currentIndex - 1);
   };
 
   const goToNext = () => {
-    setCurrentIndex((prev) => (prev === totalArticles - 1 ? 0 : prev + 1));
+    if (currentIndex >= maxIndex || isTransitioning) return;
+    scrollToIndex(currentIndex + 1);
+  };
+
+  const getTranslateX = () => {
+    if (!trackRef.current) return 0;
+    const gap = 24;
+    const slideWidth = slideWidthRef.current || 0;
+    return -(currentIndex * (slideWidth + gap));
   };
 
   return (
@@ -131,39 +181,79 @@ export default function ActualitesClient() {
             </div>
           ) : (
             <>
-              <div className="actualites-carousel">
+              {/* ✅ DOTS limités sans compteur */}
+              <div className="actualites-carousel__dots">
+                {/* Flèche gauche des dots (si on est loin à droite) */}
+                {visibleDots[0] > 0 && (
+                  <button
+                    className="actualites-carousel__dot-arrow"
+                    onClick={() => scrollToIndex(visibleDots[0] - 1)}
+                    aria-label="Voir les dots précédents"
+                  >
+                    <ChevronLeft size={14} />
+                  </button>
+                )}
+
+                {visibleDots.map((dotIndex) => (
+                  <button
+                    key={dotIndex}
+                    className={`actualites-carousel__dot ${
+                      dotIndex === currentIndex ? 'actualites-carousel__dot--active' : ''
+                    }`}
+                    onClick={() => scrollToIndex(dotIndex)}
+                    aria-label={`Aller au groupe d'articles ${dotIndex + 1}`}
+                  />
+                ))}
+
+                {/* Flèche droite des dots (si on est loin à gauche) */}
+                {visibleDots[visibleDots.length - 1] < maxIndex && (
+                  <button
+                    className="actualites-carousel__dot-arrow"
+                    onClick={() => scrollToIndex(visibleDots[visibleDots.length - 1] + 1)}
+                    aria-label="Voir les dots suivants"
+                  >
+                    <ChevronRight size={14} />
+                  </button>
+                )}
+              </div>
+
+              <div className="actualites-carousel-wrapper">
                 <button 
-                  className="actualites-carousel__btn actualites-carousel__btn--prev"
+                  className={`actualites-carousel__btn actualites-carousel__btn--prev ${
+                    currentIndex === 0 ? 'actualites-carousel__btn--disabled' : ''
+                  }`}
                   onClick={goToPrevious}
-                  aria-label="Article précédent"
+                  disabled={currentIndex === 0}
                 >
                   <ChevronLeft size={28} />
                 </button>
 
-                <div className="actualites-carousel__slide">
-                  <ArticleCard {...currentArticle} />
+                <div className="actualites-carousel__track" ref={trackRef}>
+                  <div 
+                    className="actualites-carousel__slides"
+                    style={{
+                      transform: `translateX(${getTranslateX()}px)`,
+                      transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none',
+                      willChange: 'transform',
+                    }}
+                  >
+                    {filteredArticles.map((article) => (
+                      <div key={article.id} className="actualites-carousel__slide">
+                        <ArticleCard {...article} />
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 <button 
-                  className="actualites-carousel__btn actualites-carousel__btn--next"
+                  className={`actualites-carousel__btn actualites-carousel__btn--next ${
+                    currentIndex >= maxIndex ? 'actualites-carousel__btn--disabled' : ''
+                  }`}
                   onClick={goToNext}
-                  aria-label="Article suivant"
+                  disabled={currentIndex >= maxIndex}
                 >
                   <ChevronRight size={28} />
                 </button>
-              </div>
-
-              <div className="actualites-carousel__dots">
-                {filteredArticles.map((_, index) => (
-                  <button
-                    key={index}
-                    className={`actualites-carousel__dot ${
-                      index === currentIndex ? 'actualites-carousel__dot--active' : ''
-                    }`}
-                    onClick={() => setCurrentIndex(index)}
-                    aria-label={`Aller à l'article ${index + 1}`}
-                  />
-                ))}
               </div>
             </>
           )}

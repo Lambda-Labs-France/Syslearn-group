@@ -10,7 +10,7 @@ import {
 import "../../styles/carrieres/carrieres.css";
 
 export const metadata = {
-  title: "Carrières | Syslearn Group",
+  title: "Carrières",
   description: "Consultant IT, ingénieur C++ ou équipe produit tech : découvrez les métiers de Syslearn Group. Un modèle horizontal, transparence totale et évolution vers l'association.",
 };
 
@@ -75,7 +75,7 @@ export default function CarrieresPage() {
           </p>
           <p className="carrieres-intro__text">
             Ce discours n'est pas qu'une posture : dans un secteur où le turnover moyen des ESN françaises tourne 
-            autour de <strong>18 % par an</strong>, et grimpe au-delà de <strong>25 %</strong> dans les structures 
+            autour de <strong> 18 % par an</strong>, et grimpe au-delà de <strong> 25 %</strong> dans les structures 
             où les consultants se sentent invisibles entre deux missions, le modèle d'entreprise fait une différence 
             mesurable sur la durée d'une carrière, pas seulement sur son confort.
           </p>
@@ -86,7 +86,7 @@ export default function CarrieresPage() {
         <div className="carrieres-marche__inner">
           <h2 className="carrieres-marche__title">Un marché du conseil IT en pleine recomposition</h2>
           <p className="carrieres-marche__text">
-            Le conseil informatique représente aujourd'hui plus de <strong>280 000 emplois</strong> en France, 
+            Le conseil informatique représente aujourd'hui plus de <strong> 280 000 emplois</strong> en France, 
             répartis entre grandes ESN et cabinets spécialisés, avec une croissance annuelle moyenne de 6 à 8 %. 
             Un marché dynamique en apparence, mais qui a profondément changé de visage en quelques années : le 
             rapport de force entre consultants et employeurs s'est largement rééquilibré depuis 2022, et les 
@@ -95,7 +95,7 @@ export default function CarrieresPage() {
           </p>
           <p className="carrieres-marche__text">
             Sur le terrain, le taux journalier moyen (TJM) d'un consultant IT confirmé s'établissait autour de 
-            <strong>680 €</strong> en 2025 sur les plateformes de mise en relation freelance. Un chiffre qui masque 
+            <strong> 680 €</strong> en 2025 sur les plateformes de mise en relation freelance. Un chiffre qui masque 
             toutefois d'importantes disparités : selon une étude Michael Page sur les salaires IT, 87 % des 
             recruteurs anticipaient malgré tout une hausse de 5 à 10 % des rémunérations dans le numérique, portée 
             par une pénurie de profils qui reste structurelle sur les compétences les plus spécialisées, 
@@ -121,7 +121,7 @@ export default function CarrieresPage() {
           </p>
           <p className="carrieres-transparence__text">
             Un chantier loin d'être anodin : selon une étude PwC France de septembre 2025, plus de 
-            <strong>60 % des entreprises du numérique</strong> reconnaissaient ne pas être encore prêtes à 
+            <strong> 60 % des entreprises du numérique</strong> reconnaissaient ne pas être encore prêtes à 
             appliquer cette directive, faute de données consolidées et de processus RH clairs.
           </p>
           <p className="carrieres-transparence__text">
@@ -154,7 +154,7 @@ export default function CarrieresPage() {
           </div>
           <div className="carrieres-metiers__note">
             <p className="carrieres-metiers__note-text">
-              <strong>La France diplôme aujourd'hui environ 46 500 ingénieurs par an</strong>, quand l'économie 
+              <strong> La France diplôme aujourd'hui environ 46 500 ingénieurs par an</strong>, quand l'économie 
               française devra en recruter près de 100 000 par an d'ici 2035 selon un rapport de l'Institut 
               Montaigne relayé par IESF. Dans ce contexte, la spécialisation technique n'est pas un luxe : c'est 
               une protection de carrière.
@@ -200,7 +200,7 @@ export default function CarrieresPage() {
           <h3 className="carrieres-protection__title">Une spécialisation qui protège votre carrière, pas seulement votre salaire</h3>
           <p className="carrieres-protection__text">
             Dans un marché où les augmentations moyennes lors d'un changement d'employeur sont retombées à 
-            <strong>2-4 % en 2026</strong>, contre 5-8 % encore en 2022, la vraie protection d'un consultant ne 
+            <strong> 2-4 % en 2026</strong>, contre 5-8 % encore en 2022, la vraie protection d'un consultant ne 
             réside plus dans sa capacité à négocier, mais dans la rareté réelle de ses compétences. C'est tout 
             l'enjeu de la spécialisation technique que nous cultivons sur l'écosystème C++ : elle ne se négocie 
             pas au coup par coup à chaque renouvellement de mission, elle se construit dans la durée, mission 
@@ -209,7 +209,7 @@ export default function CarrieresPage() {
           <p className="carrieres-protection__text">
             Cette approche vaut aussi pour la diversité des profils que nous accompagnons. L'ingénierie française 
             reste marquée par un déséquilibre persistant, les femmes ne représentent qu'environ 
-            <strong>24 % des ingénieurs en activité en France</strong>, selon la dernière enquête nationale de 
+            <strong> 24 % des ingénieurs en activité en France</strong>, selon la dernière enquête nationale de 
             l'IESF. Un modèle horizontal, où l'évolution se construit sur des critères transparents plutôt que 
             sur des dynamiques informelles de réseau, est aussi une manière concrète de rendre les trajectoires 
             de carrière plus équitables, pour tous les profils qui nous rejoignent.
