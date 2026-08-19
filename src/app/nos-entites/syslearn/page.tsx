@@ -204,8 +204,7 @@ export default function SyslearnPage() {
             <div className="syslearn-faq-item">
               <h3 className="syslearn-faq-item__question">Quelle est la différence entre Syslearn et PointerLab ?</h3>
               <p className="syslearn-faq-item__answer text-justify-hyphens">
-                Syslearn est généraliste en conseil et ingénierie informatique. PointerLab est spécialisée exclusivement 
-                sur le développement logiciel C++ et Qt pour des secteurs comme le médical, l'aéronautique ou la simulation 3D.
+                Syslearn est généraliste en conseil et ingénierie informatique. PointerLab est spécialisée exclusivement sur le développement logiciel autour de l'écosystème C++, pour des secteurs comme le médical, l'aéronautique ou la simulation 3D.
               </p>
               <Link href="/nos-entites/pointerlab" className="syslearn-faq-item__btn">
                 Découvrir PointerLab →

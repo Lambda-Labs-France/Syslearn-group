@@ -7,18 +7,9 @@ interface ArticleCardProps {
   image: string;
   date: string;
   entity: string;
-  category: string;  
+  category: string;
   originalLink: string;
 }
-
-const ENTITY_COLORS: Record<string, string> = {
-  'Syslearn': '#059669',
-  'PointerLab': '#7c3aed',
-  'StackJobs': '#2563eb',
-  'Groupe': '#0f172a',
-};
-
-
 
 export default function ArticleCard({
   title,
@@ -26,7 +17,7 @@ export default function ArticleCard({
   image,
   date,
   entity,
-  category,  
+  category,
   originalLink,
 }: ArticleCardProps) {
   const formatDate = (dateString: string) => {
@@ -44,27 +35,18 @@ export default function ArticleCard({
       target="_blank"
       rel="dofollow noopener noreferrer"
       className="article-card"
+      data-entity={entity}
     >
       <div className="article-card__image">
         <img src={image} alt={title} />
-        <span 
-          className="article-card__entity"
-          style={{ background: ENTITY_COLORS[entity] || '#0f172a' }}
-        >
-          {entity}
-        </span>
+        <span className="article-card__entity">{entity}</span>
         <span className="article-card__external-badge">
           <ExternalLink size={12} />
         </span>
       </div>
       <div className="article-card__body">
         <div className="article-card__meta">
-          <span 
-            className="article-card__category"
-           
-          >
-            {category}
-          </span>
+          <span className="article-card__category">{category}</span>
           <span className="article-card__date">
             <Calendar size={14} />
             {formatDate(date)}

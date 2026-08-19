@@ -16,7 +16,7 @@ export default function RecrutementPage() {
       description: "Missions en énergie, défense et industrie. Vous interviendrez sur des projets où les cycles longs et les contraintes réglementaires exigent une compréhension fine du métier client, au-delà de la seule compétence technique. Une mission n'est jamais un simple ticket à traiter : c'est un système complet à comprendre avant d'y toucher.",
     },
     {
-      title: "Ingénieur C++",
+      title: "Ingénieur écosystème C++",
       entity: "Pôle ingénierie",
       icon: Code2,
       description: "Développement logiciel pour projets critiques. Systèmes embarqués, interfaces temps réel, logiciels de simulation : vous rejoignez une équipe qui a fait de l'écosystème C++ sa spécialité, sur des environnements où la performance et la fiabilité ne sont jamais négociables. Un poste pour les développeurs qui veulent que leur code compte, littéralement.",
@@ -47,11 +47,11 @@ export default function RecrutementPage() {
         <div className="recrutement-content__inner">
           <div className="recrutement-intro">
             <p>
-              En France, environ <strong>85 000 postes de développeurs</strong> restent non pourvus en 2026, 
+              En France, environ <strong> 85 000 postes de développeurs</strong> restent non pourvus en 2026, 
               et ce chiffre s'accentue chaque année. Dans la cybersécurité, l'intelligence artificielle et le 
               cloud, la tension est encore plus marquée : le marché ne récompense plus la polyvalence générique, 
               mais la rareté d'une spécialisation assumée. C'est exactement la conviction sur laquelle 
-              <strong>Syslearn Group</strong> a construit ses trois pôles métiers et c'est ce qui nous permet 
+              <strong> Syslearn Group</strong> a construit ses trois pôles métiers et c'est ce qui nous permet 
               de vous proposer des missions où votre expertise compte vraiment, pas seulement votre disponibilité.
             </p>
             <p className="recrutement-intro__sub">
