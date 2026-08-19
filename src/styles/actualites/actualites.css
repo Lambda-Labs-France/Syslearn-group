@@ -38,7 +38,7 @@
 }
 
 /* ============================================================
-   FILTRES
+   FILTRES - NOUVEAU STYLE
    ============================================================ */
 .actualites-filters {
   padding: 20px 0;
@@ -104,10 +104,7 @@
   transition: all 0.2s ease;
 }
 
-.actualites-filters__option:hover {
-  background: #f1f5f9;
-  color: #0f172a;
-}
+
 
 .actualites-filters__option--active {
   background: #0f172a;
@@ -118,6 +115,7 @@
   background: #1e293b;
 }
 
+/* ✅ Barre du bas : compteur + reset */
 .actualites-filters__bottom {
   display: flex;
   align-items: center;
@@ -229,29 +227,6 @@
   height: 14px;
 }
 
-.actualites-card__external-badge {
-  position: absolute;
-  top: 0.75rem;
-  right: 0.75rem;
-  background: rgba(15, 23, 42, 0.8);
-  backdrop-filter: blur(4px);
-  color: #ffffff;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  z-index: 2;
-  transition: all 0.3s ease;
-}
-
-.actualites-card:hover .actualites-card__external-badge {
-  background: #0f172a;
-  transform: scale(1.1);
-}
-
 .actualites-card__body {
   padding: 1.5rem;
   display: flex;
@@ -318,42 +293,22 @@
   overflow: hidden;
 }
 
-.actualites-card__read-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  color: #2563eb;
-  margin-top: 0.5rem;
-  transition: all 0.3s ease;
-}
-
-.actualites-card:hover .actualites-card__read-link {
-  gap: 0.6rem;
-  color: #1d4ed8;
-}
-
 /* ============================================================
-   PAGINATION - AMÉLIORÉE
+   PAGINATION
    ============================================================ */
 .actualites-pagination {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   margin-top: 3rem;
-  flex-wrap: wrap;
 }
 
 .actualites-pagination__btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
   gap: 0.5rem;
-  min-width: 44px;
-  height: 44px;
-  padding: 0 1.25rem;
+  padding: 0.5rem 1rem;
   background: #ffffff;
   border: 1px solid #e2e8f0;
   border-radius: 0.5rem;
@@ -361,49 +316,30 @@
   font-weight: 500;
   color: #0f172a;
   cursor: pointer;
-  transition: all 0.25s ease;
-  font-family: inherit;
+  transition: all 0.2s ease;
 }
 
 .actualites-pagination__btn:hover:not(:disabled) {
   background: #f1f5f9;
   border-color: #0f172a;
-  transform: translateY(-1px);
 }
 
 .actualites-pagination__btn:disabled {
   opacity: 0.4;
   cursor: not-allowed;
-  transform: none;
-}
-
-.actualites-pagination__btn svg {
-  flex-shrink: 0;
-}
-
-/* ✅ Version compacte pour mobile */
-.actualites-pagination__btn--compact span {
-  display: none;
-}
-
-.actualites-pagination__btn--compact {
-  min-width: 44px;
-  padding: 0 0.75rem;
 }
 
 .actualites-pagination__numbers {
   display: flex;
   gap: 0.25rem;
-  align-items: center;
 }
 
 .actualites-pagination__number {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 40px;
-  height: 40px;
-  padding: 0 0.5rem;
+  width: 36px;
+  height: 36px;
   border-radius: 0.5rem;
   font-size: 0.875rem;
   font-weight: 500;
@@ -412,36 +348,19 @@
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: inherit;
 }
 
 .actualites-pagination__number:hover {
   background: #f1f5f9;
-  color: #0f172a;
-  border-color: #e2e8f0;
 }
 
 .actualites-pagination__number--active {
   background: #0f172a;
   color: #ffffff;
-  border-color: #0f172a;
 }
 
 .actualites-pagination__number--active:hover {
   background: #1e293b;
-  border-color: #1e293b;
-}
-
-/* ✅ Points de suspension */
-.actualites-pagination__dots {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 40px;
-  height: 40px;
-  font-size: 1rem;
-  color: #94a3b8;
-  letter-spacing: 2px;
 }
 
 /* ============================================================
@@ -592,39 +511,12 @@
     height: 180px;
   }
 
-  .actualites-card__external-badge {
-    width: 24px;
-    height: 24px;
-    top: 0.5rem;
-    right: 0.5rem;
-  }
-
-  /* ✅ Pagination responsive */
   .actualites-pagination {
-    gap: 0.375rem;
-  }
-
-  .actualites-pagination__btn {
-    min-width: 38px;
-    height: 38px;
-    padding: 0 0.75rem;
-    font-size: 0.8125rem;
+    flex-wrap: wrap;
   }
 
   .actualites-pagination__btn span {
     display: none;
-  }
-
-  .actualites-pagination__number {
-    min-width: 36px;
-    height: 36px;
-    font-size: 0.8125rem;
-  }
-
-  .actualites-pagination__dots {
-    min-width: 32px;
-    height: 36px;
-    font-size: 0.875rem;
   }
 
   .actualites-upcoming__item {
@@ -668,26 +560,126 @@
     font-size: 0.875rem;
   }
 
-  .actualites-pagination {
-    gap: 0.25rem;
-  }
-
-  .actualites-pagination__btn {
-    min-width: 34px;
-    height: 34px;
-    padding: 0 0.5rem;
-    font-size: 0.75rem;
-  }
-
   .actualites-pagination__number {
-    min-width: 32px;
-    height: 32px;
-    font-size: 0.75rem;
-  }
-
-  .actualites-pagination__dots {
-    min-width: 28px;
+    width: 32px;
     height: 32px;
     font-size: 0.8125rem;
+  }
+}
+/* ============================================================
+   CAROUSEL
+   ============================================================ */
+.actualites-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  position: relative;
+  max-width: 900px;  /* ✅ AJOUTÉ - largeur max du carousel */
+  margin: 0 auto;
+}
+
+.actualites-carousel__slide {
+  flex: 1;
+  max-width: 700px;  /* ✅ MODIFIÉ - de 500px à 700px */
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.actualites-carousel__btn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 56px;     
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #0f172a;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.actualites-carousel__btn:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+  transform: scale(1.05);
+}
+
+.actualites-carousel__btn:active {
+  transform: scale(0.95);
+}
+
+/* DOTS */
+.actualites-carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 0 0 0;
+}
+
+.actualites-carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.actualites-carousel__dot--active {
+  background: #0f172a;
+  width: 28px;
+  border-radius: 9999px;
+}
+
+.actualites-carousel__dot:hover:not(.actualites-carousel__dot--active) {
+  background: #94a3b8;
+}
+
+/* RESPONSIVE CAROUSEL */
+@media (max-width: 768px) {
+  .actualites-carousel {
+    gap: 0.75rem;
+  }
+
+  .actualites-carousel__btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .actualites-carousel__btn svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .actualites-carousel__slide {
+    max-width: 100%;
+    min-height: 380px;
+  }
+}
+
+@media (max-width: 480px) {
+  .actualites-carousel__btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .actualites-carousel__btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .actualites-carousel {
+    gap: 0.5rem;
   }
 }

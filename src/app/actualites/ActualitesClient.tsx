@@ -1,10 +1,7 @@
-// actualites/ActualitesClient.tsx
 "use client";
 
 import { useState } from "react";
 import { 
-  Calendar, 
-  Clock, 
   Filter,
   ChevronLeft,
   ChevronRight,
@@ -12,15 +9,16 @@ import {
   Briefcase,
   Code2,
   UserCheck,
-  ExternalLink
 } from "lucide-react";
 import {
   articles,
   entities,
-  categories,
   getFilteredArticles,
+  getCategories,
   upcomingArticles,
 } from "./data/articles";
+import ArticleCard from "../../components/common/ArticleCard";
+import "../../styles/common/article-card.css";
 import "../../styles/actualites/actualites.css";
 
 const ENTITY_ICONS: Record<string, React.ReactNode> = {
@@ -30,38 +28,28 @@ const ENTITY_ICONS: Record<string, React.ReactNode> = {
   'Groupe': <Users size={16} />,
 };
 
-const ENTITY_COLORS: Record<string, string> = {
-  'Syslearn': '#059669',
-  'PointerLab': '#7c3aed',
-  'StackJobs': '#2563eb',
-  'Groupe': '#0f172a',
-};
-
-const ITEMS_PER_PAGE = 9;
-
 export default function ActualitesClient() {
   const [selectedEntity, setSelectedEntity] = useState('Groupe');
-  const [selectedCategory, setSelectedCategory] = useState('Vue du groupe');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [selectedCategory, setSelectedCategory] = useState('Toutes');
+  const [currentIndex, setCurrentIndex] = useState(0);
 
+  const categories = getCategories(); // ✅ Récupère les catégories dynamiques
   const filteredArticles = getFilteredArticles(selectedEntity, selectedCategory);
-  const totalPages = Math.ceil(filteredArticles.length / ITEMS_PER_PAGE);
-  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const paginatedArticles = filteredArticles.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const totalArticles = filteredArticles.length;
+  const currentArticle = filteredArticles[currentIndex];
 
   const handleFilterChange = (entity: string, category: string) => {
     setSelectedEntity(entity);
     setSelectedCategory(category);
-    setCurrentPage(1);
+    setCurrentIndex(0);
   };
 
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat('fr-FR', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    }).format(date);
+  const goToPrevious = () => {
+    setCurrentIndex((prev) => (prev === 0 ? totalArticles - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) => (prev === totalArticles - 1 ? 0 : prev + 1));
   };
 
   return (
@@ -89,6 +77,7 @@ export default function ActualitesClient() {
                     }`}
                     onClick={() => handleFilterChange(entity, selectedCategory)}
                   >
+                    {ENTITY_ICONS[entity]}
                     {entity}
                   </button>
                 ))}
@@ -120,12 +109,12 @@ export default function ActualitesClient() {
 
           <div className="actualites-filters__bottom">
             <span className="actualites-filters__count">
-              {filteredArticles.length} article{filteredArticles.length > 1 ? 's' : ''}
+              {totalArticles} article{totalArticles > 1 ? 's' : ''}
             </span>
-            {(selectedEntity !== 'Groupe' || selectedCategory !== 'Vue du groupe') && (
+            {(selectedEntity !== 'Groupe' || selectedCategory !== 'Toutes') && (
               <button
                 className="actualites-filters__reset"
-                onClick={() => handleFilterChange('Groupe', 'Vue du groupe')}
+                onClick={() => handleFilterChange('Groupe', 'Toutes')}
               >
                 Réinitialiser les filtres
               </button>
@@ -136,91 +125,46 @@ export default function ActualitesClient() {
 
       <section className="actualites-content">
         <div className="actualites-content__inner">
-          {paginatedArticles.length === 0 ? (
+          {totalArticles === 0 ? (
             <div className="actualites-empty">
               <p>Aucun article ne correspond à vos filtres.</p>
             </div>
           ) : (
             <>
-              <div className="actualites-grid">
-                {paginatedArticles.map((article) => (
-                  <a
-                    key={article.id}
-                    href={article.originalLink}
-                    target="_blank"
-                    rel="dofollow noopener noreferrer"
-                    className="actualites-card"
-                  >
-                    <div className="actualites-card__image">
-                      <img src={article.image} alt={article.title} />
-                      <span 
-                        className="actualites-card__entity"
-                        style={{ background: ENTITY_COLORS[article.entity] || '#0f172a' }}
-                      >
-                        {ENTITY_ICONS[article.entity]}
-                        {article.entity}
-                      </span>
-                      <span className="actualites-card__external-badge">
-                        <ExternalLink size={12} />
-                      </span>
-                    </div>
-                    <div className="actualites-card__body">
-                      <div className="actualites-card__meta">
-                        <span className="actualites-card__category">
-                          {article.category}
-                        </span>
-                        <span className="actualites-card__date">
-                          <Calendar size={14} />
-                          {formatDate(article.date)}
-                        </span>
-                        <span className="actualites-card__readtime">
-                          <Clock size={14} />
-                          {article.readTime} min
-                        </span>
-                      </div>
-                      <h3 className="actualites-card__title">{article.title}</h3>
-                      <p className="actualites-card__excerpt">{article.excerpt}</p>
-                      <span className="actualites-card__read-link">
-                        Lire l'article sur {article.source} →
-                      </span>
-                    </div>
-                  </a>
-                ))}
+              <div className="actualites-carousel">
+                <button 
+                  className="actualites-carousel__btn actualites-carousel__btn--prev"
+                  onClick={goToPrevious}
+                  aria-label="Article précédent"
+                >
+                  <ChevronLeft size={28} />
+                </button>
+
+                <div className="actualites-carousel__slide">
+                  <ArticleCard {...currentArticle} />
+                </div>
+
+                <button 
+                  className="actualites-carousel__btn actualites-carousel__btn--next"
+                  onClick={goToNext}
+                  aria-label="Article suivant"
+                >
+                  <ChevronRight size={28} />
+                </button>
               </div>
 
-              {totalPages > 1 && (
-                <div className="actualites-pagination">
+              <div className="actualites-carousel__dots">
+                {filteredArticles.map((_, index) => (
                   <button
-                    className="actualites-pagination__btn"
-                    onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                    disabled={currentPage === 1}
-                  >
-                    <ChevronLeft size={18} />
-                    <span>Précédent</span>
-                  </button>
-                  <div className="actualites-pagination__numbers">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-                      <button
-                        key={page}
-                        className={`actualites-pagination__number ${
-                          page === currentPage ? 'actualites-pagination__number--active' : ''
-                        }`}
-                        onClick={() => setCurrentPage(page)}
-                      >
-                        {page}
-                      </button>
-                    ))}
-                  </div>
-                  <button
-                    className="actualites-pagination__btn"
-                    onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                    disabled={currentPage === totalPages}
-                  >
-                    <span>Suivant</span>
-                    <ChevronRight size={18} />
-                  </button>
-                </div>
-              )}
+                    key={index}
+                    className={`actualites-carousel__dot ${
+                      index === currentIndex ? 'actualites-carousel__dot--active' : ''
+                    }`}
+                    onClick={() => setCurrentIndex(index)}
+                    aria-label={`Aller à l'article ${index + 1}`}
+                  />
+                ))}
+              </div>
             </>
           )}
         </div>
