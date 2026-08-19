@@ -1,9 +1,7 @@
-
 .stackjobs-page {
   padding-top: 100px;
   min-height: 100vh;
 }
-
 
 .stackjobs-hero {
   background: linear-gradient(135deg, #2752ff 0%, #1d4ed8 30%, #0f172a 100%);
@@ -83,7 +81,6 @@
   transform: translateX(4px) rotate(-5deg);
 }
 
-
 .stackjobs-section {
   padding: 60px 0;
   background: #ffffff;
@@ -122,12 +119,14 @@
   font-family: var(--font-inter);
 }
 
+/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
+/* Plus besoin de dupliquer les propriétés ici */
+
 .stackjobs-section__text p {
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify;
 }
 
 .stackjobs-section__text p:last-child {
@@ -152,7 +151,6 @@
   border-radius: 1rem;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
-
 
 .stackjobs-features {
   padding: 60px 0;
@@ -210,9 +208,7 @@
   color: #1f2937;
   line-height: 1.5;
   margin: 0;
-  text-align: justify;
 }
-
 
 .stackjobs-raisons {
   padding: 60px 0;
@@ -270,9 +266,7 @@
   color: #1f2937;
   line-height: 1.6;
   margin: 0;
-  text-align: justify;
 }
-
 
 .stackjobs-faq {
   padding: 60px 0;
@@ -323,9 +317,7 @@
   font-size: 1rem;
   color: #475569;
   line-height: 1.7;
-  text-align: justify;
 }
-
 
 @media (max-width: 1024px) {
   .stackjobs-section__grid {

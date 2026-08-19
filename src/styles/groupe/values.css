@@ -50,6 +50,9 @@
   line-height: 1.8;
 }
 
+/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
+/* Plus besoin de dupliquer les propriétés ici */
+
 .valeurs-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -114,13 +117,9 @@
 .valeurs-card__description {
   font-size: 0.9375rem;
   color: #475569;
-  line-height: 1.7; /* ✅ Légèrement augmenté pour meilleure lisibilité */
+  line-height: 1.7;
   margin-bottom: 1.25rem;
-  text-align: justify;
-  text-justify: inter-word; /* ✅ Meilleure répartition des espaces */
-  word-break: break-word; /* ✅ Coupe les mots trop longs */
-  hyphens: auto; /* ✅ Ajoute des césures */
-  max-width: 100%; /* ✅ S'assure que le texte prend toute la largeur */
+  max-width: 100%;
 }
 
 .valeurs-card__line {
@@ -155,13 +154,6 @@
 
   .valeurs-grid .valeurs-card:nth-child(5) {
     grid-column: 3 / 5;
-  }
-
-  .valeurs-card__description {
-    text-align: justify;
-    text-justify: inter-word;
-    word-break: break-word;
-    hyphens: auto;
   }
 }
 
@@ -207,12 +199,8 @@
     font-size: 1.125rem;
   }
 
-  /* ✅ Sur mobile, on garde la justification mais avec moins de contraintes */
   .valeurs-card__description {
-    text-align: justify;
-    text-justify: inter-word;
-    word-break: break-word;
-    hyphens: auto;
+    font-size: 0.9375rem;
   }
 }
 
@@ -231,9 +219,5 @@
 
   .valeurs-card__description {
     font-size: 0.875rem;
-    text-align: justify;
-    text-justify: inter-word;
-    word-break: break-word;
-    hyphens: auto;
   }
-}
+} 

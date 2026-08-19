@@ -86,11 +86,11 @@ export default function PointerLabPage() {
           <div className="pointerlab-section__grid">
             <div className="pointerlab-section__text">
               <h2 className="pointerlab-section__title">Une expertise construite sur la rareté des compétences</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 Simulation, imagerie temps réel, systèmes de communication critiques : ce sont des projets où l'à-peu-près 
                 n'a pas sa place.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 PointerLab est une <strong>Spécialiste en écosystème C++ & transformation industrielle</strong>, un choix stratégique dans les 
                 environnements où la fiabilité, la performance et la maîtrise du temps réel priment sur tout le reste : 
                 médical, aéronautique, automobile, industrie lourde. Dans ces secteurs, un logiciel défaillant n'est pas 
@@ -98,7 +98,7 @@ export default function PointerLabPage() {
                 entier. C'est précisément pour répondre à ces exigences que l'écosystème C++ reste, depuis des décennies, 
                 la référence des architectures logicielles critiques.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Recruter un profil C++ senior capable d'intervenir sur des systèmes embarqués ou temps réel est un défi 
                 que connaissent bien les directions techniques : ces compétences sont rares, longues à former et très 
                 disputées sur le marché. PointerLab a construit son modèle autour de cette contrainte.
@@ -120,17 +120,17 @@ export default function PointerLabPage() {
           <div className="pointerlab-section__grid pointerlab-section__grid--reverse">
             <div className="pointerlab-section__text">
               <h2 className="pointerlab-section__title">Un vivier de plus de 8 000 profils C++ qualifiés</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 Reconnue par les acteurs majeurs de cet écosystème, PointerLab s'appuie sur un vivier de plus de 
                 8 000 profils C++ qualifiés, identifiés et validés en continu par une combinaison d'intelligence 
                 artificielle et d'expertise humaine.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Cette double approche permet de croiser la rigueur d'une évaluation technique automatisée avec le 
                 jugement d'experts du domaine, pour ne présenter que des profils réellement opérationnels sur des 
                 projets à forte criticité.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Un accompagnement pensé pour les projets à forte criticité. Au-delà du sourcing, PointerLab accompagne 
                 ses clients dans la structuration de leurs équipes techniques, de la définition du besoin jusqu'à 
                 l'intégration du consultant. Une approche qui s'inscrit dans les tendances observées par des cabinets 
@@ -159,7 +159,7 @@ export default function PointerLabPage() {
                   <div className="pointerlab-expertise-card__icon">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <p className="pointerlab-expertise-card__text">{item.text}</p>
+                  <p className="pointerlab-expertise-card__text text-justify-hyphens">{item.text}</p>
                 </div>
               );
             })}
@@ -179,7 +179,7 @@ export default function PointerLabPage() {
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="pointerlab-raison-card__title">{item.title}</h3>
-                  <p className="pointerlab-raison-card__desc">{item.desc}</p>
+                  <p className="pointerlab-raison-card__desc text-justify-hyphens">{item.desc}</p>
                 </div>
               );
             })}
@@ -199,7 +199,7 @@ export default function PointerLabPage() {
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
                   <h3 className="pointerlab-secteur-card__name">{item.name}</h3>
-                  <p className="pointerlab-secteur-card__desc">{item.desc}</p>
+                  <p className="pointerlab-secteur-card__desc text-justify-hyphens">{item.desc}</p>
                 </div>
               );
             })}
@@ -215,7 +215,7 @@ export default function PointerLabPage() {
               <h3 className="pointerlab-faq-item__question">
                 Pourquoi choisir une ESN spécialisée plutôt qu'une ESN généraliste pour un projet C++ ?
               </h3>
-              <p className="pointerlab-faq-item__answer">
+              <p className="pointerlab-faq-item__answer text-justify-hyphens">
                 Sur des stacks aussi spécifiques que le C++, la profondeur d'expertise fait la différence : 
                 une ESN généraliste doit souvent sous-traiter ou monter en compétence sur le projet, quand une ESN 
                 spécialisée comme PointerLab dispose déjà du vivier et du savoir-faire nécessaires.
@@ -223,7 +223,7 @@ export default function PointerLabPage() {
             </div>
             <div className="pointerlab-faq-item">
               <h3 className="pointerlab-faq-item__question">PointerLab recrute-t-elle en CDI ou en mission ?</h3>
-              <p className="pointerlab-faq-item__answer">
+              <p className="pointerlab-faq-item__answer text-justify-hyphens">
                 Les deux formats existent : mise à disposition de consultants salariés ou freelances pour un pic de charge, 
                 et recrutement direct en CDI pour intégrer durablement un profil C++.
               </p>

@@ -22,7 +22,7 @@ const activitesData = [
     id: "pointerlab",
     title: "PointerLab",
     description:
-      "L'ESN spécialisée dans l'écosystème C++, partenaire officiel de Qt Group. Simulation 3D, imagerie médicale, systèmes embarqués aéronautiques : quand le logiciel doit tenir sous contrainte réelle, sans droit à l'erreur.",
+      "Spécialiste de l'écosystème C++ pour les projets logiciels critiques. Simulation 3D, imagerie médicale, systèmes embarqués aéronautiques : quand le logiciel doit tenir sous contrainte réelle, sans droit à l'erreur.",
     images: [
       "/images/pointerlab-vignette1.jpg",
       "/images/pointerlab-vignette2.jpg",

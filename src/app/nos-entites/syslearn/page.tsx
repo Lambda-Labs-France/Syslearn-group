@@ -66,12 +66,12 @@ export default function SyslearnPage() {
           <div className="syslearn-section__grid">
             <div className="syslearn-section__text">
               <h2 className="syslearn-section__title">Présentation</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 Un projet de transformation numérique dans l'énergie ne se pilote pas comme un projet e-commerce. 
                 Les cycles sont longs, les contraintes réglementaires nombreuses, et une erreur de conception peut 
                 coûter bien plus qu'un simple retard de mise en production.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Syslearn est une <strong>ESN spécialisée dans l'accompagnement des secteurs de l'énergie, de la défense 
                 et de l'industrie</strong> sur leurs projets numériques les plus exigeants. Notre conviction : la technique 
                 seule ne suffit pas, il faut aussi comprendre en profondeur les enjeux métier, réglementaires et 
@@ -94,24 +94,24 @@ export default function SyslearnPage() {
           <div className="syslearn-section__grid syslearn-section__grid--reverse">
             <div className="syslearn-section__text">
               <h2 className="syslearn-section__title">Quatre piliers d'expertise au service des systèmes critiques</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 Nos consultants interviennent en conseil, en régie ou en portage salarial, sur quatre grands domaines 
                 qui structurent aujourd'hui la transformation numérique des secteurs sensibles :
               </p>
               <ul className="syslearn-section__list">
-                <li>
+                <li className="text-justify-hyphens">
                   <strong>L'écosystème Java</strong>, pour la conception et la maintenance d'applications métier robustes, 
                   capables de tenir dans la durée sur des systèmes d'information complexes.
                 </li>
-                <li>
+                <li className="text-justify-hyphens">
                   <strong>L'intelligence artificielle et la data science</strong>, pour transformer des volumes de données 
                   industrielles en décisions opérationnelles fiables.
                 </li>
-                <li>
+                <li className="text-justify-hyphens">
                   <strong>L'IoT industriel</strong>, pour connecter, superviser et optimiser des équipements et 
                   infrastructures sur le terrain.
                 </li>
-                <li>
+                <li className="text-justify-hyphens">
                   <strong>La cybersécurité</strong>, pour protéger des systèmes où une faille ne se mesure pas seulement 
                   en pertes financières, mais parfois en risques opérationnels majeurs.
                 </li>
@@ -133,12 +133,12 @@ export default function SyslearnPage() {
           <div className="syslearn-section__grid">
             <div className="syslearn-section__text">
               <h2 className="syslearn-section__title">Une approche pensée pour la criticité, pas pour la vitesse</h2>
-              <p>
+              <p className="text-justify-hyphens">
                 Contrairement aux environnements où l'itération rapide prime, les projets de nos clients exigent une 
                 approche méthodique : compréhension approfondie du contexte réglementaire, anticipation des risques, 
                 et rigueur dans chaque livrable.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 C'est cette culture de la criticité que l'on retrouve détaillée sur notre page Nos expertises sectorielles, 
                 et qui rejoint les constats du Syntec Numérique sur la tension croissante des compétences IT dans les 
                 secteurs stratégiques français.
@@ -166,7 +166,7 @@ export default function SyslearnPage() {
                   <div className="syslearn-expertise-card__icon">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <p className="syslearn-expertise-card__text">{item.text}</p>
+                  <p className="syslearn-expertise-card__text text-justify-hyphens">{item.text}</p>
                 </div>
               );
             })}
@@ -183,7 +183,7 @@ export default function SyslearnPage() {
                 <div className="syslearn-raison-card__icon">
                   <CheckCircle2 size={24} strokeWidth={1.5} />
                 </div>
-                <p className="syslearn-raison-card__text">{item}</p>
+                <p className="syslearn-raison-card__text ">{item}</p>
               </div>
             ))}
           </div>
@@ -196,14 +196,14 @@ export default function SyslearnPage() {
           <div className="syslearn-faq__list">
             <div className="syslearn-faq-item">
               <h3 className="syslearn-faq-item__question">Quels secteurs Syslearn accompagne-t-elle ?</h3>
-              <p className="syslearn-faq-item__answer">
+              <p className="syslearn-faq-item__answer text-justify-hyphens">
                 Syslearn intervient principalement dans l'énergie, la défense et l'industrie, sur des missions de 
                 conseil et d'ingénierie informatique.
               </p>
             </div>
             <div className="syslearn-faq-item">
               <h3 className="syslearn-faq-item__question">Quelle est la différence entre Syslearn et PointerLab ?</h3>
-              <p className="syslearn-faq-item__answer">
+              <p className="syslearn-faq-item__answer text-justify-hyphens">
                 Syslearn est généraliste en conseil et ingénierie informatique. PointerLab est spécialisée exclusivement 
                 sur le développement logiciel C++ et Qt pour des secteurs comme le médical, l'aéronautique ou la simulation 3D.
               </p>

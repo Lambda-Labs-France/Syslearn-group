@@ -4,7 +4,7 @@ import "../../styles/groupe/groupe.css";
 
 export const metadata = {
   title: "Le Groupe",
-  description: "Découvrez Syslearn Group : l'écosystème derrière Syslearn, PointerLab et StackJobs. Notre histoire, nos valeurs et notre modèle horizontal et transparent. ",
+  description: "Découvrez Syslearn Group : l'écosystème derrière Syslearn, PointerLab et StackJobs. Notre histoire, nos valeurs et notre modèle horizontal et transparent.",
 };
 
 export default function LeGroupePage() {
@@ -28,7 +28,7 @@ export default function LeGroupePage() {
           </div>
           <div className="groupe-section__grid">
             <div className="groupe-section__text">
-              <p className="groupe-section__brief">
+              <p className="groupe-section__brief text-justify-hyphens">
                 Syslearn Group réunit trois entités du numérique - Syslearn, PointerLab et StackJobs - 
                 unies par un modèle horizontal et transparent. Chaque entité conserve sa spécialité tout en 
                 partageant une infrastructure commune et une porosité assumée.
@@ -59,12 +59,12 @@ export default function LeGroupePage() {
           </div>
           <div className="groupe-section__grid groupe-section__grid--reverse">
             <div className="groupe-section__text">
-              <p>
+              <p className="text-justify-hyphens">
                 Chaque entité conserve son autonomie opérationnelle - son propre site, sa propre clientèle, sa propre équipe 
                 dirigeante - tout en partageant une infrastructure commune : outils, méthodes de recrutement, et surtout, une 
                 porosité assumée entre les trois structures.
               </p>
-              <p>
+              <p className="text-justify-hyphens">
                 Un consultant Syslearn en fin de mission énergie peut être orienté vers une opportunité PointerLab si son profil 
                 technique correspond mieux. Une offre PointerLab est relayée en priorité sur StackJobs avant toute diffusion externe.
               </p>
@@ -123,7 +123,7 @@ export default function LeGroupePage() {
           <div className="groupe-faq__list">
             <div className="groupe-faq-item">
               <h3 className="groupe-faq-item__question">Qu'est-ce qu'une néo-ESN ?</h3>
-              <p className="groupe-faq-item__answer">
+              <p className="groupe-faq-item__answer text-justify-hyphens">
                 Une néo-ESN reprend le modèle économique classique d'une entreprise de services numériques - facturer des 
                 compétences techniques en mission - mais en réduisant les strates hiérarchiques et en partageant plus 
                 équitablement la marge avec les consultants qui produisent le travail.
@@ -131,7 +131,7 @@ export default function LeGroupePage() {
             </div>
             <div className="groupe-faq-item">
               <h3 className="groupe-faq-item__question">Syslearn Group est-il une seule entreprise ou plusieurs ?</h3>
-              <p className="groupe-faq-item__answer">
+              <p className="groupe-faq-item__answer text-justify-hyphens">
                 Syslearn Group réunit trois entités distinctes - Syslearn, PointerLab et StackJobs - chacune avec son propre 
                 site et sa propre spécialité, reliées par un modèle et des valeurs communes.
               </p>

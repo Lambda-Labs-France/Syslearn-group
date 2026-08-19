@@ -26,19 +26,11 @@ export default function Hero() {
             </h1>
 
             <p className="hero__description">
-              Vous cherchez un partenaire pour un projet informatique, une expertise C++/Qt pointue, 
-              ou votre prochain poste tech ? Syslearn Group réunit trois entités qui, ensemble, 
-              couvrent tout le parcours : Syslearn pour le conseil et l'ingénierie informatique généraliste, 
-              PointerLab pour le développement logiciel C++ et Qt sur les projets les plus exigeants, 
-              et StackJobs pour connecter les bons profils aux bonnes entreprises.
+              Vous cherchez un partenaire pour un projet informatique, une maîtrise pointue de l'écosystème C++, ou votre prochain poste tech ? <strong>Syslearn Group</strong> réunit trois entités complémentaires qui, ensemble, couvrent tout le parcours : <strong>Syslearn</strong> pour le conseil et l'ingénierie informatique généraliste, <strong>PointerLab</strong> pour le développement logiciel sur l'écosystème C++ appliqué aux projets les plus exigeants, et <strong>StackJobs</strong> pour connecter les bons profils aux bonnes entreprises grâce à un moteur de matching par intelligence artificielle.
             </p>
 
             <p className="hero__description">
-              Ce qui nous relie n'est pas qu'une charte graphique commune : c'est une même façon de travailler. 
-              Peu de strates hiérarchiques, des objectifs et des marges transparents, une spécialisation technique 
-              assumée plutôt qu'une promesse généraliste vague. Un consultant Syslearn qui intervient en énergie 
-              ne fait pas le même métier qu'un ingénieur PointerLab qui développe un logiciel de simulation médicale 
-              et c'est précisément cette diversité maîtrisée qui fait la force du groupe.
+              Ce qui relie ces trois entités n'est pas qu'une charte graphique commune : c'est une même façon de travailler. Peu de strates hiérarchiques, des objectifs et des marges transparents, une spécialisation technique assumée plutôt qu'une promesse généraliste diluée. Un consultant Syslearn qui intervient dans l'énergie ne fait pas le même métier qu'un ingénieur PointerLab qui développe un logiciel de simulation médicale sur l'écosystème C++ et c'est précisément cette diversité maîtrisée, réunie sous une même exigence, qui fait la force de <strong>Syslearn Group</strong>. 
             </p>
             
             <div className="hero__buttons">

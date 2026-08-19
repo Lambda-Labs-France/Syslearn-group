@@ -7,7 +7,7 @@ export default function Rejoindre() {
       <div className="rejoindre__inner">
         <div className="rejoindre__content">
           <h2 className="rejoindre__title">Carrières</h2>
-          <p className="rejoindre__text">
+          <p className="rejoindre__text text-justify-hyphens">
             Rejoindre un groupe où la spécialisation technique paie vraiment. Peu de strates hiérarchiques, 
             des marges connues de tous, et la possibilité réelle de devenir associé si vous le souhaitez. 
             C'est le modèle que PointerLab a rodé sur le C++, et que Syslearn comme StackJobs appliquent à leur façon.
@@ -26,7 +26,7 @@ export default function Rejoindre() {
         </div>
         <div className="rejoindre__image">
           <img
-            src="/images/section-carriere.png"
+            src="/images/carrieres.jpg"
             alt="Carrières"
             className="rejoindre__img"
           />

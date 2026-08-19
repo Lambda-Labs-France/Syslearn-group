@@ -1,9 +1,7 @@
-
 .syslearn-page {
   padding-top: 100px;
   min-height: 100vh;
 }
-
 
 .syslearn-hero {
   background: linear-gradient(135deg, #aacf37 0%, #aacf37 50%, #0f172a 100%);
@@ -89,7 +87,6 @@
   transform: translateX(4px) rotate(-5deg);
 }
 
-
 .syslearn-section {
   padding: 60px 0;
   background: #ffffff;
@@ -128,12 +125,14 @@
   font-family: var(--font-inter);
 }
 
+/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
+/* Plus besoin de dupliquer les propriétés ici */
+
 .syslearn-section__text p {
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify;
 }
 
 .syslearn-section__text p:last-child {
@@ -159,7 +158,6 @@
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
 }
 
-
 .syslearn-section__list {
   list-style: none;
   padding: 0;
@@ -174,7 +172,6 @@
   padding-left: 1.5rem;
   position: relative;
   border-bottom: 1px solid #f1f5f9;
-  text-align: justify;
 }
 
 .syslearn-section__list li:last-child {
@@ -195,7 +192,6 @@
 .syslearn-section__list li strong {
   color: #0f172a;
 }
-
 
 .syslearn-expertises {
   padding: 60px 0;
@@ -251,9 +247,7 @@
   color: #1f2937;
   line-height: 1.5;
   margin: 0;
-  text-align: justify;
 }
-
 
 .syslearn-raisons {
   padding: 60px 0;
@@ -311,9 +305,7 @@
   color: #1f2937;
   line-height: 1.6;
   margin: 0;
-  text-align: justify;
 }
-
 
 .syslearn-faq {
   padding: 60px 0;
@@ -365,7 +357,6 @@
   color: #475569;
   line-height: 1.7;
   margin-bottom: 0.75rem;
-  text-align: justify;
 }
 
 .syslearn-faq-item__btn {
@@ -389,7 +380,6 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 @media (max-width: 1024px) {
   .syslearn-section__grid {
