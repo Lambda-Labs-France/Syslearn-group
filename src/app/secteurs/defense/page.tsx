@@ -40,8 +40,8 @@ export default function DefensePage() {
         <div className="defense-content__inner">
           <div className="defense-content__intro text-justify-hyphens">
             <p>
-              Sur des systèmes où la fiabilité et la confidentialité sont non négociables, 
-              <strong>Syslearn Group</strong> intervient auprès d'acteurs du secteur de la défense avec une 
+              Sur des systèmes où la fiabilité et la confidentialité sont non négociables 
+              <strong> Syslearn Group</strong> intervient auprès d'acteurs du secteur de la défense avec une 
               rigueur méthodologique adaptée à ce niveau d'exigence.
             </p>
           </div>
