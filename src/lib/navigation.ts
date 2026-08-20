@@ -33,6 +33,7 @@ export const mainNav: NavItem[] = [
       { label: "Défense", href: "/secteurs/defense" },
       { label: "Industrie", href: "/secteurs/industrie" },
       { label: "Médical", href: "/secteurs/medical" },
+      { label: "Simulation", href: "/secteurs/simulation" },
       { label: "Aéronautique", href: "/secteurs/aeronautique" },
       { label: "Automobile & Mobilité", href: "/secteurs/automobile-mobilite" },
       { label: "IoT", href: "/secteurs/iot" },
