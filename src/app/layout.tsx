@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google"; // ✅ Supprimer Barlow
+import { Inter } from "next/font/google"; 
 import "./globals.css";
 import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
+import ScrollToTop from "../components/layout/ScrollToTop"; 
 
-// ✅ Garder uniquement Inter
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -37,6 +37,7 @@ export default function RootLayout({
       <body>
         <Header />
         <main>{children}</main>
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
