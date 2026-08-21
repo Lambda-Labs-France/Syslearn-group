@@ -17,6 +17,9 @@ export const metadata: Metadata = {
     template: `%s | Syslearn Group`,
   },
   description: "Syslearn Group - Leader de la transformation numérique",
+  icons: {
+    icon: "/favicon-48x48.png",
+  },
   openGraph: {
     title: "Syslearn Group",
     description: "Découvrez le groupe Syslearn et ses entités",

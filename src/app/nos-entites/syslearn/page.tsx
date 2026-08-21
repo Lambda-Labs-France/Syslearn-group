@@ -45,7 +45,7 @@ export default function SyslearnPage() {
             <div>
               <span className="syslearn-hero__badge">Syslearn</span>
               <h1 className="syslearn-hero__title">
-                Syslearn : Conseil Tech,Ingénierie Data, IA, IoT & Cybersécurité
+                Syslearn : Conseil Tech, Ingénierie Data, IA, IoT & Cybersécurité
               </h1>
             </div>
             <Link 
