@@ -64,9 +64,6 @@
   padding: 0 2rem;
 }
 
-/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
-/* Plus besoin de dupliquer les propriétés ici */
-
 .industrie-content__intro {
   font-size: 1.125rem;
   color: #1f2937;
@@ -95,6 +92,14 @@
   color: #0f172a;
   margin-bottom: 1rem;
   font-family: 'Barlow', sans-serif;
+}
+
+.industrie-content__subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #7c3aed;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .industrie-content__block p {
@@ -139,6 +144,18 @@
 .industrie-content__link:hover svg {
   transform: translateX(2px) rotate(-5deg);
   opacity: 1;
+}
+
+.industrie-content__link-inline {
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.industrie-content__link-inline:hover {
+  color: #5b21b6;
+  text-decoration: underline;
 }
 
 .industrie-expertises {
@@ -339,6 +356,10 @@
 
   .industrie-content__title {
     font-size: 1.25rem;
+  }
+
+  .industrie-content__subtitle {
+    font-size: 1rem;
   }
 
   .industrie-content__block p {

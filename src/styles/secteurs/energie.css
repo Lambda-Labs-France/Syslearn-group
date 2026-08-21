@@ -64,9 +64,6 @@
   padding: 0 2rem;
 }
 
-/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
-/* Plus besoin de dupliquer les propriétés ici */
-
 .energie-content__intro {
   font-size: 1.125rem;
   color: #1f2937;
@@ -95,6 +92,14 @@
   color: #0f172a;
   margin-bottom: 1rem;
   font-family: 'Barlow', sans-serif;
+}
+
+.energie-content__subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #2563eb;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .energie-content__block p {
@@ -341,6 +346,10 @@
     font-size: 1.25rem;
   }
 
+  .energie-content__subtitle {
+    font-size: 1rem;
+  }
+
   .energie-content__block p {
     font-size: 1rem;
   }
@@ -428,4 +437,16 @@
   .energie-content__image {
     height: 160px;
   }
+}
+/* Style pour les liens internes */
+.energie-content__link-inline {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.energie-content__link-inline:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }

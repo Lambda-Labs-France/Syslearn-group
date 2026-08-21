@@ -46,6 +46,9 @@
   font-size: 1rem;
   color: #94a3b8;
   font-weight: 300;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
 }
 
 .aeronautique-hero__subtitle strong {
@@ -63,9 +66,6 @@
   margin: 0 auto;
   padding: 0 2rem;
 }
-
-/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
-/* Plus besoin de dupliquer les propriétés ici */
 
 .aeronautique-content__intro {
   font-size: 1.125rem;
@@ -97,6 +97,14 @@
   font-family: 'Barlow', sans-serif;
 }
 
+.aeronautique-content__subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0284c7;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .aeronautique-content__block p {
   font-size: 1.125rem;
   color: #475569;
@@ -111,6 +119,70 @@
 .aeronautique-content__block strong {
   color: #0284c7;
   font-weight: 600;
+}
+
+.aeronautique-content__link-inline {
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.aeronautique-content__link-inline:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
+
+/* INTRODUCTION AVEC DIVIDER */
+.aeronautique-content__intro-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.aeronautique-content__intro-text {
+  font-size: 1.125rem;
+  color: #1f2937;
+  line-height: 1.8;
+  padding-bottom: 2rem;
+  margin-bottom: 0;
+}
+.aeronautique-content__intro-text strong{
+  color: #0284c7;
+}
+.aeronautique-content__divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 0;
+}
+.aeronautique-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.aeronautique-list li {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.8;
+  padding: 0.5rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.aeronautique-list li:last-child {
+  border-bottom: none;
+}
+
+.aeronautique-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #0284c7;
+  font-weight: 700;
+}
+
+.aeronautique-list li strong {
+  color: #0f172a;
 }
 
 .aeronautique-expertises {
@@ -276,128 +348,4 @@
 
 .aeronautique-content__image:hover {
   transform: scale(1.01);
-}
-
-@media (max-width: 1024px) {
-  .aeronautique-hero__title {
-    font-size: 2.4rem;
-  }
-
-  .aeronautique-cta__title {
-    font-size: 1.75rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .aeronautique-hero {
-    padding: 40px 0;
-  }
-
-  .aeronautique-hero__title {
-    font-size: 2rem;
-  }
-
-  .aeronautique-hero__subtitle {
-    font-size: 0.9375rem;
-  }
-
-  .aeronautique-content {
-    padding: 40px 0 30px 0;
-  }
-
-  .aeronautique-content__intro {
-    font-size: 1rem;
-  }
-
-  .aeronautique-content__title {
-    font-size: 1.25rem;
-  }
-
-  .aeronautique-content__block p {
-    font-size: 1rem;
-  }
-
-  .aeronautique-expertises {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-  }
-
-  .aeronautique-cta {
-    padding: 40px 0;
-  }
-
-  .aeronautique-cta__title {
-    font-size: 1.5rem;
-  }
-
-  .aeronautique-cta__text {
-    font-size: 1rem;
-  }
-
-  .aeronautique-cta__actions {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 0.75rem;
-  }
-
-  .aeronautique-cta__btn--primary,
-  .aeronautique-cta__btn--secondary {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.875rem;
-    width: auto;
-    min-width: fit-content;
-    justify-content: center;
-  }
-
-  .aeronautique-content__image-wrapper {
-    margin: 1.5rem 0 2rem 0;
-  }
-
-  .aeronautique-content__image {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .aeronautique-hero__title {
-    font-size: 1.7rem;
-  }
-
-  .aeronautique-expertise {
-    padding: 0.75rem 1rem;
-  }
-
-  .aeronautique-expertise__text {
-    font-size: 0.875rem;
-  }
-
-  .aeronautique-cta__title {
-    font-size: 1.25rem;
-  }
-
-  .aeronautique-cta__text {
-    font-size: 0.9375rem;
-  }
-
-  .aeronautique-cta__btn--primary,
-  .aeronautique-cta__btn--secondary {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.8125rem;
-    width: auto;
-    min-width: fit-content;
-    justify-content: center;
-  }
-
-  .aeronautique-cta__actions {
-    gap: 0.5rem;
-  }
-
-  .aeronautique-content__image-wrapper {
-    margin: 1rem 0 1.5rem 0;
-  }
-
-  .aeronautique-content__image {
-    height: 160px;
-  }
 }

@@ -71,7 +71,6 @@
   padding-bottom: 2rem;
   border-bottom: 1px solid #e2e8f0;
   margin-bottom: 2rem;
-  text-align: justify;
 }
 
 .iot-content__intro strong {
@@ -95,12 +94,19 @@
   font-family: 'Barlow', sans-serif;
 }
 
+.iot-content__subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #0891b2;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .iot-content__block p {
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.8;
   margin-bottom: 1rem;
-  text-align: justify;
 }
 
 .iot-content__block p:last-child {
@@ -110,6 +116,50 @@
 .iot-content__block strong {
   color: #0891b2;
   font-weight: 600;
+}
+
+.iot-content__link-inline {
+  color: #0891b2;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.iot-content__link-inline:hover {
+  color: #0e7490;
+  text-decoration: underline;
+}
+
+.iot-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.iot-list li {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.8;
+  padding: 0.5rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.iot-list li:last-child {
+  border-bottom: none;
+}
+
+.iot-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #0891b2;
+  font-weight: 700;
+}
+
+.iot-list li strong {
+  color: #0f172a;
 }
 
 .iot-expertises {
@@ -258,6 +308,25 @@
   transform: translateX(4px);
 }
 
+.iot-content__image-wrapper {
+  margin: 2rem 0 2.5rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.iot-content__image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.iot-content__image:hover {
+  transform: scale(1.01);
+}
+
 @media (max-width: 1024px) {
   .iot-hero__title {
     font-size: 2.4rem;
@@ -291,6 +360,10 @@
 
   .iot-content__title {
     font-size: 1.25rem;
+  }
+
+  .iot-content__subtitle {
+    font-size: 1rem;
   }
 
   .iot-content__block p {
@@ -329,6 +402,19 @@
     min-width: fit-content;
     justify-content: center;
   }
+
+  .iot-content__image-wrapper {
+    margin: 1.5rem 0 2rem 0;
+  }
+
+  .iot-content__image {
+    height: 200px;
+  }
+
+  .iot-list li {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -364,45 +450,17 @@
   .iot-cta__actions {
     gap: 0.5rem;
   }
-}
-/* ============================================================
-   IMAGE SOUS EXPERTISES
-   ============================================================ */
-.iot-content__image-wrapper {
-  margin: 2rem 0 2.5rem 0;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-}
 
-.iot-content__image {
-  width: 100%;
-  height: 600px;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
-}
-
-.iot-content__image:hover {
-  transform: scale(1.01);
-}
-
-@media (max-width: 768px) {
   .iot-content__image-wrapper {
-    margin: 1.5rem 0 2rem 0;
-  }
-
-  .iot-content__image {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .iotcontent__image-wrapper {
     margin: 1rem 0 1.5rem 0;
   }
 
   .iot-content__image {
     height: 160px;
+  }
+
+  .iot-list li {
+    font-size: 0.9375rem;
+    padding-left: 1.25rem;
   }
 }

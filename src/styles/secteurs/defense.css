@@ -64,9 +64,6 @@
   padding: 0 2rem;
 }
 
-/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
-/* Plus besoin de dupliquer les propriétés ici */
-
 .defense-content__intro {
   font-size: 1.125rem;
   color: #1f2937;
@@ -76,8 +73,7 @@
   margin-bottom: 2rem;
 }
 
-.defense-content__intro strong,
-.defense-content__block strong {
+.defense-content__intro strong {
   color: #4f46e5;
   font-weight: 600;
 }
@@ -98,6 +94,14 @@
   font-family: 'Barlow', sans-serif;
 }
 
+.defense-content__subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #4f46e5;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .defense-content__block p {
   font-size: 1.125rem;
   color: #475569;
@@ -107,6 +111,11 @@
 
 .defense-content__block p:last-child {
   margin-bottom: 0;
+}
+
+.defense-content__block strong {
+  color: #4f46e5;
+  font-weight: 600;
 }
 
 .defense-content__link {
@@ -337,6 +346,10 @@
     font-size: 1.25rem;
   }
 
+  .defense-content__subtitle {
+    font-size: 1rem;
+  }
+
   .defense-content__block p {
     font-size: 1rem;
   }
@@ -426,4 +439,16 @@
   .defense-content__image {
     height: 160px;
   }
+}
+/* Style pour les liens internes */
+.defense-content__link-inline {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.defense-content__link-inline:hover {
+  color: #4338ca;
+  text-decoration: underline;
 }

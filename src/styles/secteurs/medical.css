@@ -64,9 +64,6 @@
   padding: 0 2rem;
 }
 
-/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
-/* Plus besoin de dupliquer les propriétés ici */
-
 .medical-content__intro {
   font-size: 1.125rem;
   color: #1f2937;
@@ -97,6 +94,14 @@
   font-family: 'Barlow', sans-serif;
 }
 
+.medical-content__subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #059669;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .medical-content__block p {
   font-size: 1.125rem;
   color: #475569;
@@ -111,6 +116,50 @@
 .medical-content__block strong {
   color: #059669;
   font-weight: 600;
+}
+
+.medical-content__link-inline {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.medical-content__link-inline:hover {
+  color: #047857;
+  text-decoration: underline;
+}
+
+.medical-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.medical-list li {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.8;
+  padding: 0.5rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.medical-list li:last-child {
+  border-bottom: none;
+}
+
+.medical-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #059669;
+  font-weight: 700;
+}
+
+.medical-list li strong {
+  color: #0f172a;
 }
 
 .medical-expertises {
@@ -313,6 +362,10 @@
     font-size: 1.25rem;
   }
 
+  .medical-content__subtitle {
+    font-size: 1rem;
+  }
+
   .medical-content__block p {
     font-size: 1rem;
   }
@@ -357,6 +410,11 @@
   .medical-content__image {
     height: 200px;
   }
+
+  .medical-list li {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -399,5 +457,10 @@
 
   .medical-content__image {
     height: 160px;
+  }
+
+  .medical-list li {
+    font-size: 0.9375rem;
+    padding-left: 1.25rem;
   }
 }

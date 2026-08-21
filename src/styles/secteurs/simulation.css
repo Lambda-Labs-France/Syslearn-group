@@ -386,13 +386,13 @@
 }
 
 .simulation-cta__btn--primary {
-  background: #7c3aed;
+  background: #131215;
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
 }
 
 .simulation-cta__btn--primary:hover {
-  background: #6d28d9;
+  background: #222125;
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(124, 58, 237, 0.35);
 }
@@ -590,5 +590,36 @@
 
   .simulation-type-card p {
     font-size: 0.875rem;
+  }
+}
+/* IMAGE UNIQUE */
+.simulation-content__image-wrapper {
+  margin: 2rem 0 2.5rem 0;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.simulation-content__image {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.simulation-content__image:hover {
+  transform: scale(1.01);
+}
+
+@media (max-width: 768px) {
+  .simulation-content__image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .simulation-content__image {
+    height: 160px;
   }
 }
