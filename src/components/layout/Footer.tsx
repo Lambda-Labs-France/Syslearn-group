@@ -33,7 +33,7 @@ export default function Footer() {
               <Link href="/secteurs/energie">Énergie</Link> & <Link href="/secteurs/defense">Défense</Link>
             </li>
             <li>
-              <Link href="/secteurs/medical">Médical</Link> & Simulation
+              <Link href="/secteurs/medical">Médical</Link> & <Link href="/secteurs/simulation">Simulation</Link> 
             </li>
             <li>
               <Link href="/secteurs/aeronautique">Aéronautique</Link> & <Link href="/secteurs/iot">IoT</Link>
