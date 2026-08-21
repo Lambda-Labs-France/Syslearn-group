@@ -314,7 +314,7 @@ export default function SimulationPage() {
           {/* IMAGE UNIQUE - Simulation générale après l'introduction */}
           <div className="simulation-content__image-wrapper">
             <img
-              src="https://picsum.photos/seed/simulation/900/400"
+              src="/images/simulation.jpg"
               alt="Simulation informatique - Syslearn Group"
               className="simulation-content__image"
             />
