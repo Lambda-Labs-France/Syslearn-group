@@ -6,7 +6,7 @@ import {
 import "../../../styles/secteurs/simulation.css";
 
 export const metadata = {
-  title: "Simulation informatique ",
+  title: "Simulation informatique : guide complet pour ingénieurs et décideurs tech",
   description: "Types, langages, frameworks, Digital Twin, profils recrutés : tout ce qu'il faut savoir sur la simulation informatique pour développer ou recruter efficacement.",
 };
 
@@ -297,7 +297,6 @@ export default function SimulationPage() {
             <div>
               <span className="simulation-hero__badge">Secteur</span>
               <h1 className="simulation-hero__title">Simulation : conseil et ingénierie sur mesure</h1>
-              
             </div>
           </div>
         </div>
@@ -308,8 +307,17 @@ export default function SimulationPage() {
           
           <div className="simulation-content__intro text-justify-hyphens">
             <p>
-              La simulation informatique consiste à reproduire le comportement d'un système réel dans un environnement numérique, pour tester, valider ou optimiser sans risque ni coût physique. Il existe une trentaine de grandes familles de simulateurs , du calcul par éléments finis au Digital Twin en passant par le "Hardware in the Loop". C++ reste le langage dominant pour les simulateurs industriels et temps réel, mais Python, MATLAB/Simulink, Julia et Rust gagnent du terrain selon les contextes. Développer un simulateur sérieux mobilise des profils rares : ingénieurs C++/Qt, spécialistes HPC, ingénieurs systèmes embarqués et architectes logiciel simulation.
+              La simulation informatique consiste à reproduire le comportement d'un système réel dans un environnement numérique, pour tester, valider ou optimiser sans risque ni coût physique. Il existe une trentaine de grandes familles de simulateurs, du calcul par éléments finis au Digital Twin en passant par le "Hardware in the Loop". C++ reste le langage dominant pour les simulateurs industriels et temps réel, mais Python, MATLAB/Simulink, Julia et Rust gagnent du terrain selon les contextes. Développer un simulateur sérieux mobilise des profils rares : ingénieurs C++/Qt, spécialistes HPC, ingénieurs systèmes embarqués et architectes logiciel simulation.
             </p>
+          </div>
+
+          {/* IMAGE UNIQUE - Simulation générale après l'introduction */}
+          <div className="simulation-content__image-wrapper">
+            <img
+              src="https://picsum.photos/seed/simulation/900/400"
+              alt="Simulation informatique - Syslearn Group"
+              className="simulation-content__image"
+            />
           </div>
 
           <div className="simulation-content__block">

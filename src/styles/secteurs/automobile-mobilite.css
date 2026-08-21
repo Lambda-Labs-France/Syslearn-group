@@ -64,9 +64,6 @@
   padding: 0 2rem;
 }
 
-/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
-/* Plus besoin de dupliquer les propriétés ici */
-
 .automobile-content__intro {
   font-size: 1.125rem;
   color: #1f2937;
@@ -97,6 +94,14 @@
   font-family: 'Barlow', sans-serif;
 }
 
+.automobile-content__subtitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #d97706;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .automobile-content__block p {
   font-size: 1.125rem;
   color: #475569;
@@ -111,6 +116,98 @@
 .automobile-content__block strong {
   color: #d97706;
   font-weight: 600;
+}
+
+.automobile-content__link-inline {
+  color: #d97706;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.automobile-content__link-inline:hover {
+  color: #b45309;
+  text-decoration: underline;
+}
+
+.automobile-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.automobile-list li {
+  font-size: 1.0625rem;
+  color: #475569;
+  line-height: 1.8;
+  padding: 0.5rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.automobile-list li:last-child {
+  border-bottom: none;
+}
+
+.automobile-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #d97706;
+  font-weight: 700;
+}
+
+.automobile-list li strong {
+  color: #0f172a;
+}
+
+.automobile-table-wrapper {
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+}
+
+.automobile-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  min-width: 500px;
+}
+
+.automobile-table thead {
+  background: #d97706;
+}
+
+.automobile-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.automobile-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #e2e8f0;
+  color: #475569;
+  line-height: 1.5;
+  vertical-align: top;
+}
+
+.automobile-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.automobile-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.automobile-table td strong {
+  color: #0f172a;
 }
 
 .automobile-expertises {
@@ -313,6 +410,10 @@
     font-size: 1.25rem;
   }
 
+  .automobile-content__subtitle {
+    font-size: 1rem;
+  }
+
   .automobile-content__block p {
     font-size: 1rem;
   }
@@ -357,6 +458,21 @@
   .automobile-content__image {
     height: 200px;
   }
+
+  .automobile-list li {
+    font-size: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  .automobile-table {
+    font-size: 0.8rem;
+    min-width: 400px;
+  }
+
+  .automobile-table th,
+  .automobile-table td {
+    padding: 0.5rem 0.75rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -399,5 +515,20 @@
 
   .automobile-content__image {
     height: 160px;
+  }
+
+  .automobile-list li {
+    font-size: 0.9375rem;
+    padding-left: 1.25rem;
+  }
+
+  .automobile-table {
+    font-size: 0.7rem;
+    min-width: 300px;
+  }
+
+  .automobile-table th,
+  .automobile-table td {
+    padding: 0.3rem 0.5rem;
   }
 }
