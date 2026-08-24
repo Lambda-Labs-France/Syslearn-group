@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import { 
   Filter,
   ChevronLeft,
@@ -27,19 +27,47 @@ const ENTITY_ICONS: Record<string, React.ReactNode> = {
   'Groupe': <Users size={16} />,
 };
 
+// ✅ Fonction pour déterminer le nombre d'articles par vue selon la taille d'écran
+const getArticlesPerView = () => {
+  if (typeof window === 'undefined') return 3;
+  if (window.innerWidth < 768) return 1;
+  if (window.innerWidth < 1024) return 2;
+  return 3;
+};
+
 export default function ActualitesClient() {
   const [selectedEntity, setSelectedEntity] = useState('Groupe');
   const [selectedCategory, setSelectedCategory] = useState('Toutes');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [articlesPerView, setArticlesPerView] = useState(3);
   const trackRef = useRef<HTMLDivElement>(null);
   const slideWidthRef = useRef<number>(0);
+  const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const isUserScrollingRef = useRef(false);
 
   const categories = getCategories();
   const filteredArticles = getFilteredArticles(selectedEntity, selectedCategory);
   const totalArticles = filteredArticles.length;
-  const articlesPerView = 3;
   const maxIndex = Math.max(0, totalArticles - articlesPerView);
+
+  // ✅ Mettre à jour le nombre d'articles par vue au resize
+  useEffect(() => {
+    const updateArticlesPerView = () => {
+      const newValue = getArticlesPerView();
+      if (newValue !== articlesPerView) {
+        setArticlesPerView(newValue);
+        setCurrentIndex(0);
+        if (trackRef.current) {
+          trackRef.current.scrollTo({ left: 0, behavior: 'auto' });
+        }
+      }
+    };
+
+    updateArticlesPerView();
+    window.addEventListener('resize', updateArticlesPerView);
+    return () => window.removeEventListener('resize', updateArticlesPerView);
+  }, [articlesPerView]);
 
   const MAX_DOTS = 5;
 
@@ -59,48 +87,176 @@ export default function ActualitesClient() {
 
   const visibleDots = getVisibleDots();
 
+  // Calcul de la largeur des slides
   useEffect(() => {
     const updateSlideWidth = () => {
       if (trackRef.current) {
         const trackWidth = trackRef.current.offsetWidth;
         const gap = 24;
-        slideWidthRef.current = (trackWidth - (articlesPerView - 1) * gap) / articlesPerView;
+        const currentArticlesPerView = getArticlesPerView();
+        slideWidthRef.current = (trackWidth - (currentArticlesPerView - 1) * gap) / currentArticlesPerView;
       }
     };
     updateSlideWidth();
     window.addEventListener('resize', updateSlideWidth);
     return () => window.removeEventListener('resize', updateSlideWidth);
-  }, [filteredArticles]);
+  }, [filteredArticles, articlesPerView]);
+
+  // Synchronisation du scroll manuel avec les dots
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    const handleScroll = () => {
+      if (isAnimating) return;
+      
+      isUserScrollingRef.current = true;
+      
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      scrollTimeoutRef.current = setTimeout(() => {
+        const scrollLeft = track.scrollLeft;
+        const gap = 24;
+        const currentArticlesPerView = getArticlesPerView();
+        const slideTotalWidth = slideWidthRef.current + gap;
+        const newIndex = Math.round(scrollLeft / slideTotalWidth);
+        
+        if (newIndex !== currentIndex && newIndex <= maxIndex) {
+          setCurrentIndex(newIndex);
+        }
+        isUserScrollingRef.current = false;
+      }, 150);
+    };
+
+    track.addEventListener('scroll', handleScroll, { passive: true });
+    return () => track.removeEventListener('scroll', handleScroll);
+  }, [currentIndex, maxIndex, isAnimating, articlesPerView]);
+
+  // Scroll vers un index
+  const scrollToIndex = useCallback((index: number) => {
+    if (isAnimating) return;
+    if (index < 0 || index > maxIndex) return;
+    
+    const track = trackRef.current;
+    if (!track) return;
+
+    const gap = 24;
+    const currentArticlesPerView = getArticlesPerView();
+    const slideTotalWidth = slideWidthRef.current + gap;
+    const targetScroll = index * slideTotalWidth;
+
+    setIsAnimating(true);
+    setCurrentIndex(index);
+    
+    track.scrollTo({
+      left: targetScroll,
+      behavior: 'smooth',
+    });
+
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 500);
+  }, [maxIndex, isAnimating, articlesPerView]);
 
   const handleFilterChange = (entity: string, category: string) => {
     setSelectedEntity(entity);
     setSelectedCategory(category);
     setCurrentIndex(0);
+    setIsAnimating(false);
+    if (trackRef.current) {
+      trackRef.current.scrollTo({ left: 0, behavior: 'auto' });
+    }
   };
 
-  const scrollToIndex = (index: number) => {
-    if (isTransitioning) return;
-    setIsTransitioning(true);
-    setCurrentIndex(index);
-    setTimeout(() => setIsTransitioning(false), 500);
-  };
+  const goToPrevious = useCallback(() => {
+    if (currentIndex > 0 && !isAnimating) {
+      scrollToIndex(currentIndex - 1);
+    }
+  }, [currentIndex, isAnimating, scrollToIndex]);
 
-  const goToPrevious = () => {
-    if (currentIndex === 0 || isTransitioning) return;
-    scrollToIndex(currentIndex - 1);
-  };
+  const goToNext = useCallback(() => {
+    if (currentIndex < maxIndex && !isAnimating) {
+      scrollToIndex(currentIndex + 1);
+    }
+  }, [currentIndex, maxIndex, isAnimating, scrollToIndex]);
 
-  const goToNext = () => {
-    if (currentIndex >= maxIndex || isTransitioning) return;
-    scrollToIndex(currentIndex + 1);
-  };
+  // ✅ Support clavier
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') goToPrevious();
+      if (e.key === 'ArrowRight') goToNext();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [goToPrevious, goToNext]);
 
-  const getTranslateX = () => {
-    if (!trackRef.current) return 0;
-    const gap = 24;
-    const slideWidth = slideWidthRef.current || 0;
-    return -(currentIndex * (slideWidth + gap));
-  };
+  // ✅ Support tactile (swipe)
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+
+    let startX = 0;
+    let startY = 0;
+    let isSwiping = false;
+
+    const handleTouchStart = (e: TouchEvent) => {
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      isSwiping = false;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!startX || !startY) return;
+      
+      const deltaX = e.touches[0].clientX - startX;
+      const deltaY = e.touches[0].clientY - startY;
+      
+      if (Math.abs(deltaX) > 20 && Math.abs(deltaX) > Math.abs(deltaY)) {
+        isSwiping = true;
+        e.preventDefault();
+      }
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      if (!isSwiping) return;
+      
+      const endX = e.changedTouches[0].clientX;
+      const deltaX = endX - startX;
+      
+      if (deltaX < -50) {
+        goToNext();
+      } else if (deltaX > 50) {
+        goToPrevious();
+      }
+      
+      startX = 0;
+      startY = 0;
+      isSwiping = false;
+    };
+
+    track.addEventListener('touchstart', handleTouchStart, { passive: true });
+    track.addEventListener('touchmove', handleTouchMove, { passive: false });
+    track.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      track.removeEventListener('touchstart', handleTouchStart);
+      track.removeEventListener('touchmove', handleTouchMove);
+      track.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, [goToNext, goToPrevious]);
+
+  // ✅ Réinitialiser l'animation si elle bloque
+  useEffect(() => {
+    const resetAnimation = () => {
+      if (isAnimating) {
+        setIsAnimating(false);
+      }
+    };
+    window.addEventListener('scroll', resetAnimation);
+    return () => window.removeEventListener('scroll', resetAnimation);
+  }, [isAnimating]);
 
   return (
     <main className="actualites-page">
@@ -181,14 +337,13 @@ export default function ActualitesClient() {
             </div>
           ) : (
             <>
-              {/* ✅ DOTS limités sans compteur */}
               <div className="actualites-carousel__dots">
-                {/* Flèche gauche des dots (si on est loin à droite) */}
                 {visibleDots[0] > 0 && (
                   <button
                     className="actualites-carousel__dot-arrow"
                     onClick={() => scrollToIndex(visibleDots[0] - 1)}
                     aria-label="Voir les dots précédents"
+                    disabled={isAnimating}
                   >
                     <ChevronLeft size={14} />
                   </button>
@@ -202,15 +357,16 @@ export default function ActualitesClient() {
                     }`}
                     onClick={() => scrollToIndex(dotIndex)}
                     aria-label={`Aller au groupe d'articles ${dotIndex + 1}`}
+                    disabled={isAnimating}
                   />
                 ))}
 
-                {/* Flèche droite des dots (si on est loin à gauche) */}
                 {visibleDots[visibleDots.length - 1] < maxIndex && (
                   <button
                     className="actualites-carousel__dot-arrow"
                     onClick={() => scrollToIndex(visibleDots[visibleDots.length - 1] + 1)}
                     aria-label="Voir les dots suivants"
+                    disabled={isAnimating}
                   >
                     <ChevronRight size={14} />
                   </button>
@@ -220,23 +376,20 @@ export default function ActualitesClient() {
               <div className="actualites-carousel-wrapper">
                 <button 
                   className={`actualites-carousel__btn actualites-carousel__btn--prev ${
-                    currentIndex === 0 ? 'actualites-carousel__btn--disabled' : ''
+                    currentIndex === 0 || isAnimating ? 'actualites-carousel__btn--disabled' : ''
                   }`}
                   onClick={goToPrevious}
-                  disabled={currentIndex === 0}
+                  disabled={currentIndex === 0 || isAnimating}
+                  aria-label="Articles précédents"
                 >
                   <ChevronLeft size={28} />
                 </button>
 
-                <div className="actualites-carousel__track" ref={trackRef}>
-                  <div 
-                    className="actualites-carousel__slides"
-                    style={{
-                      transform: `translateX(${getTranslateX()}px)`,
-                      transition: isTransitioning ? 'transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)' : 'none',
-                      willChange: 'transform',
-                    }}
-                  >
+                <div 
+                  className="actualites-carousel__track" 
+                  ref={trackRef}
+                >
+                  <div className="actualites-carousel__slides">
                     {filteredArticles.map((article) => (
                       <div key={article.id} className="actualites-carousel__slide">
                         <ArticleCard {...article} />
@@ -247,10 +400,11 @@ export default function ActualitesClient() {
 
                 <button 
                   className={`actualites-carousel__btn actualites-carousel__btn--next ${
-                    currentIndex >= maxIndex ? 'actualites-carousel__btn--disabled' : ''
+                    currentIndex >= maxIndex || isAnimating ? 'actualites-carousel__btn--disabled' : ''
                   }`}
                   onClick={goToNext}
-                  disabled={currentIndex >= maxIndex}
+                  disabled={currentIndex >= maxIndex || isAnimating}
+                  aria-label="Articles suivants"
                 >
                   <ChevronRight size={28} />
                 </button>

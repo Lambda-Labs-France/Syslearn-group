@@ -1,4 +1,6 @@
+// actualites/data/articles.ts
 import { pointerlabArticles } from './pointerlab-articles';
+import { stackjobsArticles } from './stackjobs-articles';
 
 export interface Article {
   id: string;
@@ -11,9 +13,11 @@ export interface Article {
   originalLink: string;
 }
 
+// ✅ Fusionner et trier par date (du plus récent au plus ancien)
 export const articles: Article[] = [
   ...pointerlabArticles,
-];
+  ...stackjobsArticles,
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
 export const upcomingArticles = [
   {
