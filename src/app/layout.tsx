@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   description: "Syslearn Group - Leader de la transformation numérique",
   icons: {
-    icon: "/favicon-48x48.png",
+    icon: "/syslearn-groupe.ico?v=2",
   },
   openGraph: {
     title: "Syslearn Group",
@@ -37,6 +37,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${inter.className} ${inter.variable}`}>
+      <head>
+        <link rel="icon" href="/syslearn-groupe.ico?v=2" sizes="48x48" />
+
+      </head>
       <body>
         <Header />
         <main>{children}</main>
