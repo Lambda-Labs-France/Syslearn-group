@@ -464,3 +464,15 @@
     padding-left: 1.25rem;
   }
 }
+/* Style pour les liens internes */
+.medical-content__link-inline {
+  color: #059669;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.medical-content__link-inline:hover {
+  color: #047857;
+  text-decoration: underline;
+}

@@ -550,3 +550,15 @@
     font-size: 0.8125rem;
   }
 }
+/* Style pour les liens dans le contenu */
+.pointerlab-content__link {
+  color: #9462fc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pointerlab-content__link:hover {
+  color: #b794f4;
+  text-decoration: underline;
+}

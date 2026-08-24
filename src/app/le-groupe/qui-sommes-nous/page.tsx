@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "../../../styles/groupe/about.css";
 
 export const metadata = {
@@ -34,7 +35,7 @@ export default function QuiSommesNousPage() {
                   <span className="quisommes-timeline-item__year">2019</span>
                   <p className="text-justify-hyphens">
                     <strong>Naissance de Syslearn</strong> - Du constat qu'un conseil informatique générique ne suffit plus 
-                    dès qu'un secteur impose ses propres règles du jeu - cycles longs de l'énergie, exigences de sécurité 
+                    dès qu'un secteur impose ses propres règles du jeu : cycles longs de l'énergie, exigences de sécurité 
                     de la défense.
                   </p>
                 </div>
@@ -65,19 +66,58 @@ export default function QuiSommesNousPage() {
             </div>
           </div>
 
+          {/* SECTION NOTRE PHILOSOPHIE - NOUVEAU CONTENU */}
           <div className="quisommes-block">
             <h2 className="quisommes-block__title">Notre philosophie</h2>
+            
             <p className="quisommes-block__text text-justify-hyphens">
-              La plupart des ESN grandissent en empilant les strates hiérarchiques et en diluant leurs marges dans l'opacité le consultant sur le terrain ignore souvent ce que sa mission facture réellement. Nous avons construit l'inverse. PointerLab a été pensée dès le départ avec un modèle à deux niveaux seulement associés et collaborateurs où chacun connaît les objectifs et les marges de son travail. Syslearn Group porte cette conviction à l'échelle de ses trois entités : Syslearn, PointerLab et StackJobs.
+              <strong>Syslearn Group</strong> réunit trois entités qui, ensemble, couvrent tout le parcours : 
+              {" "}<Link href="https://www.syslearn.fr" target="_blank" rel="dofollow noopener noreferrer" className="quisommes-block__link">Syslearn</Link>{" "} 
+              pour le conseil Data, Ingénierie Tech, IA, IoT et Cybersécurité, 
+              {" "}<Link href="https://www.pointerlab.fr" target="_blank" rel="dofollow noopener noreferrer" className="quisommes-block__link">PointerLab</Link>{" "} 
+              pour le développement logiciel sur l'écosystème C++ appliqué aux projets les plus exigeants, et 
+              {" "}<Link href="https://www.stackjobs.com" target="_blank" rel="dofollow noopener noreferrer" className="quisommes-block__link">StackJobs</Link>{" "} 
+              pour connecter les bons profils aux bonnes entreprises.
             </p>
+            
             <p className="quisommes-block__text text-justify-hyphens">
-              Trois entités, trois métiers distincts, une même colonne vertébrale. Syslearn conseille et déploie des solutions informatiques dans des secteurs à forte contrainte réglementaire énergie, défense, industrie. PointerLab construit des logiciels sur l'écosystème C++ là où la fiabilité n'est pas négociable médical, aéronautique, mobilité. StackJobs connecte les meilleurs profils tech aux entreprises qui les recherchent vraiment, grâce à un matching propulsé par l'IA.
+              Cette architecture n'est pas un assemblage opportuniste de trois marques : c'est une réponse structurelle 
+              à un problème que rencontrent la plupart des entreprises technologiques françaises. Le marché IT français 
+              compte aujourd'hui plus de 
+              {" "}<Link 
+                href="https://www.cobalt-ia.com/fr/blog/radiographie-marche-it-francais" 
+                target="_blank" 
+                rel="nofollow noopener noreferrer" 
+                className="quisommes-block__link"
+              >
+                48 000 entreprises actives, dont le top 10 concentre moins de 20 % du marché
+              </Link>{", "}
+              un niveau de fragmentation nettement plus élevé qu'au Royaume-Uni ou aux États-Unis. Résultat concret 
+              pour les entreprises clientes : 
+              {" "}<Link 
+                href="https://www.lemag-numerique.com/workspace/piloter-infogerance-environnement-multi-prestataires" 
+                target="_blank" 
+                rel="nofollow noopener noreferrer" 
+                className="quisommes-block__link"
+              >
+                sept grandes entreprises françaises sur dix confient désormais leurs services IT à au moins trois 
+                fournisseurs différents
+              </Link>{", "}
+              une dispersion qui complique le pilotage au point que la « confusion sur la responsabilité » figure 
+              aujourd'hui en tête des défis cités par 62 % des DSI interrogés.
+            </p>
+            
+            <p className="quisommes-block__text text-justify-hyphens">
+              Cette fragmentation a un coût direct : jongler entre plusieurs prestataires pour couvrir le conseil 
+              généraliste, l'ingénierie critique et le recrutement spécialisé entraîne à chaque interface une perte 
+              d'information, un délai de plus et une responsabilité qui se dilue. Chez nous, ces trois briques restent 
+              connectées, sous une même exigence de rigueur et de transparence.
             </p>
           </div>
 
           <div className="quisommes-engagement">
             <h3 className="quisommes-engagement__title">Notre engagement</h3>
-            <p className="quisommes-engagement__text ">
+            <p className="quisommes-engagement__text text-justify-hyphens">
               Permettre à toutes et tous de trouver la meilleure opportunité, que ce soit pour les entreprises 
               que nous accompagnons ou pour les talents que nous recrutons.
             </p>

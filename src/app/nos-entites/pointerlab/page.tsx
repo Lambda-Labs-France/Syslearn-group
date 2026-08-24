@@ -93,13 +93,17 @@ export default function PointerLabPage() {
               <p className="text-justify-hyphens">
                 PointerLab est une <strong>Spécialiste en écosystème C++ & transformation industrielle</strong>, un choix stratégique dans les 
                 environnements où la fiabilité, la performance et la maîtrise du temps réel priment sur tout le reste : 
-                médical, aéronautique, automobile, industrie lourde. Dans ces secteurs, un logiciel défaillant n'est pas 
+                <Link href="https://www.syslearn-group.com/secteurs/medical" target="_blank" rel="dofollow noopener noreferrer" className="pointerlab-content__link"> médical</Link>, 
+                <Link href="https://www.syslearn-group.com/secteurs/aeronautique" target="_blank" rel="dofollow noopener noreferrer" className="pointerlab-content__link"> aéronautique</Link>, 
+                <Link href="https://www.syslearn-group.com/secteurs/automobile-mobilite" target="_blank" rel="dofollow noopener noreferrer" className="pointerlab-content__link"> automobile</Link>, 
+                industrie lourde. Dans ces secteurs, un logiciel défaillant n'est pas 
                 une simple gêne : il peut mettre en jeu la sécurité des personnes ou la continuité d'un système industriel 
-                entier. C'est précisément pour répondre à ces exigences que l'écosystème C++ reste, depuis des décennies, 
-                la référence des architectures logicielles critiques.
+                entier. C'est précisément pour répondre à ces exigences que 
+                <Link href="https://www.techniques-ingenieur.fr/base-documentaire/technologies-de-l-information-th9/systemes-embarques-42588210/vers-une-certification-continue-des-logiciels-critiques-en-aeronautique-h8060/" target="_blank" rel="nofollow noopener noreferrer" className="pointerlab-content__link"> l'écosystème C++ reste, depuis des décennies, la référence des architectures logicielles critiques</Link>.
               </p>
               <p className="text-justify-hyphens">
-                Recruter un profil C++ senior capable d'intervenir sur des systèmes embarqués ou temps réel est un défi 
+                Recruter un profil C++ senior capable d'intervenir sur 
+                <Link href="https://www.syslearn-group.com/secteurs/iot" target="_blank" rel="dofollow noopener noreferrer" className="pointerlab-content__link"> des systèmes embarqués ou temps réel</Link> est un défi 
                 que connaissent bien les directions techniques : ces compétences sont rares, longues à former et très 
                 disputées sur le marché. PointerLab a construit son modèle autour de cette contrainte.
               </p>
@@ -122,8 +126,9 @@ export default function PointerLabPage() {
               <h2 className="pointerlab-section__title">Un vivier de plus de 8 000 profils C++ qualifiés</h2>
               <p className="text-justify-hyphens">
                 Reconnue par les acteurs majeurs de cet écosystème, PointerLab s'appuie sur un vivier de plus de 
-                8 000 profils C++ qualifiés, identifiés et validés en continu par une combinaison d'intelligence 
-                artificielle et d'expertise humaine.
+                8 000 profils C++ qualifiés, identifiés et validés en continu par une combinaison d'
+                <Link href="https://co-cto.fr/en/blog/lia-dans-le-developpement-logiciel-quand-lintelligence-artificielle-redefinit-les-pratiques-tech" target="_blank" rel="nofollow noopener noreferrer" className="pointerlab-content__link">intelligence artificielle</Link> 
+                et d'expertise humaine.
               </p>
               <p className="text-justify-hyphens">
                 Cette double approche permet de croiser la rigueur d'une évaluation technique automatisée avec le 
@@ -132,9 +137,11 @@ export default function PointerLabPage() {
               </p>
               <p className="text-justify-hyphens">
                 Un accompagnement pensé pour les projets à forte criticité. Au-delà du sourcing, PointerLab accompagne 
-                ses clients dans la structuration de leurs équipes techniques, de la définition du besoin jusqu'à 
+                ses clients dans la 
+                <Link href="https://www.syslearn-group.com/carrieres/metiers" target="_blank" rel="dofollow noopener noreferrer" className="pointerlab-content__link"> structuration de leurs équipes techniques</Link>, de la définition du besoin jusqu'à 
                 l'intégration du consultant. Une approche qui s'inscrit dans les tendances observées par des cabinets 
-                comme le Syntec Numérique sur la tension du marché des compétences logicielles critiques en France.
+                comme le 
+                <Link href="https://numeum.fr/economie-marche/classement-2025-des-esn-ict-les-plus-performantes-en-france/" target="_blank" rel="nofollow noopener noreferrer" className="pointerlab-content__link"> Syntec Numérique sur la tension du marché des compétences logicielles critiques en France</Link>.
               </p>
             </div>
             <div className="pointerlab-section__image">
@@ -159,7 +166,15 @@ export default function PointerLabPage() {
                   <div className="pointerlab-expertise-card__icon">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <p className="pointerlab-expertise-card__text text-justify-hyphens">{item.text}</p>
+                  <p className="pointerlab-expertise-card__text text-justify-hyphens">
+                    {item.text === "Vision par ordinateur (OpenCV) et traitement d'image médicale" ? (
+                      <>
+                        <Link href="https://www.techniques-ingenieur.fr/base-documentaire/technologies-de-l-information-th9/systemes-embarques-42588210/vers-une-certification-continue-des-logiciels-critiques-en-aeronautique-h8060/" target="_blank" rel="nofollow noopener noreferrer" className="pointerlab-content__link">Vision par ordinateur (OpenCV) et traitement d'image médicale</Link>
+                      </>
+                    ) : (
+                      item.text
+                    )}
+                  </p>
                 </div>
               );
             })}

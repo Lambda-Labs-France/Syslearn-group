@@ -7,13 +7,14 @@ import {
   Plane, 
   Car, 
   Wifi,
+  Cpu,
   ArrowRight
 } from "lucide-react";
 import "../../styles/secteurs/secteurs.css";
 
 export const metadata = {
   title: "Secteurs",
-  description: "Découvrez les secteurs accompagnés par Syslearn Group : énergie, défense, industrie, médical, aéronautique, automobile et IoT. Conseil et ingénierie sur mesure.",
+  description: "Découvrez les secteurs accompagnés par Syslearn Group : énergie, défense, industrie, médical, aéronautique, automobile, IoT et simulation. Conseil et ingénierie sur mesure.",
 };
 
 export default function SecteursPage() {
@@ -24,7 +25,6 @@ export default function SecteursPage() {
       description: "Conseil et ingénierie pour les acteurs de l'énergie, sur des cycles longs et réglementés.",
       link: "/secteurs/energie",
       color: "#2563eb",
-      entities: ["Syslearn"],
     },
     {
       name: "Défense",
@@ -32,7 +32,6 @@ export default function SecteursPage() {
       description: "Systèmes critiques où la fiabilité et la confidentialité sont non négociables.",
       link: "/secteurs/defense",
       color: "#4f46e5",
-      entities: ["Syslearn"],
     },
     {
       name: "Industrie",
@@ -40,7 +39,6 @@ export default function SecteursPage() {
       description: "Industrie 4.0 : automatisation, supervision et fiabilisation des lignes de production.",
       link: "/secteurs/industrie",
       color: "#7c3aed",
-      entities: ["Syslearn", "PointerLab"],
     },
     {
       name: "Médical",
@@ -48,7 +46,6 @@ export default function SecteursPage() {
       description: "Imagerie médicale 3D et dispositifs cliniques où la fiabilité prime sur tout.",
       link: "/secteurs/medical",
       color: "#059669",
-      entities: ["PointerLab"],
     },
     {
       name: "Aéronautique",
@@ -56,7 +53,6 @@ export default function SecteursPage() {
       description: "Simulation et systèmes embarqués pour l'aéronautique, où chaque ligne de code compte.",
       link: "/secteurs/aeronautique",
       color: "#0284c7",
-      entities: ["PointerLab"],
     },
     {
       name: "Automobile & Mobilité",
@@ -64,7 +60,6 @@ export default function SecteursPage() {
       description: "Systèmes embarqués, simulation de conduite et info-divertissement.",
       link: "/secteurs/automobile-mobilite",
       color: "#d97706",
-      entities: ["PointerLab"],
     },
     {
       name: "IoT",
@@ -72,12 +67,19 @@ export default function SecteursPage() {
       description: "Objets connectés, du firmware embarqué à la plateforme de supervision.",
       link: "/secteurs/iot",
       color: "#0891b2",
-      entities: ["Syslearn", "PointerLab"],
+    },
+    {
+      name: "Simulation",
+      icon: Cpu,
+      description: "Types, langages, frameworks et Digital Twin : le guide complet de la simulation.",
+      link: "/secteurs/simulation",
+      color: "#7c3aed",
     },
   ];
 
   return (
-    <main className="secteurs-page">      <section className="secteurs-hero">
+    <main className="secteurs-page">
+      <section className="secteurs-hero">
         <div className="secteurs-hero__inner">
           <h1 className="secteurs-hero__title">Nos secteurs : une expertise technique adaptée à chaque contexte</h1>
           <p className="secteurs-hero__subtitle">
@@ -100,14 +102,7 @@ export default function SecteursPage() {
                   <h3 className="secteur-card__title">{secteur.name}</h3>
                   <p className="secteur-card__description">{secteur.description}</p>
                   <div className="secteur-card__footer">
-                    <span className="secteur-card__entities">
-                      {secteur.entities.map((entity, index) => (
-                        <span key={entity} className="secteur-card__entity">
-                          {entity}
-                          {index < secteur.entities.length - 1 && " / "}
-                        </span>
-                      ))}
-                    </span>
+                    
                     <span className="secteur-card__arrow">
                       <ArrowRight size={18} />
                     </span>

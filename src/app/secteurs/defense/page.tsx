@@ -11,7 +11,7 @@ import {
 import "../../../styles/secteurs/defense.css";
 
 export const metadata = {
-  title: "Défense : conseil et ingénierie IT pour systèmes critiques",
+  title: "Défense",
   description: "La défense bénéficie d'un effort budgétaire inédit de 6,7 milliards d'€ en 2026. Syslearn Group accompagne vos projets embarqués, cyberdéfense et IA avec une rigueur méthodologique adaptée.",
 };
 
@@ -48,7 +48,9 @@ export default function DefensePage() {
             
             <h3 className="defense-content__subtitle">Un effort budgétaire sans précédent sur le numérique</h3>
             <p className="text-justify-hyphens">
-              La défense est aujourd'hui l'un des secteurs où l'effort budgétaire et technologique est le plus soutenu en France. Le budget de la mission Défense pour 2026 augmente de <strong>6,7 milliards d'euros</strong> par rapport à 2025, soit 3,5 milliards au-delà de la trajectoire initialement prévue par la loi de programmation militaire - un effort qualifié d'inédit par le ministère des Armées.
+              La défense est aujourd'hui l'un des secteurs où l'effort budgétaire et technologique est le plus soutenu en France. Le 
+              <Link href="https://www.defense.gouv.fr/actualites/budget-defense-2026" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> budget de la mission Défense pour 2026 augmente de 6,7 milliards d'euros</Link> par rapport à 2025, soit 3,5 milliards au-delà de la trajectoire initialement prévue par la 
+              <Link href="https://www.defense.gouv.fr/actualites/loi-programmation-militaire-2024-2030" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> loi de programmation militaire</Link> - un effort qualifié d'inédit par le ministère des Armées.
             </p>
             <p className="text-justify-hyphens">
               Cette hausse s'accompagne d'un investissement ciblé sur le numérique : plus de <strong>500 millions d'euros</strong> sont fléchés vers la cyberdéfense et plus de <strong>400 millions d'euros</strong> vers l'intelligence artificielle, afin de doter la France de capacités souveraines. Sur le plan humain, cet effort se traduit par des recrutements massifs : près de <strong>40 000 recrutements</strong> sont prévus en 2026, dont 800 postes supplémentaires ciblés en priorité sur le réarmement capacitaire, la cyberdéfense, la transformation numérique et l'intelligence artificielle.
@@ -80,7 +82,19 @@ export default function DefensePage() {
                     <div className="defense-expertise__icon">
                       <Icon size={20} strokeWidth={1.5} />
                     </div>
-                    <p className="defense-expertise__text text-justify-hyphens">{item.text}</p>
+                    <p className="defense-expertise__text text-justify-hyphens">
+                      {item.text.includes("Cyberdéfense") ? (
+                        <>
+                          <Link href="/secteurs/defense" className="defense-content__link-inline">Cyberdéfense</Link> et sécurité des systèmes d'information sensibles
+                        </>
+                      ) : item.text.includes("Interfaces homme-machine à haute fiabilité") ? (
+                        <>
+                          <Link href="/secteurs/aeronautique" className="defense-content__link-inline">Interfaces homme-machine à haute fiabilité</Link> (C++/Qt)
+                        </>
+                      ) : (
+                        item.text
+                      )}
+                    </p>
                   </div>
                 );
               })}
@@ -100,10 +114,14 @@ export default function DefensePage() {
           <div className="defense-content__block">
             <h2 className="defense-content__title">Systèmes embarqués pour environnements critiques</h2>
             <p className="text-justify-hyphens">
-              Nous développons des systèmes embarqués en C et C++ pour des environnements où la fiabilité est non négociable. Cela inclut les calculateurs de bord, les systèmes de navigation, les équipements de communication tactique et les contrôleurs temps réel pour systèmes d'armes.
+              Nous développons des 
+              <Link href="/secteurs/iot" className="defense-content__link-inline"> systèmes embarqués</Link> en C et C++ pour des environnements où la fiabilité est non négociable. Cela inclut les calculateurs de bord, les systèmes de navigation, les équipements de communication tactique et les contrôleurs temps réel pour systèmes d'armes.
             </p>
             <p className="text-justify-hyphens">
-              Les contraintes sont strictes : empreinte mémoire minimale, déterminisme garanti, zéro allocation dynamique en phase opérationnelle, RTOS certifiés (VxWorks, LynxOS). Chaque ligne de code doit être justifiée, testée exhaustivement et documentée pour la certification. Nous maîtrisons les standards de développement embarqué défense (DO-178C, IEC 61508) et les méthodologies de validation associées.
+              Les contraintes sont strictes : empreinte mémoire minimale, déterminisme garanti, zéro allocation dynamique en phase opérationnelle, RTOS certifiés 
+              <Link href="https://www.windriver.com/products/embedded/vxworks" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> (VxWorks</Link>, LynxOS). Chaque ligne de code doit être justifiée, testée exhaustivement et documentée pour la certification. Nous maîtrisons les standards de développement embarqué défense 
+              <Link href="https://www.rtca.org/" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> (DO-178C</Link>, 
+              <Link href="https://www.iec.ch/functional-safety" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> IEC 61508</Link>) et les méthodologies de validation associées.
             </p>
           </div>
 
@@ -114,10 +132,12 @@ export default function DefensePage() {
               La sécurisation des systèmes d'information sensibles et des réseaux classifiés est au cœur de nos interventions. Cela couvre la segmentation réseau, le chiffrement, l'audit de code, la traçabilité des accès et la conformité aux standards LPM et NIS2.
             </p>
             <p className="text-justify-hyphens">
-              La loi de programmation militaire 2024-2030 flèche <strong>4 milliards d'euros</strong> pour la cyberdéfense sur la période. Parallèlement, la directive NIS2 européenne rapproche progressivement le cadre français de ces exigences, ce qui pousse les entreprises accompagnant des opérateurs d'importance vitale ou des donneurs d'ordre sensibles à anticiper ces standards bien avant un audit. Nous aidons nos clients à naviguer cette convergence LPM-NIS2 et à mettre en place une posture de sécurité adaptée aux contraintes réglementaires françaises et européennes.
+              La 
+              <Link href="https://www.defense.gouv.fr/actualites/loi-programmation-militaire-2024-2030" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> loi de programmation militaire 2024-2030 flèche 4 milliards d'euros</Link> pour la cyberdéfense sur la période. Parallèlement, la directive 
+              <Link href="https://cyber.gouv.fr/entreprise/reglementation/directive-nis/" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> NIS2</Link> européenne rapproche progressivement le cadre français de ces exigences, ce qui pousse les entreprises accompagnant des opérateurs d'importance vitale ou des donneurs d'ordre sensibles à anticiper ces standards bien avant un audit. Nous aidons nos clients à naviguer cette convergence LPM-NIS2 et à mettre en place une posture de sécurité adaptée aux contraintes réglementaires françaises et européennes.
             </p>
             <p className="text-justify-hyphens">
-              Nous intervenons sur <Link href="/secteurs/energie" className="defense-content__link-inline">systèmes d'information critiques</Link> pour l'énergie et la défense, avec une expertise éprouvée en sécurisation des réseaux fermés et en gestion des habilitations.
+              <Link href="/secteurs/defense" className="defense-content__link-inline">Nous intervenons sur systèmes d'information critiques</Link> pour l'énergie et la défense, avec une expertise éprouvée en sécurisation des réseaux fermés et en gestion des habilitations.
             </p>
           </div>
 
@@ -174,7 +194,8 @@ export default function DefensePage() {
               L'enjeu de souveraineté est central. Dépendre d'un composant étranger, d'une bibliothèque open source non auditée ou d'une chaîne logicielle non maîtrisée crée un risque stratégique inacceptable.
             </p>
             <p className="text-justify-hyphens">
-              La LPM et la réglementation ANSSI imposent une maîtrise complète de la chaîne logicielle : choix des compilateurs, audit des dépendances, contrôle des sources, certification des outils. Cela signifie : privilégier les logiciels libres auditables plutôt que les boîtes noires propriétaires, construire des chaînes de compilation maîtrisées, documenter chaque choix technologique pour justifier la souveraineté.
+              La LPM et la réglementation 
+              <Link href="https://cyber.gouv.fr/" target="_blank" rel="nofollow noopener noreferrer" className="defense-content__link-inline"> ANSSI</Link> imposent une maîtrise complète de la chaîne logicielle : choix des compilateurs, audit des dépendances, contrôle des sources, certification des outils. Cela signifie : privilégier les logiciels libres auditables plutôt que les boîtes noires propriétaires, construire des chaînes de compilation maîtrisées, documenter chaque choix technologique pour justifier la souveraineté.
             </p>
             <p className="text-justify-hyphens">
               Nous aidons nos clients à naviguer ces contraintes et à construire une posture de souveraineté numérique durable.

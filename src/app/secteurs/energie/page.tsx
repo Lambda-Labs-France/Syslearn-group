@@ -12,7 +12,7 @@ import {
 import "../../../styles/secteurs/energie.css";
 
 export const metadata = {
-  title: "Énergie : conseil et ingénierie IT pour la transformation numérique",
+  title: "Énergie",
   description: "Le secteur de l'énergie affiche une croissance de 6,0 % en 2026. Syslearn Group accompagne vos projets Java, cybersécurité, IoT et SCADA avec une expertise des contraintes réglementaires NIS2.",
 };
 
@@ -49,10 +49,13 @@ export default function EnergiePage() {
             
             <h3 className="energie-content__subtitle">Modernisation des systèmes d'information énergétiques</h3>
             <p className="text-justify-hyphens">
-              Le secteur de l'énergie est l'un des plus exigeants en matière de transformation numérique - et l'un des moins indulgents en cas d'erreur. La transition énergétique accélère la digitalisation des réseaux : déploiement massif de compteurs communicants, intégration des énergies renouvelables intermittentes, supervision temps réel des flux de production et de distribution, smart grids capables d'équilibrer offre et demande à la milliseconde.
+              Le secteur de l'énergie est l'un des plus exigeants en matière de transformation numérique - et l'un des moins indulgents en cas d'erreur. La transition énergétique accélère la digitalisation des réseaux : déploiement massif de 
+              <Link href="https://www.enedis.fr/linky" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> compteurs communicants</Link>, intégration des énergies renouvelables intermittentes, supervision temps réel des flux de production et de distribution, 
+              <Link href="https://www.rte-france.com/actualites/smart-grids" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> smart grids</Link> capables d'équilibrer offre et demande à la milliseconde.
             </p>
             <p className="text-justify-hyphens">
-              En 2026, la croissance numérique du secteur énergie atteint <strong>6 %</strong> en France - l'un des taux les plus élevés parmi les secteurs clients du numérique. Ce chiffre traduit une réalité opérationnelle : les directions IT des énergéticiens investissent, recrutent et externalisent des compétences qu'elles ne peuvent pas toujours constituer en interne.
+              En 2026, la 
+              <Link href="https://numeum.fr/economie-marche/classement-2025-des-esn-ict-les-plus-performantes-en-france/" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> croissance numérique du secteur énergie atteint 6 % en France</Link> - l'un des taux les plus élevés parmi les secteurs clients du numérique. Ce chiffre traduit une réalité opérationnelle : les directions IT des énergéticiens investissent, recrutent et externalisent des compétences qu'elles ne peuvent pas toujours constituer en interne.
             </p>
             <p className="text-justify-hyphens">
               La supervision temps réel des réseaux, la collecte de données issues de milliers de capteurs terrain, le pilotage de la production décentralisée - tout cela repose sur des systèmes d'information qui doivent fonctionner 24h/24, sans tolérance à l'interruption.
@@ -84,7 +87,23 @@ export default function EnergiePage() {
                     <div className="energie-expertise__icon">
                       <Icon size={20} strokeWidth={1.5} />
                     </div>
-                    <p className="energie-expertise__text text-justify-hyphens">{item.text}</p>
+                    <p className="energie-expertise__text text-justify-hyphens">
+                      {item.text.includes("Cybersécurité") ? (
+                        <>
+                          <Link href="/secteurs/defense" className="energie-content__link-inline">Cybersécurité</Link> et conformité NIS2 pour les OIV/OSE
+                        </>
+                      ) : item.text.includes("IoT industriel") ? (
+                        <>
+                          <Link href="/secteurs/iot" className="energie-content__link-inline">IoT industriel</Link> et remontée de données terrain (MQTT, OPC-UA)
+                        </>
+                      ) : item.text.includes("supervision SCADA") ? (
+                        <>
+                          Interfaces homme-machine et <Link href="/secteurs/industrie" className="energie-content__link-inline">supervision SCADA</Link>
+                        </>
+                      ) : (
+                        item.text
+                      )}
+                    </p>
                   </div>
                 );
               })}
@@ -107,7 +126,8 @@ export default function EnergiePage() {
               Java est une référence dans les SI énergétiques, et ce n'est pas un hasard. La stabilité de la JVM sur des cycles de vie longs, la portabilité entre environnements hétérogènes, l'écosystème mature autour de Spring Boot et Quarkus - tout cela correspond aux contraintes réelles du secteur.
             </p>
             <p className="text-justify-hyphens">
-              Un système de gestion de la production ou de facturation d'énergie ne peut pas être réécrit tous les trois ans parce qu'un framework est passé de mode. Java industriel offre cette pérennité. Les librairies d'intégration OPC-UA disponibles dans l'écosystème Java (Eclipse Milo, notamment) permettent de connecter des applications métier directement aux équipements industriels sans couche intermédiaire fragile.
+              Un système de gestion de la production ou de facturation d'énergie ne peut pas être réécrit tous les trois ans parce qu'un framework est passé de mode. Java industriel offre cette pérennité. Les librairies d'intégration OPC-UA disponibles dans l'écosystème Java 
+              <Link href="https://github.com/eclipse/milo" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> (Eclipse Milo, notamment)</Link> permettent de connecter des applications métier directement aux équipements industriels sans couche intermédiaire fragile.
             </p>
             <p className="text-justify-hyphens">
               Nos ingénieurs Java interviennent sur des applications critiques : systèmes de gestion de réseau, plateformes de facturation à fort volume, interfaces de supervision, APIs d'intégration entre SCADA et SI de gestion.
@@ -118,7 +138,9 @@ export default function EnergiePage() {
           <div className="energie-content__block">
             <h2 className="energie-content__title">Cybersécurité et conformité NIS2</h2>
             <p className="text-justify-hyphens">
-              La directive NIS2 couvre plus de 15 000 entités dans dix-huit secteurs, dont l'énergie figure en tête des secteurs hautement critiques. Pour les OIV et OSE du secteur, les obligations sont concrètes : analyse de risques, mesures de sécurité sur les systèmes OT et IT, notification des incidents à l'ANSSI dans des délais stricts.
+              La directive 
+              <Link href="https://cyber.gouv.fr/entreprise/reglementation/directive-nis/" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> NIS2</Link> couvre plus de 15 000 entités dans dix-huit secteurs, dont l'énergie figure en tête des secteurs hautement critiques. Pour les OIV et OSE du secteur, les obligations sont concrètes : analyse de risques, mesures de sécurité sur les systèmes OT et IT, notification des incidents à l'
+              <Link href="https://cyber.gouv.fr/" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> ANSSI</Link> dans des délais stricts.
             </p>
             <p className="text-justify-hyphens">
               Le contexte cyber justifie cette pression réglementaire. Les attaques visant les systèmes SCADA du secteur énergétique représentent <strong>13 %</strong> des cyberattaques détectées en France en 2025. Le secteur énergie concentre plus de <strong>8 %</strong> des cyberattaques recensées, avec le segment électrique qui représente près de <strong>44 %</strong> de ces incidents (source : ANSSI).
@@ -138,7 +160,9 @@ export default function EnergiePage() {
               Les capteurs terrain se multiplient : compteurs intelligents, capteurs de pression sur les réseaux de gaz, sondes de température sur les transformateurs, équipements de mesure sur les parcs éoliens et photovoltaïques. Derrière chaque capteur, il faut un protocole, une passerelle, un pipeline de données.
             </p>
             <p className="text-justify-hyphens">
-              Nous travaillons sur les protocoles industriels qui structurent ces échanges : <strong>MQTT</strong> pour la remontée légère de données en environnement contraint, <strong>Modbus</strong> pour l'interfaçage avec les équipements historiques, <strong>OPC-UA</strong> pour les architectures de supervision modernes qui exigent sécurité et interopérabilité.
+              Nous travaillons sur les protocoles industriels qui structurent ces échanges : 
+              <Link href="https://mqtt.org/" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> MQTT</Link> pour la remontée légère de données en environnement contraint, <strong>Modbus</strong> pour l'interfaçage avec les équipements historiques, 
+              <Link href="https://opcfoundation.org/" target="_blank" rel="nofollow noopener noreferrer" className="energie-content__link-inline"> OPC-UA</Link> pour les architectures de supervision modernes qui exigent sécurité et interopérabilité.
             </p>
             <p className="text-justify-hyphens">
               L'edge computing joue un rôle croissant : traiter localement les données avant de les remonter réduit la bande passante, diminue la latence et limite la surface d'exposition. Nos développeurs IoT/embarqué conçoivent ces architectures en tenant compte d'une réalité préoccupante : les attaques visant les environnements IoT et OT du secteur énergie ont bondi de <strong>387 % en un an</strong>. La sécurité n'est pas une option à ajouter après coup - elle se conçoit dès l'architecture.
@@ -196,7 +220,7 @@ export default function EnergiePage() {
               Cela signifie concevoir des architectures segmentées dès le départ, choisir des protocoles qui intègrent l'authentification et le chiffrement nativement (OPC-UA le fait, Modbus non), et anticiper les exigences de traçabilité et d'audit que la réglementation impose.
             </p>
             <p className="text-justify-hyphens">
-              Pour nos approches sur les <Link href="/secteurs/iot" className="energie-content__link-inline">systèmes industriels critiques</Link>.
+              Pour nos approches sur les <Link href="/secteurs/defense" className="energie-content__link-inline">systèmes industriels critiques</Link>.
             </p>
           </div>
 

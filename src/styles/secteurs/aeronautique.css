@@ -349,3 +349,15 @@
 .aeronautique-content__image:hover {
   transform: scale(1.01);
 }
+/* Style pour les liens internes */
+.aeronautique-content__link-inline {
+  color: #0284c7;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.aeronautique-content__link-inline:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
