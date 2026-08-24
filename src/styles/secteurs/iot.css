@@ -464,3 +464,15 @@
     padding-left: 1.25rem;
   }
 }
+/* Style pour les liens internes */
+.iot-content__link-inline {
+  color: #0891b2;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.iot-content__link-inline:hover {
+  color: #0e7490;
+  text-decoration: underline;
+}

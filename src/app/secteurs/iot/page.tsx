@@ -13,7 +13,7 @@ import {
 import "../../../styles/secteurs/iot.css";
 
 export const metadata = {
-  title: "IoT : conseil et ingénierie IT du firmware à la plateforme",
+  title: "IoT",
   description: "Syslearn Group accompagne vos projets IoT du firmware embarqué à la plateforme de supervision. Cyber Resilience Act, Data Act, migration 2G/3G vers LTE-M/NB-IoT.",
 };
 
@@ -29,7 +29,6 @@ export default function IotPage() {
 
   return (
     <main className="iot-page">
-      {/* HERO */}
       <section className="iot-hero">
         <div className="iot-hero__inner">
           <div className="iot-hero__content">
@@ -41,11 +40,9 @@ export default function IotPage() {
         </div>
       </section>
 
-      {/* CONTENU */}
       <section className="iot-content">
         <div className="iot-content__inner">
           
-          {/* INTRODUCTION */}
           <div className="iot-content__intro text-justify-hyphens">
             <p>
               Un objet connecté ne se résume pas à un capteur qui envoie des données : c'est un système complet, 
@@ -54,33 +51,36 @@ export default function IotPage() {
             </p>
           </div>
 
-          {/* UN MARCHÉ EN CROISSANCE RAPIDE */}
           <div className="iot-content__block">
             <h2 className="iot-content__title">Un marché en croissance rapide sous pression réglementaire</h2>
             
             <h3 className="iot-content__subtitle">21,5 milliards d'objets connectés : une expansion qui ne ralentit pas</h3>
             <p className="text-justify-hyphens">
-              La France comptait près de <strong>350 millions d'objets connectés actifs en 2025</strong>, avec une croissance annuelle moyenne du marché estimée à <strong>18 %</strong> entre 2020 et 2025. À l'échelle mondiale, le nombre d'objets connectés en activité dépasse désormais <strong>21,5 milliards en 2026</strong>, porté par l'adoption massive dans les secteurs industriel, domestique et urbain. L'IoT industriel reste le principal moteur de cette expansion.
+              La France comptait près de <strong>350 millions d'objets connectés actifs en 2025</strong>, avec une croissance annuelle moyenne du marché estimée à <strong>18 %</strong> entre 2020 et 2025. À l'échelle mondiale, le nombre d'objets connectés en activité dépasse désormais 
+              <Link href="https://www.iotanalytics.com" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> 21,5 milliards en 2026</Link>, porté par l'adoption massive dans les secteurs industriel, domestique et urbain. L'IoT industriel reste le principal moteur de cette expansion.
             </p>
             <p className="text-justify-hyphens">
               Ces chiffres traduisent une réalité concrète pour les projets IoT : volumes de données croissants, hétérogénéité des équipements, contraintes de scalabilité dès la conception. Les projets IoT industriels sont structurellement plus complexes que l'IoT grand public : ils exigent une fiabilité sans compromis, une latence maîtrisée, une durée de vie des équipements souvent mesurée en années ou décennies, et une exploitation en environnement difficile (températures extrêmes, humidité, vibrations, interférences électromagnétiques).
             </p>
           </div>
 
-          {/* TROIS CONTRAINTES SIMULTANÉES */}
           <div className="iot-content__block">
             <h2 className="iot-content__title">Cyber Resilience Act, Data Act et migration réseau : trois contraintes simultanées</h2>
             <p className="text-justify-hyphens">
               Les projets IoT en 2025-2026 font face à trois pressions réglementaires et techniques qui s'imposent simultanément :
             </p>
             <ul className="iot-list">
-              <li><strong>Cyber Resilience Act :</strong> Le cadre européen impose de nouvelles obligations de sécurité pour tout produit connecté mis sur le marché européen. Cela signifie : sécurité dès la conception du produit, documentation complète des vulnérabilités connues, mises à jour de sécurité garanties sur toute la durée de vie du produit.</li>
-              <li><strong>Data Act :</strong> Le droit d'accès aux données générées par les objets connectés s'étend. Les obligations de partage des données impactent directement l'architecture des plateformes de collecte et les modèles de gouvernance des données.</li>
-              <li><strong>Migration 2G/3G vers LTE-M/NB-IoT :</strong> Un mouvement technique majeur est en cours en France. L'extinction progressive des réseaux 2G et 3G, engagée par les principaux opérateurs entre fin 2025 et fin 2026, oblige des millions d'équipements IoT déjà déployés - télérelève, alarmes, trackers, capteurs industriels - à migrer vers des réseaux cellulaires modernes. Concrètement, cela implique : re-certification des équipements, mise à jour firmware Over-The-Air (OTA), et dans certains cas remplacement physique des modules de communication.</li>
+              <li>
+                <Link href="https://digital-strategy.ec.europa.eu/en/policies/cyber-resilience-act" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"><strong>Cyber Resilience Act</strong></Link> : Le cadre européen impose de nouvelles obligations de sécurité pour tout produit connecté mis sur le marché européen. Cela signifie : sécurité dès la conception du produit, documentation complète des vulnérabilités connues, mises à jour de sécurité garanties sur toute la durée de vie du produit.
+              </li>
+              <li>
+                <Link href="https://digital-strategy.ec.europa.eu/en/policies/data-act" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"><strong>Data Act</strong></Link> : Le droit d'accès aux données générées par les objets connectés s'étend. Les obligations de partage des données impactent directement l'architecture des plateformes de collecte et les modèles de gouvernance des données.
+              </li>
+              <li><strong>Migration 2G/3G vers LTE-M/NB-IoT :</strong> Un mouvement technique majeur est en cours en France. L'extinction progressive des réseaux 2G et 3G, engagée par les principaux opérateurs entre fin 2025 et fin 2026, oblige des millions d'équipements IoT déjà déployés - télérelève, alarmes, trackers, capteurs industriels - à migrer vers des réseaux cellulaires modernes. Concrètement, cela implique : re-certification des équipements, mise à jour firmware Over-The-Air (OTA), et dans certains cas remplacement physique des modules de communication.
+              </li>
             </ul>
           </div>
 
-          {/* UN PROJET IOT C'EST UNE CHAÎNE COMPLÈTE */}
           <div className="iot-content__block">
             <h2 className="iot-content__title">Un projet IoT, c'est une chaîne complète - pas un capteur</h2>
             
@@ -89,7 +89,9 @@ export default function IotPage() {
               Le firmware est la couche logicielle qui fait fonctionner le matériel IoT. Les contraintes spécifiques sont sévères : ressources matérielles limitées (quelques Ko de RAM, processeur basse consommation), fiabilité sur des cycles de vie longs (5–10 ans sans intervention), gestion de l'alimentation (batterie, energy harvesting), démarrage déterministe.
             </p>
             <p className="text-justify-hyphens">
-              Les langages privilégiés sont le <strong>C</strong> et le <strong>C++ embarqué</strong>, souvent complétés par du <strong>Rust</strong> pour les nouveaux projets. Les systèmes d'exploitation temps réel (RTOS) courants incluent <strong>FreeRTOS</strong>, <strong>Zephyr</strong> et <strong>Mbed OS</strong>. Le firmware est la fondation sur laquelle repose toute la fiabilité du système IoT : une défaillance au niveau firmware se propage à l'ensemble de la chaîne.
+              Les langages privilégiés sont le <strong>C</strong> et le <strong>C++ embarqué</strong>, souvent complétés par du <strong>Rust</strong> pour les nouveaux projets. Les systèmes d'exploitation temps réel (RTOS) courants incluent 
+              <Link href="https://www.freertos.org/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> FreeRTOS</Link>, 
+              <Link href="https://zephyrproject.org/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> Zephyr</Link> et <strong>Mbed OS</strong>. Le firmware est la fondation sur laquelle repose toute la fiabilité du système IoT : une défaillance au niveau firmware se propage à l'ensemble de la chaîne.
             </p>
 
             <h3 className="iot-content__subtitle">Protocoles de communication : choisir selon les contraintes terrain</h3>
@@ -98,12 +100,19 @@ export default function IotPage() {
             </p>
             <ul className="iot-list">
               <li><strong>Courte portée, faible consommation :</strong> Zigbee, BLE, Z-Wave (smart building, domotique industrielle)</li>
-              <li><strong>Longue portée, faible consommation (LPWAN) :</strong> LoRaWAN, Sigfox, LTE-M, NB-IoT (compteurs, capteurs terrain, trackers)</li>
-              <li><strong>Protocoles industriels :</strong> MQTT (remontée légère), CoAP (contraintes), OPC-UA (supervision industrielle), Modbus (équipements legacy)</li>
+              <li>
+                <strong>Longue portée, faible consommation (LPWAN) :</strong> 
+                <Link href="https://lora-alliance.org/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> LoRaWAN</Link>, Sigfox, LTE-M, NB-IoT (compteurs, capteurs terrain, trackers)
+              </li>
+              <li>
+                <strong>Protocoles industriels :</strong> 
+                <Link href="https://mqtt.org/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> MQTT</Link> (remontée légère), CoAP (contraintes), 
+                <Link href="https://opcfoundation.org/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> OPC-UA</Link> (supervision industrielle), Modbus (équipements legacy)
+              </li>
               <li><strong>Haut débit :</strong> Wi-Fi, 4G/5G (caméras, passerelles)</li>
             </ul>
             <p className="text-justify-hyphens">
-              Le choix du protocole structure l'architecture entière du projet. Une mauvaise décision au départ entraîne des coûts de refonte importants. Syslearn Group accompagne les <Link href="/secteurs/energie" className="iot-content__link-inline">projets IoT industriels et supervision</Link> en guidant ce choix selon les contraintes réelles de déploiement.
+              Le choix du protocole structure l'architecture entière du projet. Une mauvaise décision au départ entraîne des coûts de refonte importants. <Link href="/secteurs/industrie" className="iot-content__link-inline">Syslearn Group accompagne les projets IoT industriels et supervision</Link> en guidant ce choix selon les contraintes réelles de déploiement.
             </p>
 
             <h3 className="iot-content__subtitle">Edge computing et traitement local des données</h3>
@@ -125,15 +134,18 @@ export default function IotPage() {
               La donnée remontée n'a de valeur que si elle est exploitable. La chaîne complète comprend : collecte → normalisation → stockage → visualisation → alertes → décision.
             </p>
             <ul className="iot-list">
-              <li><strong>Plateformes de supervision :</strong> dashboards temps réel (Grafana, Kibana), time-series databases (InfluxDB, TimescaleDB), intégration avec les ERP/MES existants.</li>
+              <li>
+                <strong>Plateformes de supervision :</strong> dashboards temps réel 
+                <Link href="https://grafana.com/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> (Grafana</Link>, Kibana), time-series databases 
+                <Link href="https://www.influxdata.com/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> (InfluxDB</Link>, TimescaleDB), intégration avec les ERP/MES existants.
+              </li>
               <li><strong>Business intelligence IoT :</strong> détection d'anomalies, maintenance prédictive, optimisation de consommation énergétique.</li>
             </ul>
             <p className="text-justify-hyphens">
-              Syslearn Group accompagne les <Link href="/secteurs/energie" className="iot-content__link-inline">systèmes IoT pour l'énergie</Link> en construisant des plateformes de supervision capables de gérer des millions de points de données et de transformer ces données en décisions opérationnelles.
+              <Link href="/secteurs/energie" className="iot-content__link-inline">Syslearn Group accompagne les systèmes IoT pour l'énergie</Link> en construisant des plateformes de supervision capables de gérer des millions de points de données et de transformer ces données en décisions opérationnelles.
             </p>
           </div>
 
-          {/* IMAGE */}
           <div className="iot-content__image-wrapper">
             <img
               src="/images/secteur-iot.jpg"
@@ -142,7 +154,6 @@ export default function IotPage() {
             />
           </div>
 
-          {/* LA SÉCURITÉ IOT */}
           <div className="iot-content__block">
             <h2 className="iot-content__title">La sécurité IoT : une contrainte d'architecture, pas une couche optionnelle</h2>
             
@@ -159,9 +170,15 @@ export default function IotPage() {
               Les bonnes pratiques de sécurité IoT au niveau firmware incluent :
             </p>
             <ul className="iot-list">
-              <li><strong>Chiffrement des communications :</strong> TLS/DTLS pour les flux sensibles</li>
+              <li>
+                <strong>Chiffrement des communications :</strong> 
+                <Link href="https://www.rfc-editor.org/rfc/rfc8446.txt" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> TLS/DTLS</Link> pour les flux sensibles
+              </li>
               <li><strong>Authentification mutuelle :</strong> certificats X.509, Pre-Shared Keys (PSK)</li>
-              <li><strong>Stockage sécurisé des clés :</strong> secure element, TPM (Trusted Platform Module)</li>
+              <li>
+                <strong>Stockage sécurisé des clés :</strong> secure element, 
+                <Link href="https://trustedcomputinggroup.org/" target="_blank" rel="nofollow noopener noreferrer" className="iot-content__link-inline"> TPM (Trusted Platform Module)</Link>
+              </li>
               <li><strong>Mécanisme de mise à jour OTA sécurisé :</strong> signature cryptographique, rollback protection</li>
             </ul>
             <p className="text-justify-hyphens">
@@ -169,7 +186,6 @@ export default function IotPage() {
             </p>
           </div>
 
-          {/* CE QUE SYsLEARN GROUP APPORTE */}
           <div className="iot-content__block">
             <h2 className="iot-content__title">Ce que Syslearn Group apporte concrètement</h2>
             
@@ -196,7 +212,10 @@ export default function IotPage() {
             <h3 className="iot-content__subtitle">Des profils techniques couvrant toute la chaîne IoT</h3>
             <ul className="iot-list">
               <li><strong>Ingénieurs firmware C/C++ embarqué :</strong> FreeRTOS, Zephyr, Mbed OS</li>
-              <li><strong>Développeurs protocoles IoT :</strong> MQTT, OPC-UA, LoRaWAN, CoAP</li>
+              <li>
+                <strong>Développeurs protocoles IoT :</strong> 
+                <Link href="/secteurs/industrie" className="iot-content__link-inline"> MQTT, OPC-UA, LoRaWAN, CoAP</Link>
+              </li>
               <li><strong>Architectes edge computing :</strong> passerelles, conteneurisation, synchronisation</li>
               <li><strong>Développeurs plateformes de supervision :</strong> Grafana, InfluxDB, intégrations ERP/MES</li>
               <li><strong>Experts cybersécurité IoT :</strong> Cyber Resilience Act, TLS/DTLS, OTA sécurisé</li>
@@ -206,7 +225,6 @@ export default function IotPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="iot-cta">
         <div className="iot-cta__inner">
           <div className="iot-cta__content">

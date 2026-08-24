@@ -61,13 +61,23 @@
   margin-bottom: 1rem;
 }
 
-/* ✅ LES CLASSES TEXT-JUSTIFY SONT GÉRÉES PAR LE FICHIER GLOBAL */
-/* Plus besoin de dupliquer les propriétés ici */
-
 .quisommes-block__text {
   font-size: 1.125rem;
   color: #475569;
   line-height: 1.8;
+}
+
+/* ✅ Style pour les liens dans la philosophie */
+.quisommes-block__link {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.quisommes-block__link:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
 }
 
 .quisommes-block__image {

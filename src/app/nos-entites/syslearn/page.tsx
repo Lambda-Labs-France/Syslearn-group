@@ -68,12 +68,27 @@ export default function SyslearnPage() {
               <h2 className="syslearn-section__title">Présentation</h2>
               <p className="text-justify-hyphens">
                 Un projet de transformation numérique dans l'énergie ne se pilote pas comme un projet e-commerce. 
-                Les cycles sont longs, les contraintes réglementaires nombreuses, et une erreur de conception peut 
+                Les cycles sont longs, les 
+                <Link 
+                  href="https://www.techniques-ingenieur.fr/base-documentaire/technologies-de-l-information-th9/systemes-embarques-42588210/vers-une-certification-continue-des-logiciels-critiques-en-aeronautique-h8060/" 
+                  target="_blank" 
+                  rel="nofollow noopener noreferrer" 
+                  className="syslearn-content__link"
+                >
+                  {" "}contraintes réglementaires nombreuses
+                </Link>, et une erreur de conception peut 
                 coûter bien plus qu'un simple retard de mise en production.
               </p>
               <p className="text-justify-hyphens">
-                Syslearn est une <strong>ESN spécialisée dans l'accompagnement des secteurs de l'énergie, de la défense 
-                et de l'industrie</strong> sur leurs projets numériques les plus exigeants. Notre conviction : la technique 
+                Syslearn est une <strong>ESN spécialisée dans l'accompagnement des 
+                <Link 
+                  href="https://www.syslearn.fr/qui-sommes-nous/secteurs-dactivites" 
+                  target="_blank" 
+                  rel="dofollow noopener noreferrer" 
+                  className="syslearn-content__link"
+                >
+                  {" "}secteurs de l'énergie, de la défense et de l'industrie
+                </Link></strong> sur leurs projets numériques les plus exigeants. Notre conviction : la technique 
                 seule ne suffit pas, il faut aussi comprendre en profondeur les enjeux métier, réglementaires et 
                 opérationnels propres à ces environnements critiques.
               </p>
@@ -104,15 +119,42 @@ export default function SyslearnPage() {
                   capables de tenir dans la durée sur des systèmes d'information complexes.
                 </li>
                 <li className="text-justify-hyphens">
-                  <strong>L'intelligence artificielle et la data science</strong>, pour transformer des volumes de données 
+                  <strong>
+                    <Link 
+                      href="https://co-cto.fr/en/blog/lia-dans-le-developpement-logiciel-quand-lintelligence-artificielle-redefinit-les-pratiques-tech" 
+                      target="_blank" 
+                      rel="nofollow noopener noreferrer" 
+                      className="syslearn-content__link"
+                    >
+                      L'intelligence artificielle et la data science
+                    </Link>
+                  </strong>, pour transformer des volumes de données 
                   industrielles en décisions opérationnelles fiables.
                 </li>
                 <li className="text-justify-hyphens">
-                  <strong>L'IoT industriel</strong>, pour connecter, superviser et optimiser des équipements et 
+                  <strong>
+                    <Link 
+                      href="https://www.syslearn-group.com/secteurs/iot" 
+                      target="_blank" 
+                      rel="dofollow noopener noreferrer" 
+                      className="syslearn-content__link"
+                    >
+                      L'IoT industriel
+                    </Link>
+                  </strong>, pour connecter, superviser et optimiser des équipements et 
                   infrastructures sur le terrain.
                 </li>
                 <li className="text-justify-hyphens">
-                  <strong>La cybersécurité</strong>, pour protéger des systèmes où une faille ne se mesure pas seulement 
+                  <strong>
+                    <Link 
+                      href="https://www.appvizer.fr/magazine/services-informatiques/securite-informatique/cybersecurite-outils-proteger-entreprise" 
+                      target="_blank" 
+                      rel="nofollow noopener noreferrer" 
+                      className="syslearn-content__link"
+                    >
+                      La cybersécurité
+                    </Link>
+                  </strong>, pour protéger des systèmes où une faille ne se mesure pas seulement 
                   en pertes financières, mais parfois en risques opérationnels majeurs.
                 </li>
               </ul>
@@ -139,8 +181,23 @@ export default function SyslearnPage() {
                 et rigueur dans chaque livrable.
               </p>
               <p className="text-justify-hyphens">
-                C'est cette culture de la criticité que l'on retrouve détaillée sur notre page Nos expertises sectorielles, 
-                et qui rejoint les constats du Syntec Numérique sur la tension croissante des compétences IT dans les 
+                C'est cette culture de la criticité que l'on retrouve détaillée sur 
+                <Link 
+                  href="https://www.syslearn.fr/qui-sommes-nous/secteurs-dactivites" 
+                  target="_blank" 
+                  rel="dofollow noopener noreferrer" 
+                  className="syslearn-content__link"
+                >
+                  {" "}notre page Nos expertises sectorielles
+                </Link>, et qui rejoint les constats du 
+                <Link 
+                  href="https://numeum.fr/economie-marche/classement-2025-des-esn-ict-les-plus-performantes-en-france/" 
+                  target="_blank" 
+                  rel="nofollow noopener noreferrer" 
+                  className="syslearn-content__link"
+                >
+                  {" "}Syntec Numérique
+                </Link> sur la tension croissante des compétences IT dans les 
                 secteurs stratégiques français.
               </p>
             </div>
@@ -183,7 +240,7 @@ export default function SyslearnPage() {
                 <div className="syslearn-raison-card__icon">
                   <CheckCircle2 size={24} strokeWidth={1.5} />
                 </div>
-                <p className="syslearn-raison-card__text ">{item}</p>
+                <p className="syslearn-raison-card__text text-justify-hyphens">{item}</p>
               </div>
             ))}
           </div>

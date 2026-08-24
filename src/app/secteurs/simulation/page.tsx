@@ -6,7 +6,7 @@ import {
 import "../../../styles/secteurs/simulation.css";
 
 export const metadata = {
-  title: "Simulation informatique : guide complet pour ingénieurs et décideurs tech",
+  title: "Simulation ",
   description: "Types, langages, frameworks, Digital Twin, profils recrutés : tout ce qu'il faut savoir sur la simulation informatique pour développer ou recruter efficacement.",
 };
 
@@ -311,7 +311,6 @@ export default function SimulationPage() {
             </p>
           </div>
 
-          {/* IMAGE UNIQUE - Simulation générale après l'introduction */}
           <div className="simulation-content__image-wrapper">
             <img
               src="/images/simulation.jpg"
@@ -1098,20 +1097,53 @@ export default function SimulationPage() {
             </p>
           </div>
 
-          <div className="simulation-content__block">
+                    <div className="simulation-content__block">
             <h2 className="simulation-content__title">Sources utiles</h2>
             <ul className="simulation-list">
-              <li><strong>ROS 2</strong> - Documentation officielle</li>
-              <li><strong>NVIDIA Isaac Sim</strong> - Documentation officielle</li>
-              <li><strong>NVIDIA Omniverse</strong> - Documentation officielle</li>
-              <li><strong>Gazebo</strong> - Documentation officielle</li>
-              <li><strong>OpenFOAM</strong> - Site officiel (OpenFOAM Foundation)</li>
-              <li><strong>ANSYS</strong> - Portail de documentation</li>
-              <li><strong>COMSOL Multiphysics</strong> - Documentation officielle</li>
-              <li><strong>OpenModelica</strong> - Site officiel</li>
-              <li><strong>MATLAB / Simulink</strong> - Documentation MathWorks</li>
-              <li><strong>IEEE</strong> - Digital Twin (technav)</li>
-              <li><strong>NIST</strong> - Digital Twins: Definitions and State of the Art</li>
+              <li>
+                <strong>ROS 2</strong> - 
+                <Link href="https://docs.ros.org/en/rolling/" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Documentation officielle</Link>
+              </li>
+              <li>
+                <strong>NVIDIA Isaac Sim</strong> - 
+                <Link href="https://docs.isaacsim.omniverse.nvidia.com/" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Documentation officielle</Link>
+              </li>
+              <li>
+                <strong>NVIDIA Omniverse</strong> - 
+                <Link href="https://docs.omniverse.nvidia.com/" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Documentation officielle</Link>
+              </li>
+              <li>
+                <strong>Gazebo</strong> - 
+                <Link href="https://gazebosim.org/docs" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Documentation officielle</Link>
+              </li>
+              <li>
+                <strong>OpenFOAM</strong> - 
+                <Link href="https://openfoam.org/" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Site officiel (OpenFOAM Foundation)</Link>
+              </li>
+              <li>
+                <strong>ANSYS</strong> - 
+                <Link href="https://www.ansys.com/products" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Portail de documentation</Link>
+              </li>
+              <li>
+                <strong>COMSOL Multiphysics</strong> - 
+                <Link href="https://www.comsol.fr/documentation" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Documentation officielle</Link>
+              </li>
+              <li>
+                <strong>OpenModelica</strong> - 
+                <Link href="https://openmodelica.org/" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Site officiel</Link>
+              </li>
+              <li>
+                <strong>MATLAB / Simulink</strong> - 
+                <Link href="https://fr.mathworks.com/products/simulink.html" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Documentation MathWorks</Link>
+              </li>
+              <li>
+                <strong>IEEE</strong> - 
+                <Link href="https://technav.ieee.org/tag/digital-twin" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Digital Twin (Technav)</Link>
+              </li>
+              <li>
+                <strong>NIST</strong> - 
+                <Link href="https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-8.pdf" target="_blank" rel="nofollow noopener noreferrer" className="simulation-content__link-inline"> Digital Twins: Definitions and State of the Art</Link>
+              </li>
             </ul>
           </div>
 

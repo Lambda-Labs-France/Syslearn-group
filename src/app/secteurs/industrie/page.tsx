@@ -10,7 +10,7 @@ import {
 import "../../../styles/secteurs/industrie.css";
 
 export const metadata = {
-  title: "Industrie 4.0 : conseil et ingénierie IT pour usines connectées",
+  title: "Industrie",
   description: "L'industrie 4.0 exige des systèmes capables de superviser, automatiser et fiabiliser des lignes de production. Syslearn Group accompagne vos projets industriels avec une double expertise.",
 };
 
@@ -50,7 +50,9 @@ export default function IndustriePage() {
               L'industrie 4.0 impose une transformation profonde des chaînes de production. Capteurs connectés, automates programmables, systèmes de supervision temps réel (SCADA), plateformes MES (Manufacturing Execution System), maintenance prédictive basée sur l'IA - ces couches technologiques doivent s'intégrer dans des environnements industriels conçus pour fonctionner sans interruption pendant des décennies.
             </p>
             <p className="text-justify-hyphens">
-              Cette transformation représente un enjeu financier considérable en France : l'adaptation de l'ensemble de l'industrie manufacturière aux standards de l'industrie 4.0 nécessiterait un investissement estimé à <strong>130 milliards d'euros</strong>, selon les travaux de l'Alliance Industrie du Futur. À l'échelle mondiale, le marché de l'industrie 4.0 poursuit une croissance annuelle de <strong>19,4 %</strong>, portée par l'intelligence artificielle, l'IoT et l'automatisation avancée des lignes de production.
+              Cette transformation représente un enjeu financier considérable en France : l'adaptation de l'ensemble de l'industrie manufacturière aux standards de l'industrie 4.0 nécessiterait un investissement estimé à <strong>130 milliards d'euros</strong>, selon les travaux de l'
+              <Link href="https://www.industrie-dufutur.org/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> Alliance Industrie du Futur</Link>. À l'échelle mondiale, le marché de l'industrie 4.0 poursuit une 
+              <Link href="https://numeum.fr/economie-marche/classement-2025-des-esn-ict-les-plus-performantes-en-france/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> croissance annuelle de 19,4 %</Link>, portée par l'intelligence artificielle, l'IoT et l'automatisation avancée des lignes de production.
             </p>
             <p className="text-justify-hyphens">
               Face à cette ampleur, les directions IT industrielles externalisent des compétences qu'elles ne peuvent pas constituer en interne : la capacité à raisonner à l'échelle d'une usine connectée, tout en respectant les contraintes de fiabilité, de sécurité fonctionnelle et de déterminisme temporel que l'industrie impose.
@@ -79,7 +81,19 @@ export default function IndustriePage() {
                     <div className="industrie-expertise__icon">
                       <Icon size={20} strokeWidth={1.5} />
                     </div>
-                    <p className="industrie-expertise__text text-justify-hyphens">{item.text}</p>
+                    <p className="industrie-expertise__text text-justify-hyphens">
+                      {item.text.includes("IoT industriel") ? (
+                        <>
+                          <Link href="/secteurs/iot" className="industrie-content__link-inline">IoT industriel</Link> et remontée de données terrain (MQTT, OPC-UA)
+                        </>
+                      ) : item.text.includes("Intelligence artificielle") ? (
+                        <>
+                          <Link href="/secteurs/defense" className="industrie-content__link-inline">Intelligence artificielle</Link> appliquée à la production
+                        </>
+                      ) : (
+                        item.text
+                      )}
+                    </p>
                   </div>
                 );
               })}
@@ -113,7 +127,11 @@ export default function IndustriePage() {
           <div className="industrie-content__block">
             <h2 className="industrie-content__title">Logiciels embarqués pour équipements industriels</h2>
             <p className="text-justify-hyphens">
-              Firmware et logiciels embarqués sur équipements de production : C, C++, RTOS (FreeRTOS, VxWorks), protocoles terrain (Modbus, Profibus, EtherCAT). La contrainte centrale est la fiabilité sur cycles longs, la mise à jour sans arrêt de production, et la certification fonctionnelle selon les normes IEC 61508 ou ISO 13849.
+              Firmware et logiciels embarqués sur équipements de production : C, C++, RTOS 
+              <Link href="https://www.freertos.org/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> (FreeRTOS</Link>, 
+              <Link href="https://www.windriver.com/products/embedded/vxworks" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> VxWorks</Link>), protocoles terrain (Modbus, Profibus, EtherCAT). La contrainte centrale est la fiabilité sur cycles longs, la mise à jour sans arrêt de production, et la certification fonctionnelle selon les normes 
+              <Link href="https://www.iec.ch/functional-safety" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> IEC 61508</Link> ou 
+              <Link href="https://www.iso.org/standard/69544.html" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> ISO 13849</Link>.
             </p>
             <p className="text-justify-hyphens">
               Un équipement embarqué industriel ne peut pas redémarrer pour appliquer une mise à jour. Il doit évoluer en production, avec les précautions méthodologiques que cela impose. C'est une expertise que seuls les profils ayant travaillé sur des systèmes critiques maîtrisent vraiment.
@@ -127,7 +145,9 @@ export default function IndustriePage() {
           <div className="industrie-content__block">
             <h2 className="industrie-content__title">IoT industriel et remontée de données terrain</h2>
             <p className="text-justify-hyphens">
-              Capteurs de production, passerelles edge, protocoles OPC-UA et MQTT, pipelines de données vers les plateformes MES/ERP. La différence entre IoT grand public et IoT industriel (IIoT) est fondamentale : contraintes de fiabilité, de latence, de sécurité, de continuité de service.
+              Capteurs de production, passerelles edge, protocoles 
+              <Link href="https://opcfoundation.org/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> OPC-UA</Link> et 
+              <Link href="https://mqtt.org/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> MQTT</Link>, pipelines de données vers les plateformes MES/ERP. La différence entre IoT grand public et IoT industriel (IIoT) est fondamentale : contraintes de fiabilité, de latence, de sécurité, de continuité de service.
             </p>
             <p className="text-justify-hyphens">
               Un capteur de température dans un smart home peut perdre une mesure. Un capteur de vibration sur un compresseur industriel ne peut pas. Nous concevons des architectures IoT qui garantissent la remontée de données même en cas de perte réseau temporaire, avec horodatage précis, intégrité des données et traçabilité complète.
@@ -152,7 +172,8 @@ export default function IndustriePage() {
           <div className="industrie-content__block">
             <h2 className="industrie-content__title">Intelligence artificielle appliquée à la production</h2>
             <p className="text-justify-hyphens">
-              IA sur les lignes : détection de défauts par vision industrielle, maintenance prédictive, optimisation de paramètres de process, analyse de séries temporelles capteurs. Le gouvernement soutient directement cette dynamique, avec un objectif d'accompagnement de <strong>500 PME et ETI</strong> françaises dans l'adoption de solutions d'intelligence artificielle sur leurs lignes de production.
+              IA sur les lignes : détection de défauts par vision industrielle, maintenance prédictive, optimisation de paramètres de process, analyse de séries temporelles capteurs. Le gouvernement soutient directement cette dynamique, avec un objectif d'accompagnement de 
+              <Link href="https://www.bpifrance.fr/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> 500 PME et ETI</Link> françaises dans l'adoption de solutions d'intelligence artificielle sur leurs lignes de production.
             </p>
             <p className="text-justify-hyphens">
               L'IA industrielle ≠ IA grand public. Données structurées, contraintes temps réel, explicabilité des décisions (pourquoi le modèle recommande-t-il un changement de paramètre ?), intégration dans des systèmes de contrôle existants. Nous développons des modèles IA qui s'intègrent dans votre écosystème industriel sans le déstabiliser.
@@ -168,12 +189,16 @@ export default function IndustriePage() {
               Dans l'industrie, un temps de réponse non garanti peut arrêter une chaîne ou créer un risque de sécurité physique. Le déterminisme temporel - la garantie qu'une opération s'exécutera dans un délai maximal connu - structure le choix des langages (C, C++, Ada) et des OS (RTOS vs Linux temps réel).
             </p>
             <p className="text-justify-hyphens">
-              Les normes de sécurité fonctionnelle (IEC 61508, ISO 13849) imposent au développement logiciel une rigueur que les projets IT classiques ne connaissent pas : traçabilité complète du code, tests exhaustifs, analyse de défaillance, certification. Chaque ligne de code doit être justifiée et testée.
+              Les normes de sécurité fonctionnelle 
+              <Link href="https://www.iec.ch/functional-safety" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> (IEC 61508</Link>, 
+              <Link href="https://www.iso.org/standard/69544.html" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> ISO 13849</Link>) imposent au développement logiciel une rigueur que les projets IT classiques ne connaissent pas : traçabilité complète du code, tests exhaustifs, analyse de défaillance, certification. Chaque ligne de code doit être justifiée et testée.
             </p>
 
             <h3 className="industrie-content__subtitle">Interopérabilité et intégration dans l'écosystème existant</h3>
             <p className="text-justify-hyphens">
-              Un nouveau logiciel industriel ne vit pas seul : il doit s'intégrer dans un écosystème d'automates, de SCADA, de MES, d'ERP existants. Protocoles d'intégration (OPC-UA, MQTT, REST), gestion des versions, compatibilité ascendante - tout cela doit être pensé dès le départ.
+              Un nouveau logiciel industriel ne vit pas seul : il doit s'intégrer dans un écosystème d'automates, de SCADA, de MES, d'ERP existants. Protocoles d'intégration 
+              <Link href="https://opcfoundation.org/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> (OPC-UA</Link>, 
+              <Link href="https://mqtt.org/" target="_blank" rel="nofollow noopener noreferrer" className="industrie-content__link-inline"> MQTT</Link>, REST), gestion des versions, compatibilité ascendante - tout cela doit être pensé dès le départ.
             </p>
             <p className="text-justify-hyphens">
               L'intégration est souvent plus complexe que le développement lui-même. Un système qui fonctionne parfaitement en isolation peut créer des goulots d'étranglement ou des conflits de synchronisation une fois connecté à l'écosystème existant. Nous avons l'expérience de ces intégrations complexes et des pièges à éviter.

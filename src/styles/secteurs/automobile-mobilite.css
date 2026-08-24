@@ -532,3 +532,15 @@
     padding: 0.3rem 0.5rem;
   }
 }
+/* Style pour les liens internes */
+.automobile-content__link-inline {
+  color: #d97706;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.automobile-content__link-inline:hover {
+  color: #b45309;
+  text-decoration: underline;
+}

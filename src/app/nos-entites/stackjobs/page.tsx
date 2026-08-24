@@ -102,13 +102,15 @@ export default function StackJobsPage() {
                   <strong>4 000 offres actives</strong>
                 </Link>{" "}
                 couvrant l'ensemble de l'écosystème 
-                Tech & Engineering : développement, data, cloud, cybersécurité, systèmes embarqués et ingénierie 
+                Tech & Engineering : développement, data, cloud, 
+                <Link href="/secteurs/defense" className="stackjobs-content__link"> cybersécurité </Link>, 
+                <Link href="/secteurs/iot" className="stackjobs-content__link"> systèmes embarqués </Link> et ingénierie 
                 industrielle.
               </p>
               <p className="text-justify-hyphens">
-                Son moteur de matching par intelligence artificielle croise la stack technique, l'expérience réelle 
-                et les préférences du candidat avec les besoins concrets des recruteurs, au-delà de la simple 
-                détection de mots-clés dans un document.
+                Son moteur de matching par 
+                <Link href="https://co-cto.fr/en/blog/lia-dans-le-developpement-logiciel-quand-lintelligence-artificielle-redefinit-les-pratiques-tech" target="_blank" rel="nofollow noopener noreferrer" className="stackjobs-content__link"> intelligence artificielle </Link> 
+                croise la stack technique, l'expérience réelle et les préférences du candidat avec les besoins concrets des recruteurs, au-delà de la simple détection de mots-clés dans un document.
               </p>
               <p className="text-justify-hyphens">
                 Cette approche permet de faire remonter des opportunités réellement pertinentes, y compris pour des 
@@ -135,16 +137,18 @@ export default function StackJobsPage() {
               <p className="text-justify-hyphens">
                 Développeurs, data scientists, ingénieurs cloud ou spécialistes cybersécurité créent leur profil en 
                 quelques minutes, avec la possibilité de valoriser un GitHub, des projets personnels ou des 
-                contributions open source plutôt qu'un simple CV formaté.
+                <Link href="https://www.developernation.net/blog/tag/guest-post/" target="_blank" rel="nofollow noopener noreferrer" className="stackjobs-content__link"> contributions open source </Link> 
+                plutôt qu'un simple CV formaté.
               </p>
               <p className="text-justify-hyphens">
                 Une manière de donner aux recruteurs une vision plus fidèle de la façon dont un candidat travaille 
                 réellement, au-delà des intitulés de poste et des années d'expérience.
               </p>
               <p className="text-justify-hyphens">
-                Cette logique s'inscrit dans une tendance plus large observée par des acteurs comme l'APEC sur 
-                l'évolution des critères de recrutement dans les métiers techniques, où la preuve par la pratique 
-                prend une place croissante face au CV traditionnel.
+                Cette logique s'inscrit dans une tendance plus large observée par des acteurs comme 
+                <Link href="https://www.apec.fr/" target="_blank" rel="nofollow noopener noreferrer" className="stackjobs-content__link"> l'APEC </Link> 
+                sur l'évolution des critères de recrutement dans les métiers techniques, où la preuve par la pratique 
+                prend une place croissante face au CV traditionnel. 
               </p>
             </div>
             <div className="stackjobs-section__image">
@@ -169,7 +173,17 @@ export default function StackJobsPage() {
                   <div className="stackjobs-feature-card__icon">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <p className="stackjobs-feature-card__text text-justify-hyphens">{item.text}</p>
+                  <p className="stackjobs-feature-card__text text-justify-hyphens">
+                    {item.text.includes("C++") ? (
+                      <>
+                        Plus de 40 technologies référencées : Python, 
+                        <Link href="https://c.developpez.com/" target="_blank" rel="nofollow noopener noreferrer" className="stackjobs-content__link"> C++ </Link>, 
+                        Go, React, Kafka, et bien plus encore
+                      </>
+                    ) : (
+                      item.text
+                    )}
+                  </p>
                 </div>
               );
             })}
@@ -190,7 +204,19 @@ export default function StackJobsPage() {
                   <div className="stackjobs-raison-card__icon">
                     <Icon size={24} strokeWidth={1.5} />
                   </div>
-                  <p className="stackjobs-raison-card__text text-justify-hyphens">{item.text}</p>
+                  <p className="stackjobs-raison-card__text text-justify-hyphens">
+                    {item.text.includes("PointerLab") && item.text.includes("Syslearn") ? (
+                      <>
+                        Une intégration directe avec 
+                        <Link href="/nos-entites/pointerlab" className="stackjobs-content__link"> PointerLab </Link> 
+                        et 
+                        <Link href="/nos-entites/syslearn" className="stackjobs-content__link"> Syslearn </Link> 
+                        pour les offres du groupe
+                      </>
+                    ) : (
+                      item.text
+                    )}
+                  </p>
                 </div>
               );
             })}

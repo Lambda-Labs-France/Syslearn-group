@@ -448,3 +448,15 @@
     font-size: 0.875rem;
   }
 }
+/* Style pour les liens dans le contenu */
+.stackjobs-content__link {
+  color: #2752ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.stackjobs-content__link:hover {
+  color: #4a7aff;
+  text-decoration: underline;
+}

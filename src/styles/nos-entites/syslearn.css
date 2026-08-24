@@ -541,3 +541,15 @@
     min-width: fit-content;
   }
 }
+/* Style pour les liens dans le contenu */
+.syslearn-content__link {
+  color: #aacf37;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.syslearn-content__link:hover {
+  color: #c8e66e;
+  text-decoration: underline;
+}

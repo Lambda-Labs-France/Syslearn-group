@@ -459,3 +459,15 @@
     height: 160px;
   }
 }
+/* Style pour les liens internes */
+.industrie-content__link-inline {
+  color: #7c3aed;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.industrie-content__link-inline:hover {
+  color: #5b21b6;
+  text-decoration: underline;
+}

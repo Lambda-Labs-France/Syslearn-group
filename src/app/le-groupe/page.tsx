@@ -29,7 +29,10 @@ export default function LeGroupePage() {
           <div className="groupe-section__grid">
             <div className="groupe-section__text">
               <p className="groupe-section__brief text-justify-hyphens">
-                Syslearn Group réunit trois entités du numérique - Syslearn, PointerLab et StackJobs - 
+                Syslearn Group réunit trois entités du numérique 
+                <Link href="https://www.syslearn.fr/" target="_blank" rel="dofollow noopener noreferrer" className="groupe-section__link-inline"> Syslearn </Link>, 
+                <Link href="https://www.pointerlab.fr/" target="_blank" rel="dofollow noopener noreferrer" className="groupe-section__link-inline"> PointerLab </Link> et 
+                <Link href="https://www.stackjobs.com/" target="_blank" rel="dofollow noopener noreferrer" className="groupe-section__link-inline"> StackJobs </Link>
                 unies par un modèle horizontal et transparent. Chaque entité conserve sa spécialité tout en 
                 partageant une infrastructure commune et une porosité assumée.
               </p>
@@ -60,13 +63,10 @@ export default function LeGroupePage() {
           <div className="groupe-section__grid groupe-section__grid--reverse">
             <div className="groupe-section__text">
               <p className="text-justify-hyphens">
-                Chaque entité conserve son autonomie opérationnelle - son propre site, sa propre clientèle, sa propre équipe 
-                dirigeante - tout en partageant une infrastructure commune : outils, méthodes de recrutement, et surtout, une 
-                porosité assumée entre les trois structures.
+                Chaque entité conserve son autonomie opérationnelle son propre site, sa propre clientèle, sa propre équipe dirigeante tout en partageant une infrastructure commune : outils, méthodes de recrutement, et surtout, une porosité assumée entre les trois structures.
               </p>
               <p className="text-justify-hyphens">
-                Un consultant Syslearn en fin de mission énergie peut être orienté vers une opportunité PointerLab si son profil 
-                technique correspond mieux. Une offre PointerLab est relayée en priorité sur StackJobs avant toute diffusion externe.
+                Un consultant Syslearn en fin de mission énergie peut être orienté vers une opportunité PointerLab si son profil technique correspond mieux. Une offre PointerLab est relayée en priorité sur StackJobs avant toute diffusion externe.
               </p>
             </div>
             <div className="groupe-section__image">
