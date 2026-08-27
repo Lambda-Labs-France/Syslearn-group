@@ -1,5 +1,5 @@
 .hero {
-  padding: 120px 0 80px;
+  padding: 120px 0 20px; 
   background: var(--color-background);
   min-height: 80vh;
   display: flex;
@@ -157,6 +157,7 @@
   display: flex;
   justify-content: flex-start;
   margin-top: 0.5rem;
+  margin-bottom: 0; /* ✅ Supprime la marge en dessous */
 }
 
 .hero__btn {
@@ -225,7 +226,7 @@
 
 @media (max-width: 1024px) {
   .hero {
-    padding: 100px 0 60px;
+    padding: 100px 0 40px; /* ✅ Réduit le padding-bottom */
   }
 
   .hero__title {
@@ -260,7 +261,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    padding: 140px 0 50px;
+    padding: 120px 0 30px; /* ✅ Réduit le padding-bottom sur mobile */
     min-height: auto;
   }
 
@@ -277,13 +278,13 @@
   }
 
   .hero__title {
-    font-size: 2rem; /* ✅ Augmenté de 1.8rem à 2rem */
+    font-size: 2rem;
     text-align: left;
     width: 100%;
   }
 
   .hero__title--highlight {
-    font-size: 2rem; /* ✅ Augmenté de 1.8rem à 2rem */
+    font-size: 2rem;
     text-align: left;
   }
 
@@ -319,23 +320,23 @@
 
   .hero__title--words {
     min-width: 280px;
-    height: 6rem; /* ✅ Augmenté de 5.5rem à 6rem */
+    height: 6rem;
     text-align: left;
   }
 
   .hero__title--word {
     align-items: flex-start;
-    gap: 0.1rem; /* ✅ Augmenté de 0.05rem à 0.1rem */
+    gap: 0.1rem;
   }
 
   .hero__title--company {
-    font-size: 2.8rem; /* ✅ Augmenté de 2.2rem à 2.8rem */
+    font-size: 2.8rem;
     white-space: nowrap;
     text-align: left;
   }
 
   .hero__title--tagline {
-    font-size: 1.2rem; /* ✅ Augmenté de 0.95rem à 1.2rem */
+    font-size: 1.2rem;
     white-space: nowrap;
     text-align: left;
   }
@@ -343,15 +344,15 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 130px 0 40px;
+    padding: 100px 0 20px; /* ✅ Réduit encore plus sur petit mobile */
   }
 
   .hero__title {
-    font-size: 1.7rem; /* ✅ Augmenté de 1.5rem à 1.7rem */
+    font-size: 1.7rem;
   }
 
   .hero__title--highlight {
-    font-size: 1.7rem; /* ✅ Augmenté de 1.5rem à 1.7rem */
+    font-size: 1.7rem;
   }
 
   .hero__description {
@@ -375,18 +376,18 @@
 
   .hero__title--words {
     min-width: 200px;
-    height: 5rem; /* ✅ Augmenté de 4.5rem à 5rem */
+    height: 5rem;
     text-align: left;
   }
 
   .hero__title--company {
-    font-size: 2.2rem; /* ✅ Augmenté de 1.6rem à 2.2rem */
+    font-size: 2.2rem;
     white-space: nowrap;
     text-align: left;
   }
 
   .hero__title--tagline {
-    font-size: 1rem; /* ✅ Augmenté de 0.75rem à 1rem */
+    font-size: 1rem;
     white-space: nowrap;
     text-align: left;
   }
