@@ -1,7 +1,7 @@
 .chiffres-cles {
   padding: 60px 0;
-  background: var(--color-background, #fbfcf9);
-  /* ❌ border-top supprimé */
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -30,7 +30,7 @@
   text-align: center;
   background: #ffffff;
   border-radius: 1rem;
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 1.5rem; 
   border: 1px solid #e2e8f0;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
   transition: all 0.3s ease;
@@ -42,7 +42,7 @@
 }
 
 .chiffres-cles__number {
-  font-size: 3rem;
+  font-size: 3rem; 
   font-weight: 700;
   color: #0f172a;
   font-family: 'Barlow', sans-serif;
@@ -51,7 +51,7 @@
 }
 
 .chiffres-cles__label {
-  font-size: 1rem;
+  font-size: 1rem; 
   color: #64748b;
   font-weight: 500;
   margin-top: 0;
