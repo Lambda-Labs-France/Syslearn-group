@@ -30,7 +30,7 @@ export default function LeGroupePage() {
             <div className="groupe-section__text">
               <p className="groupe-section__brief text-justify-hyphens">
                 Syslearn Group réunit trois entités du numérique 
-                <Link href="https://www.syslearn.fr/" target="_blank" rel="dofollow noopener noreferrer" className="groupe-section__link-inline"> Syslearn </Link>, 
+                <Link href="https://www.syslearn.fr/" target="_blank" rel="dofollow noopener noreferrer" className="groupe-section__link-inline"> Syslearn</Link>, 
                 <Link href="https://www.pointerlab.fr/" target="_blank" rel="dofollow noopener noreferrer" className="groupe-section__link-inline"> PointerLab </Link> et 
                 <Link href="https://www.stackjobs.com/" target="_blank" rel="dofollow noopener noreferrer" className="groupe-section__link-inline"> StackJobs </Link>
                 unies par un modèle horizontal et transparent. Chaque entité conserve sa spécialité tout en 

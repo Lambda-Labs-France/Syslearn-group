@@ -21,7 +21,7 @@ export default function ValeursPage() {
     },
     {
       title: "Spécialisation",
-      description: "Un consultant Syslearn énergie n'est pas un consultant Syslearn défense. Nous assumons la niche plutôt que de vendre un CV généraliste .",
+      description: "Un consultant Syslearn énergie n'est pas un consultant Syslearn défense. Nous assumons la niche plutôt que de vendre un CV généraliste.",
     },
     {
       title: "Partage de la valeur",

@@ -5,12 +5,17 @@ import "../../styles/accueil/actualites.css";
 export default function Actualites() {
   const allArticles = getArticles();
   
+  // ✅ Filtrer par entité
   const pointerLabArticles = allArticles.filter(a => a.entity === 'PointerLab');
   const stackJobsArticles = allArticles.filter(a => a.entity === 'StackJobs');
+  const syslearnArticles = allArticles.filter(a => a.entity === 'Syslearn');
   
+  // ✅ Prendre le plus récent de chaque
   const dernierPointerLab = pointerLabArticles.length > 0 ? pointerLabArticles[0] : null;
   const dernierStackJobs = stackJobsArticles.length > 0 ? stackJobsArticles[0] : null;
+  const dernierSyslearn = syslearnArticles.length > 0 ? syslearnArticles[0] : null;
   
+  // ✅ Construire les données à afficher
   const actualitesData = [];
   
   if (dernierPointerLab) {
@@ -20,7 +25,7 @@ export default function Actualites() {
       category: dernierPointerLab.category,
       title: dernierPointerLab.title,
       image: dernierPointerLab.image,
-      link: dernierPointerLab.originalLink,  
+      link: dernierPointerLab.originalLink,
       source: 'PointerLab',
     });
   }
@@ -32,22 +37,35 @@ export default function Actualites() {
       category: dernierStackJobs.category,
       title: dernierStackJobs.title,
       image: dernierStackJobs.image,
-      link: dernierStackJobs.originalLink, 
+      link: dernierStackJobs.originalLink,
       source: 'StackJobs',
     });
   }
   
-  if (actualitesData.length < 2) {
+  if (dernierSyslearn) {
+    actualitesData.push({
+      id: dernierSyslearn.id,
+      date: dernierSyslearn.date,
+      category: dernierSyslearn.category,
+      title: dernierSyslearn.title,
+      image: dernierSyslearn.image,
+      link: dernierSyslearn.originalLink,
+      source: 'Syslearn',
+    });
+  }
+  
+  // ✅ Fallback si pas assez d'articles
+  if (actualitesData.length < 3) {
     const groupeArticles = allArticles.filter(a => a.entity === 'Groupe');
     const dernierGroupe = groupeArticles.length > 0 ? groupeArticles[0] : null;
-    if (dernierGroupe) {
+    if (dernierGroupe && actualitesData.length < 3) {
       actualitesData.push({
         id: dernierGroupe.id,
         date: dernierGroupe.date,
         category: dernierGroupe.category,
         title: dernierGroupe.title,
         image: dernierGroupe.image,
-        link: dernierGroupe.originalLink || `/actualites/${dernierGroupe.id}`,  
+        link: dernierGroupe.originalLink || `/actualites/${dernierGroupe.id}`,
         source: 'Groupe',
       });
     }
