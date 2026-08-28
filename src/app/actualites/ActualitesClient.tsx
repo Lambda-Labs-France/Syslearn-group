@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import {
   entities,
-  getFilteredArticles,
+  getArticles,
   getCategories,
   upcomingArticles,
 } from "./data/articles";
@@ -27,7 +27,6 @@ const ENTITY_ICONS: Record<string, React.ReactNode> = {
   'Groupe': <Users size={16} />,
 };
 
-// ✅ Fonction pour déterminer le nombre d'articles par vue selon la taille d'écran
 const getArticlesPerView = () => {
   if (typeof window === 'undefined') return 3;
   if (window.innerWidth < 768) return 1;
@@ -47,11 +46,31 @@ export default function ActualitesClient() {
   const isUserScrollingRef = useRef(false);
 
   const categories = getCategories();
-  const filteredArticles = getFilteredArticles(selectedEntity, selectedCategory);
+  const allArticles = getArticles();
+
+  let categoryFiltered = allArticles;
+  if (selectedCategory !== 'Toutes') {
+    categoryFiltered = allArticles.filter(a => a.category === selectedCategory);
+  }
+
+  let entityFiltered = categoryFiltered;
+  if (selectedEntity !== 'Groupe') {
+    entityFiltered = categoryFiltered.filter(a => a.entity === selectedEntity);
+  }
+
+  const filteredArticles = (() => {
+    if (selectedCategory !== 'Toutes') {
+      return allArticles.filter(a => a.category === selectedCategory);
+    }
+    if (selectedEntity !== 'Groupe') {
+      return allArticles.filter(a => a.entity === selectedEntity);
+    }
+    return allArticles;
+  })();
+
   const totalArticles = filteredArticles.length;
   const maxIndex = Math.max(0, totalArticles - articlesPerView);
 
-  // ✅ Mettre à jour le nombre d'articles par vue au resize
   useEffect(() => {
     const updateArticlesPerView = () => {
       const newValue = getArticlesPerView();
@@ -75,7 +94,7 @@ export default function ActualitesClient() {
     if (maxIndex <= MAX_DOTS - 1) {
       return Array.from({ length: maxIndex + 1 }, (_, i) => i);
     }
-    
+
     let start = 0;
     if (currentIndex >= 3 && currentIndex <= maxIndex - 3) {
       start = currentIndex - 2;
@@ -87,7 +106,6 @@ export default function ActualitesClient() {
 
   const visibleDots = getVisibleDots();
 
-  // Calcul de la largeur des slides
   useEffect(() => {
     const updateSlideWidth = () => {
       if (trackRef.current) {
@@ -102,16 +120,15 @@ export default function ActualitesClient() {
     return () => window.removeEventListener('resize', updateSlideWidth);
   }, [filteredArticles, articlesPerView]);
 
-  // Synchronisation du scroll manuel avec les dots
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
 
     const handleScroll = () => {
       if (isAnimating) return;
-      
+
       isUserScrollingRef.current = true;
-      
+
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
       }
@@ -122,7 +139,7 @@ export default function ActualitesClient() {
         const currentArticlesPerView = getArticlesPerView();
         const slideTotalWidth = slideWidthRef.current + gap;
         const newIndex = Math.round(scrollLeft / slideTotalWidth);
-        
+
         if (newIndex !== currentIndex && newIndex <= maxIndex) {
           setCurrentIndex(newIndex);
         }
@@ -134,11 +151,10 @@ export default function ActualitesClient() {
     return () => track.removeEventListener('scroll', handleScroll);
   }, [currentIndex, maxIndex, isAnimating, articlesPerView]);
 
-  // Scroll vers un index
   const scrollToIndex = useCallback((index: number) => {
     if (isAnimating) return;
     if (index < 0 || index > maxIndex) return;
-    
+
     const track = trackRef.current;
     if (!track) return;
 
@@ -147,17 +163,32 @@ export default function ActualitesClient() {
     const slideTotalWidth = slideWidthRef.current + gap;
     const targetScroll = index * slideTotalWidth;
 
+    const startScroll = track.scrollLeft;
+    const distance = targetScroll - startScroll;
+    const duration = 150; // ✅ Durée en ms — plus rapide que 220ms
+    let startTime: number | null = null;
+
     setIsAnimating(true);
     setCurrentIndex(index);
-    
-    track.scrollTo({
-      left: targetScroll,
-      behavior: 'smooth',
-    });
 
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, 500);
+    const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
+
+    const animateScroll = (currentTime: number) => {
+      if (startTime === null) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = easeOutQuart(progress);
+
+      track.scrollLeft = startScroll + distance * eased;
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      } else {
+        setIsAnimating(false);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
   }, [maxIndex, isAnimating, articlesPerView]);
 
   const handleFilterChange = (entity: string, category: string) => {
@@ -182,7 +213,6 @@ export default function ActualitesClient() {
     }
   }, [currentIndex, maxIndex, isAnimating, scrollToIndex]);
 
-  // ✅ Support clavier
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') goToPrevious();
@@ -192,7 +222,6 @@ export default function ActualitesClient() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [goToPrevious, goToNext]);
 
-  // ✅ Support tactile (swipe)
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -209,10 +238,10 @@ export default function ActualitesClient() {
 
     const handleTouchMove = (e: TouchEvent) => {
       if (!startX || !startY) return;
-      
+
       const deltaX = e.touches[0].clientX - startX;
       const deltaY = e.touches[0].clientY - startY;
-      
+
       if (Math.abs(deltaX) > 20 && Math.abs(deltaX) > Math.abs(deltaY)) {
         isSwiping = true;
         e.preventDefault();
@@ -221,16 +250,16 @@ export default function ActualitesClient() {
 
     const handleTouchEnd = (e: TouchEvent) => {
       if (!isSwiping) return;
-      
+
       const endX = e.changedTouches[0].clientX;
       const deltaX = endX - startX;
-      
+
       if (deltaX < -50) {
         goToNext();
       } else if (deltaX > 50) {
         goToPrevious();
       }
-      
+
       startX = 0;
       startY = 0;
       isSwiping = false;
@@ -247,7 +276,6 @@ export default function ActualitesClient() {
     };
   }, [goToNext, goToPrevious]);
 
-  // ✅ Réinitialiser l'animation si elle bloque
   useEffect(() => {
     const resetAnimation = () => {
       if (isAnimating) {
@@ -269,7 +297,8 @@ export default function ActualitesClient() {
       <section className="actualites-filters">
         <div className="actualites-filters__inner">
           <div className="actualites-filters__row">
-            <div className="actualites-filters__group">
+            {/* ✅ Classe ajoutée uniquement ici : actualites-filters__group--entity */}
+            <div className="actualites-filters__group actualites-filters__group--entity">
               <span className="actualites-filters__label">
                 <Filter size={16} />
                 Entité
@@ -282,6 +311,7 @@ export default function ActualitesClient() {
                       selectedEntity === entity ? 'actualites-filters__option--active' : ''
                     }`}
                     onClick={() => handleFilterChange(entity, selectedCategory)}
+                    aria-label={`Filtrer par entité ${entity}`}
                   >
                     {ENTITY_ICONS[entity]}
                     {entity}
@@ -289,8 +319,6 @@ export default function ActualitesClient() {
                 ))}
               </div>
             </div>
-
-            <div className="actualites-filters__divider" />
 
             <div className="actualites-filters__group">
               <span className="actualites-filters__label">
@@ -305,6 +333,7 @@ export default function ActualitesClient() {
                       selectedCategory === category ? 'actualites-filters__option--active' : ''
                     }`}
                     onClick={() => handleFilterChange(selectedEntity, category)}
+                    aria-label={`Filtrer par thématique ${category}`}
                   >
                     {category}
                   </button>
@@ -321,6 +350,7 @@ export default function ActualitesClient() {
               <button
                 className="actualites-filters__reset"
                 onClick={() => handleFilterChange('Groupe', 'Toutes')}
+                aria-label="Réinitialiser les filtres"
               >
                 Réinitialiser les filtres
               </button>
