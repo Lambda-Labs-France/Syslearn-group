@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { useSearchParams, useRouter, usePathname } from "next/navigation"; // 🆕
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import {
   Filter,
@@ -48,14 +48,19 @@ export default function ActualitesClient() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const searchParams = useSearchParams(); // 🆕
-  const router = useRouter(); // 🆕
-  const pathname = usePathname(); // 🆕
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const trackRef = useRef<HTMLDivElement>(null);
   const slideWidthRef = useRef<number>(0);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isUserScrollingRef = useRef(false);
+
+  // 🆕 REFS pour casser la boucle infinie URL ↔ State
+  const searchParamsRef = useRef(searchParams);
+  searchParamsRef.current = searchParams;
+  const skipNextUrlWriteRef = useRef(false);
 
   useEffect(() => {
     let cancelled = false;
@@ -82,7 +87,6 @@ export default function ActualitesClient() {
     };
   }, []);
 
-  // ✅ Catégories toujours globales (toutes les entités confondues)
   const categories = getCategories(allArticles);
 
   const filteredArticles = getFilteredArticles(
@@ -93,7 +97,7 @@ export default function ActualitesClient() {
   const totalArticles = filteredArticles.length;
   const maxIndex = Math.max(0, totalArticles - articlesPerView);
 
-  // 🆕 Si maxIndex diminue (resize/filtres), on bloque currentIndex pour ne pas dépasser
+  // Sécurité : si maxIndex diminue, on bloque currentIndex
   useEffect(() => {
     if (currentIndex > maxIndex) {
       setCurrentIndex(maxIndex);
@@ -295,7 +299,11 @@ export default function ActualitesClient() {
     return () => window.removeEventListener("scroll", resetAnimation);
   }, [isAnimating]);
 
-  // 🆕 1. Lecture de l'URL au chargement / retour arrière / lien direct
+  // ─────────────────────────────────────────────
+  // 🆕 SYNCHRONISATION URL (lecture + écriture)
+  // ─────────────────────────────────────────────
+
+  // 1. LECTURE : URL → State (navigation externe : lien, back/forward)
   useEffect(() => {
     if (loading || allArticles.length === 0) return;
 
@@ -307,31 +315,39 @@ export default function ActualitesClient() {
     const targetIndex = Math.min(pageNum - 1, maxIndex);
 
     if (targetIndex !== currentIndex) {
+      skipNextUrlWriteRef.current = true; // Le prochain changement d'index vient de l'URL
       setCurrentIndex(targetIndex);
     }
   }, [searchParams, loading, allArticles.length, maxIndex]);
 
-  // 🆕 2. Écriture dans l'URL quand on navigue (Next / Prev / Dots)
+  // 2. ÉCRITURE : State → URL (interaction utilisateur uniquement)
   useEffect(() => {
     if (loading || allArticles.length === 0) return;
 
-    const page = currentIndex + 1;
-    const pageParam = searchParams.get("page");
-    const currentPage = pageParam ? parseInt(pageParam, 10) : 1;
-
-    if (page !== currentPage) {
-      if (page === 1) {
-        // La page 1 reste sur /actualites (pas de ?page=1, évite le duplicate content)
-        router.replace(pathname, { scroll: false });
-      } else {
-        const params = new URLSearchParams(searchParams.toString());
-        params.set("page", String(page));
-        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
-      }
+    // Si le changement d'index vient de la lecture d'URL, on n'écrit PAS
+    if (skipNextUrlWriteRef.current) {
+      skipNextUrlWriteRef.current = false;
+      return;
     }
-  }, [currentIndex, loading, allArticles.length, pathname, router, searchParams, maxIndex]);
 
-  // 🆕 3. Scroll automatique quand l'index change via l'URL (sans animation)
+    const page = currentIndex + 1;
+    const currentPageStr = searchParamsRef.current.get("page");
+    const currentPage = currentPageStr ? parseInt(currentPageStr, 10) : 1;
+
+    if (page === currentPage) return;
+
+    if (page === 1) {
+      // Page 1 = URL propre /actualites (pas de ?page=1)
+      router.replace(pathname, { scroll: false });
+    } else {
+      const params = new URLSearchParams(searchParamsRef.current.toString());
+      params.set("page", String(page));
+      router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+    }
+    // 🚫 PAS searchParams dans les dépendances ! On utilise la ref pour éviter la boucle
+  }, [currentIndex, loading, allArticles.length, pathname, router, maxIndex]);
+
+  // 3. Scroll auto quand l'index vient de l'URL (sans animation)
   useEffect(() => {
     if (!trackRef.current || isAnimating) return;
 
