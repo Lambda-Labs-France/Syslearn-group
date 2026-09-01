@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect, useCallback } from "react";
-import { 
+import { useSearchParams, useRouter, usePathname } from "next/navigation"; // 🆕
+import Link from "next/link";
+import {
   Filter,
   ChevronLeft,
   ChevronRight,
@@ -12,80 +14,110 @@ import {
 } from "lucide-react";
 import {
   entities,
-  getArticles,
+  fetchArticles,
   getCategories,
+  getFilteredArticles,
   upcomingArticles,
+  type Article,
 } from "./data/articles";
 import ArticleCard from "../../components/common/ArticleCard";
 import "../../styles/common/article-card.css";
 import "../../styles/actualites/actualites.css";
 
 const ENTITY_ICONS: Record<string, React.ReactNode> = {
-  'Syslearn': <Briefcase size={16} />,
-  'PointerLab': <Code2 size={16} />,
-  'StackJobs': <UserCheck size={16} />,
-  'Groupe': <Users size={16} />,
+  Syslearn: <Briefcase size={16} />,
+  PointerLab: <Code2 size={16} />,
+  StackJobs: <UserCheck size={16} />,
+  Groupe: <Users size={16} />,
 };
 
 const getArticlesPerView = () => {
-  if (typeof window === 'undefined') return 3;
+  if (typeof window === "undefined") return 3;
   if (window.innerWidth < 768) return 1;
   if (window.innerWidth < 1024) return 2;
   return 3;
 };
 
 export default function ActualitesClient() {
-  const [selectedEntity, setSelectedEntity] = useState('Groupe');
-  const [selectedCategory, setSelectedCategory] = useState('Toutes');
+  const [selectedEntity, setSelectedEntity] = useState("Groupe");
+  const [selectedCategory, setSelectedCategory] = useState("Toutes");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
   const [articlesPerView, setArticlesPerView] = useState(3);
+  const [allArticles, setAllArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const searchParams = useSearchParams(); // 🆕
+  const router = useRouter(); // 🆕
+  const pathname = usePathname(); // 🆕
+
   const trackRef = useRef<HTMLDivElement>(null);
   const slideWidthRef = useRef<number>(0);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isUserScrollingRef = useRef(false);
 
-  const categories = getCategories();
-  const allArticles = getArticles();
+  useEffect(() => {
+    let cancelled = false;
+    setLoading(true);
+    setError(null);
 
-  let categoryFiltered = allArticles;
-  if (selectedCategory !== 'Toutes') {
-    categoryFiltered = allArticles.filter(a => a.category === selectedCategory);
-  }
+    fetchArticles()
+      .then((articles) => {
+        if (!cancelled) {
+          setAllArticles(articles);
+          setLoading(false);
+        }
+      })
+      .catch((err) => {
+        if (!cancelled) {
+          console.error(err);
+          setError("Impossible de charger les articles.");
+          setLoading(false);
+        }
+      });
 
-  let entityFiltered = categoryFiltered;
-  if (selectedEntity !== 'Groupe') {
-    entityFiltered = categoryFiltered.filter(a => a.entity === selectedEntity);
-  }
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
-  const filteredArticles = (() => {
-    if (selectedCategory !== 'Toutes') {
-      return allArticles.filter(a => a.category === selectedCategory);
-    }
-    if (selectedEntity !== 'Groupe') {
-      return allArticles.filter(a => a.entity === selectedEntity);
-    }
-    return allArticles;
-  })();
+  // ✅ Catégories toujours globales (toutes les entités confondues)
+  const categories = getCategories(allArticles);
 
+  const filteredArticles = getFilteredArticles(
+    allArticles,
+    selectedEntity,
+    selectedCategory
+  );
   const totalArticles = filteredArticles.length;
   const maxIndex = Math.max(0, totalArticles - articlesPerView);
+
+  // 🆕 Si maxIndex diminue (resize/filtres), on bloque currentIndex pour ne pas dépasser
+  useEffect(() => {
+    if (currentIndex > maxIndex) {
+      setCurrentIndex(maxIndex);
+    }
+  }, [maxIndex, currentIndex]);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+    setIsAnimating(false);
+    if (trackRef.current) {
+      trackRef.current.scrollTo({ left: 0, behavior: "auto" });
+    }
+  }, [selectedEntity, selectedCategory, articlesPerView, allArticles.length]);
 
   useEffect(() => {
     const updateArticlesPerView = () => {
       const newValue = getArticlesPerView();
       if (newValue !== articlesPerView) {
         setArticlesPerView(newValue);
-        setCurrentIndex(0);
-        if (trackRef.current) {
-          trackRef.current.scrollTo({ left: 0, behavior: 'auto' });
-        }
       }
     };
-
     updateArticlesPerView();
-    window.addEventListener('resize', updateArticlesPerView);
-    return () => window.removeEventListener('resize', updateArticlesPerView);
+    window.addEventListener("resize", updateArticlesPerView);
+    return () => window.removeEventListener("resize", updateArticlesPerView);
   }, [articlesPerView]);
 
   const MAX_DOTS = 5;
@@ -94,7 +126,6 @@ export default function ActualitesClient() {
     if (maxIndex <= MAX_DOTS - 1) {
       return Array.from({ length: maxIndex + 1 }, (_, i) => i);
     }
-
     let start = 0;
     if (currentIndex >= 3 && currentIndex <= maxIndex - 3) {
       start = currentIndex - 2;
@@ -112,12 +143,14 @@ export default function ActualitesClient() {
         const trackWidth = trackRef.current.offsetWidth;
         const gap = 24;
         const currentArticlesPerView = getArticlesPerView();
-        slideWidthRef.current = (trackWidth - (currentArticlesPerView - 1) * gap) / currentArticlesPerView;
+        slideWidthRef.current =
+          (trackWidth - (currentArticlesPerView - 1) * gap) /
+          currentArticlesPerView;
       }
     };
     updateSlideWidth();
-    window.addEventListener('resize', updateSlideWidth);
-    return () => window.removeEventListener('resize', updateSlideWidth);
+    window.addEventListener("resize", updateSlideWidth);
+    return () => window.removeEventListener("resize", updateSlideWidth);
   }, [filteredArticles, articlesPerView]);
 
   useEffect(() => {
@@ -126,20 +159,15 @@ export default function ActualitesClient() {
 
     const handleScroll = () => {
       if (isAnimating) return;
-
       isUserScrollingRef.current = true;
-
       if (scrollTimeoutRef.current) {
         clearTimeout(scrollTimeoutRef.current);
       }
-
       scrollTimeoutRef.current = setTimeout(() => {
         const scrollLeft = track.scrollLeft;
         const gap = 24;
-        const currentArticlesPerView = getArticlesPerView();
         const slideTotalWidth = slideWidthRef.current + gap;
         const newIndex = Math.round(scrollLeft / slideTotalWidth);
-
         if (newIndex !== currentIndex && newIndex <= maxIndex) {
           setCurrentIndex(newIndex);
         }
@@ -147,58 +175,52 @@ export default function ActualitesClient() {
       }, 150);
     };
 
-    track.addEventListener('scroll', handleScroll, { passive: true });
-    return () => track.removeEventListener('scroll', handleScroll);
+    track.addEventListener("scroll", handleScroll, { passive: true });
+    return () => track.removeEventListener("scroll", handleScroll);
   }, [currentIndex, maxIndex, isAnimating, articlesPerView]);
 
-  const scrollToIndex = useCallback((index: number) => {
-    if (isAnimating) return;
-    if (index < 0 || index > maxIndex) return;
+  const scrollToIndex = useCallback(
+    (index: number) => {
+      if (isAnimating) return;
+      if (index < 0 || index > maxIndex) return;
 
-    const track = trackRef.current;
-    if (!track) return;
+      const track = trackRef.current;
+      if (!track) return;
 
-    const gap = 24;
-    const currentArticlesPerView = getArticlesPerView();
-    const slideTotalWidth = slideWidthRef.current + gap;
-    const targetScroll = index * slideTotalWidth;
+      const gap = 24;
+      const slideTotalWidth = slideWidthRef.current + gap;
+      const targetScroll = index * slideTotalWidth;
+      const startScroll = track.scrollLeft;
+      const distance = targetScroll - startScroll;
+      const duration = 150;
+      let startTime: number | null = null;
 
-    const startScroll = track.scrollLeft;
-    const distance = targetScroll - startScroll;
-    const duration = 150; // ✅ Durée en ms — plus rapide que 220ms
-    let startTime: number | null = null;
+      setIsAnimating(true);
+      setCurrentIndex(index);
 
-    setIsAnimating(true);
-    setCurrentIndex(index);
+      const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
 
-    const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
+      const animateScroll = (currentTime: number) => {
+        if (startTime === null) startTime = currentTime;
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = easeOutQuart(progress);
+        track.scrollLeft = startScroll + distance * eased;
+        if (progress < 1) {
+          requestAnimationFrame(animateScroll);
+        } else {
+          setIsAnimating(false);
+        }
+      };
 
-    const animateScroll = (currentTime: number) => {
-      if (startTime === null) startTime = currentTime;
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = easeOutQuart(progress);
-
-      track.scrollLeft = startScroll + distance * eased;
-
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll);
-      } else {
-        setIsAnimating(false);
-      }
-    };
-
-    requestAnimationFrame(animateScroll);
-  }, [maxIndex, isAnimating, articlesPerView]);
+      requestAnimationFrame(animateScroll);
+    },
+    [maxIndex, isAnimating, articlesPerView]
+  );
 
   const handleFilterChange = (entity: string, category: string) => {
     setSelectedEntity(entity);
     setSelectedCategory(category);
-    setCurrentIndex(0);
-    setIsAnimating(false);
-    if (trackRef.current) {
-      trackRef.current.scrollTo({ left: 0, behavior: 'auto' });
-    }
   };
 
   const goToPrevious = useCallback(() => {
@@ -215,17 +237,16 @@ export default function ActualitesClient() {
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') goToPrevious();
-      if (e.key === 'ArrowRight') goToNext();
+      if (e.key === "ArrowLeft") goToPrevious();
+      if (e.key === "ArrowRight") goToNext();
     };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [goToPrevious, goToNext]);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-
     let startX = 0;
     let startY = 0;
     let isSwiping = false;
@@ -235,56 +256,96 @@ export default function ActualitesClient() {
       startY = e.touches[0].clientY;
       isSwiping = false;
     };
-
     const handleTouchMove = (e: TouchEvent) => {
       if (!startX || !startY) return;
-
       const deltaX = e.touches[0].clientX - startX;
       const deltaY = e.touches[0].clientY - startY;
-
       if (Math.abs(deltaX) > 20 && Math.abs(deltaX) > Math.abs(deltaY)) {
         isSwiping = true;
         e.preventDefault();
       }
     };
-
     const handleTouchEnd = (e: TouchEvent) => {
       if (!isSwiping) return;
-
       const endX = e.changedTouches[0].clientX;
       const deltaX = endX - startX;
-
-      if (deltaX < -50) {
-        goToNext();
-      } else if (deltaX > 50) {
-        goToPrevious();
-      }
-
+      if (deltaX < -50) goToNext();
+      else if (deltaX > 50) goToPrevious();
       startX = 0;
       startY = 0;
       isSwiping = false;
     };
 
-    track.addEventListener('touchstart', handleTouchStart, { passive: true });
-    track.addEventListener('touchmove', handleTouchMove, { passive: false });
-    track.addEventListener('touchend', handleTouchEnd, { passive: true });
+    track.addEventListener("touchstart", handleTouchStart, { passive: true });
+    track.addEventListener("touchmove", handleTouchMove, { passive: false });
+    track.addEventListener("touchend", handleTouchEnd, { passive: true });
 
     return () => {
-      track.removeEventListener('touchstart', handleTouchStart);
-      track.removeEventListener('touchmove', handleTouchMove);
-      track.removeEventListener('touchend', handleTouchEnd);
+      track.removeEventListener("touchstart", handleTouchStart);
+      track.removeEventListener("touchmove", handleTouchMove);
+      track.removeEventListener("touchend", handleTouchEnd);
     };
   }, [goToNext, goToPrevious]);
 
   useEffect(() => {
     const resetAnimation = () => {
-      if (isAnimating) {
-        setIsAnimating(false);
-      }
+      if (isAnimating) setIsAnimating(false);
     };
-    window.addEventListener('scroll', resetAnimation);
-    return () => window.removeEventListener('scroll', resetAnimation);
+    window.addEventListener("scroll", resetAnimation);
+    return () => window.removeEventListener("scroll", resetAnimation);
   }, [isAnimating]);
+
+  // 🆕 1. Lecture de l'URL au chargement / retour arrière / lien direct
+  useEffect(() => {
+    if (loading || allArticles.length === 0) return;
+
+    const pageParam = searchParams.get("page");
+    const pageNum = pageParam ? parseInt(pageParam, 10) : 1;
+
+    if (isNaN(pageNum) || pageNum < 1) return;
+
+    const targetIndex = Math.min(pageNum - 1, maxIndex);
+
+    if (targetIndex !== currentIndex) {
+      setCurrentIndex(targetIndex);
+    }
+  }, [searchParams, loading, allArticles.length, maxIndex]);
+
+  // 🆕 2. Écriture dans l'URL quand on navigue (Next / Prev / Dots)
+  useEffect(() => {
+    if (loading || allArticles.length === 0) return;
+
+    const page = currentIndex + 1;
+    const pageParam = searchParams.get("page");
+    const currentPage = pageParam ? parseInt(pageParam, 10) : 1;
+
+    if (page !== currentPage) {
+      if (page === 1) {
+        // La page 1 reste sur /actualites (pas de ?page=1, évite le duplicate content)
+        router.replace(pathname, { scroll: false });
+      } else {
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("page", String(page));
+        router.replace(`${pathname}?${params.toString()}`, { scroll: false });
+      }
+    }
+  }, [currentIndex, loading, allArticles.length, pathname, router, searchParams, maxIndex]);
+
+  // 🆕 3. Scroll automatique quand l'index change via l'URL (sans animation)
+  useEffect(() => {
+    if (!trackRef.current || isAnimating) return;
+
+    const gap = 24;
+    const slideTotalWidth = slideWidthRef.current + gap;
+    if (slideTotalWidth <= 0) return;
+
+    const targetScroll = currentIndex * slideTotalWidth;
+    const currentScroll = trackRef.current.scrollLeft;
+
+    if (Math.abs(currentScroll - targetScroll) > 2) {
+      trackRef.current.scrollTo({ left: targetScroll, behavior: "auto" });
+    }
+  }, [currentIndex, isAnimating, articlesPerView]);
 
   return (
     <main className="actualites-page">
@@ -297,7 +358,6 @@ export default function ActualitesClient() {
       <section className="actualites-filters">
         <div className="actualites-filters__inner">
           <div className="actualites-filters__row">
-            {/* ✅ Classe ajoutée uniquement ici : actualites-filters__group--entity */}
             <div className="actualites-filters__group actualites-filters__group--entity">
               <span className="actualites-filters__label">
                 <Filter size={16} />
@@ -308,7 +368,9 @@ export default function ActualitesClient() {
                   <button
                     key={entity}
                     className={`actualites-filters__option ${
-                      selectedEntity === entity ? 'actualites-filters__option--active' : ''
+                      selectedEntity === entity
+                        ? "actualites-filters__option--active"
+                        : ""
                     }`}
                     onClick={() => handleFilterChange(entity, selectedCategory)}
                     aria-label={`Filtrer par entité ${entity}`}
@@ -330,7 +392,9 @@ export default function ActualitesClient() {
                   <button
                     key={category}
                     className={`actualites-filters__option ${
-                      selectedCategory === category ? 'actualites-filters__option--active' : ''
+                      selectedCategory === category
+                        ? "actualites-filters__option--active"
+                        : ""
                     }`}
                     onClick={() => handleFilterChange(selectedEntity, category)}
                     aria-label={`Filtrer par thématique ${category}`}
@@ -344,12 +408,12 @@ export default function ActualitesClient() {
 
           <div className="actualites-filters__bottom">
             <span className="actualites-filters__count">
-              {totalArticles} article{totalArticles > 1 ? 's' : ''}
+              {totalArticles} article{totalArticles > 1 ? "s" : ""}
             </span>
-            {(selectedEntity !== 'Groupe' || selectedCategory !== 'Toutes') && (
+            {(selectedEntity !== "Groupe" || selectedCategory !== "Toutes") && (
               <button
                 className="actualites-filters__reset"
-                onClick={() => handleFilterChange('Groupe', 'Toutes')}
+                onClick={() => handleFilterChange("Groupe", "Toutes")}
                 aria-label="Réinitialiser les filtres"
               >
                 Réinitialiser les filtres
@@ -361,7 +425,15 @@ export default function ActualitesClient() {
 
       <section className="actualites-content">
         <div className="actualites-content__inner">
-          {totalArticles === 0 ? (
+          {loading ? (
+            <div className="actualites-empty">
+              <p>Chargement des articles...</p>
+            </div>
+          ) : error ? (
+            <div className="actualites-empty">
+              <p>{error}</p>
+            </div>
+          ) : totalArticles === 0 ? (
             <div className="actualites-empty">
               <p>Aucun article ne correspond à vos filtres.</p>
             </div>
@@ -383,7 +455,9 @@ export default function ActualitesClient() {
                   <button
                     key={dotIndex}
                     className={`actualites-carousel__dot ${
-                      dotIndex === currentIndex ? 'actualites-carousel__dot--active' : ''
+                      dotIndex === currentIndex
+                        ? "actualites-carousel__dot--active"
+                        : ""
                     }`}
                     onClick={() => scrollToIndex(dotIndex)}
                     aria-label={`Aller au groupe d'articles ${dotIndex + 1}`}
@@ -394,7 +468,9 @@ export default function ActualitesClient() {
                 {visibleDots[visibleDots.length - 1] < maxIndex && (
                   <button
                     className="actualites-carousel__dot-arrow"
-                    onClick={() => scrollToIndex(visibleDots[visibleDots.length - 1] + 1)}
+                    onClick={() =>
+                      scrollToIndex(visibleDots[visibleDots.length - 1] + 1)
+                    }
                     aria-label="Voir les dots suivants"
                     disabled={isAnimating}
                   >
@@ -404,40 +480,54 @@ export default function ActualitesClient() {
               </div>
 
               <div className="actualites-carousel-wrapper">
-                <button 
+                <Link
+                  href="#actualites-carousel"
+                  scroll={false}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goToPrevious();
+                  }}
                   className={`actualites-carousel__btn actualites-carousel__btn--prev ${
-                    currentIndex === 0 || isAnimating ? 'actualites-carousel__btn--disabled' : ''
+                    currentIndex === 0 || isAnimating
+                      ? "actualites-carousel__btn--disabled"
+                      : ""
                   }`}
-                  onClick={goToPrevious}
-                  disabled={currentIndex === 0 || isAnimating}
                   aria-label="Articles précédents"
+                  aria-disabled={currentIndex === 0 || isAnimating}
                 >
                   <ChevronLeft size={28} />
-                </button>
+                </Link>
 
-                <div 
-                  className="actualites-carousel__track" 
-                  ref={trackRef}
-                >
+                <div className="actualites-carousel__track" ref={trackRef}>
                   <div className="actualites-carousel__slides">
                     {filteredArticles.map((article) => (
-                      <div key={article.id} className="actualites-carousel__slide">
+                      <div
+                        key={article.id}
+                        className="actualites-carousel__slide"
+                      >
                         <ArticleCard {...article} />
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <button 
+                <Link
+                  href="#actualites-carousel"
+                  scroll={false}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goToNext();
+                  }}
                   className={`actualites-carousel__btn actualites-carousel__btn--next ${
-                    currentIndex >= maxIndex || isAnimating ? 'actualites-carousel__btn--disabled' : ''
+                    currentIndex >= maxIndex || isAnimating
+                      ? "actualites-carousel__btn--disabled"
+                      : ""
                   }`}
-                  onClick={goToNext}
-                  disabled={currentIndex >= maxIndex || isAnimating}
                   aria-label="Articles suivants"
+                  aria-disabled={currentIndex >= maxIndex || isAnimating}
                 >
                   <ChevronRight size={28} />
-                </button>
+                </Link>
               </div>
             </>
           )}
@@ -453,10 +543,16 @@ export default function ActualitesClient() {
           <div className="actualites-upcoming__grid">
             {upcomingArticles.map((article, index) => (
               <div key={index} className="actualites-upcoming__item">
-                <span className="actualites-upcoming__number">{String(index + 1).padStart(2, '0')}</span>
+                <span className="actualites-upcoming__number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <div>
-                  <h3 className="actualites-upcoming__item-title">{article.title}</h3>
-                  <p className="actualites-upcoming__item-desc">{article.description}</p>
+                  <h3 className="actualites-upcoming__item-title">
+                    {article.title}
+                  </h3>
+                  <p className="actualites-upcoming__item-desc">
+                    {article.description}
+                  </p>
                 </div>
               </div>
             ))}
