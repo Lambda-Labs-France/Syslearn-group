@@ -2,7 +2,6 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 import ActualitesClient from "./ActualitesClient";
 
-
 export async function generateMetadata({
   searchParams,
 }: {
