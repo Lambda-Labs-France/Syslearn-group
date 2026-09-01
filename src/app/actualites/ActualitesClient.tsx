@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback, useMemo } from "react";
-import { useSearchParams, usePathname } from "next/navigation";
+import { useState, useRef, useEffect, useCallback, useMemo, memo } from "react";
+import { useSearchParams, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
   Filter,
@@ -38,6 +38,7 @@ const getArticlesPerView = () => {
 };
 
 const MAX_DOTS = 5;
+const MemoizedArticleCard = memo(ArticleCard);
 
 interface ActualitesClientProps {
   initialArticles: Article[];
@@ -54,16 +55,25 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
 
   const searchParams = useSearchParams();
   const pathname = usePathname();
+  const router = useRouter();
 
   const trackRef = useRef<HTMLDivElement>(null);
   const slideWidthRef = useRef<number>(0);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const isProgrammaticScrollRef = useRef(false);
   const resizeTimerRef = useRef<NodeJS.Timeout | null>(null);
-  const lastExternalKeyRef = useRef<string | null>(null);
+  const skipUrlWriteRef = useRef(false);
+  const currentIndexRef = useRef(currentIndex);
   const maxIndexRef = useRef(0);
 
- 
+  // Sync ref avec state
+  useEffect(() => {
+    currentIndexRef.current = currentIndex;
+  }, [currentIndex]);
+
+  // ─────────────────────────────────────────────
+  // MÉMOÏSATION
+  // ─────────────────────────────────────────────
   const categories = useMemo(() => getCategories(allArticles), [allArticles]);
 
   const filteredArticles = useMemo(
@@ -78,12 +88,18 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
   );
   maxIndexRef.current = maxIndex;
 
+  // ─────────────────────────────────────────────
+  // SÉCURITÉ : bloquer currentIndex si maxIndex diminue
+  // ─────────────────────────────────────────────
   useEffect(() => {
     if (currentIndex > maxIndex) {
       setCurrentIndex(maxIndex);
     }
-  }, [maxIndex]);
+  }, [maxIndex]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // ─────────────────────────────────────────────
+  // RESET : filtres ou resize changent
+  // ─────────────────────────────────────────────
   useEffect(() => {
     setCurrentIndex(0);
     setIsAnimating(false);
@@ -92,17 +108,29 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
     }
   }, [selectedEntity, selectedCategory, articlesPerView, allArticles.length]);
 
-
+  // ─────────────────────────────────────────────
+  // RESPONSIVE (debounced)
+  // ─────────────────────────────────────────────
   useEffect(() => {
+    const updateSize = () => {
+      if (trackRef.current) {
+        const trackWidth = trackRef.current.offsetWidth;
+        const gap = 24;
+        const apv = getArticlesPerView();
+        slideWidthRef.current = (trackWidth - (apv - 1) * gap) / apv;
+      }
+    };
+
     const handleResize = () => {
       if (resizeTimerRef.current) clearTimeout(resizeTimerRef.current);
       resizeTimerRef.current = setTimeout(() => {
         const newValue = getArticlesPerView();
         setArticlesPerView((prev) => (newValue !== prev ? newValue : prev));
+        updateSize();
       }, 150);
     };
 
-    handleResize();
+    updateSize();
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("resize", handleResize);
@@ -110,23 +138,9 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
     };
   }, []);
 
- 
-  useEffect(() => {
-    const updateSlideWidth = () => {
-      if (!trackRef.current) return;
-      const trackWidth = trackRef.current.offsetWidth;
-      const gap = 24;
-      const currentAPV = getArticlesPerView();
-      slideWidthRef.current =
-        (trackWidth - (currentAPV - 1) * gap) / currentAPV;
-    };
-
-    updateSlideWidth();
-    window.addEventListener("resize", updateSlideWidth);
-    return () => window.removeEventListener("resize", updateSlideWidth);
-  }, []);
-
-
+  // ─────────────────────────────────────────────
+  // SCROLL → INDEX (user scroll uniquement)
+  // ─────────────────────────────────────────────
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -142,7 +156,11 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
         if (slideTotalWidth <= 0) return;
 
         const newIndex = Math.round(scrollLeft / slideTotalWidth);
-        if (newIndex >= 0 && newIndex <= maxIndex && newIndex !== currentIndex) {
+        if (
+          newIndex >= 0 &&
+          newIndex <= maxIndex &&
+          newIndex !== currentIndexRef.current
+        ) {
           setCurrentIndex(newIndex);
         }
       }, 150);
@@ -150,12 +168,15 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
 
     track.addEventListener("scroll", handleScroll, { passive: true });
     return () => track.removeEventListener("scroll", handleScroll);
-  }, [currentIndex, maxIndex]);
+  }, [maxIndex]);
 
-
+  // ─────────────────────────────────────────────
+  // NAVIGATION (scroll programmatique animé)
+  // ─────────────────────────────────────────────
   const scrollToIndex = useCallback(
     (index: number) => {
       if (isAnimating || index < 0 || index > maxIndex) return;
+      if (index === currentIndexRef.current) return;
 
       const track = trackRef.current;
       if (!track) return;
@@ -216,7 +237,9 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
     }
   }, [currentIndex, maxIndex, isAnimating, scrollToIndex]);
 
-  
+  // ─────────────────────────────────────────────
+  // CLAVIER
+  // ─────────────────────────────────────────────
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") goToPrevious();
@@ -226,7 +249,9 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [goToPrevious, goToNext]);
 
-
+  // ─────────────────────────────────────────────
+  // TOUCH
+  // ─────────────────────────────────────────────
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
@@ -269,30 +294,60 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
     };
   }, [goToNext, goToPrevious]);
 
-
+  // ─────────────────────────────────────────────
+  // LECTURE URL : navigation externe (lien, back/forward)
+  // ─────────────────────────────────────────────
   useEffect(() => {
     if (allArticles.length === 0) return;
-
-    const key = `${pathname}?${searchParams.toString()}`;
-    if (lastExternalKeyRef.current === key) return;
-    lastExternalKeyRef.current = key;
 
     const pageParam = searchParams.get("page");
-    const pageNum = pageParam ? parseInt(pageParam, 10) : 1;
-    const targetIndex =
-      isNaN(pageNum) || pageNum < 1
-        ? 0
-        : Math.min(pageNum - 1, maxIndexRef.current);
 
-    setCurrentIndex(targetIndex);
-    if (trackRef.current) {
-      trackRef.current.scrollTo({ left: 0, behavior: "auto" });
+    // 🆕 Clic sur "Actualités" ou back vers /actualites (sans ?page) → reset
+    if (!pageParam) {
+      if (currentIndexRef.current !== 0) {
+        skipUrlWriteRef.current = true;
+        setCurrentIndex(0);
+        setIsAnimating(false);
+        if (trackRef.current) {
+          trackRef.current.scrollTo({ left: 0, behavior: "auto" });
+        }
+      }
+      return;
     }
-  }, [pathname, searchParams, allArticles.length]);
 
+    // URL avec ?page=X → synchroniser l'index
+    const pageNum = parseInt(pageParam, 10);
+    if (isNaN(pageNum) || pageNum < 1) return;
 
+    const targetIndex = Math.min(pageNum - 1, maxIndexRef.current);
+    if (targetIndex !== currentIndexRef.current) {
+      skipUrlWriteRef.current = true;
+      setCurrentIndex(targetIndex);
+      setIsAnimating(false);
+      if (trackRef.current) {
+        const gap = 24;
+        const slideTotalWidth = slideWidthRef.current + gap;
+        if (slideTotalWidth > 0) {
+          trackRef.current.scrollTo({
+            left: targetIndex * slideTotalWidth,
+            behavior: "auto",
+          });
+        }
+      }
+    }
+  }, [searchParams, allArticles.length]);
+
+  // ─────────────────────────────────────────────
+  // ÉCRITURE URL : interaction utilisateur
+  // ─────────────────────────────────────────────
   useEffect(() => {
     if (allArticles.length === 0) return;
+
+    // Si on vient de lire l'URL, ne pas réécrire
+    if (skipUrlWriteRef.current) {
+      skipUrlWriteRef.current = false;
+      return;
+    }
 
     const page = currentIndex + 1;
     const currentPageStr = searchParams.get("page");
@@ -300,17 +355,13 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
 
     if (page === currentPage) return;
 
-    const url = page === 1 ? pathname : `${pathname}?page=${page}`;
-    window.history.replaceState(null, "", url);
+    const newUrl = page === 1 ? pathname : `${pathname}?page=${page}`;
+    router.replace(newUrl, { scroll: false });
+  }, [currentIndex, allArticles.length, pathname, router, searchParams]);
 
-    lastExternalKeyRef.current = url.includes("?")
-      ? url.replace(pathname, "")
-      : "?";
-    lastExternalKeyRef.current = `${pathname}?${
-      page === 1 ? "" : `page=${page}`
-    }`;
-  }, [currentIndex, allArticles.length, pathname, maxIndex]);
-
+  // ─────────────────────────────────────────────
+  // DOTS
+  // ─────────────────────────────────────────────
   const visibleDots = useMemo(() => {
     if (maxIndex <= MAX_DOTS - 1) {
       return Array.from({ length: maxIndex + 1 }, (_, i) => i);
@@ -324,11 +375,21 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
     return Array.from({ length: MAX_DOTS }, (_, i) => start + i);
   }, [currentIndex, maxIndex]);
 
-
+  // ─────────────────────────────────────────────
+  // RENDU (virtualisé)
+  // ─────────────────────────────────────────────
   const renderArticles = useMemo(() => {
     const buffer = 1;
     const start = Math.max(0, currentIndex - buffer);
-    const end = Math.min(filteredArticles.length, currentIndex + articlesPerView + buffer);
+    const end = Math.min(
+      filteredArticles.length,
+      currentIndex + articlesPerView + buffer
+    );
+
+    const minWidthStyle =
+      slideWidthRef.current > 0
+        ? slideWidthRef.current
+        : `calc((100% - ${(articlesPerView - 1) * 24}px) / ${articlesPerView})`;
 
     return filteredArticles.map((article, idx) => {
       const isVisible = idx >= start && idx < end;
@@ -338,10 +399,14 @@ export default function ActualitesClient({ initialArticles }: ActualitesClientPr
           className="actualites-carousel__slide"
           style={{
             visibility: isVisible ? "visible" : "hidden",
-            minWidth: slideWidthRef.current || undefined,
+            minWidth: minWidthStyle,
           }}
         >
-          {isVisible ? <ArticleCard {...article} /> : <div style={{ height: "100%" }} />}
+          {isVisible ? (
+            <MemoizedArticleCard {...article} />
+          ) : (
+            <div style={{ height: "100%" }} />
+          )}
         </div>
       );
     });
