@@ -60,27 +60,19 @@
   gap: 1rem;
 }
 
-/* ✅ Passe en colonne pour que chaque groupe (Entité, Thématique)
-   ait sa propre ligne pleine largeur, indépendamment centrable */
 .actualites-filters__row {
   display: flex;
-  flex-direction: column;
+  flex-direction: column;   /* <-- ajouté */
   align-items: center;
+  justify-content: center;  /* <-- ajouté */
   gap: 1.5rem;
 }
 
-/* Comportement par défaut inchangé pour tous les groupes (Thématique inclus) */
 .actualites-filters__group {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
-}
-
-/* ✅ UNIQUEMENT pour le groupe Entité : centré au milieu de la page */
-.actualites-filters__group--entity {
-  justify-content: center;
-  width: 100%;
 }
 
 .actualites-filters__label {
@@ -503,10 +495,6 @@
 
   .actualites-filters__group {
     width: 100%;
-  }
-
-  .actualites-filters__group--entity {
-    justify-content: center;
   }
 
   .actualites-filters__options {
