@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { fetchArticles } from "./data/articles";
 import ActualitesClient from "./ActualitesClient";
@@ -40,5 +41,15 @@ export const revalidate = 300;
 export default async function Page() {
   const articles = await fetchArticles();
 
-  return <ActualitesClient initialArticles={articles} />;
+  return (
+    <Suspense
+      fallback={
+        <div className="actualites-empty">
+          <p>Chargement des articles...</p>
+        </div>
+      }
+    >
+      <ActualitesClient initialArticles={articles} />
+    </Suspense>
+  );
 }
