@@ -35,6 +35,8 @@ const STRAPI_URL =
   process.env.STRAPI_API_URL ||
   'https://strapi.pointerlab.fr';
 
+const REVALIDATE_SECONDS = 300;
+
 function normalizeEntity(siteName: string): Article['entity'] {
   const clean = (siteName || '').toString().trim().toLowerCase();
   if (clean === 'pointerlab' || clean === 'pointer lab') return 'PointerLab';
@@ -76,15 +78,31 @@ function getCategory(item: any): string {
   return 'Article';
 }
 
-async function fetchAllArticles(): Promise<any[]> {
-  const url = new URL(`${STRAPI_URL}/api/articles`);
-  url.searchParams.append('sort', 'publishedAt:desc');
-  url.searchParams.append('populate', '*');
-  url.searchParams.append('pagination[pageSize]', '100');
 
-  const firstRes = await fetch(url.toString(), {
+function buildArticlesUrl(page: number, pageSize: number): string {
+  const params = new URLSearchParams();
+
+  ['title', 'summary', 'slug', 'publishDate', 'publishedAt', 'WebSite_Name'].forEach((f) =>
+    params.append('fields', f)
+  );
+
+  params.append('populate[image][fields][0]', 'url');
+  params.append('populate[category][fields][0]', 'name');
+
+  params.append('sort', 'publishDate:desc');
+  params.append('pagination[pageSize]', String(pageSize));
+  params.append('pagination[page]', String(page));
+
+  return `${STRAPI_URL}/api/articles?${params.toString()}`;
+}
+
+async function fetchAllArticles(): Promise<any[]> {
+  const PAGE_SIZE = 100;
+
+  const firstRes = await fetch(buildArticlesUrl(1, PAGE_SIZE), {
     headers: { 'Content-Type': 'application/json' },
-    cache: 'no-store',
+    
+    next: { revalidate: REVALIDATE_SECONDS },
   });
 
   if (!firstRes.ok) {
@@ -97,23 +115,15 @@ async function fetchAllArticles(): Promise<any[]> {
 
   if (pageCount <= 1) return firstData;
 
-  const remaining = [];
-  for (let page = 2; page <= pageCount; page++) {
-    const pageUrl = new URL(`${STRAPI_URL}/api/articles`);
-    pageUrl.searchParams.append('sort', 'publishedAt:desc');
-    pageUrl.searchParams.append('populate', '*');
-    pageUrl.searchParams.append('pagination[pageSize]', '100');
-    pageUrl.searchParams.append('pagination[page]', page.toString());
-
-    remaining.push(
-      fetch(pageUrl.toString(), {
-        headers: { 'Content-Type': 'application/json' },
-        cache: 'no-store',
-      })
-        .then((r) => r.json())
-        .then((j) => j.data || [])
-    );
-  }
+  const remaining = Array.from({ length: pageCount - 1 }, (_, i) => {
+    const page = i + 2;
+    return fetch(buildArticlesUrl(page, PAGE_SIZE), {
+      headers: { 'Content-Type': 'application/json' },
+      next: { revalidate: REVALIDATE_SECONDS },
+    })
+      .then((r) => r.json())
+      .then((j) => j.data || []);
+  });
 
   const rest = await Promise.all(remaining);
   return [...firstData, ...rest.flat()];
@@ -149,7 +159,6 @@ export async function fetchArticles(): Promise<Article[]> {
   }
 }
 
-// ✅ RÉINTRODUIT pour compatibilité avec home/Actualites.tsx
 export async function getArticles(): Promise<Article[]> {
   return fetchArticles();
 }
