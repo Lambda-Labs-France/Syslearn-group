@@ -18,7 +18,7 @@ export type SiteConfig = {
 export const siteConfig: SiteConfig = {
   name: "Syslearn Group",
   description: "Syslearn Group - Leader de la transformation numérique",
-  url: "https://syslearn-group.com",
+  url: "https://www.syslearn-group.com",
   logo: "/logo.png",
   socials: {
     linkedin: "https://linkedin.com/company/syslearn",
@@ -28,17 +28,17 @@ export const siteConfig: SiteConfig = {
   sites: [
     {
       name: "Syslearn",
-      url: "https://syslearn.fr",
+      url: "https://www.syslearn.fr",
       description: "Solutions de transformation numérique",
     },
     {
       name: "PointerLab",
-      url: "https://pointerlab.fr",
+      url: "https://www.pointerlab.fr",
       description: "Innovation et recherche en IA",
     },
     {
       name: "StackJobs",
-      url: "https://stackjobs.fr",
+      url: "https://www.stackjobs.fr",
       description: "Plateforme de recrutement tech",
     },
   ],

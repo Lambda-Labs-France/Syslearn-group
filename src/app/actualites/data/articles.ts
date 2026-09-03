@@ -24,14 +24,16 @@ export const ARTICLES_PAGE_SIZE = 3;
 export const upcomingArticles = [
   {
     title: "C++ vs Qt : quelles différences et pourquoi les deux comptent",
-    description: "Cible les recherches techniques, positionne PointerLab comme référence",
+    description:
+      "Cible les recherches techniques, positionne PointerLab comme référence",
   },
   {
     title: "Comment fonctionne le matching IA de StackJobs",
     description: "Contenu produit à forte valeur SEO sur le recrutement tech",
   },
   {
-    title: "Conseil informatique dans l'énergie : 5 défis spécifiques au secteur",
+    title:
+      "Conseil informatique dans l'énergie : 5 défis spécifiques au secteur",
     description: "Renforce la page secteur Énergie",
   },
   {
@@ -40,7 +42,12 @@ export const upcomingArticles = [
   },
 ];
 
-export const entities = ["Groupe", "Syslearn", "PointerLab", "StackJobs"] as const;
+export const entities = [
+  "Groupe",
+  "Syslearn",
+  "PointerLab",
+  "StackJobs",
+] as const;
 export type EntityFilter = (typeof entities)[number];
 
 const STRAPI_URL =
@@ -90,10 +97,10 @@ function normalizeEntity(siteName: string): Article["entity"] {
 
 function getDomain(entity: Article["entity"]): string {
   const domains: Record<Article["entity"], string> = {
-    PointerLab: "https://pointerlab.fr",
-    StackJobs: "https://stackjobs.com",
-    Syslearn: "https://syslearn.fr",
-    Groupe: "https://pointerlab.fr",
+    PointerLab: "https://www.pointerlab.fr",
+    StackJobs: "https://www.stackjobs.com",
+    Syslearn: "https://www.syslearn.fr",
+    Groupe: "https://www.syslearn-group.com",
   };
   return domains[entity];
 }
@@ -150,10 +157,22 @@ function buildStrapiFilters(entity?: string, category?: string) {
   return filters;
 }
 
-function buildArticlesUrl(page: number, pageSize: number, entity?: string, category?: string) {
+function buildArticlesUrl(
+  page: number,
+  pageSize: number,
+  entity?: string,
+  category?: string,
+) {
   const query = qs.stringify(
     {
-      fields: ["title", "summary", "slug", "publishDate", "publishedAt", "WebSite_Name"],
+      fields: [
+        "title",
+        "summary",
+        "slug",
+        "publishDate",
+        "publishedAt",
+        "WebSite_Name",
+      ],
       populate: {
         image: { fields: ["url"] },
         category: { fields: ["name"] },
@@ -162,7 +181,7 @@ function buildArticlesUrl(page: number, pageSize: number, entity?: string, categ
       pagination: { page, pageSize },
       filters: buildStrapiFilters(entity, category),
     },
-    { encodeValuesOnly: true }
+    { encodeValuesOnly: true },
   );
 
   return `${STRAPI_URL}/api/articles?${query}`;
@@ -191,7 +210,10 @@ export async function fetchArticlesPage({
   const safeSize = Math.max(1, pageSize);
 
   try {
-    const res = await fetch(buildArticlesUrl(safePage, safeSize, entity, category), FETCH_OPTIONS);
+    const res = await fetch(
+      buildArticlesUrl(safePage, safeSize, entity, category),
+      FETCH_OPTIONS,
+    );
 
     if (!res.ok) {
       throw new Error(`Strapi HTTP ${res.status}`);
@@ -222,16 +244,22 @@ export async function fetchArticleCategories(): Promise<string[]> {
         pagination: { pageSize: 100 },
         sort: ["name:asc"],
       },
-      { encodeValuesOnly: true }
+      { encodeValuesOnly: true },
     );
 
-    const res = await fetch(`${STRAPI_URL}/api/categories?${query}`, FETCH_OPTIONS);
+    const res = await fetch(
+      `${STRAPI_URL}/api/categories?${query}`,
+      FETCH_OPTIONS,
+    );
     if (!res.ok) throw new Error(`Strapi HTTP ${res.status}`);
 
     const json = await res.json();
     const names = (json.data || [])
       .map((item: { name?: string }) => item.name)
-      .filter((name: unknown): name is string => typeof name === "string" && name.trim().length > 0);
+      .filter(
+        (name: unknown): name is string =>
+          typeof name === "string" && name.trim().length > 0,
+      );
 
     return ["Toutes", ...Array.from(new Set<string>(names))];
   } catch (error) {
@@ -251,7 +279,9 @@ export async function getArticles(): Promise<Article[]> {
 }
 
 export function parseEntity(value?: string): EntityFilter {
-  return entities.includes(value as EntityFilter) ? (value as EntityFilter) : "Groupe";
+  return entities.includes(value as EntityFilter)
+    ? (value as EntityFilter)
+    : "Groupe";
 }
 
 export function parsePage(value?: string): number {
