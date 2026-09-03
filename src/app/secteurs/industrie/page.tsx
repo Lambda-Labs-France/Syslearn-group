@@ -12,6 +12,7 @@ import "../../../styles/secteurs/industrie.css";
 export const metadata = {
   title: "Industrie",
   description: "L'industrie 4.0 exige des systèmes capables de superviser, automatiser et fiabiliser des lignes de production. Syslearn Group accompagne vos projets industriels avec une double expertise.",
+  alternates: { canonical: "/secteurs/industrie" },
 };
 
 export default function IndustriePage() {

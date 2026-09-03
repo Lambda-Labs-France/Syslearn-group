@@ -13,6 +13,7 @@ import "../../../styles/secteurs/aeronautique.css";
 export const metadata = {
   title: "Aéronautique",
   description: "Syslearn Group conçoit des systèmes embarqués et logiciels de simulation pour l'aéronautique avec l'écosystème C++. Conformité DO-178C, certification et fiabilité pour vos projets critiques.",
+  alternates: { canonical: "/secteurs/aeronautique" },
 };
 
 export default function AeronautiquePage() {

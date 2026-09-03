@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { mainNav } from "../../lib/navigation";
+import { entityLinkRel } from "../../lib/entityLinks";
 import MobileNav from "./MobileNav";
 import "../../styles/accueil/header.css";
 
@@ -45,7 +46,7 @@ export default function Header() {
                     <a
                       href={item.href}
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel={entityLinkRel(item.href)}
                       className={isActiveLink ? "header__nav-link--active" : ""}
                     >
                       {item.label}
@@ -71,7 +72,7 @@ export default function Header() {
                               <a
                                 href={child.href}
                                 target="_blank"
-                                rel="noopener noreferrer"
+                                rel={entityLinkRel(child.href)}
                                 className={isChildActive ? "header__submenu-link--active" : ""}
                               >
                                 {child.label}

@@ -1,15 +1,7 @@
-/* ============================================================
-   ACTUALITÉS - STYLE COMPLET
-   ============================================================ */
-
 .actualites-page {
   padding-top: 100px;
   min-height: 100vh;
 }
-
-/* ============================================================
-   HERO
-   ============================================================ */
 
 .actualites-hero {
   background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 100%);
@@ -27,7 +19,7 @@
 .actualites-hero__title {
   font-size: 3.5rem;
   font-weight: 700;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   letter-spacing: 0.05em;
   margin-bottom: 1rem;
 }
@@ -40,10 +32,6 @@
   margin: 0 auto;
   line-height: 1.8;
 }
-
-/* ============================================================
-   FILTRES
-   ============================================================ */
 
 .actualites-filters {
   padding: 20px 0;
@@ -62,9 +50,9 @@
 
 .actualites-filters__row {
   display: flex;
-  flex-direction: column;   /* <-- ajouté */
+  flex-direction: column;
   align-items: center;
-  justify-content: center;  /* <-- ajouté */
+  justify-content: center;
   gap: 1.5rem;
 }
 
@@ -86,12 +74,6 @@
   letter-spacing: 0.05em;
 }
 
-.actualites-filters__divider {
-  width: 1px;
-  height: 28px;
-  background: #e2e8f0;
-}
-
 .actualites-filters__options {
   display: flex;
   flex-wrap: wrap;
@@ -111,9 +93,8 @@
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
+  text-decoration: none;
 }
-
-
 
 .actualites-filters__option--active {
   background: #0f172a;
@@ -147,15 +128,12 @@
   border: none;
   cursor: pointer;
   transition: color 0.2s ease;
+  text-decoration: none;
 }
 
 .actualites-filters__reset:hover {
   color: #1d4ed8;
 }
-
-/* ============================================================
-   CONTENU
-   ============================================================ */
 
 .actualites-content {
   padding: 40px 0 60px 0;
@@ -168,13 +146,9 @@
   padding: 0 2rem;
 }
 
-/* ============================================================
-   CAROUSEL - AVEC SCROLL NATIF
-   ============================================================ */
-
 .actualites-carousel-wrapper {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
   position: relative;
   max-width: 1400px;
@@ -182,58 +156,24 @@
   padding: 0 0.5rem;
 }
 
-.actualites-carousel__track {
+.actualites-grid {
   flex: 1;
-  overflow-x: auto;
-  overflow-y: visible;
-  border-radius: 1rem;
-  padding: 0.5rem 0;
-  position: relative;
-  min-height: 420px;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 0.5rem;
-}
-
-/* ✅ Masquer la scrollbar */
-.actualites-carousel__track::-webkit-scrollbar {
-  display: none;
-}
-
-.actualites-carousel__track {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.actualites-carousel__slides {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
-  will-change: transform;
-  padding: 0.25rem;
+  min-height: 420px;
+  align-items: stretch;
 }
 
-/* ✅ Scroll snap sur chaque slide */
-.actualites-carousel__slide {
-  flex: 0 0 calc(33.333% - 1rem);
-  min-width: 0;
-  padding: 0.5rem 0;
-  height: auto;
-  scroll-snap-align: start;
-}
-
-.actualites-carousel__slide .article-card {
+.actualites-grid .article-card {
   width: 100%;
   height: 100%;
   max-width: 100%;
 }
 
-/* ============================================================
-   BOUTONS DE NAVIGATION - AMÉLIORÉS POUR MOBILE
-   ============================================================ */
-
 .actualites-carousel__btn {
   flex-shrink: 0;
+  align-self: center;
   width: 48px;
   height: 48px;
   min-width: 48px;
@@ -250,19 +190,20 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   z-index: 10;
   touch-action: manipulation;
-  user-select: none;
+  -webkit-user-select: none; /* Safari */
+  user-select: none; /* Standard syntax */
   -webkit-tap-highlight-color: transparent;
-  position: relative;
+  text-decoration: none;
 }
 
-.actualites-carousel__btn:hover:not(:disabled) {
+.actualites-carousel__btn:hover:not(.actualites-carousel__btn--disabled) {
   background: #0f172a;
   color: #ffffff;
   border-color: #0f172a;
   transform: scale(1.05);
 }
 
-.actualites-carousel__btn:active:not(:disabled) {
+.actualites-carousel__btn:active:not(.actualites-carousel__btn--disabled) {
   transform: scale(0.92);
 }
 
@@ -271,10 +212,6 @@
   cursor: not-allowed;
   pointer-events: none;
 }
-
-/* ============================================================
-   DOTS
-   ============================================================ */
 
 .actualites-carousel__dots {
   display: flex;
@@ -294,12 +231,15 @@
   cursor: pointer;
   transition: all 0.3s ease;
   padding: 0;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .actualites-carousel__dot--active {
   background: #0f172a;
   width: 32px;
   border-radius: 9999px;
+  pointer-events: none;
 }
 
 .actualites-carousel__dot:hover:not(.actualites-carousel__dot--active) {
@@ -320,6 +260,7 @@
   cursor: pointer;
   transition: all 0.2s ease;
   padding: 0;
+  text-decoration: none;
 }
 
 .actualites-carousel__dot-arrow:hover {
@@ -332,20 +273,12 @@
   transform: scale(0.9);
 }
 
-/* ============================================================
-   EMPTY STATE
-   ============================================================ */
-
 .actualites-empty {
   text-align: center;
   padding: 4rem 0;
   color: #94a3b8;
   font-size: 1.125rem;
 }
-
-/* ============================================================
-   PROCHAINS ARTICLES
-   ============================================================ */
 
 .actualites-upcoming {
   padding: 60px 0;
@@ -365,7 +298,7 @@
   color: #0f172a;
   text-align: center;
   margin-bottom: 0.5rem;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
 }
 
 .actualites-upcoming__subtitle {
@@ -401,7 +334,7 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: #d1d5db;
-  font-family: 'Barlow', sans-serif;
+  font-family: "Barlow", sans-serif;
   flex-shrink: 0;
   min-width: 36px;
 }
@@ -419,17 +352,14 @@
   margin: 0;
 }
 
-/* ============================================================
-   RESPONSIVE - TABLETTE (2 articles)
-   ============================================================ */
-
 @media (max-width: 1024px) {
   .actualites-hero__title {
     font-size: 2.8rem;
   }
 
-  .actualites-carousel__slide {
-    flex: 0 0 calc(50% - 0.75rem);
+  .actualites-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 350px;
   }
 
   .actualites-carousel-wrapper {
@@ -448,19 +378,7 @@
     width: 20px;
     height: 20px;
   }
-
-  .actualites-carousel__slides {
-    gap: 1.5rem;
-  }
-
-  .actualites-carousel__track {
-    min-height: 350px;
-  }
 }
-
-/* ============================================================
-   RESPONSIVE - MOBILE (1 article avec scroll natif)
-   ============================================================ */
 
 @media (max-width: 768px) {
   .actualites-hero {
@@ -487,10 +405,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
-  }
-
-  .actualites-filters__divider {
-    display: none;
   }
 
   .actualites-filters__group {
@@ -521,11 +435,10 @@
     padding: 0 0.75rem;
   }
 
-  /* ✅ 1 article visible sur mobile avec scroll natif */
-  .actualites-carousel__slide {
-    flex: 0 0 100%;
-    padding: 0.25rem 0;
-    scroll-snap-align: center;
+  .actualites-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    min-height: 0;
   }
 
   .actualites-carousel-wrapper {
@@ -533,20 +446,6 @@
     padding: 0 0.25rem;
   }
 
-  .actualites-carousel__track {
-    min-height: 350px;
-    padding: 0.25rem 0;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scroll-padding: 0.25rem;
-  }
-
-  .actualites-carousel__slides {
-    gap: 1rem;
-  }
-
-  /* ✅ Flèches plus petites mais toujours présentes */
   .actualites-carousel__btn {
     width: 40px;
     height: 40px;
@@ -561,7 +460,6 @@
     height: 18px;
   }
 
-  /* ✅ Dots adaptés au mobile */
   .actualites-carousel__dots {
     gap: 0.4rem;
     padding: 0 0 1.5rem 0;
@@ -619,10 +517,6 @@
   }
 }
 
-/* ============================================================
-   RESPONSIVE - TRÈS PETIT MOBILE
-   ============================================================ */
-
 @media (max-width: 480px) {
   .actualites-hero__title {
     font-size: 1.6rem;
@@ -652,19 +546,6 @@
   .actualites-carousel-wrapper {
     gap: 0.25rem;
     padding: 0;
-  }
-
-  .actualites-carousel__track {
-    min-height: 300px;
-    scroll-padding: 0.1rem;
-  }
-
-  .actualites-carousel__slide {
-    padding: 0.15rem 0;
-  }
-
-  .actualites-carousel__slides {
-    gap: 0.75rem;
   }
 
   .actualites-carousel__dots {

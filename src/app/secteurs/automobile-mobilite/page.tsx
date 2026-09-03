@@ -12,6 +12,7 @@ import "../../../styles/secteurs/automobile-mobilite.css";
 export const metadata = {
   title: "Automobile & Mobilité",
   description: "Syslearn Group développe des systèmes embarqués et logiciels de simulation pour l'automobile avec l'écosystème C++. ISO 26262, MISRA C/C++, ADAS, Autosar et info-divertissement.",
+  alternates: { canonical: "/secteurs/automobile-mobilite" },
 };
 
 export default function AutomobileMobilitePage() {

@@ -4,6 +4,7 @@ import "../../styles/nos-entites/nos-entites.css";
 export const metadata = {
   title: "Nos entités",
   description: "Découvrez les trois entités de Syslearn Group : Syslearn (conseil IT), PointerLab (ESN C++) et StackJobs (recrutement tech).",
+  alternates: { canonical: "/nos-entites" },
 };
 
 export default function NosEntitesPage() {

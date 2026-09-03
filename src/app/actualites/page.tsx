@@ -1,17 +1,31 @@
-import { Suspense } from "react";
 import type { Metadata } from "next";
-import { fetchArticles } from "./data/articles";
-import ActualitesClient from "./ActualitesClient";
+import { redirect } from "next/navigation";
+import {
+  fetchArticlesPage,
+  fetchArticleCategories,
+  parseEntity,
+  parsePage,
+  buildActualitesHref,
+  ARTICLES_PAGE_SIZE,
+} from "./data/articles";
+import ActualitesView from "./ActualitesView";
+
+type SearchParams = Promise<{
+  page?: string;
+  entity?: string;
+  category?: string;
+}>;
 
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: Promise<{ page?: string }>;
+  searchParams: SearchParams;
 }): Promise<Metadata> {
   const params = await searchParams;
-  const page = params?.page;
+  const hasQuery =
+    Boolean(params.page) || Boolean(params.entity) || Boolean(params.category);
 
-  if (page && page !== "1") {
+  if (hasQuery) {
     return {
       title: "Actualités",
       description:
@@ -30,6 +44,10 @@ export async function generateMetadata({
     title: "Actualités",
     description:
       "Retrouvez toutes les actualités de Syslearn Group : lancements, bilans, portraits et secteurs. Découvrez l'écosystème conseil informatique, ESN C++/Qt et plateforme de recrutement tech.",
+    robots: {
+      index: true,
+      follow: true,
+    },
     alternates: {
       canonical: "/actualites",
     },
@@ -38,18 +56,45 @@ export async function generateMetadata({
 
 export const revalidate = 300;
 
-export default async function Page() {
-  const articles = await fetchArticles();
+export default async function Page({
+  searchParams,
+}: {
+  searchParams: SearchParams;
+}) {
+  const params = await searchParams;
+  const page = parsePage(params.page);
+  const entity = parseEntity(params.entity);
+  const category = params.category?.trim() || "Toutes";
+
+  const [{ articles, pageCount, total }, categories] = await Promise.all([
+    fetchArticlesPage({
+      page,
+      pageSize: ARTICLES_PAGE_SIZE,
+      entity,
+      category,
+    }),
+    fetchArticleCategories(),
+  ]);
+
+  if (pageCount > 0 && page > pageCount) {
+    redirect(
+      buildActualitesHref({
+        page: pageCount,
+        entity,
+        category,
+      })
+    );
+  }
 
   return (
-    <Suspense
-      fallback={
-        <div className="actualites-empty">
-          <p>Chargement des articles...</p>
-        </div>
-      }
-    >
-      <ActualitesClient initialArticles={articles} />
-    </Suspense>
+    <ActualitesView
+      articles={articles}
+      categories={categories}
+      selectedEntity={entity}
+      selectedCategory={category}
+      page={page}
+      pageCount={pageCount}
+      total={total}
+    />
   );
 }

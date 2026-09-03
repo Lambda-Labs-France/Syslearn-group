@@ -15,6 +15,7 @@ import "../../../styles/secteurs/iot.css";
 export const metadata = {
   title: "IoT",
   description: "Syslearn Group accompagne vos projets IoT du firmware embarqué à la plateforme de supervision. Cyber Resilience Act, Data Act, migration 2G/3G vers LTE-M/NB-IoT.",
+  alternates: { canonical: "/secteurs/iot" },
 };
 
 export default function IotPage() {

@@ -4,6 +4,7 @@ import "../../../styles/carrieres/nous-rejoindre.css";
 export const metadata = {
   title: "Pourquoi nous rejoindre",
   description: "Découvrez pourquoi rejoindre Syslearn Group : modèle horizontal, transparence totale, évolution vers l'association et spécialisation technique. Rejoignez une ESN différente.",
+  alternates: { canonical: "/carrieres/pourquoi-nous-rejoindre" },
 };
 
 export default function PourquoiNousRejoindrePage() {

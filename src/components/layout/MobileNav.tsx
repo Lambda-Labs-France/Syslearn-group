@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { mainNav } from "../../lib/navigation";
+import { entityLinkRel } from "../../lib/entityLinks";
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function MobileNav() {
                           <a
                             href={item.href}
                             target="_blank"
-                            rel="noopener noreferrer"
+                            rel={entityLinkRel(item.href)}
                             onClick={() => setIsOpen(false)}
                           >
                             {item.label}
@@ -80,7 +81,7 @@ export default function MobileNav() {
                                   <a
                                     href={child.href}
                                     target="_blank"
-                                    rel="noopener noreferrer"
+                                    rel={entityLinkRel(child.href)}
                                     onClick={() => setIsOpen(false)}
                                   >
                                     {child.label}

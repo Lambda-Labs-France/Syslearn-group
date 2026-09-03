@@ -17,6 +17,7 @@ import "../../../styles/nos-entites/syslearn.css";
 export const metadata = {
   title: "Syslearn",
   description: "Syslearn est une ESN spécialisée dans l'accompagnement des secteurs de l'énergie, de la défense et de l'industrie sur leurs projets numériques les plus exigeants.",
+  alternates: { canonical: "/nos-entites/syslearn" },
 };
 
 export default function SyslearnPage() {

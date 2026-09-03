@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import "../../styles/accueil/hero.css";
 
@@ -40,10 +41,14 @@ Ce qui relie ces trois entités n'est pas qu'une charte graphique commune : c'es
 
           <div className="hero__right">
             <div className="hero__image-wrapper">
-              <img
+              <Image
                 src="/images/hero.png"
                 alt="Syslearn Group - Illustration"
+                width={1280}
+                height={1280}
                 className="hero__image"
+                priority
+                sizes="(max-width: 768px) 80vw, 550px"
               />
             </div>
           </div>

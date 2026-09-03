@@ -5,6 +5,7 @@ import "../../../styles/carrieres/metier.css";
 export const metadata = {
   title: "Nos métiers",
   description: "Découvrez les métiers de Syslearn Group : consultant informatique, ingénieur C++/Qt et équipes produit tech.",
+  alternates: { canonical: "/carrieres/metiers" },
 };
 
 export default function MetiersPage() {

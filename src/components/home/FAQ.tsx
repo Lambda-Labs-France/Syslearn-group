@@ -1,6 +1,6 @@
 import "../../styles/accueil/faq.css";
 
-const faqs = [
+export const faqs = [
   {
     question: "Qu'est-ce que Syslearn Group ?",
     answer:
@@ -33,7 +33,9 @@ export default function FAQ() {
           {faqs.map((faq, index) => (
             <div key={index} className="faq__item">
               <div className="faq__item-header">
-                <span className="faq__item-number">{String(index + 1).padStart(2, '0')}</span>
+                <span className="faq__item-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
                 <h3 className="faq__question">{faq.question}</h3>
               </div>
               <p className="faq__answer">{faq.answer}</p>

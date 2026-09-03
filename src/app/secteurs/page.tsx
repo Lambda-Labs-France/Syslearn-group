@@ -15,6 +15,7 @@ import "../../styles/secteurs/secteurs.css";
 export const metadata = {
   title: "Secteurs",
   description: "Découvrez les secteurs accompagnés par Syslearn Group : énergie, défense, industrie, médical, aéronautique, automobile, IoT et simulation. Conseil et ingénierie sur mesure.",
+  alternates: { canonical: "/secteurs" },
 };
 
 export default function SecteursPage() {

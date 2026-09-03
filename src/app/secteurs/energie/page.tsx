@@ -14,6 +14,7 @@ import "../../../styles/secteurs/energie.css";
 export const metadata = {
   title: "Énergie",
   description: "Le secteur de l'énergie affiche une croissance de 6,0 % en 2026. Syslearn Group accompagne vos projets Java, cybersécurité, IoT et SCADA avec une expertise des contraintes réglementaires NIS2.",
+  alternates: { canonical: "/secteurs/energie" },
 };
 
 export default function EnergiePage() {

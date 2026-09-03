@@ -1,4 +1,7 @@
+import Image from "next/image";
 import { Calendar, ExternalLink } from "lucide-react";
+import { entityLinkRel } from "../../lib/entityLinks";
+import "../../styles/common/article-card.css";
 
 interface ArticleCardProps {
   id: string;
@@ -9,6 +12,19 @@ interface ArticleCardProps {
   entity: string;
   category: string;
   originalLink: string;
+  priority?: boolean;
+}
+
+const dateFormatter = new Intl.DateTimeFormat("fr-FR", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+});
+
+function formatDate(dateString: string) {
+  const parsed = new Date(dateString);
+  if (Number.isNaN(parsed.getTime())) return dateString;
+  return dateFormatter.format(parsed);
 }
 
 export default function ArticleCard({
@@ -19,26 +35,26 @@ export default function ArticleCard({
   entity,
   category,
   originalLink,
+  priority = false,
 }: ArticleCardProps) {
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString);
-    return new Intl.DateTimeFormat('fr-FR', {
-      day: 'numeric',
-      month: 'long',
-      year: 'numeric',
-    }).format(date);
-  };
-
   return (
     <a
       href={originalLink}
       target="_blank"
-      rel="dofollow noopener noreferrer"
+      rel={entityLinkRel(originalLink)}
       className="article-card"
       data-entity={entity}
     >
       <div className="article-card__image">
-        <img src={image} alt={title} />
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={priority}
+          unoptimized={image.endsWith(".svg")}
+          style={{ objectFit: "cover" }}
+        />
         <span className="article-card__entity">{entity}</span>
         <span className="article-card__external-badge">
           <ExternalLink size={12} />
@@ -54,9 +70,7 @@ export default function ArticleCard({
         </div>
         <h3 className="article-card__title">{title}</h3>
         <p className="article-card__excerpt">{excerpt}</p>
-        <span className="article-card__read-link">
-          Lire l'article →
-        </span>
+        <span className="article-card__read-link">Lire l'article →</span>
       </div>
     </a>
   );

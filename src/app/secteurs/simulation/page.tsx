@@ -8,6 +8,7 @@ import "../../../styles/secteurs/simulation.css";
 export const metadata = {
   title: "Simulation ",
   description: "Types, langages, frameworks, Digital Twin, profils recrutés : tout ce qu'il faut savoir sur la simulation informatique pour développer ou recruter efficacement.",
+  alternates: { canonical: "/secteurs/simulation" },
 };
 
 export default function SimulationPage() {

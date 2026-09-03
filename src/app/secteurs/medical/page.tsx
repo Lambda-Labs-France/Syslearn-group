@@ -13,6 +13,7 @@ import "../../../styles/secteurs/medical.css";
 export const metadata = {
   title: "Médical",
   description: "Syslearn Group développe des logiciels d'imagerie médicale et des interfaces de dispositifs cliniques avec l'écosystème C++, choisi pour sa robustesse face aux contraintes réglementaires MDR, AI Act et NIS2.",
+  alternates: { canonical: "/secteurs/medical" },
 };
 
 export default function MedicalPage() {

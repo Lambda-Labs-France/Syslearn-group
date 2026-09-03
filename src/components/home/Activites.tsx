@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import "../../styles/accueil/activites.css";
 
@@ -45,6 +46,35 @@ const activitesData = [
     buttonLink: "/nos-entites/stackjobs",
   },
 ];
+
+function AccordionThumbs({
+  images,
+  title,
+  variant,
+}: {
+  images: string[];
+  title: string;
+  variant: "desktop" | "mobile";
+}) {
+  const isDesktop = variant === "desktop";
+  const size = isDesktop ? 80 : 60;
+
+  return (
+    <div className={isDesktop ? "activites__accordion-images" : "activites__mobile-images"}>
+      {images.map((img, index) => (
+        <Image
+          key={img}
+          src={img}
+          alt={`${title} illustration ${index + 1}`}
+          width={size}
+          height={size}
+          className={isDesktop ? "activites__accordion-image" : "activites__mobile-image"}
+          sizes={isDesktop ? "(max-width: 768px) 1px, 80px" : "(max-width: 768px) 60px, 1px"}
+        />
+      ))}
+    </div>
+  );
+}
 
 export default function Activites() {
   const [openId, setOpenId] = useState<string>("syslearn");
@@ -92,18 +122,12 @@ export default function Activites() {
                       {item.description}
                     </p>
 
-                    {item.images && item.images.length > 0 && (
-                      <div className="activites__accordion-images">
-                        {item.images.map((img, index) => (
-                          <img
-                            key={index}
-                            src={img}
-                            alt={`${item.title} illustration ${index + 1}`}
-                            className="activites__accordion-image"
-                            loading="lazy"
-                          />
-                        ))}
-                      </div>
+                    {isOpen && item.images.length > 0 && (
+                      <AccordionThumbs
+                        images={item.images}
+                        title={item.title}
+                        variant="desktop"
+                      />
                     )}
 
                     <Link
@@ -119,11 +143,13 @@ export default function Activites() {
           </div>
 
           <div className="activites__image-col">
-            <img
+            <Image
               src={activeItem?.imageMain || activitesData[0].imageMain}
               alt="Nos activités"
+              width={1024}
+              height={1024}
               className="activites__image"
-              loading="lazy"
+              sizes="(max-width: 768px) 1px, 50vw"
             />
           </div>
         </div>
@@ -154,26 +180,24 @@ export default function Activites() {
                     {item.description}
                   </p>
 
-                  {item.images && item.images.length > 0 && (
-                    <div className="activites__mobile-images">
-                      {item.images.map((img, index) => (
-                        <img
-                          key={index}
-                          src={img}
-                          alt={`${item.title} illustration ${index + 1}`}
-                          className="activites__mobile-image"
-                          loading="lazy"
-                        />
-                      ))}
-                    </div>
+                  {isOpen && item.images.length > 0 && (
+                    <AccordionThumbs
+                      images={item.images}
+                      title={item.title}
+                      variant="mobile"
+                    />
                   )}
 
-                  <img
-                    src={item.imageMain}
-                    alt={item.title}
-                    className="activites__mobile-main-image"
-                    loading="lazy"
-                  />
+                  {isOpen && (
+                    <Image
+                      src={item.imageMain}
+                      alt={item.title}
+                      width={1024}
+                      height={1024}
+                      className="activites__mobile-main-image"
+                      sizes="(max-width: 768px) 100vw, 1px"
+                    />
+                  )}
 
                   <Link
                     href={item.buttonLink}

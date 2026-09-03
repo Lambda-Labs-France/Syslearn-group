@@ -5,6 +5,7 @@ import "../../../styles/carrieres/recrutement.css";
 export const metadata = {
   title: "Recrutement",
   description: "Découvrez nos offres d'emploi tech chez Syslearn Group. Consultant informatique, ingénieur C++, développeur full-stack. Rejoignez une ESN qui valorise votre expertise.",
+  alternates: { canonical: "/carrieres/recrutement" },
 };
 
 export default function RecrutementPage() {

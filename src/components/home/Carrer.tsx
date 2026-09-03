@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import "../../styles/accueil/carrer.css";
 
@@ -25,10 +26,13 @@ export default function Rejoindre() {
           </div>
         </div>
         <div className="rejoindre__image">
-          <img
+          <Image
             src="/images/carrieres.jpg"
             alt="Carrières"
+            width={1408}
+            height={768}
             className="rejoindre__img"
+            sizes="(max-width: 768px) 100vw, 550px"
           />
         </div>
       </div>

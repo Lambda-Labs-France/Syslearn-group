@@ -12,6 +12,7 @@ import "../../styles/carrieres/carrieres.css";
 export const metadata = {
   title: "Carrières",
   description: "Consultant IT, ingénieur C++ ou équipe produit tech : découvrez les métiers de Syslearn Group. Un modèle horizontal, transparence totale et évolution vers l'association.",
+  alternates: { canonical: "/carrieres" },
 };
 
 export default function CarrieresPage() {

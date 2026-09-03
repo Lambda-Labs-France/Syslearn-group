@@ -4,6 +4,7 @@ import CandidatureSpontaneeClient from './CandidatureSpontaneeClient';
 export const metadata: Metadata = {
   title: "Candidature spontanée",
   description: "Aucune offre ne correspond exactement à votre profil ? Dites-nous ce que vous cherchez, nos trois entités recrutent en continu.",
+  alternates: { canonical: "/carrieres/candidature-spontanee" },
 };
 
 export default function Page() {

@@ -4,6 +4,7 @@ import "../../../styles/groupe/about.css";
 export const metadata = {
   title: "Qui sommes-nous",
   description: "Découvrez l'histoire du groupe Syslearn : la naissance de Syslearn, PointerLab et StackJobs.",
+  alternates: { canonical: "/le-groupe/qui-sommes-nous" },
 };
 
 export default function QuiSommesNousPage() {

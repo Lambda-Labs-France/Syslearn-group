@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import "../../styles/accueil/secteurs.css";
 
@@ -26,7 +27,6 @@ const secteursData = [
     image: "/images/secteur-medical.png",
     link: "/secteurs/medical",
   },
-  
 ];
 
 export default function Secteurs() {
@@ -44,7 +44,13 @@ export default function Secteurs() {
           {secteursData.map((item) => (
             <Link key={item.id} href={item.link} className="secteurs__card">
               <div className="secteurs__card-image">
-                <img src={item.image} alt={item.title} />
+                <Image
+                  src={item.image}
+                  alt={item.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 530px"
+                  style={{ objectFit: "cover" }}
+                />
               </div>
               <div className="secteurs__card-overlay">
                 <h3 className="secteurs__card-title">{item.title}</h3>

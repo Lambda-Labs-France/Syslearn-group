@@ -13,6 +13,7 @@ import "../../../styles/secteurs/defense.css";
 export const metadata = {
   title: "Défense",
   description: "La défense bénéficie d'un effort budgétaire inédit de 6,7 milliards d'€ en 2026. Syslearn Group accompagne vos projets embarqués, cyberdéfense et IA avec une rigueur méthodologique adaptée.",
+  alternates: { canonical: "/secteurs/defense" },
 };
 
 export default function DefensePage() {

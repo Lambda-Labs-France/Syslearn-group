@@ -5,6 +5,7 @@ import "../../styles/groupe/groupe.css";
 export const metadata = {
   title: "Le Groupe",
   description: "Découvrez Syslearn Group : l'écosystème derrière Syslearn, PointerLab et StackJobs. Notre histoire, nos valeurs et notre modèle horizontal et transparent.",
+  alternates: { canonical: "/le-groupe" },
 };
 
 export default function LeGroupePage() {
