@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
         hostname: "strapi.pointerlab.fr",
         pathname: "/uploads/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.stackjobs.com",
+      },
     ],
   },
   experimental: {

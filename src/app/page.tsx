@@ -8,6 +8,7 @@ import Question from "../components/home/Question";
 import ChiffresCles from "../components/home/ChiffresCles";
 import FAQ from "../components/home/FAQ";
 import HomeStructuredData from "../components/home/HomeStructuredData";
+import StackJobsSection from "../components/home/stackjobs-section";
 
 const Activites = dynamic(() => import("../components/home/Activites"));
 
@@ -72,6 +73,7 @@ export default function HomePage() {
       <Secteurs />
       <FAQ />
       <Carrer />
+      <StackJobsSection />
       <Actualites />
       <Question />
     </>
